@@ -1,0 +1,140 @@
+\babel@toc {spanish}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Localizaci\IeC {\'o}n de las ra\IeC {\'\i }ces de los sistemas.\relax }}{2}{figure.caption.1}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Funci\IeC {\'o}n de transferecia para el modelo de referencia}}}{2}{subfigure.1.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Funci\IeC {\'o}n de transferecia para la planta}}}{2}{subfigure.1.2}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de bloques general de MRAS.\relax }}{2}{figure.caption.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Diagrama de bloque del sistema controlado por 3 leyes de ajuste para $n^* = 1$.\relax }}{3}{figure.caption.3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Diagrama de bloques representativo del control adaptativo para un sistema de grado relativo igual a $2$.\relax }}{5}{figure.caption.4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Error aumentado para $k_p$ desconocido con $n^* =2$.\relax }}{6}{figure.caption.5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama de bloques para un control adaptativo directo de un sistema de grado relativo $n^* = 2$.\relax }}{7}{figure.caption.6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de bloques para las leyes de ajuste del control adaptativo.\relax }}{7}{figure.caption.7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama de bloques para los vectores auxiliares.\relax }}{8}{figure.caption.8}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de bloques para calcular el error aumentado.\relax }}{8}{figure.caption.9}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Resultados de simulaciones para diferentes valores iniciales del sistema con entrada oscilante.\relax }}{9}{figure.caption.10}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{9}{subfigure.10.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{9}{subfigure.10.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{9}{subfigure.10.3}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Resultados de simulaciones para diferentes valores iniciales del sistema con entrada unitaria.\relax }}{10}{figure.caption.11}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{10}{subfigure.11.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{10}{subfigure.11.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{10}{subfigure.11.3}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Resultados de simulaciones para diferentes valores de ganancia adaptativa con una entrada unitaria.\relax }}{11}{figure.caption.12}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{11}{subfigure.12.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{11}{subfigure.12.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{11}{subfigure.12.3}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Resultados de simulaciones para diferentes valores de ganancia adaptativa con una entrada oscilante.\relax }}{12}{figure.caption.13}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{12}{subfigure.13.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{12}{subfigure.13.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{12}{subfigure.13.3}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Simulaciones para diferentes valores de ganancia adaptativa con ruido blanco.\relax }}{13}{figure.caption.14}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{13}{subfigure.14.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{13}{subfigure.14.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{13}{subfigure.14.3}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Resultados de simulaciones para diferentes valores de $b_p$ con una entrada unitaria.\relax }}{14}{figure.caption.15}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}{subfigure.15.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}{subfigure.15.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{14}{subfigure.15.3}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Resultados de simulaciones para diferentes valores de $c_p$ con una entrada unitaria.\relax }}{15}{figure.caption.16}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{15}{subfigure.16.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{15}{subfigure.16.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{15}{subfigure.16.3}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Resultados de simulaciones para diferentes valores de $b_p$ con una entrada oscilante.\relax }}{16}{figure.caption.17}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{16}{subfigure.17.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{16}{subfigure.17.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{16}{subfigure.17.3}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Resultados de simulaciones para diferentes valores de $c_p$ con una entrada oscilante.\relax }}{17}{figure.caption.18}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{17}{subfigure.18.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{17}{subfigure.18.2}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{17}{subfigure.18.3}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Perturbaci\IeC {\'o}n $p(t)$ agregada en la salida de la planta.\relax }}{18}{figure.caption.19}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Comportamiento de las leyes de ajuste para diferentes valores de perturbaci\IeC {\'o}n constante.\relax }}{19}{figure.caption.20}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{19}{subfigure.20.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{19}{subfigure.20.2}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Comportamiento de las leyes de ajuste para diferentes valores de amplitud en la perturbaci\IeC {\'o}n con $\omega _f=2$.\relax }}{20}{figure.caption.21}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{20}{subfigure.21.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{20}{subfigure.21.2}% 
+\contentsline {figure}{\numberline {22}{\ignorespaces Comportamiento de las leyes de ajuste para diferentes frecuencias en la perturbaci\IeC {\'o}n con $A = 1$.\relax }}{21}{figure.caption.22}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{21}{subfigure.22.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{21}{subfigure.22.2}% 
+\contentsline {figure}{\numberline {23}{\ignorespaces Leyes de ajuste para diferentes valores de perturbaci\IeC {\'o}n constante con valor inicial igual al objetivo.\relax }}{22}{figure.caption.23}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{22}{subfigure.23.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{22}{subfigure.23.2}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces Leyes de ajuste para diferentes valores de amplitud en la perturbaci\IeC {\'o}n con $\omega _f=2$ y con valor inicial igual al objetivo.\relax }}{23}{figure.caption.24}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{23}{subfigure.24.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{23}{subfigure.24.2}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces Leyes de ajuste para diferentes frecuencias en la perturbaci\IeC {\'o}n con $A = 1$ y con valor inicial igual al objetivo.\relax }}{24}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{24}{subfigure.25.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{24}{subfigure.25.2}% 
+\contentsline {figure}{\numberline {26}{\ignorespaces Modificaci\IeC {\'o}n de las leyes de ajuste con el uso de Zona muerta.\relax }}{25}{figure.caption.26}% 
+\contentsline {figure}{\numberline {27}{\ignorespaces Leyes de ajuste para diferentes valores de perturbaci\IeC {\'o}n constante con valor inicial igual al objetivo.\relax }}{26}{figure.caption.27}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{26}{subfigure.27.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{26}{subfigure.27.2}% 
+\contentsline {figure}{\numberline {28}{\ignorespaces Leyes de ajuste para diferentes valores de perturbaci\IeC {\'o}n constante con valor inicial aleatorio.\relax }}{27}{figure.caption.28}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{27}{subfigure.28.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{27}{subfigure.28.2}% 
+\contentsline {figure}{\numberline {29}{\ignorespaces Leyes de ajuste para diferentes valores de amplitud en la perturbaci\IeC {\'o}n con $\omega _f=2$ y con valor inicial igual al objetivo.\relax }}{28}{figure.caption.29}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{28}{subfigure.29.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{28}{subfigure.29.2}% 
+\contentsline {figure}{\numberline {30}{\ignorespaces Leyes de ajuste para diferentes valores de amplitud en la perturbaci\IeC {\'o}n con $\omega _f=2$ y con valor inicial aleatorio.\relax }}{29}{figure.caption.30}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{29}{subfigure.30.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{29}{subfigure.30.2}% 
+\contentsline {figure}{\numberline {31}{\ignorespaces Leyes de ajuste para diferentes frecuencias en la perturbaci\IeC {\'o}n con $A = 1$ y con valor inicial igual al objetivo.\relax }}{30}{figure.caption.31}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{30}{subfigure.31.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{30}{subfigure.31.2}% 
+\contentsline {figure}{\numberline {32}{\ignorespaces Leyes de ajuste para diferentes frecuencias en la perturbaci\IeC {\'o}n con $A = 1$ y con valor inicial aleatorio.\relax }}{31}{figure.caption.32}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{31}{subfigure.32.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{31}{subfigure.32.2}% 
+\contentsline {figure}{\numberline {33}{\ignorespaces Modificaci\IeC {\'o}n de las leyes de ajuste acotando el valor de $||\theta ||$.\relax }}{32}{figure.caption.33}% 
+\contentsline {figure}{\numberline {34}{\ignorespaces Leyes de ajuste y error para diferentes valores de $\theta _{max}$.\relax }}{33}{figure.caption.34}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{33}{subfigure.34.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{33}{subfigure.34.2}% 
+\contentsline {figure}{\numberline {35}{\ignorespaces Leyes de ajuste y error para $\theta _{max}^* = 9$ con perturbaci\IeC {\'o}n constante y condici\IeC {\'o}n inicial de $\theta $ aleatorio.\relax }}{34}{figure.caption.35}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{34}{subfigure.35.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{34}{subfigure.35.2}% 
+\contentsline {figure}{\numberline {36}{\ignorespaces Leyes de ajuste y error para $\theta _{max}^* =9$ y perturbaci\IeC {\'o}n constante.\relax }}{35}{figure.caption.36}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{35}{subfigure.36.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{35}{subfigure.36.2}% 
+\contentsline {figure}{\numberline {37}{\ignorespaces Leyes de ajuste y error para $\theta _{max}^* =9$ y perturbaci\IeC {\'o}n oscilante con $\omega _f=2$.\relax }}{36}{figure.caption.37}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{36}{subfigure.37.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{36}{subfigure.37.2}% 
+\contentsline {figure}{\numberline {38}{\ignorespaces Leyes de ajuste y error para $\theta _{max}^* =9$ y perturbaci\IeC {\'o}n oscilante con $A=1$.\relax }}{37}{figure.caption.38}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{37}{subfigure.38.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{37}{subfigure.38.2}% 
+\contentsline {figure}{\numberline {39}{\ignorespaces Modificaci\IeC {\'o}n de las leyes de ajuste con constante $\sigma $.\relax }}{38}{figure.caption.39}% 
+\contentsline {figure}{\numberline {40}{\ignorespaces Leyes de ajuste y error para diferentes valores de $\sigma $ y perturbaci\IeC {\'o}n igual a $5$.\relax }}{39}{figure.caption.40}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{39}{subfigure.40.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{39}{subfigure.40.2}% 
+\contentsline {figure}{\numberline {41}{\ignorespaces Leyes de ajuste y error para $\sigma = 20$ y diferentes valores de perturbaci\IeC {\'o}n constante.\relax }}{40}{figure.caption.41}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{40}{subfigure.41.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{40}{subfigure.41.2}% 
+\contentsline {figure}{\numberline {42}{\ignorespaces Leyes de ajuste y error para $\sigma = 20$ y diferentes valores de $A$ con $\omega _f=2$.\relax }}{41}{figure.caption.42}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{41}{subfigure.42.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{41}{subfigure.42.2}% 
+\contentsline {figure}{\numberline {43}{\ignorespaces Leyes de ajuste y error para $\sigma = 20$ y diferentes valores de $\omega _f$ con $A=1$.\relax }}{42}{figure.caption.43}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{42}{subfigure.43.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{42}{subfigure.43.2}% 
+\contentsline {figure}{\numberline {44}{\ignorespaces Modificaci\IeC {\'o}n de las leyes de ajuste con el uso de $\varepsilon $.\relax }}{43}{figure.caption.44}% 
+\contentsline {figure}{\numberline {45}{\ignorespaces Leyes de ajuste y error para para diferentes perturbaciones constantes.\relax }}{44}{figure.caption.45}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{44}{subfigure.45.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{44}{subfigure.45.2}% 
+\contentsline {figure}{\numberline {46}{\ignorespaces Leyes de ajuste y error para para diferentes amplitudes $A$ de perturbaci\IeC {\'o}n con $\omega _f =2$.\relax }}{45}{figure.caption.46}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{45}{subfigure.46.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{45}{subfigure.46.2}% 
+\contentsline {figure}{\numberline {47}{\ignorespaces Leyes de ajuste y error para para diferentes frecuencias de perturbaciones con $A=1$.\relax }}{46}{figure.caption.47}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$r(t) = 2\sin ((5)t)$}}}{46}{subfigure.47.1}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$r(t)=1$}}}{46}{subfigure.47.2}% 
+\contentsline {figure}{\numberline {48}{\ignorespaces Comparaci\IeC {\'o}n del error y las leyes de ajuste con perturbaci\IeC {\'o}n constante. Entrada $r(t) = 2\sin (5t)$.\relax }}{47}{figure.caption.48}% 
+\contentsline {figure}{\numberline {49}{\ignorespaces Comparaci\IeC {\'o}n del error y las leyes de ajuste con perturbaci\IeC {\'o}n constante. Entrada $r(t) = 1$.\relax }}{47}{figure.caption.49}% 
+\contentsline {figure}{\numberline {50}{\ignorespaces Comparaci\IeC {\'o}n del error y las leyes de ajuste con perturbaci\IeC {\'o}n oscilante. Entrada $r(t) = 2\sin (5t)$.\relax }}{48}{figure.caption.50}% 
+\contentsline {figure}{\numberline {51}{\ignorespaces Comparaci\IeC {\'o}n del error y las leyes de ajuste con perturbaci\IeC {\'o}n oscilante. Entrada $r(t) = 1$.\relax }}{48}{figure.caption.51}% 
+\contentsline {figure}{\numberline {52}{\ignorespaces Modificaci\IeC {\'o}n del t\IeC {\'e}rmino $b_p(t)$ la planta.\relax }}{49}{figure.caption.52}% 
+\contentsline {figure}{\numberline {53}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $p=1$. Entrada $r(t) = 2\sin (5t)$.\relax }}{50}{figure.caption.53}% 
+\contentsline {figure}{\numberline {54}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $p=5$. Entrada $r(t) = 2\sin (5t)$.\relax }}{50}{figure.caption.54}% 
+\contentsline {figure}{\numberline {55}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $p=10$. Entrada $r(t) = 2\sin (5t)$.\relax }}{51}{figure.caption.55}% 
+\contentsline {figure}{\numberline {56}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $p=1$. Entrada $r(t) = 1$.\relax }}{51}{figure.caption.56}% 
+\contentsline {figure}{\numberline {57}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $p=5$. Entrada $r(t) = 1$.\relax }}{52}{figure.caption.57}% 
+\contentsline {figure}{\numberline {58}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $p=10$. Entrada $r(t) = 1$.\relax }}{52}{figure.caption.58}% 
+\contentsline {figure}{\numberline {59}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $A=1$. Entrada $r(t) = 2\sin (5t)$.\relax }}{53}{figure.caption.59}% 
+\contentsline {figure}{\numberline {60}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $A=5$. Entrada $r(t) = 2\sin (5t)$.\relax }}{53}{figure.caption.60}% 
+\contentsline {figure}{\numberline {61}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $A=1$. Entrada $r(t) = 1$.\relax }}{54}{figure.caption.61}% 
+\contentsline {figure}{\numberline {62}{\ignorespaces Error y leyes de ajuste con perturbaci\IeC {\'o}n rampa $A=5$. Entrada $r(t) = 1$.\relax }}{54}{figure.caption.62}% 

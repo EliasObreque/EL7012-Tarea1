@@ -1,0 +1,24 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Pregunta 1}{1}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Soluci\IeC {\'o}n problema 1}{1}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Experimentos con diferentes par\IeC {\'a}metros}{8}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}Condiciones iniciales diferentes entrada oscilante}{8}{subsubsection.1.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Condiciones iniciales diferentes entrada unitaria}{9}{subsubsection.1.2.2}% 
+\contentsline {subsubsection}{\numberline {1.2.3}Variaci\IeC {\'o}n de ganancias adaptativas con entrada unitaria}{10}{subsubsection.1.2.3}% 
+\contentsline {subsubsection}{\numberline {1.2.4}Variaci\IeC {\'o}n de ganancias adaptativas con entrada oscilante}{11}{subsubsection.1.2.4}% 
+\contentsline {subsubsection}{\numberline {1.2.5}Variaci\IeC {\'o}n de ganancias adaptativas con entrada ruido blanco}{12}{subsubsection.1.2.5}% 
+\contentsline {subsubsection}{\numberline {1.2.6}Variaci\IeC {\'o}n del par\IeC {\'a}metro $b_p$ de la planta con entrada unitaria}{13}{subsubsection.1.2.6}% 
+\contentsline {subsubsection}{\numberline {1.2.7}Variaci\IeC {\'o}n del par\IeC {\'a}metro $c_p$ de la planta con entrada unitaria}{14}{subsubsection.1.2.7}% 
+\contentsline {subsubsection}{\numberline {1.2.8}Variaci\IeC {\'o}n del par\IeC {\'a}metro $b_p$ de la planta con entrada oscilante}{15}{subsubsection.1.2.8}% 
+\contentsline {subsubsection}{\numberline {1.2.9}Variaci\IeC {\'o}n del par\IeC {\'a}metro $c_p$ de la planta con entrada oscilante}{16}{subsubsection.1.2.9}% 
+\contentsline {section}{\numberline {2}Problema 2}{18}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Soluci\IeC {\'o}n problema 1}{18}{subsection.2.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Uso de Zona muerta}{25}{subsubsection.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Cota sobre $||\theta ^*||$}{32}{subsubsection.2.1.2}% 
+\contentsline {subsubsection}{\numberline {2.1.3}Modificaci\IeC {\'o}n - $\sigma $}{37}{subsubsection.2.1.3}% 
+\contentsline {subsubsection}{\numberline {2.1.4}Modificaci\IeC {\'o}n - $\varepsilon $}{42}{subsubsection.2.1.4}% 
+\contentsline {subsubsection}{\numberline {2.1.5}Comparaci\IeC {\'o}n de m\IeC {\'e}todos}{46}{subsubsection.2.1.5}% 
+\contentsline {subsection}{\numberline {2.2}Soluci\IeC {\'o}n problema 2}{49}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Perturbaci\IeC {\'o}n con rampa}{49}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Perturbaci\IeC {\'o}n oscilatoria}{49}{subsubsection.2.2.2}% 
+\contentsline {section}{\numberline {3}Conclusi\IeC {\'o}n}{55}{section.3}% 
