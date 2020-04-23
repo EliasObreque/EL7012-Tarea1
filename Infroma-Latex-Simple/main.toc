@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{1}%
+\contentsline {section}{\numberline {2}Marco Teórico}{1}%
+\contentsline {subsection}{\numberline {2.1}Denavit Hartenberg}{1}%
+\contentsline {subsection}{\numberline {2.2}Algoritmos Genéticos}{3}%
+\contentsline {subsubsection}{\numberline {2.2.1}Creación de los individuos de la Población Original}{4}%
+\contentsline {subsubsection}{\numberline {2.2.2}Fitness}{5}%
+\contentsline {subsubsection}{\numberline {2.2.3}Selección de los individuos}{6}%
+\contentsline {subsubsection}{\numberline {2.2.4}Crossover y mutación}{7}%
+\contentsline {section}{\numberline {3}Metodología}{8}%
+\contentsline {subsection}{\numberline {3.1}Selección de los hiperparámetros de fitness}{9}%
+\contentsline {section}{\numberline {4}Resultados}{11}%
+\contentsline {section}{\numberline {5}Conclusión}{13}%
