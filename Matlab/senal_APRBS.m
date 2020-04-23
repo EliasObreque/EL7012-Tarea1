@@ -12,3 +12,5 @@ u1 = idinput(N,'prbs',Band,Range);
 figure(3)
 stairs(u1)
 %Genera una señal APRBS
+
+% dsadsdasdds
