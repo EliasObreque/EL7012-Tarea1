@@ -92,8 +92,8 @@ Esto es una prueba para el trabajo offline.
 Considere la siguiente serie no lineal dinámica:
 
 \begin{align}
-y(k)= (0.8 - 0.5 exp\{-y^2(k- 1)\})y(k - 1)\nonumber \\
--(0.3 + 0.9 exp\{-y^2(k - 1)\})y(k - 2)\nonumber \\
+y(k)= (0.8 - 0.5 exp{-y^2(k- 1)})y(k - 1)\nonumber \\
+-(0.3 + 0.9 exp{-y^2(k - 1)})y(k - 2)\nonumber \\
 +u(k - 1) + 0.2u(k - 2) + 0.1u(k - 1)u(k - 2) + e(k)
 \label{e_serie}
 \end{align}
@@ -101,7 +101,7 @@ y(k)= (0.8 - 0.5 exp\{-y^2(k- 1)\})y(k - 1)\nonumber \\
 donde el ruido del sistema
 
 \begin{equation}
-e(k)=  0.5 exp\{-y^2(k- 1)\}\beta(k)
+e(k)=  0.5 exp{-y^2(k- 1)})\beta(k)
 \label{e_error}
 \end{equation}
 
