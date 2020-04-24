@@ -1,15 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.4.18)  24 APR 2020 10:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.4.20)  24 APR 2020 18:38
 entering extended mode
-**"C:/Users/maibe/Documents/UCHILE/Ramos/EL7012 Control Inteligente de Sistemas
-/Tareas/EL7012-Tarea1/Infroma-Latex-Simple/main.tex"
-
-("C:/Users/maibe/Documents/UCHILE/Ramos/EL7012 Control Inteligente de Sistemas/
-Tareas/EL7012-Tarea1/Infroma-Latex-Simple/main.tex"
+**./main.tex
+(main.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06>
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+L3 programming layer <2020-03-03>
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
 File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
@@ -24,33 +21,35 @@ File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
 Package: babel 2020/02/28 3.41 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def"
 File: switch.def 2020/02/28 3.41 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-spanish\spanish.ldf
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-spanish\spanish
+.ldf"
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
 File: babel.def 2020/02/28 3.41 Babel common definitions
 \babel@savecnt=\count175
 \U@D=\dimen135
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.def"
+)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count176
 )
@@ -60,18 +59,17 @@ Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
-))
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/natbib\natbib.sty
+)) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip49
 \bibsep=\skip50
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count178
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty
+"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks18
 \symAMSa=\mathgroup4
@@ -80,24 +78,23 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen136
-))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+)) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen137
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count179
@@ -137,8 +134,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/amscls\amsthm.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.sty"
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks24
 \thm@bodyfont=\toks25
@@ -149,8 +145,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@postskip=\skip55
 \thm@headsep=\skip56
 \dth@everypar=\toks29
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count191
 \calc@Bcount=\count192
@@ -163,53 +158,61 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count193
 \calc@Cskip=\skip59
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/was\gensymb.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.sty
+"
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks30
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.sty
+"
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphics
+.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex.d
+ef"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen147
 \Gin@req@width=\dimen148
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/parskip\parskip.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\parskip.sty"
 Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/kvoptions\kvoptions.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvoptions.s
+ty"
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/ltxcmds\ltxcmds.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.sty
+"
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/kvsetkeys\kvsetkeys.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvsetkeys
+.sty"
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) ("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
+))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty
+"
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count194
 ))
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/fancyhdr\fancyhdr.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.sty
+"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip60
@@ -221,25 +224,26 @@ s
 \f@nch@O@erf=\skip66
 \f@nch@O@olf=\skip67
 \f@nch@O@orf=\skip68
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/vmargin\vmargin.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/vmargin\vmargin.sty
+"
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 \PaperWidth=\dimen149
 \PaperHeight=\dimen150
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.cf
+g"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/colortbl\colortbl.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\colortbl.sty
+"
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen151
 \ar@mcellbox=\box47
@@ -262,14 +266,12 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.s
+ty"
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count196
@@ -285,19 +287,21 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen160
 \Gm@dimlist=\toks33
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.cfg))
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/pdflscape\pdflscape.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.cfg
+"))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscape.s
+ty"
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.sty
+"
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
-
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption3.sty
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.sty
+"
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
 \captionmargin=\dimen161
@@ -312,7 +316,8 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count199
 \c@continuedfloat=\count266
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/subfigure\subfigure.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfigure\subfigure.s
+ty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip72
 \subfigcapskip=\skip73
@@ -328,14 +333,15 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/subfigure\subfigure.cfg)
+
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfigure\subfigure.c
+fg")
 \subfig@top=\skip76
 \subfig@bottom=\skip77
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/xurl\xurl.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xurl\xurl.sty"
 Package: xurl 2020/01/24 v 0.09 modify URL breaks
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/enumitem\enumitem.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.s
+ty"
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip78
 \enit@outerparindent=\dimen170
@@ -344,12 +350,12 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count271
 \enitdp@description=\count272
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdfmode.def"
-File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend-p
+dfmode.def"
+File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count273
 \l__pdf_internal_box=\box50
-)
-(main.aux
+) (main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 )
@@ -383,7 +389,9 @@ Package gensymb Info: Using \Omega for \ohm on input line 46.
 
 Package gensymb Warning: Not defining \micro.
 
-("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.
+mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count274
 \scratchdimen=\dimen171
@@ -396,18 +404,24 @@ Package gensymb Warning: Not defining \micro.
 \MPnumerator=\count278
 \makeMPintoPDFobject=\count279
 \everyMPtoPDFconversion=\toks36
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+)
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf
+-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/infwarerr\infwarerr.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwarerr
+.sty"
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/grfext\grfext.sty
+)
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grfext\grfext.sty"
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/kvdefinekeys\kvdefinekey
-s.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty"
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)) ("C:\Program Files\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexcmds.sty"
+))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexcmds
+.sty"
 Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -465,597 +479,26 @@ Package pdftex.def Info: Logo_Uchile_modern.png  used on input line 53.
 (pdftex.def)             Requested size: 170.16167pt x 140.53996pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
 
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+[1
 
-{C:/Users/maibe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Logo_Uchi
-le_modern.png>]
-(main.toc
+{C:/Users/EO/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Logo_Uchile_
+modern.png>] (main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [1] [1] [2]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 162.
-
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-
- []
-
-<imag/Algortimo_Genetico_diagrama.png, id=32, 1883.3562pt x 584.4234pt>
-File: imag/Algortimo_Genetico_diagrama.png Graphic file (type png)
-<use imag/Algortimo_Genetico_diagrama.png>
-Package pdftex.def Info: imag/Algortimo_Genetico_diagrama.png  used on input li
-ne 222.
-(pdftex.def)             Requested size: 369.88248pt x 142.26201pt.
-[5 <./imag/Algortimo_Genetico_diagrama.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 253.
-
-[6]
-Package epstopdf Info: Source file: <imag/EjemploSmoothness.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 52488 bytes
-(epstopdf)             Output file: <imag/EjemploSmoothness-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2020-04-22 11:58:28
-(epstopdf)                    size: 2630 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/EjemploSmoothness-eps-
-converted-to.pdf imag/EjemploSmoothness.eps>
-(epstopdf)             \includegraphics on input line 282.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/EjemploSmoothness-eps-converted-to.pdf): 
-PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/EjemploSmoothness-eps-converted-to.pdf, id=42, 1445.4pt x 724.7075pt>
-File: imag/EjemploSmoothness-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/EjemploSmoothness-eps-converted-to.pdf>
-Package pdftex.def Info: imag/EjemploSmoothness-eps-converted-to.pdf  used on i
-nput line 282.
-(pdftex.def)             Requested size: 227.60759pt x 142.26286pt.
-[7 <./imag/EjemploSmoothness-eps-converted-to.pdf>] [8]
-Package epstopdf Info: Source file: <imag/Crossover.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 93723 bytes
-(epstopdf)             Output file: <imag/Crossover-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:29
-(epstopdf)                    size: 2612 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/Crossover-eps-converte
-d-to.pdf imag/Crossover.eps>
-(epstopdf)             \includegraphics on input line 337.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/Crossover-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/Crossover-eps-converted-to.pdf, id=50, 1445.4pt x 724.7075pt>
-File: imag/Crossover-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/Crossover-eps-converted-to.pdf>
-Package pdftex.def Info: imag/Crossover-eps-converted-to.pdf  used on input lin
-e 337.
-(pdftex.def)             Requested size: 199.15665pt x 142.26286pt.
-Package epstopdf Info: Source file: <imag/MutacionFix.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 68631 bytes
-(epstopdf)             Output file: <imag/MutacionFix-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:30
-(epstopdf)                    size: 2616 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/MutacionFix-eps-conver
-ted-to.pdf imag/MutacionFix.eps>
-(epstopdf)             \includegraphics on input line 339.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/MutacionFix-eps-converted-to.pdf): PDF in
-clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/MutacionFix-eps-converted-to.pdf, id=51, 1445.4pt x 724.7075pt>
-File: imag/MutacionFix-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/MutacionFix-eps-converted-to.pdf>
-Package pdftex.def Info: imag/MutacionFix-eps-converted-to.pdf  used on input l
-ine 339.
-(pdftex.def)             Requested size: 199.15665pt x 142.26286pt.
-[9 <./imag/Crossover-eps-converted-to.pdf> <./imag/MutacionFix-eps-converted-to
-.pdf>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 359.
-
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Evoluciondelerrordepos
-icionparaelmejorfitnessvarianhiperparametros.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 162643 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Evoluciondelerrordepos
-icionparaelmejorfitnessvarianhiperparametros-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:31
-(epstopdf)                    size: 2538 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Evoluci
-ondelerrordeposicionparaelmejorfitnessvarianhiperparametros-eps-converted-to.pd
-f imag/VariacionAlfas/Evoluciondelerrordeposicionparaelmejorfitnessvarianhiperp
-arametros.eps>
-(epstopdf)             \includegraphics on input line 390.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Evoluciondelerrordeposicio
-nparaelmejorfitnessvarianhiperparametros-eps-converted-to.pdf): PDF inclusion: 
-found PDF version <1.7>, but at most version <1.5> allowed
-<imag/VariacionAlfas/Evoluciondelerrordeposicionparaelmejorfitnessvarianhiperpa
-rametros-eps-converted-to.pdf, id=58, 1180.41pt x 667.49374pt>
-File: imag/VariacionAlfas/Evoluciondelerrordeposicionparaelmejorfitnessvarianhi
-perparametros-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/VariacionAlfas/Evoluciondelerrordeposicionparaelmejorfitnessvarianhip
-erparametros-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Evoluciondelerrordeposicionparaelm
-ejorfitnessvarianhiperparametros-eps-converted-to.pdf  used on input line 390.
-(pdftex.def)             Requested size: 199.15407pt x 99.57993pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Fitnesspromedioparalas
-distintasgeneracionesvarianhiperparametro.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 124371 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Fitnesspromedioparalas
-distintasgeneracionesvarianhiperparametro-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:32
-(epstopdf)                    size: 2528 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Fitness
-promedioparalasdistintasgeneracionesvarianhiperparametro-eps-converted-to.pdf i
-mag/VariacionAlfas/Fitnesspromedioparalasdistintasgeneracionesvarianhiperparame
-tro.eps>
-(epstopdf)             \includegraphics on input line 391.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Fitnesspromedioparalasdist
-intasgeneracionesvarianhiperparametro-eps-converted-to.pdf): PDF inclusion: fou
-nd PDF version <1.7>, but at most version <1.5> allowed
-<imag/VariacionAlfas/Fitnesspromedioparalasdistintasgeneracionesvarianhiperpara
-metro-eps-converted-to.pdf, id=59, 1180.41pt x 667.49374pt>
-File: imag/VariacionAlfas/Fitnesspromedioparalasdistintasgeneracionesvarianhipe
-rparametro-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/VariacionAlfas/Fitnesspromedioparalasdistintasgeneracionesvarianhiper
-parametro-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Fitnesspromedioparalasdistintasgen
-eracionesvarianhiperparametro-eps-converted-to.pdf  used on input line 391.
-(pdftex.def)             Requested size: 199.15407pt x 99.57993pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Evoluciondelmejorfitne
-ssvarianhiperparametro.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 161933 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Evoluciondelmejorfitne
-ssvarianhiperparametro-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:33
-(epstopdf)                    size: 2486 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Evoluci
-ondelmejorfitnessvarianhiperparametro-eps-converted-to.pdf imag/VariacionAlfas/
-Evoluciondelmejorfitnessvarianhiperparametro.eps>
-(epstopdf)             \includegraphics on input line 392.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Evoluciondelmejorfitnessva
-rianhiperparametro-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7
->, but at most version <1.5> allowed
-<imag/VariacionAlfas/Evoluciondelmejorfitnessvarianhiperparametro-eps-converted
--to.pdf, id=60, 1180.41pt x 667.49374pt>
-File: imag/VariacionAlfas/Evoluciondelmejorfitnessvarianhiperparametro-eps-conv
-erted-to.pdf Graphic file (type pdf)
-<use imag/VariacionAlfas/Evoluciondelmejorfitnessvarianhiperparametro-eps-conve
-rted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Evoluciondelmejorfitnessvarianhipe
-rparametro-eps-converted-to.pdf  used on input line 392.
-(pdftex.def)             Requested size: 398.32616pt x 99.57993pt.
-[10]
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa01Beta09.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 54132 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa01Beta09-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:34
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa01B
-eta09-eps-converted-to.pdf imag/VariacionAlfas/Alfa01Beta09.eps>
-(epstopdf)             \includegraphics on input line 404.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa01Beta09-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa01Beta09-eps-converted-to.pdf, id=66, 1198.4775pt x 68
-7.56876pt>
-File: imag/VariacionAlfas/Alfa01Beta09-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa01Beta09-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa01Beta09-eps-converted-to.pdf 
- used on input line 404.
-(pdftex.def)             Requested size: 113.80168pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa02Beta08.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58686 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa02Beta08-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:35
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa02B
-eta08-eps-converted-to.pdf imag/VariacionAlfas/Alfa02Beta08.eps>
-(epstopdf)             \includegraphics on input line 405.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa02Beta08-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa02Beta08-eps-converted-to.pdf, id=67, 1201.48875pt x 6
-87.56876pt>
-File: imag/VariacionAlfas/Alfa02Beta08-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa02Beta08-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa02Beta08-eps-converted-to.pdf 
- used on input line 405.
-(pdftex.def)             Requested size: 113.79428pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa03Beta07.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58292 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa03Beta07-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:36
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa03B
-eta07-eps-converted-to.pdf imag/VariacionAlfas/Alfa03Beta07.eps>
-(epstopdf)             \includegraphics on input line 406.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa03Beta07-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa03Beta07-eps-converted-to.pdf, id=68, 1205.50375pt x 6
-87.56876pt>
-File: imag/VariacionAlfas/Alfa03Beta07-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa03Beta07-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa03Beta07-eps-converted-to.pdf 
- used on input line 406.
-(pdftex.def)             Requested size: 113.80666pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa04Beta06.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58914 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa04Beta06-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:37
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa04B
-eta06-eps-converted-to.pdf imag/VariacionAlfas/Alfa04Beta06.eps>
-(epstopdf)             \includegraphics on input line 408.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa04Beta06-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa04Beta06-eps-converted-to.pdf, id=69, 1196.47pt x 687.
-56876pt>
-File: imag/VariacionAlfas/Alfa04Beta06-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa04Beta06-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa04Beta06-eps-converted-to.pdf 
- used on input line 408.
-(pdftex.def)             Requested size: 113.79362pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa05Beta05.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58788 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa05Beta05-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:37
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa05B
-eta05-eps-converted-to.pdf imag/VariacionAlfas/Alfa05Beta05.eps>
-(epstopdf)             \includegraphics on input line 409.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa05Beta05-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa05Beta05-eps-converted-to.pdf, id=70, 1179.40625pt x 6
-87.56876pt>
-File: imag/VariacionAlfas/Alfa05Beta05-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa05Beta05-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa05Beta05-eps-converted-to.pdf 
- used on input line 409.
-(pdftex.def)             Requested size: 113.80838pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa06Beta04.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 57863 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa06Beta04-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:38
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa06B
-eta04-eps-converted-to.pdf imag/VariacionAlfas/Alfa06Beta04.eps>
-(epstopdf)             \includegraphics on input line 410.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa06Beta04-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa06Beta04-eps-converted-to.pdf, id=71, 1188.44pt x 687.
-56876pt>
-File: imag/VariacionAlfas/Alfa06Beta04-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa06Beta04-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa06Beta04-eps-converted-to.pdf 
- used on input line 410.
-(pdftex.def)             Requested size: 113.80968pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa07Beta03.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58795 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa07Beta03-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:39
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa07B
-eta03-eps-converted-to.pdf imag/VariacionAlfas/Alfa07Beta03.eps>
-(epstopdf)             \includegraphics on input line 412.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa07Beta03-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa07Beta03-eps-converted-to.pdf, id=72, 1179.40625pt x 6
-87.56876pt>
-File: imag/VariacionAlfas/Alfa07Beta03-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa07Beta03-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa07Beta03-eps-converted-to.pdf 
- used on input line 412.
-(pdftex.def)             Requested size: 113.80838pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa08Beta02.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58353 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa08Beta02-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:40
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa08B
-eta02-eps-converted-to.pdf imag/VariacionAlfas/Alfa08Beta02.eps>
-(epstopdf)             \includegraphics on input line 413.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa08Beta02-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa08Beta02-eps-converted-to.pdf, id=73, 1179.40625pt x 6
-87.56876pt>
-File: imag/VariacionAlfas/Alfa08Beta02-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa08Beta02-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa08Beta02-eps-converted-to.pdf 
- used on input line 413.
-(pdftex.def)             Requested size: 113.80838pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/VariacionAlfas/Alfa09Beta01.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 57726 bytes
-(epstopdf)             Output file: <imag/VariacionAlfas/Alfa09Beta01-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:41
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/VariacionAlfas/Alfa09B
-eta01-eps-converted-to.pdf imag/VariacionAlfas/Alfa09Beta01.eps>
-(epstopdf)             \includegraphics on input line 414.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/VariacionAlfas/Alfa09Beta01-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/VariacionAlfas/Alfa09Beta01-eps-converted-to.pdf, id=74, 1190.4475pt x 68
-7.56876pt>
-File: imag/VariacionAlfas/Alfa09Beta01-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/VariacionAlfas/Alfa09Beta01-eps-converted-to.pdf>
-Package pdftex.def Info: imag/VariacionAlfas/Alfa09Beta01-eps-converted-to.pdf 
- used on input line 414.
-(pdftex.def)             Requested size: 113.80211pt x 56.89508pt.
-Package epstopdf Info: Source file: <imag/versus/ComparaFitness.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 51258 bytes
-(epstopdf)             Output file: <imag/versus/ComparaFitness-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:41
-(epstopdf)                    size: 2610 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/ComparaFitness-
-eps-converted-to.pdf imag/versus/ComparaFitness.eps>
-(epstopdf)             \includegraphics on input line 422.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/ComparaFitness-eps-converted-to.pd
-f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/versus/ComparaFitness-eps-converted-to.pdf, id=75, 1445.4pt x 724.7075pt>
-
-File: imag/versus/ComparaFitness-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/versus/ComparaFitness-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/ComparaFitness-eps-converted-to.pdf  used 
-on input line 422.
-(pdftex.def)             Requested size: 199.15665pt x 85.35771pt.
-Package epstopdf Info: Source file: <imag/versus/ComparaComparaFitness.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 51667 bytes
-(epstopdf)             Output file: <imag/versus/ComparaComparaFitness-eps-conv
-erted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:42
-(epstopdf)                    size: 2624 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/ComparaComparaF
-itness-eps-converted-to.pdf imag/versus/ComparaComparaFitness.eps>
-(epstopdf)             \includegraphics on input line 423.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/ComparaComparaFitness-eps-converte
-d-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> al
-lowed
-<imag/versus/ComparaComparaFitness-eps-converted-to.pdf, id=76, 1445.4pt x 724.
-7075pt>
-File: imag/versus/ComparaComparaFitness-eps-converted-to.pdf Graphic file (type
- pdf)
-<use imag/versus/ComparaComparaFitness-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/ComparaComparaFitness-eps-converted-to.pdf
-  used on input line 423.
-(pdftex.def)             Requested size: 199.15665pt x 85.35771pt.
-Package epstopdf Info: Source file: <imag/versus/ComparaErrorPosicion.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 50934 bytes
-(epstopdf)             Output file: <imag/versus/ComparaErrorPosicion-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:43
-(epstopdf)                    size: 2622 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/ComparaErrorPos
-icion-eps-converted-to.pdf imag/versus/ComparaErrorPosicion.eps>
-(epstopdf)             \includegraphics on input line 424.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/ComparaErrorPosicion-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/versus/ComparaErrorPosicion-eps-converted-to.pdf, id=77, 1445.4pt x 724.7
-075pt>
-File: imag/versus/ComparaErrorPosicion-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use imag/versus/ComparaErrorPosicion-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/ComparaErrorPosicion-eps-converted-to.pdf 
- used on input line 424.
-(pdftex.def)             Requested size: 398.33534pt x 85.35771pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11 <./imag/VariacionAlfas/Evoluciondelerrordeposicionparaelmejorfitnessvarianh
-iperparametros-eps-converted-to.pdf> <./imag/VariacionAlfas/Fitnesspromediopara
-lasdistintasgeneracionesvarianhiperparametro-eps-converted-to.pdf> <./imag/Vari
-acionAlfas/Evoluciondelmejorfitnessvarianhiperparametro-eps-converted-to.pdf>]
-[12 <./imag/VariacionAlfas/Alfa01Beta09-eps-converted-to.pdf> <./imag/Variacion
-Alfas/Alfa02Beta08-eps-converted-to.pdf> <./imag/VariacionAlfas/Alfa03Beta07-ep
-s-converted-to.pdf> <./imag/VariacionAlfas/Alfa04Beta06-eps-converted-to.pdf> <
-./imag/VariacionAlfas/Alfa05Beta05-eps-converted-to.pdf> <./imag/VariacionAlfas
-/Alfa06Beta04-eps-converted-to.pdf> <./imag/VariacionAlfas/Alfa07Beta03-eps-con
-verted-to.pdf> <./imag/VariacionAlfas/Alfa08Beta02-eps-converted-to.pdf> <./ima
-g/VariacionAlfas/Alfa09Beta01-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <imag/versus/MejorConMutacion.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 58788 bytes
-(epstopdf)             Output file: <imag/versus/MejorConMutacion-eps-converted
--to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:44
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/MejorConMutacio
-n-eps-converted-to.pdf imag/versus/MejorConMutacion.eps>
-(epstopdf)             \includegraphics on input line 437.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/MejorConMutacion-eps-converted-to.
-pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-
-<imag/versus/MejorConMutacion-eps-converted-to.pdf, id=98, 1179.40625pt x 687.5
-6876pt>
-File: imag/versus/MejorConMutacion-eps-converted-to.pdf Graphic file (type pdf)
-
-<use imag/versus/MejorConMutacion-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/MejorConMutacion-eps-converted-to.pdf  use
-d on input line 437.
-(pdftex.def)             Requested size: 199.16469pt x 85.35835pt.
-Package epstopdf Info: Source file: <imag/versus/PeorConMutacion.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 55972 bytes
-(epstopdf)             Output file: <imag/versus/PeorConMutacion-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:45
-(epstopdf)                    size: 2508 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/PeorConMutacion
--eps-converted-to.pdf imag/versus/PeorConMutacion.eps>
-(epstopdf)             \includegraphics on input line 438.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/PeorConMutacion-eps-converted-to.p
-df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/versus/PeorConMutacion-eps-converted-to.pdf, id=99, 1179.40625pt x 687.56
-876pt>
-File: imag/versus/PeorConMutacion-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/versus/PeorConMutacion-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/PeorConMutacion-eps-converted-to.pdf  used
- on input line 438.
-(pdftex.def)             Requested size: 199.16469pt x 85.35835pt.
-Package epstopdf Info: Source file: <imag/versus/MejorSinMutacion.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 55976 bytes
-(epstopdf)             Output file: <imag/versus/MejorSinMutacion-eps-converted
--to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:46
-(epstopdf)                    size: 2510 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/MejorSinMutacio
-n-eps-converted-to.pdf imag/versus/MejorSinMutacion.eps>
-(epstopdf)             \includegraphics on input line 439.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/MejorSinMutacion-eps-converted-to.
-pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-
-<imag/versus/MejorSinMutacion-eps-converted-to.pdf, id=100, 1179.40625pt x 687.
-56876pt>
-File: imag/versus/MejorSinMutacion-eps-converted-to.pdf Graphic file (type pdf)
-
-<use imag/versus/MejorSinMutacion-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/MejorSinMutacion-eps-converted-to.pdf  use
-d on input line 439.
-(pdftex.def)             Requested size: 199.16469pt x 85.35835pt.
-Package epstopdf Info: Source file: <imag/versus/PeorSinMutacion.eps>
-(epstopdf)                    date: 2020-04-22 11:55:56
-(epstopdf)                    size: 56029 bytes
-(epstopdf)             Output file: <imag/versus/PeorSinMutacion-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2020-04-22 11:58:46
-(epstopdf)                    size: 2508 bytes
-(epstopdf)             Command: <epstopdf --outfile=imag/versus/PeorSinMutacion
--eps-converted-to.pdf imag/versus/PeorSinMutacion.eps>
-(epstopdf)             \includegraphics on input line 440.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./imag/versus/PeorSinMutacion-eps-converted-to.p
-df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/versus/PeorSinMutacion-eps-converted-to.pdf, id=101, 1179.40625pt x 687.5
-6876pt>
-File: imag/versus/PeorSinMutacion-eps-converted-to.pdf Graphic file (type pdf)
-<use imag/versus/PeorSinMutacion-eps-converted-to.pdf>
-Package pdftex.def Info: imag/versus/PeorSinMutacion-eps-converted-to.pdf  used
- on input line 440.
-(pdftex.def)             Requested size: 199.16469pt x 85.35835pt.
-[13 <./imag/versus/ComparaFitness-eps-converted-to.pdf> <./imag/versus/ComparaC
-omparaFitness-eps-converted-to.pdf> <./imag/versus/ComparaErrorPosicion-eps-con
-verted-to.pdf>] [14 <./imag/versus/MejorConMutacion-eps-converted-to.pdf> <./im
-ag/versus/PeorConMutacion-eps-converted-to.pdf> <./imag/versus/MejorSinMutacion
--eps-converted-to.pdf> <./imag/versus/PeorSinMutacion-eps-converted-to.pdf>]
-[15] (main.bbl
+ [1] [1] [2] [3] [4] (main.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
@@ -1065,35 +508,31 @@ ag/versus/PeorConMutacion-eps-converted-to.pdf> <./imag/versus/MejorSinMutacion
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `es'. Using the pattern for
 ** the default language instead.
-) [16] (main.aux
+) [5] (main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 ) ) 
 Here is how much of TeX's memory you used:
- 7853 strings out of 480934
- 118256 string characters out of 2909682
- 388317 words of memory out of 3000000
- 23545 multiletter control sequences out of 15000+200000
- 547649 words of font info for 82 fonts, out of 3000000 for 9000
+ 7661 strings out of 481258
+ 111549 string characters out of 2907634
+ 380222 words of memory out of 3000000
+ 23045 multiletter control sequences out of 15000+200000
+ 545045 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,45p,1646b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\maibe\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
-\tcti1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (18 pages, 370121 bytes).
+ 41i,14n,45p,814b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmbx12.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmcsc10.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/EO/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/EO/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EO/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
+/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
+>
+Output written on main.pdf (7 pages, 156998 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

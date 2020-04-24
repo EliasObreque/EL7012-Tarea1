@@ -3,13 +3,5 @@
 \contentsline {section}{\numberline {2}Problema 1}{1}%
 \contentsline {subsection}{\numberline {2.1}Generación de Datos}{2}%
 \contentsline {section}{\numberline {3}Problema 2}{2}%
-\contentsline {subsection}{\numberline {3.1}Denavit Hartenberg}{3}%
-\contentsline {subsection}{\numberline {3.2}Algoritmos Genéticos}{4}%
-\contentsline {subsubsection}{\numberline {3.2.1}Creación de los individuos de la Población Original}{6}%
-\contentsline {subsubsection}{\numberline {3.2.2}Fitness}{7}%
-\contentsline {subsubsection}{\numberline {3.2.3}Selección de los individuos}{7}%
-\contentsline {subsubsection}{\numberline {3.2.4}Crossover y mutación}{8}%
-\contentsline {section}{\numberline {4}Metodología}{9}%
-\contentsline {subsection}{\numberline {4.1}Selección de los hiperparámetros de fitness}{10}%
-\contentsline {section}{\numberline {5}Resultados}{11}%
-\contentsline {section}{\numberline {6}Conclusión}{14}%
+\contentsline {section}{\numberline {4}Resultados}{3}%
+\contentsline {section}{\numberline {5}Conclusión}{4}%
