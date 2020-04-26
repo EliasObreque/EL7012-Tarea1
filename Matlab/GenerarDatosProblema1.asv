@@ -54,7 +54,7 @@ for i=f:-1:f-Dt+1
     Dt=Dt-1;
 end
 
-%Selección de datos Aleatoria
+%Seleccion de datos Aleatoria
 %55% para entrenamiento (330) 25% test (150) y 20% validación (120)
 rndIDX = randperm(600);
 
