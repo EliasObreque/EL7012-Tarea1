@@ -1,0 +1,48 @@
+clear all, clc
+load('DatosProblema1');
+
+%------Seleccion de Variables Relevantes. Análisis de sensibilidad---
+% %Seleccion del número óptimo de clusters
+% max_clusters=7;
+% [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
+reglas=3;
+
+[~, v]=size(Xent);
+errS=zeros(v,1);
+VarDelete=zeros(v,1);
+
+for i=v:-1:1
+    % Calcular el error con el numero de cluster (reglas)
+    errS(i)=errortest(Yent,Xent,Ytest,Xtest,reglas);
+    
+    % Analisis de sensibilidad
+    [p indice]=sensibilidad(Yent,Xent,reglas);
+    VarDelete(i)=p;
+    Xent(:,p)=[];
+    Xtest(:,p)=[];
+end
+
+cantEntradas=3;  %y-1, y-2, u-1
+load('DatosProblema1','Xent', 'Xtest');
+for i=v:-1:cantEntradas+1
+    Xent(:,VarDelete(i))=[];
+    Xtest(:,VarDelete(i))=[];
+    Xval(:,VarDelete(i))=[];
+end
+
+%Obtencion del modelo
+[model, result]=TakagiSugeno(Yent,Xent,reglas,[1 2]);
+
+%Evaluación del modelo
+y1=ysim(Xval,model.a,model.b,model.g);
+
+figure ()
+plot(y1,'.')
+hold on
+plot(Yval,'red','.')
+legend('Estimación','Modelo real')
+%xlabel('Entrada')
+%ylabel('Error cuadrático medio')
+
+e1_1=RMSE(Yval,y1)
+e1_2=MAPE(Yval,y1)

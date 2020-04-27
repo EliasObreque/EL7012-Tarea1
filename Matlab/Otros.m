@@ -18,10 +18,4 @@
 % %u(k)=(b-a)*u(k)+a
 % u=(b-a)*u+a;
 %-------------
-
-nRows = 100; % number of rows
-nSample = 10; % number of samples
-
-rndIDX = randperm(nRows);
-
-newSample = data(rndIDX(1:nSample), :);
+sum

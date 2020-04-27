@@ -17,7 +17,7 @@ Pmax=2^n-1;     %Período máximo
 
 %Band = [0 B] B=1/Ns 
 %u =- idinput([Pmax*Ns],'prbs',[0 1/Ns],[a b]); %PBRS
-u =[0; 0; - idinput([Pmax 1 41],'prbs',[0 1],[a b])]; %PBRS
+u =- idinput([Pmax 1 41],'prbs',[0 1],[a b]); %PBRS
 
 %APBRS
 n_d=round(4*rand(size(u)));
@@ -29,6 +29,7 @@ e=zeros(Nd,1);
 y=zeros(Nd,1);
 r_b=wgn (Nd, 1, -100);                    %ruido blanco
 
+%Serie de Chen
 for k=r_y+1:Nd
    e(k)=0.5*exp(-(y(k-1)^2))*r_b(k);  %error
    y(k)=(0.8-0.5*exp(-(y(k-1)^2)))*y(k-1)-(0.3+0.9*exp(-(y(k-1)^2)))*y(k-2)+u(k-1)+0.2*u(k-2)+0.1*u(k-1)*u(k-2)+e(k);
@@ -66,3 +67,6 @@ Ytest = Y(rndIDX(331:480), :);
 
 Xval = X(rndIDX(481:600), :);
 Yval = Y(rndIDX(481:600), :);
+
+ savefile = 'DatosProblema1.mat';
+ save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval');
