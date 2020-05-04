@@ -1,5 +1,45 @@
 clear all, clc
-%load('DatosProblema1');
+load('DatosPV2015');
+load('DatosPV2017');
+
+%------------Contrucción del vector de datos
+Dt=600;         %Tamaño del vector
+f=length(y);
+ry=10;
+ru=5;
+Y=zeros(Dt,1);
+X=zeros(Dt,ry+ru);
+for i=f:-1:f-Dt+1
+    Y(Dt,1)=y(i);
+    %Regresores de y
+    for j=1:ry
+        X(Dt,j)=y(i-j);
+    end
+    Dt=Dt-1;
+end
+
+%Selección de datos Aleatoria
+%55% para entrenamiento (330) 25% test (150) y 20% validación (120)
+rndIDX = randperm(600);
+
+Xent = X(rndIDX(1:330), :);
+Yent = Y(rndIDX(1:330), :);
+
+Xtest = X(rndIDX(331:480), :);
+Ytest = Y(rndIDX(331:480), :);
+
+Xval = X(rndIDX(481:600), :);
+Yval = Y(rndIDX(481:600), :);
+
+savefile = 'DatosProblema1.mat';
+save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval');
+
+
+
+
+
+
+
 
 % %------Seleccion de Variables Relevantes. Análisis de sensibilidad---
 % %Seleccion del número óptimo de clusters
