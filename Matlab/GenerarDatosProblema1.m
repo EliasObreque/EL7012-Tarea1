@@ -1,7 +1,7 @@
 clear all
 clc
 %------------Generar BPRS------------
-Nd=610;         %Número de datos
+Nd=2010;         %Número de datos
 
 fmin=0.2;       %frecuencia mínima
 fmax=1;         %frecuencia máxima
@@ -17,7 +17,7 @@ Pmax=2^n-1;     %Período máximo
 
 %Band = [0 B] B=1/Ns 
 %u =- idinput([Pmax*Ns],'prbs',[0 1/Ns],[a b]); %PBRS
-u =- idinput([Pmax 1 41],'prbs',[0 1],[a b]); %PBRS
+u =- idinput([Pmax 1 134],'prbs',[0 1],[a b]); %PBRS
 
 %APBRS
 n_d=round(rand(size(u)),1);
@@ -35,7 +35,7 @@ r_y=2;          %Cantidad de regresores en y
 
 e=zeros(Nd,1);
 y=zeros(Nd,1);
-r_b=wgn (Nd, 1, -100);                    %ruido blanco
+r_b=wgn (Nd, 1, -10);                    %ruido blanco
 
 %Serie de Chen
 for k=r_y+1:Nd
@@ -43,8 +43,19 @@ for k=r_y+1:Nd
    y(k)=(0.8-0.5*exp(-(y(k-1)^2)))*y(k-1)-(0.3+0.9*exp(-(y(k-1)^2)))*y(k-2)+u(k-1)+0.2*u(k-2)+0.1*u(k-1)*u(k-2)+e(k);
 end
 
+figure ()
+stairs(y)
+hold on
+stairs(u)
+% stairs(e)
+xlim([1 90])
+xlabel('Número de muestras')
+ylabel('Amplitud')
+legend('y(k)', 'u(k)')
+title('Serie no lineal dinámica')
+
 %------------Contrucción del vector de datos
-Dt=600;         %Tamaño del vector
+Dt=2000;         %Tamaño del vector
 f=length(y);
 ry=5;
 ru=5;
@@ -65,16 +76,16 @@ end
 
 %Selección de datos Aleatoria
 %55% para entrenamiento (330) 25% test (150) y 20% validación (120)
-rndIDX = randperm(600);
+rndIDX = randperm(2000);
 
-Xent = X(rndIDX(1:330), :);
-Yent = Y(rndIDX(1:330), :);
+Xent = X(rndIDX(1:1100), :);
+Yent = Y(rndIDX(1:1100), :);
 
-Xtest = X(rndIDX(331:480), :);
-Ytest = Y(rndIDX(331:480), :);
+Xtest = X(rndIDX(1101:1600), :);
+Ytest = Y(rndIDX(1101:1600), :);
 
-Xval = X(rndIDX(481:600), :);
-Yval = Y(rndIDX(481:600), :);
+Xval = X(rndIDX(1601:2000), :);
+Yval = Y(rndIDX(1601:2000), :);
 
  savefile = 'DatosProblema1.mat';
- save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval');
+ save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval','y','u','e');
