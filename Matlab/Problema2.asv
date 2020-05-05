@@ -93,7 +93,7 @@ load('DatosProblema2');
 load('DatosProblema2Fuzzy'); %Modelo con 1 reglas y 1 regresores %y-1
 
 %Comprobación del número óptimo de clusters
-% [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,10);
+%[errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,10);
 
 % %Obtencion del modelo
 [model, result]=TakagiSugeno(Yent,Xent,reglas,[1 2]);
@@ -132,39 +132,39 @@ plot(Yval,'red')
 legend('Estimación','Modelo real')
 xlabel('t')
 ylabel('Salida del modelo')
+% 
+% e1_1=RMSE(Yval,y);
+% e1_2=MAPE(Yval,y);
+% e1_3=MAE(Yval,y);
 
-e1_1=RMSE(Yval,y)
-e1_2=MAPE(Yval,y)
-e1_3=MAE(Yval,y)
+%Prediccion a j-pasos del modelo Original
+y1=ysim_p(Xval,model.a,model.b,model.g,1);
 
-% %Prediccion a j-pasos del modelo Original
-% y1=ysim_p(Xval,model.a,model.b,model.g,1);
-% 
-% figure ()
-% plot(y1,'--')
-% hold on
-% plot(Yval,'red')
-% legend('Estimación a 1 pasos','Modelo real')
-% xlabel('t')
-% ylabel('Salida del modelo')
-% 
-% y8=ysim_p(Xval,model.a,model.b,model.g,8);
-% 
-% figure ()
-% plot(y8,'--')
-% hold on
-% plot(Yval,'red')
-% legend('Estimación a 8 pasos','Modelo real')
-% xlabel('t')
-% ylabel('Salida del modelo')
-% 
-% y16=ysim_p(Xval,model.a,model.b,model.g,16);
-% 
-% figure ()
-% plot(y16,'--')
-% hold on
-% plot(Yval,'red')
-% legend('Estimación a 16 pasos','Modelo real')
-% xlabel('t')
-% ylabel('Salida del modelo')
+figure ()
+plot(y1,'--')
+hold on
+plot(Yval,'red')
+legend('Estimación a 1 pasos','Modelo real')
+xlabel('t')
+ylabel('Salida del modelo')
+
+y8=ysim_p(Xval,model.a,model.b,model.g,8);
+
+figure ()
+plot(y8,'--')
+hold on
+plot(Yval,'red')
+legend('Estimación a 8 pasos','Modelo real')
+xlabel('t')
+ylabel('Salida del modelo')
+
+y16=ysim_p(Xval,model.a,model.b,model.g,16);
+
+figure ()
+plot(y16,'--')
+hold on
+plot(Yval,'red')
+legend('Estimación a 16 pasos','Modelo real')
+xlabel('t')
+ylabel('Salida del modelo')
 

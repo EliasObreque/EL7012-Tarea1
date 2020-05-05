@@ -20,7 +20,7 @@ errent(i)=sqrt(mean((y1-yent).^2));
 end
 %Finalmente se grafican ambos errores
 figure ()
-nc=1:max_clusters;
+nc=2:max_clusters;
 plot(nc,errtest,'b','LineWidth',2)
 hold on
 grid on
