@@ -3,5 +3,6 @@
 \contentsline {section}{\numberline {2}Problema 1}{1}%
 \contentsline {subsection}{\numberline {2.1}Generación de Datos}{2}%
 \contentsline {section}{\numberline {3}Problema 2}{2}%
-\contentsline {section}{\numberline {4}Resultados}{3}%
-\contentsline {section}{\numberline {5}Conclusión}{4}%
+\contentsline {subsection}{\numberline {3.1}Selección de Datos}{4}%
+\contentsline {section}{\numberline {4}Resultados}{4}%
+\contentsline {section}{\numberline {5}Conclusión}{5}%

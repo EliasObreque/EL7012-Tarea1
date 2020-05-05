@@ -94,7 +94,7 @@ for  i=1:length(Xent(1,:))
     indice(i)=mean(chi(:,i))^2+std(chi(:,i))^2;
 end
 p=find(indice==min(indice));
-%se grafican los indices obtenidos para compararse
+% %se grafican los indices obtenidos para compararse
 % figure ()
 % bar(indice)
 % ylabel('Índice de sensibilidad')
