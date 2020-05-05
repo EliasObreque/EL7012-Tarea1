@@ -20,9 +20,17 @@ Pmax=2^n-1;     %Período máximo
 u =- idinput([Pmax 1 41],'prbs',[0 1],[a b]); %PBRS
 
 %APBRS
-n_d=round(4*rand(size(u)));
+n_d=round(rand(size(u)),1);
 u=u.*n_d;
 
+figure ()
+stairs(u);
+xlim([1 90])
+xlabel('Número de muestras')
+ylabel('Amplitud')
+title('Señal APRBS')
+
+%------Construccion de la señal
 r_y=2;          %Cantidad de regresores en y
 
 e=zeros(Nd,1);

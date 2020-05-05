@@ -20,11 +20,11 @@ errent(i)=sqrt(mean((y1-yent).^2));
 end
 %Finalmente se grafican ambos errores
 figure ()
-nc=1:max_clusters;
-plot(nc,errtest,'b','LineWidth',2)
+nc=2:max_clusters;
+plot(nc,errtest(nc),'b','LineWidth',2)
 hold on
 grid on
-plot(nc,errent,'red','LineWidth',2)
+plot(nc,errent(nc),'red','LineWidth',2)
 legend('Error de test','Error de entrenamiento')
 xlabel('Número de clusters')
 ylabel('Error cuadrático medio')

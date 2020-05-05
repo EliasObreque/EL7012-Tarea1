@@ -52,10 +52,10 @@ clear all, clc
 
 load('DatosProblema2');
 
-% %------Seleccion de Variables Relevantes. Análisis de sensibilidad---
-% %Seleccion del número óptimo de clusters
-% max_clusters=20;
-% [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
+%------Seleccion de Variables Relevantes. Análisis de sensibilidad---
+%Seleccion del número óptimo de clusters
+max_clusters=20;
+[errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
 
 
 % reglas=1;   %11
