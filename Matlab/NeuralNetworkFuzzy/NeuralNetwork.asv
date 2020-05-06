@@ -1,0 +1,11 @@
+function [net_fit] = NeuralNetwork(num_neu, train_prc, test_prc, val_prc)
+net_fit = fitnet(num_neu,'trainlm');
+% transferFcn: softmax, radbas,  radbasn, purelin,  logsig
+net_fit.divideFcn = 'dividerand';
+net_fit.divideParam.trainRatio = train_prc; 
+net_fit.divideParam.testRatio = test_prc;
+net_fit.divideParam.valRatio = val_prc;
+
+net_trained = train(net_fit, x, y);
+view(net_trained)
+return
