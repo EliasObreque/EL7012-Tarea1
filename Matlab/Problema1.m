@@ -3,27 +3,32 @@ load('DatosProblema1');
 
 % %------Seleccion de Variables Relevantes. Análisis de sensibilidad---
 % %Seleccion del número óptimo de clusters
-max_clusters=10;
-[errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
-reglas=3;
+% max_clusters=20;
+% [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
+reglas=4;
 
-% %-------Seleccion de variables relevantes-----------------------------
-% [~, v]=size(Xent);
-% errS=zeros(v,1);
-% VarDelete=zeros(v,1);
-% 
-% for i=v:-1:1
-%     % Calcular el error con el numero de cluster (reglas)
-%     errS(i)=errortest(Yent,Xent,Ytest,Xtest,reglas);
-%     
-%     % Analisis de sensibilidad
-%     [p indice]=sensibilidad(Yent,Xent,reglas);
-%     VarDelete(i)=p;
-%     Xent(:,p)=[];
-%     Xtest(:,p)=[];
-% end
-% 
-% plot(errS);
+%-------Seleccion de variables relevantes-----------------------------
+[~, v]=size(Xent);
+errS=zeros(v,1);
+VarDelete=zeros(v,1);
+
+for i=v:-1:1
+    % Calcular el error con el numero de cluster (reglas)
+    errS(i)=errortest(Yent,Xent,Ytest,Xtest,reglas);
+    
+    % Analisis de sensibilidad
+    [p, indice]=sensibilidad(Yent,Xent,reglas);
+    VarDelete(i,1)=p;
+    Xent(:,p)=[];
+    Xtest(:,p)=[];
+end
+
+plot(errS,'b','LineWidth',2);
+legend('Error de test')
+xlabel('Número de Variables')
+ylabel('Error cuadrático medio')
+
+
 % 
 % cantEntradas=3;  %y-1, y-2, u-1
 % load('DatosProblema1','Xent', 'Xtest');

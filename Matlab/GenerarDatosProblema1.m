@@ -1,7 +1,7 @@
 clear all
 clc
 %------------Generar BPRS------------
-Nd=2010;         %Número de datos
+Nd=6010;         %Número de datos
 
 fmin=0.2;       %frecuencia mínima
 fmax=1;         %frecuencia máxima
@@ -43,24 +43,24 @@ legend('y(k)', 'u(k)')
 title('Serie no lineal dinámica')
 
 %------------Contrucción del vector de datos
-Dt=2000;         %Tamaño del vector
+Dt=6000;         %Tamaño del vector
 ry=5;
 ru=5;
 [X, Y] = createMatrixInput(Dt, ry, ru, y, u);
 
 
 %--------------Selección de datos Aleatoria----------------
-%55% para entrenamiento (330) 25% test (150) y 20% validación (120)
-rndIDX = randperm(2000);
+%55% para entrenamiento (3300) 25% test (1500) y 20% validación (1200)
+rndIDX = randperm(Dt);
 
-Xent = X(rndIDX(1:1100), :);
-Yent = Y(rndIDX(1:1100), :);
+Xent = X(rndIDX(1:3300), :);
+Yent = Y(rndIDX(1:3300), :);
 
-Xtest = X(rndIDX(1101:1600), :);
-Ytest = Y(rndIDX(1101:1600), :);
+Xtest = X(rndIDX(3301:4800), :);
+Ytest = Y(rndIDX(3301:4800), :);
 
-Xval = X(rndIDX(1601:2000), :);
-Yval = Y(rndIDX(1601:2000), :);
+Xval = X(rndIDX(4801:6000), :);
+Yval = Y(rndIDX(4801:6000), :);
 
  savefile = 'DatosProblema1.mat';
  save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval','y','u','e');
