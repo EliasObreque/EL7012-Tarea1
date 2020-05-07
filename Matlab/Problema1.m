@@ -1,53 +1,30 @@
 clear all, clc
-load('DatosProblema1');
+load('DatosProblema1b'); %Conjunto con 8 regresores
 
-% %------Seleccion de Variables Relevantes. Análisis de sensibilidad---
-% %Seleccion del número óptimo de clusters
-% max_clusters=20;
-% [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
-reglas=4;
-
-%-------Seleccion de variables relevantes-----------------------------
-[~, v]=size(Xent);
-errS=zeros(v,1);
-VarDelete=zeros(v,1);
-
-for i=v:-1:1
-    % Calcular el error con el numero de cluster (reglas)
-    errS(i)=errortest(Yent,Xent,Ytest,Xtest,reglas);
-    
-    % Analisis de sensibilidad
-    [p, indice]=sensibilidad(Yent,Xent,reglas);
-    VarDelete(i,1)=p;
-    Xent(:,p)=[];
-    Xtest(:,p)=[];
-end
-
-plot(errS,'b','LineWidth',2);
-legend('Error de test')
-xlabel('Número de Variables')
-ylabel('Error cuadrático medio')
-
-
+% % % %------Seleccion de Variables Relevantes. Análisis de sensibilidad---
+% reglas=3; %Clusters
+% [p, indice]=sensibilidad(Yent,Xent,reglas);
 % 
-% cantEntradas=3;  %y-1, y-2, u-1
-% load('DatosProblema1','Xent', 'Xtest');
-% for i=v:-1:cantEntradas+1
-%     Xent(:,VarDelete(i))=[];
-%     Xtest(:,VarDelete(i))=[];
-%     Xval(:,VarDelete(i))=[];
-% end
-% 
-% savefile = 'DatosProblema1Fuzzy.mat';
-% save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval','reglas');
- 
+% figure()
+% c = categorical({'y(k-1)','y(k-2)','y(k-3)','y(k-4)','u(k-1)','u(k-2)','u(k-3)','u(k-4)'},{'y(k-1)','y(k-2)','y(k-3)','y(k-4)','u(k-1)','u(k-2)','u(k-3)','u(k-4)'});
+% bar(c,indice,'b','LineWidth',2);
+% xlabel('Variables de entrada')
+% ylabel('I')
+
+errS_8=errortest(Yent,Xent,Ytest,Xtest,reglas);
+
+load('DatosProblema1a'); %Conjunto con 4 regresores
+errS_4=errortest(Yent,Xent,Ytest,Xtest,reglas);
+
 %-----Obtención modelo. Parametros antecedentes y consecuentes-------------
-load('DatosProblema1Fuzzy'); %Modelo con 3 reglas y 3 regresores %y-1, y-2, u-1
+%Modelo con 4 regresores %y-1, y-2, u-1, u-2
 
-%Comprobación del número óptimo de clusters
-%[errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,10);
+% Seleccion del número óptimo de clusters
+max_clusters=10;
+[errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
 
 % %Obtencion del modelo
+reglas=3
 [model, result]=TakagiSugeno(Yent,Xent,reglas,[1 2]);
 
 % figure()
