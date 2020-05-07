@@ -11,9 +11,11 @@ for i = f: -1 :f - Dt + 1
         for j = 1:ry
             X(Dt, j) = y_model(i - j);
         end
+        if length(u)>1
     %Regresores de u
         for j = 1:ru
             X(Dt, j + ry) = u(i - j);
+        end
         end
     Dt = Dt-1;
 end

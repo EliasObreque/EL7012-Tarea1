@@ -2,53 +2,38 @@ clear all, clc
 % load('DatosPV2015');
 % load('DatosPV2017');
 % 
-% %------------Contrucción del vector de datos
-% Dt=2160;         %Tamaño del vector
+% % %------------Contrucción del vector de datos
+% Dt=2880;         %Tamaño del vector
 % y=data2015;
-% f=2908;     %length(y);
+% u=0;
 % ry=5;
-% Y=zeros(Dt,1);
-% X=zeros(Dt,ry);
-% for i=f:-1:f-Dt+1
-%     Y(Dt,1)=y(i);
-%     %Regresores de y
-%     for j=1:ry
-%         X(Dt,j)=y(i-j);
-%     end
-%     Dt=Dt-1;
-% end
-% 
+% ru=0;
+% [X, Y] = createMatrixInput(Dt, ry, ru, y, u);
+%  
 % %60% para entrenamiento 
 % Xent = X;
 % Yent = Y;
-% 
-% Dt=1440;         %Tamaño del vector
+%  
+% Dt=1920;         %Tamaño del vector
 % y=data2017;
-% f=2544;     %length(y);
-% Y=zeros(Dt,1);
-% X=zeros(Dt,ry);
-% for i=f:-1:f-Dt+1
-%     Y(Dt,1)=y(i);
-%     %Regresores de y
-%     for j=1:ry
-%         X(Dt,j)=y(i-j);
-%     end
-%     Dt=Dt-1;
-% end
+% u=0;
+% ry=5;
+% ru=0;
+% [X, Y] = createMatrixInput(Dt, ry, ru, y, u);
 % 
-% %Selección de datos
-% %20% test y 20% validación (120)
-% rndIDX = randperm(1440);
+% % %Selección de datos
+% % %20% test y 20% validación (120)
+% % rndIDX = randperm(1440);
+% % 
+% Xtest = X(1:960, :);
+% Ytest = Y(1:960, :);
 % 
-% Xtest = X(rndIDX(1:720), :);
-% Ytest = Y(rndIDX(1:720), :);
-% 
-% Xval = X(rndIDX(721:1440), :);
-% Yval = Y(rndIDX(721:1440), :);
+% Xval = X(961:1920, :);
+% Yval = Y(961:1920, :);
 % 
 % savefile = 'DatosProblema2.mat';
 % save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval');
-% % %----------------------------------------------------------------------- 
+% % % %----------------------------------------------------------------------- 
 
 load('DatosProblema2');
 
