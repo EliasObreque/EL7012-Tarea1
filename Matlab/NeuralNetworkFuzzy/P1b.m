@@ -3,7 +3,7 @@ clear all
 close all
 
 %------------Generar Datos del modelo------------
-Nd = 2000;         %Número de datos
+Nd = 6000;         %Número de datos
 
 fmin = 0.2;       %frecuencia mínima
 fmax = 1;         %frecuencia máxima
@@ -15,8 +15,8 @@ gain_aprbs = 4;
 num_regresor = 2;
 
 [aprbs, prbs] = createAPRBS(Nd, Ts, fmax, fmin, a, b, gain_aprbs);
-Nd = size(aprbs, 1);
-y_model = SignalConstruction(Nd, num_regresor, aprbs);
+Nd_ = size(aprbs, 1);
+y_model = SignalConstruction(Nd_, num_regresor, aprbs);
 
 figure ()
 stairs(y_model)
@@ -34,7 +34,7 @@ title('Serie no lineal dinámica')
 ry = 2;
 ru = 2;
 
-[x_data, y_data] = createMatrixInput(2000, ry, ru, y_model, aprbs);
+[x_data, y_data] = createMatrixInput(Nd, ry, ru, y_model, aprbs);
 
 % Porcentaje de cada set
 train_prc = 0.5;
@@ -68,14 +68,16 @@ error_val = y_val - y_val_nn';
 
 
 %% Sensitivity analysis
-
+I = SensitivityCalc(type_actfunc, num_regresor, x_test, net_properties)
 
 
 %% PLOT
 
 % plots error vs. epoch for the training, validation, and test performances of the training record TR 
+figure()
 plotperform(tr)
 % Plot training state values
+figure()
 plottrainstate(tr)
 
 % Plot Output and Target Values
@@ -85,6 +87,7 @@ plottrainstate(tr)
 % plotregression(x_test, y_test_nn,'Regression')
 
 % Plot Histogram of Error Values
+figure()
 ploterrhist(error_train,'Train', error_test, 'Test', error_val, 'Validation')
 
 figure()
