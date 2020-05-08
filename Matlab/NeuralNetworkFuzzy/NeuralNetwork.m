@@ -8,13 +8,13 @@ net_fit.divideFcn = 'dividerand';
 net_fit.divideParam.trainRatio = train_prc; 
 net_fit.divideParam.testRatio = test_prc;
 net_fit.divideParam.valRatio = val_prc;
-
+net_fit.trainParam.max_fail = 20;
 
 %TRAINING PARAMETERS
-net_fit.trainParam.show = 20;  %# of ephocs in display
-net_fit.trainParam.lr = 0.05;  %learning rate
-net_fit.trainParam.epochs = 1000;  %max epochs
-%net_fit.trainParam.goal=0.05^2;  %training goal
+net_fit.trainParam.show = 100;     %# of ephocs in display
+net_fit.trainParam.lr = 0.05;      %learning rate
+net_fit.trainParam.epochs = 2000;  %max epochs
+%net_fit.trainParam.goal=0.05^2;   %training goal
 
 %Name of a network performance function %type help nnperformance
 net_fit.performFcn = 'mse';  
