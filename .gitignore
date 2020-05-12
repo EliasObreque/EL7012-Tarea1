@@ -138,3 +138,8 @@ dmypy.json
 Infroma-Latex-Simple/main.blg
 Infroma-Latex-Simple/main.bbl
 Infroma-Latex-Simple/main.log
+Infroma-Latex-Simple/main.tex.bak
+Infroma-Latex-Simple/main.toc
+Infroma-Latex-Simple/main.tex.bak
+*.bak
+*.aux

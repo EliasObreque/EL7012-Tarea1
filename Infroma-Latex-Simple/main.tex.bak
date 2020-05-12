@@ -82,42 +82,42 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\section{Introducción}
-%
-%Esto es una prueba para el trabajo offline.
+\section{Introducción}
+
+Esto es una prueba para el trabajo offline.
 
 
 \section{Problema 1}
 
-%Considere la siguiente serie no lineal dinámica:
-%
-%\begin{align}
-%y(k)= (0.8 - 0.5 exp\{-y^2(k- 1)\})y(k - 1)\nonumber \\
-%-(0.3 + 0.9 exp\{-y^2(k - 1)\})y(k - 2)\nonumber \\
-%+u(k - 1) + 0.2u(k - 2) + 0.1u(k - 1)u(k - 2) + e(k)
-%\label{e_serie}
-%\end{align}
-%
-%donde el ruido del sistema
-%
-%\begin{equation}
-%e(k)=  0.5 exp\{-y^2(k- 1)\}\beta(k)
-%\label{e_error}
-%\end{equation}
-%
-%depende del estado previo de la salida del modelo, y $\beta(k)$ es un ruido blanco.
-%
-%Como usted sabe existen varias técnicas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para este tipo de sistema. Para este trabajo se le pide detallar la metodología utilizada para:
-%
-%\begin{enumerate}[a)]
-%\item Generar 600 datos a partir de esta serie. Considere 55\% para entrenamiento, 25\% test y 20\% validación.
-%\item Obtener un modelo de predicción lineal, difuso tipo-1 (T\&S) y neuronal para la salida. Evaluar las predicciones a 1, 8 y 16 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras. Comente.
-%\item Construir el intervalo de predicción de los modelos obtenidos en b) utilizando el método de la covarianza.
-%\item Evaluar los intervalos de predicción obtenidos en b) realizando predicciones a 1, 8, y 16 pasos. Comparar el desempeño de los modelos a partir de las métricas más apropiadas tales como ancho del intervalo, probabilidad de cobertura, entre otras.
-%\item Construir el intervalo de predicción del modelo difuso encontrado en a) con el método de optimización min-max. Compare este intervalo de predicción con el intervalo obtenido utilizando el método de la covarianza. Comente.
-%\item Construir el intervalo de predicción neural utilizando el método de Joint Supervision. Compare con los métodos anteriores.
-%\item Seleccione el modelo más apropiado y justifique.
-%\end{enumerate}
+Considere la siguiente serie no lineal dinámica:
+
+\begin{align}
+y(k)= (0.8 - 0.5 exp\{-y^2(k- 1)\})y(k - 1)\nonumber \\
+-(0.3 + 0.9 exp\{-y^2(k - 1)\})y(k - 2)\nonumber \\
++u(k - 1) + 0.2u(k - 2) + 0.1u(k - 1)u(k - 2) + e(k)
+\label{e_serie}
+\end{align}
+
+donde el ruido del sistema
+
+\begin{equation}
+e(k)=  0.5 exp\{-y^2(k- 1)\}\beta(k)
+\label{e_error}
+\end{equation}
+
+depende del estado previo de la salida del modelo, y $\beta(k)$ es un ruido blanco.
+
+Como usted sabe existen varias técnicas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para este tipo de sistema. Para este trabajo se le pide detallar la metodología utilizada para:
+
+\begin{enumerate}[a)]
+\item Generar 600 datos a partir de esta serie. Considere 55\% para entrenamiento, 25\% test y 20\% validación.
+\item Obtener un modelo de predicción lineal, difuso tipo-1 (T\&S) y neuronal para la salida. Evaluar las predicciones a 1, 8 y 16 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras. Comente.
+\item Construir el intervalo de predicción de los modelos obtenidos en b) utilizando el método de la covarianza.
+\item Evaluar los intervalos de predicción obtenidos en b) realizando predicciones a 1, 8, y 16 pasos. Comparar el desempeño de los modelos a partir de las métricas más apropiadas tales como ancho del intervalo, probabilidad de cobertura, entre otras.
+\item Construir el intervalo de predicción del modelo difuso encontrado en a) con el método de optimización min-max. Compare este intervalo de predicción con el intervalo obtenido utilizando el método de la covarianza. Comente.
+\item Construir el intervalo de predicción neural utilizando el método de Joint Supervision. Compare con los métodos anteriores.
+\item Seleccione el modelo más apropiado y justifique.
+\end{enumerate}
 
 \subsection{Generación de Datos}
 
@@ -143,25 +143,25 @@ con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el 
 
 
 \section{Problema 2}
-%Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
-%
-%Por tal razón, se le ha confiado a usted el proyecto de determinar modelos de predicción para la generación de energía en un sistema fotovoltaico instalado en una cierta comunidad del norte del país. La finalidad de este proyecto es la de disponer de información futura de generación fotovoltaica, para así poder gestionar el funcionamiento del resto de los elementos que componen a la micro-red.
-%
-%Para esto se le entregarán datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Estos datos tienen un tiempo de muestreo de 1 hora (considerar porcentajes adecuados de los datos en las fases de training, test y validación).
-%
-%Como usted sabe, son varias las formas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para dicha aplicación.
-%
-%Se sugiere considerar los datos del año 2015 como base de entrenamiento y las mediciones del año 2017 como base de prueba y validación. Para este trabajo se le pide detallar la metodología utilizada para:
-%
-%\begin{enumerate}[a)]
-%  \item Obtener dos modelos de predicción (a elección entre los vistos en este curso) y evaluar las predicciones a 1, 6 y 12 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras.
-%  \item Construir un intervalo de predicción para los modelos obtenidos en a), utilizando método que ud. seleccione.
-%\end{enumerate}
+Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
+
+Por tal razón, se le ha confiado a usted el proyecto de determinar modelos de predicción para la generación de energía en un sistema fotovoltaico instalado en una cierta comunidad del norte del país. La finalidad de este proyecto es la de disponer de información futura de generación fotovoltaica, para así poder gestionar el funcionamiento del resto de los elementos que componen a la micro-red.
+
+Para esto se le entregarán datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Estos datos tienen un tiempo de muestreo de 1 hora (considerar porcentajes adecuados de los datos en las fases de training, test y validación).
+
+Como usted sabe, son varias las formas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para dicha aplicación.
+
+Se sugiere considerar los datos del año 2015 como base de entrenamiento y las mediciones del año 2017 como base de prueba y validación. Para este trabajo se le pide detallar la metodología utilizada para:
+
+\begin{enumerate}[a)]
+  \item Obtener dos modelos de predicción (a elección entre los vistos en este curso) y evaluar las predicciones a 1, 6 y 12 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras.
+  \item Construir un intervalo de predicción para los modelos obtenidos en a), utilizando método que ud. seleccione.
+\end{enumerate}
 
 \subsection{Selección de Datos}
 Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2160 muestars del año 2015 para entrenamiento, que corresponde a 90 días de simulaciones, y para prueba y validación 720 muestras del año 2017, el equivalente a 30 días.
 
-%\section{Resultados}
+\section{Resultados}
 
 
 
