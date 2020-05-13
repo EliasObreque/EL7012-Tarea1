@@ -32,35 +32,35 @@ for k=r_y+1:Nd
 end
 
 figure ()
-stairs(y)
-hold on
 stairs(u)
+hold on
+stairs(y)
 % stairs(e)
 xlim([1 90])
 xlabel('Número de muestras')
 ylabel('Amplitud')
-legend('y(k)', 'u(k)')
+legend('u(k)','y(k)')
 title('Serie no lineal dinámica')
 
 %------------Contrucción del vector de datos
 Dt=6000;         %Tamaño del vector
-ry=5;
-ru=5;
+ry=4;
+ru=4;
 [X, Y] = createMatrixInput(Dt, ry, ru, y, u);
 
 
 %--------------Selección de datos Aleatoria----------------
 %55% para entrenamiento (3300) 25% test (1500) y 20% validación (1200)
-rndIDX = randperm(Dt);
+% rndIDX = randperm(Dt);
 
-Xent = X(rndIDX(1:3300), :);
-Yent = Y(rndIDX(1:3300), :);
+Xent = X(1:3300, :);
+Yent = Y(1:3300, :);
 
-Xtest = X(rndIDX(3301:4800), :);
-Ytest = Y(rndIDX(3301:4800), :);
+Xtest = X(3301:4800, :);
+Ytest = Y(3301:4800, :);
 
-Xval = X(rndIDX(4801:6000), :);
-Yval = Y(rndIDX(4801:6000), :);
+Xval = X(4801:6000, :);
+Yval = Y(4801:6000, :);
 
- savefile = 'DatosProblema1.mat';
+ savefile = 'DatosProblema1a.mat';
  save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval','y','u','e');
