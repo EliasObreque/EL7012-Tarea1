@@ -24,7 +24,7 @@ if type_actfunc == 'tanh'
        end
        xi_k = sum_out;
        mu2_xi = mean(xi_k)^2;
-       var2_xi = var(xi_k)^2;
+       var2_xi = var(xi_k);
        I(k) = mu2_xi + var2_xi;
    end
 end
