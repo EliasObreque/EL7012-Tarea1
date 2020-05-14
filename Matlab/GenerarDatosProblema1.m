@@ -14,7 +14,9 @@ gain_aprbs=1;
 
 figure ()
 stairs(u);
-xlim([1 90])
+hold on
+plot(u, 'o')
+xlim([1 150])
 xlabel('Número de muestras')
 ylabel('Amplitud')
 title('Señal APRBS')

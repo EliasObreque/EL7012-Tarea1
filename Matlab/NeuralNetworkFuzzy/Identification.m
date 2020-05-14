@@ -16,7 +16,7 @@ num_regresor_y = 2;
 num_regresor_u = 1;
 num_regresor = num_regresor_y  + num_regresor_u;
 
-loaded_data = load('DatosProblema1.mat');
+loaded_data = load('P_DatosProblema1.mat');
 
 y_model = loaded_data.y;
 aprbs = loaded_data.u;
@@ -25,8 +25,9 @@ figure ()
 stairs(y_model)
 hold on
 stairs(aprbs)
+plot(aprbs, 'o')
 % stairs(e)
-xlim([1 90])
+xlim([1 500])
 xlabel('Número de muestras')
 ylabel('Amplitud')
 legend('y(k)', 'u(k)')
