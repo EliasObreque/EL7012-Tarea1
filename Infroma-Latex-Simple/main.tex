@@ -17,9 +17,10 @@
 \usepackage{graphicx}
 \usepackage{pdflscape}
 \usepackage{caption}
-\usepackage{subfigure}
+%\usepackage{subfigure}
 \usepackage{xurl}
 \usepackage{booktabs}
+\usepackage{subfig}
 \usepackage{float}
 %Agregados
 \usepackage[shortlabels]{enumitem}
@@ -398,27 +399,99 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\end{align}
 	donde $\mu$ es la media del vector de datos y $\sigma^2$ es la varianza para cada entrada $j$. 
 	
-	\item \textbf{Optimizan paramétrica y estructural:} Para encontrar los valores óptimos de las parámetros peso y sesgo de la red neuronal se utiliza el algoritmo de Levenberg-Marquardt backpropagation \cite{matlab_train}. Por otro lado, para encontrar el óptimo de la estructura se analiza cuantas neuronas debe tener la capa oculta. Para ello se estudia el RMSE (Raíz del error cuadrático medio) de la salida para un número de neuronas entre $[2-21]$. Los resultados de sensibilidad para cada neurona en la capa oculta se muestran en la Figura \ref{sensi_red} y el RMSE evaluado en los 3 conjuntos se muestra en la Figura \ref{RMSE_full}. Se puede ver que el mínimo RMSE para el conjunto de prueba es para 5 neuronas y que el modelo es sensible  a la entrada $y(k-1)$ mayoritariamente.
+	\item \textbf{Optimizan paramétrica y estructural:} Para encontrar los valores óptimos de las parámetros peso y sesgo de la red neuronal se utiliza el algoritmo de Levenberg-Marquardt backpropagation \cite{matlab_train}. Por otro lado, para encontrar el óptimo de la estructura se analiza cuantas neuronas debe tener la capa oculta. Para ello se evalúa el RMSE (Raíz del error cuadrático medio) del conjunto de prueba en la salida de la red para un número de neuronas entre $[2-41]$. Los resultados de sensibilidad para cada neurona en la capa oculta se muestran en las Figura \ref{sensi_red_1} y \ref{sensi_red_2} y el RMSE evaluado en los 3 conjuntos se muestra en la Figura \ref{RMSE_full}. Se puede ver que el mínimo RMSE para el conjunto de prueba es para $8$ neuronas y que el modelo es menos sensible  a la entrada $u(k-2)$ el cual es eliminado del entrenamiento.
 	
-	\textbf{Nota:} El entrenamiento se configura a una velocidad inicial de aprendizaje de la red de $0.05$ y un valor de épocas de 2000 sin evaluación de \textit{Overfitting} (esa es la razón de que exista una diferencia tan grande entre el número de neuronas óptimo definido por el conjunto de entrenamiento (20 neuronas) y por el conjunto de prueba (5 neuronas)).
+	\textbf{Nota:} El entrenamiento se configura a una velocidad inicial de aprendizaje de la red de $0.05$ y un valor de épocas de 4000 con evaluación de \textit{Overfitting} de 50 épocas de validación.
 	
-	Cabe mencionar que no siempre el conjunto de prueba entrega el valor optimo de neuronas exactamente igual a 5 ya que depende levemente del valor inicial de los pesos y sesgos, los resultados mostraron que entre $5$ y $7$ neuronas está el mínimo. Finalmente, se selecciona un número de neuronas en la capa oculta igual a 5 con solo una entrada, $y(k-1)$.
-	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		\caption{RMSE para diferente número de neuronas.}
+		\label{RMSE_full}
+	\end{figure}
+	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full.eps}
-		\caption{Sensibilidad para diferente número de neuronas en la capa oculta. \textit{Sin Overfitting.}}
-		\label{sensi_red}
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
-		\caption{RMSE para diferente número de neuronas. \textit{Sin Overfitting.}}
-		\label{RMSE_full}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
+		\label{sensi_red_1}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
+		\label{sensi_red_2}
 	\end{figure}
 	
 	\clearpage
-	\newpage
-	\item sadsadas
+	
+	\item \textbf{Desempeño de la red definida}: Se procede a evaluar el desempeño de la red con 8 neuronas en la capa oculta utilizando las cuatro entradas y luego solo con 3, $[y(k-1), y(k-2), u(k-1)]$, para notar las diferencias.
+	Los resultados se muestran en las Figuras \ref{Ind_4} hasta la \ref{hist_4} y las datos numéricos se agrupan en la Tabla \ref{tabla_red_4_3}
+	
+	\begin{table}[h!]
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Valores MSE para los 3 conjuntos de datos evaluados en una red con 4 entradas y otra con 3 entradas.}
+		\begin{tabular}{|l|c|c|c|}
+			\hline
+			Número de entradas & \multicolumn{1}{l|}{MSE - Entrenamiento} & \multicolumn{1}{l|}{MSE - Prueba} & \multicolumn{1}{l|}{MSE - Validación} \\ \hline
+			4                  & 0.0084                                   & 0.0099                            & 0.0090                                \\ \hline
+			3                  & 0.0149                                   & 0.0168                            & 0.0163                                \\ \hline
+		\end{tabular}
+	\label{tabla_red_4_3}
+	\end{table}
 
+	\begin{figure}[h!]
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[4 Entradas]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
+		\subfloat[3 Entradas]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
+		\caption{Indice de sensibilidad para 4 y 3 entradas.}
+		\label{Ind_4}
+	\end{figure}
+	Se puede notar de la Figura \ref{Ind_4} que al quitar la entrada $u(k-2)$ aumenta el indicador $I_1$ de la entrada $y(k-1)$ para compensar manteniendo casi al mismo valor las otras dos entradas. Por otro lado, no se eliminan más entradas dado que el ancho del histograma de la Figura \ref{hist_4}(b) comienza a aumentar de valor mostrando que más datos tienen errores grandes. Este error puede tener solución al utilizar un nuevo número de neuronas en la capa oculta, por lo tanto, en el siguiente ítem se procede nuevamente a encontrar el numero optimo de neuronas con 3 entradas.
+
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[4 Entradas]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
+		\subfloat[3 Entradas]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
+		\caption{Comparación entre la salida de la red neuronal y el valor real del conjunto de validación.}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[4 Entradas]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
+		\subfloat[3 Entradas]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
+		\caption{Histograma del error de cada conjunto de datos.}
+		\label{hist_4}
+	\end{figure}
+
+	\newpage
+	\item \textbf{Optimizan estructural 2:} Se busca el número de neuronas óptimo en un rango de $[2-41]$. El resultado de la curva RMSE se muestra en la Figura \ref{rmse_3} y el análisis de sensibilidad para cada neurona en las Figuras \ref{sensi_red_1_3} y \ref{sensi_red_2_3}.
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		\caption{RMSE para diferente número de neuronas.}
+		\label{rmse_3}
+	\end{figure}
+	\newpage
+	\clearpage
+	\begin{figure}[t!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
+		\label{sensi_red_1_3}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
+		\label{sensi_red_2_3}
+	\end{figure}
 \end{itemize} 
+
 
 
 %\section{Problema 2}
@@ -442,6 +515,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 
 
 \newpage
+\clearpage
 \section{Resultados}
 
 
