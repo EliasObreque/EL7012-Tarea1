@@ -14,7 +14,8 @@ gain_aprbs=1;
 
 figure ()
 stairs(u);
-xlim([1 90])
+% xlim([1 90])
+xlim([1 3000])
 xlabel('Número de muestras')
 ylabel('Amplitud')
 title('Señal APRBS')
@@ -36,7 +37,8 @@ stairs(u)
 hold on
 stairs(y)
 % stairs(e)
-xlim([1 90])
+% xlim([1 90])
+xlim([1 300])
 xlabel('Número de muestras')
 ylabel('Amplitud')
 legend('u(k)','y(k)')
@@ -62,5 +64,5 @@ Ytest = Y(3301:4800, :);
 Xval = X(4801:6000, :);
 Yval = Y(4801:6000, :);
 
- savefile = 'DatosProblema1a.mat';
+ savefile = 'P_DatosProblema1a.mat';
  save(savefile, 'X', 'Xent', 'Xtest','Xval','Y', 'Yent', 'Ytest', 'Yval','y','u','e');
