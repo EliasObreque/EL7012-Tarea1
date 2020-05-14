@@ -1,10 +1,9 @@
 clear all, clc
-% load('DatosProblema1a'); %Conjunto con 8 regresores
 % load('P_DatosProblema1a'); %Conjunto con 8 regresores
 
 % % % %------Seleccion de Variables Relevantes. Análisis de sensibilidad---
 % [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,40);
-reglas=5; %Clusters
+% reglas=5; %Clusters
 % [p, indice]=sensibilidad(Yent,Xent,reglas);
 % 
 % figure()
@@ -27,11 +26,10 @@ load('P_DatosProblema1'); %Conjunto con 4 regresores
 % max_clusters=20;
 % [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
 
-% %Obtencion del modelo
-% reglas=12;
+% % %Obtencion del modelo
+% reglas=5;  %Hasta 8
 % [model, result]=TakagiSugeno(Yent,Xent,reglas,[1 2 2]);
 
-% load('P1ModeloDifusoTipo1');
 load('P1ModeloDifusoTipo1_P');
 
 % %Cluster para la salida
@@ -106,7 +104,7 @@ y=ysim(Xval,model.a,model.b,model.g);
 % ylabel('Salida del modelo')
 % xlim([1 300])
 
-%Prediccion a j-pasos del modelo Original
+% % Prediccion a j-pasos del modelo Original
 y1=ysim_p(Xval,model.a,model.b,model.g,1);
 
 % figure ()
@@ -164,7 +162,7 @@ y16=ysim_p(Xval,model.a,model.b,model.g,16);
 % ylabel('Salida del modelo')
 % xlim([1 300])
 
-%Calculo de los errores
+%%Calculo de los errores
 salida=[y y1 y8 y16];
 [~,c]=size(salida);
 
@@ -174,6 +172,22 @@ eMAPE(i)=MAPE(Yval,salida(:,i));
 eMAE(i)=MAE(Yval,salida(:,i));
 end
 
-alpha=50;
+alpha=10;
 [yEst,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
-plot_Intervalos(yEst,yEst_u,yEst_l)
+for i=1:c
+ePINAW(i)= PINAW(salida(:,i)',yEst_u,yEst_l);
+ePICP(i)= PICP(salida(:,i)',yEst_u,yEst_l);
+plot_Intervalos(salida(:,i)',yEst_u,yEst_l)
+end
+
+%Minimos cuadrados
+[g_u,g_l]=MinMax(Xtest,Ytest,model.a,model.b,model.g);
+y_u=ysim(Xval,model.a,model.b,g_u);
+y_l=ysim(Xval,model.a,model.b,g_l);
+
+for i=1:c
+ePINAW(i)= PINAW(salida(:,i)',y_u',y_l');
+ePICP(i)= PICP(salida(:,i)',y_u',y_l');
+plot_Intervalos(salida(:,i)',y_u',y_l')
+end
+

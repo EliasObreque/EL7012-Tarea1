@@ -61,7 +61,14 @@ for k=1:Ndv  %Numeros del conjunto de validación
     end
 
     % Wn(r) is the normalized activation degree
-    WnV(:,k)=W/sum(W); 
+    if sum(W)==0
+        WnV(:,k)=W; 
+    else
+       WnV(:,k)=W/sum(W); 
+    end
+    
+    
+    
     psiV(:,:,k)=WnV(:,k)*[1 Xval(k,:)];
     
     
