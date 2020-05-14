@@ -267,9 +267,9 @@ donde $N$ es la cantidad total de datos, $y(k)$ es la salida de la planta real e
     \toprule
     \multicolumn{1}{|p{4.055em}|}{Modelo } & \multicolumn{1}{p{5.555em}|}{Variables de entrada } & \multicolumn{1}{p{4.055em}|}{MSE} \\
     \midrule
-    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$     & 0.1517 \\
+    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$     & 0.0474 \\
     \midrule
-    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.0902 \\
+    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.0445 \\
     \bottomrule
     \end{tabular}%
   \label{t_Error}%
@@ -347,11 +347,11 @@ MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
     \toprule
     Modelos & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
     \midrule
-    RMSE  & 0.0044 & 0.01104 & 0.0959 & 0.0105 \\
+    RMSE  & 0.0046 & 0.0061 & 0.0412 & NaN \\
     \midrule
-    MAPE  & 37.61 & 402.84 & 428.11 & 393.38 \\
+    MAPE  & 37.73 & 60.23 & 303.11 & NaN \\
     \midrule
-    MAE   & 0.1038 & 1.1249 & 1.2392 & 1.2769 \\
+    MAE   & 0.0835 & 0.1491 & 0.6627 & NaN \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
