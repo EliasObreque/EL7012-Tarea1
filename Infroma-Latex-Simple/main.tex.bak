@@ -19,7 +19,8 @@
 \usepackage{caption}
 \usepackage{subfigure}
 \usepackage{xurl}
-
+\usepackage{booktabs}
+\usepackage{float}
 %Agregados
 \usepackage[shortlabels]{enumitem}
 
@@ -87,6 +88,7 @@
 Esto es una prueba para el trabajo offline.
 
 
+\newpage
 \section{Problema 1}
 
 Considere la siguiente serie no lineal dinámica:
@@ -132,7 +134,7 @@ n=\frac{log(f_c/f_{min}+1)}{log(2)})
 \label{e_}
 \end{equation}
 
-con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$. Luego, el tiempo de un bit, $\triangle t=N_s*T_s=0.4s$, por lo que la PRBS dura en total 6s y debe ser replicada 40 veces con diferentes condiciones iniciales para obtener los 600 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS}.
+con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$. Luego, el tiempo de un bit, $\triangle t=N_s*T_s=0.4s$, por lo que la PRBS dura en total 6s y debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
 
 \begin{figure}
 \centering
@@ -141,28 +143,312 @@ con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el 
 \label{f_APRBS}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=10cm,height=7cm]{imag/SerieNoLineal}
+\caption{Respuesta de la serie no lineal.}
+\label{f_SerieNoLineal}
+\end{figure}
 
-\section{Problema 2}
-Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
 
-Por tal razón, se le ha confiado a usted el proyecto de determinar modelos de predicción para la generación de energía en un sistema fotovoltaico instalado en una cierta comunidad del norte del país. La finalidad de este proyecto es la de disponer de información futura de generación fotovoltaica, para así poder gestionar el funcionamiento del resto de los elementos que componen a la micro-red.
+Una vez obtenidos los datos experimentales de entrada-salida, éstos son clasificados en tres conjuntos con distinta información: datos de entrenamiento, datos
+de validación y datos de prueba; esto con el fin de evaluar adecuadamente los modelos
+generados. El conjunto de entrenamiento se utiliza para determinar los parámetros del
+modelo. El conjunto de prueba permite comparar distintas estructuras de los modelos
+generados. Finalmente, el conjunto de validación permite verificar el sobreajuste del
+modelo óptimo obtenido, evaluándolo en un nuevo conjunto de datos (distintos a los
+datos del conjunto de entrenamiento y validación), analizando su capacidad de
+generalización. En este caso se utiliza una división de 55\% de los datos para entrenamiento, 25\% para prueba y 20\% validación.
 
-Para esto se le entregarán datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Estos datos tienen un tiempo de muestreo de 1 hora (considerar porcentajes adecuados de los datos en las fases de training, test y validación).
+\subsection{Modelos de predicción}
+\subsubsection{Modelo lineal}
 
-Como usted sabe, son varias las formas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para dicha aplicación.
+En este caso, supondremos que se ajustará un modelo lineal suponiendo que el sistema real es lineal con ruido blanco gaussiano aditivo, es decir,
 
-Se sugiere considerar los datos del año 2015 como base de entrenamiento y las mediciones del año 2017 como base de prueba y validación. Para este trabajo se le pide detallar la metodología utilizada para:
 
-\begin{enumerate}[a)]
-  \item Obtener dos modelos de predicción (a elección entre los vistos en este curso) y evaluar las predicciones a 1, 6 y 12 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras.
-  \item Construir un intervalo de predicción para los modelos obtenidos en a), utilizando método que ud. seleccione.
-\end{enumerate}
+\begin{equation}
+y(k)=a_1 y(k-1)+a_2 y(k-2)+b_1 u(k-1)+b_2 u(k-2)+e(k)
+\label{e_ModeloLineal}
+\end{equation}
 
-\subsection{Selección de Datos}
-Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2160 muestars del año 2015 para entrenamiento, que corresponde a 90 días de simulaciones, y para prueba y validación 720 muestras del año 2017, el equivalente a 30 días.
+Luego, se propone un modelo lineal para llevar a cabo la predicción a 1 paso, de modo tal que:
 
+Predicción a 1 paso:
+
+\begin{equation}
+\hat{y}(k)=\hat{a}_1 y(k-1)+\hat{a}_2 y(k-2)+\hat{b}_1 u(k-1)+\hat{b}_2 u(k-2)
+\label{e_Pre1paso}
+\end{equation}
+
+Este modelo no considera un valor constante o bias dao el supuesto que el sistema es lineal con ruido blanco aditivo. En caso que se sospechara que existe un bias o tendencia (trend) en el sistema, se puede agregar otro vector de unos a la matriz de regresores (o matriz de información).
+
+Para llevar a cabo la estimación de los parámetros del modelo se utilizó la técnica de mínimos cuadrados, es decir:
+
+\begin{equation}
+\hat{\theta}=(Xent^T*Xent)^{-1}*Xent^T*\hat{y}(k)
+\label{e_AjustMinCuadrados}
+\end{equation}
+
+
+En que $\hat{\theta}=[\hat{a}_1 \quad \hat{a}_2 \quad \hat{b}_1 \quad \hat{2}_2]^T$ es el vector de parámetros y $Xent$ es la matriz de regresores con los valores de las $n$ muestras ordenados por filas.
+
+Los valores que se obtuvieron de los parámetros fueron los siguientes:
+
+
+\begin{equation}
+\hat{\theta}=\left(
+                \begin{array}{c}
+                  \hat{a}_1  \\
+                  \hat{a}_2  \\
+                  \hat{b}_1  \\
+                  \hat{b}_2  \\
+                \end{array}
+              \right)
+=\left(
+   \begin{array}{c}
+     0.8601 \\
+     -0.6930 \\
+     0.9724 \\
+     0.3486 \\
+   \end{array}
+ \right)
+\label{e_ValoresCoeficientes}
+\end{equation}
+
+A continuación, en la Tabla \ref{t_NoLinealp1}, se presentan las métricas de bondad del ajuste o errores en los diversos conjuntos de datos, a saber, conjunto de datos de entrenamiento, prueba o test y validación.
+
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Errores o Métricas de bondad de ajuste a 1 paso}
+    \begin{tabular}{|p{4.055em}|r|r|r|}
+    \toprule
+    Métricas & \multicolumn{1}{p{6.11em}|}{Conjunto Entrenamiento} & \multicolumn{1}{p{5.61em}|}{Conjunto de Prueba} & \multicolumn{1}{p{5.055em}|}{Conjunto de Validación} \\
+    \midrule
+    RMSE  & 0.0115 & 0.019 & 0.0241 \\
+    \midrule
+    MAPE  & 123.1323 & 101.9383 & 169.4761 \\
+    \midrule
+    MAE   & 0.3313 & 0.3402 & 0.3524 \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_NoLinealp1}%
+\end{table}%
+
+\subsubsection{Modelo difuso Takagi-Sugeno Tipo-1}
+
+
+\begin{itemize}
+	\item \textbf{Selección de variables:}
+Para seleccionar las variables que actúan como entrada al sistema difuso, se realiza un análisis de sensibilidad. Suponiendo una estructura del modelo inicial difuso con 8 variables de entrada $y(k-1)$,... $y(k-4)$, $u(k-1)$,...,$u(k-4)$. En la Fig. \ref{f_P1Sensibilidad} se muestran los índices de las sensibilidades del modelo inicial para las 8
+variables de entrada, comprobándose que las variables las variables $y(k-3)$, $y(k-4)$, $u(k-1)$ y $u(k-4)$ presentan menores índices de las sensibilidades, por lo cual no son incluidos en el modelo difuso.
+
+\begin{figure}
+\centering
+\includegraphics[width=10cm,height=7cm]{imag/P1Sensibilidad}
+\caption{Índice de Sensibilidades.}
+\label{f_P1Sensibilidad}
+\end{figure}
+
+La Tabla \ref{t_Error} indica el valor del Error Cuadrático Medio (MSE) para los modelos encontrados con 4 y 8 regresores, como se puede observar son errores muy pequeños, por lo que se escoge el núnmero de regresores de menor complejidad. .
+
+
+\begin{equation}
+MSE=\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2
+\label{e_MSE}
+\end{equation}
+
+donde $N$ es la cantidad total de datos, $y(k)$ es la salida de la planta real en el instante , e $y_{fuzzy}(k)$ es la predicción realizada por el modelo difuso en el instante .
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Valores de los Índices de Error Utilizando Análisis de Sensibilidades.}
+    \begin{tabular}{|r|l|r|}
+    \toprule
+    \multicolumn{1}{|p{4.055em}|}{Modelo } & \multicolumn{1}{p{5.555em}|}{Variables de entrada } & \multicolumn{1}{p{4.055em}|}{MSE} \\
+    \midrule
+    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$     & 0.0016 \\
+    \midrule
+    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.0026 \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_Error}%
+\end{table}%
+
+\item \textbf{Optimización de la estructura:}
+La optimización de la estructura del modelo difuso consiste principalmente en determinar el número óptimo de reglas del modelo difuso. En este caso se definió un número máximo de 12 clusters y se entrenó el modelo para cada una de las posibles valores de clusters, con el método de clustering Gustafson-Kessel.
+
+La Fig. \ref{f_P1reglas11} muestra la Raíz del Error Cuadrático Medio (RMSE) para los conjuntos de entrenamiento y prueba.  Si no importa la complejidad, el mejor modelo es aquel que
+tiene menor RMSE. Sin embargo, es posible que un modelo con peor índice de
+desempeño, pero menos complejo que el modelo óptimo, pueda obtener resultados
+aceptables bajo un estándar de rendimiento definido preliminarmente. Por lo antes expuesto para este problema se escoge como número de clusters 5, por lo que el modelo difuso contará con 5 reglas.
+
+\begin{equation}
+MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
+\label{e_RMSE}
+\end{equation}
+
+%\Psi_j = [\psi_j(1), ..., \psi_j(N)]
+
+\begin{figure}
+\centering
+\includegraphics[width=10cm,height=7cm]{imag/P1reglas11}
+\caption{Índice de Sensibilidades.}
+\label{f_P1reglas11}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Clusters.}
+\includegraphics[width=7cm]{imag/ClusterSalida}\\
+\includegraphics[width=7cm]{imag/Clustery1}
+\includegraphics[width=7cm]{imag/Clustery2}\\
+\includegraphics[width=7cm]{imag/Clusteru1}
+\includegraphics[width=7cm]{imag/Clusteru2}\\
+\label{f_Cluster}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo.}
+\includegraphics[width=7cm]{imag/P1Salida}
+\includegraphics[width=7cm]{imag/P1SalidaZoom}
+\label{f_SalidaModelo}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 1 paso.}
+\includegraphics[width=7cm]{imag/P1Salida_p1}
+\includegraphics[width=7cm]{imag/P1Salida_p1Zoom}
+\label{f_SalidaModelop1}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 8 paso.}
+\includegraphics[width=7cm]{imag/P1Salida_p8}
+\includegraphics[width=7cm]{imag/P1Salida_p8Zoom}
+\label{f_SalidaModelop8}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 16 paso.}
+\includegraphics[width=7cm]{imag/P1Salida_p16}
+\includegraphics[width=7cm]{imag/P1Salida_p16Zoom}
+\label{f_SalidaModelop16}
+\end{figure}
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Métricas para el Modelo Difuso}
+    \begin{tabular}{|l|r|r|r|r|}
+    \toprule
+    Modelos & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
+    \midrule
+    RMSE  & 0.0044 & 0.01104 & 0.0959 & 0.0105 \\
+    \midrule
+    MAPE  & 37.61 & 402.84 & 428.11 & 393.38 \\
+    \midrule
+    MAE   & 0.1038 & 1.1249 & 1.2392 & 1.2769 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\end{itemize}
+
+\newpage
+\subsubsection{Modelo de red neuronal}
+
+Para encontrar un buen modelo de red neuronal se propone seguir los pasos de identificación.
+
+\begin{itemize}
+	\item \textbf{Obtención de datos:} Para ello se utiliza el set de datos creado en el punto a) del problema.
+	\item \textbf{Selección de datos:} Análogo a los modelos anteriores, se utilizan los datos repartido con un 55\% en el conjunto de entrenamiento, 25\% en el conjunto de prueba y 20\% en el conjunto de validación.
+	\item \textbf{Definición de la estructura de la red:} Se propone una red con una capa oculta, función de activación \textit{tanh} en la salida de la capa oculta y algoritmo de aprendizaje Levenberg-Marquardt. Las variables de entradas son iguales al número de regresores (4 entradas) como muestra la Figura \ref{estred}. Por otro lado, el modelo matemático de la red, queda expresado como se muestra en la ecuacion \ref{mat_red}.
+	\begin{figure}
+		\centering
+		 \includegraphics[width=8cm]{imag/redes/estructura.eps}
+		\caption{Estructura de la red neuronal perceptrón}
+		\label{estred}
+	\end{figure}
+	\begin{align}
+	\hat{y}(k) = \sum_{i=1}^{N_h} rw_i \left( \tanh\left(\sum_{j=1}^{N_I} lw_{ji} x_j + b_i\right)\right) + c
+	\label{mat_red}
+	\end{align}
+	
+	donde, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.
+	
+	
+	\item \textbf{Selección de entradas relevantes:} De los 4 regresores presente en el sistema se debe analizar cuál tiene mayor peso en el modelo. Un método para encontrar dichos regresores es mediante un análisis de sensibilidad evaluando la derivada de la salida de la red por cada premisa de nuestros datos, es decir,
+	
+	\begin{align}
+	\xi_j = \frac{\partial \hat{y}(k)}{\partial x_j}		
+	\end{align}
+	Como la funcion de activacion es $tanh$ y en la salida es lineal, se tiene,
+	\begin{align}
+	\xi_j &= \frac{\partial \hat{y}(k)}{\partial x_j} \nonumber \\
+	&= \sum_{i=1}^{Nh} rw_i \left(1 - \tanh\left(\sum_{k=1}^{N_I} lw_{ki} x_k + b_i\right)^2 \right) lw_{ji}		
+	\end{align}
+	
+	Como se tendrá un valor de $\xi_j$ para cada dato vector de entrada, se genera un vector $\boldsymbol{\xi_j}$ del mismo largo que el número de datos de cada variable.
+	
+	Luego, se hace uso de un \textit{indicador} $I_j$ para cada entrada $j$ definido como,
+	\begin{align}
+	I_j = \mu^2 (\boldsymbol{\xi_j}) + \sigma^2(\boldsymbol{\xi_j})
+	\end{align}
+	donde $\mu$ es la media del vector de datos y $\sigma^2$ es la varianza para cada entrada $j$.
+	
+	\item \textbf{Optimizan paramétrica y estructural:} Para encontrar los valores óptimos de las parámetros peso y sesgo de la red neuronal se utiliza el algoritmo de Levenberg-Marquardt backpropagation \cite{matlab_train}. Por otro lado, para encontrar el óptimo de la estructura se analiza cuantas neuronas debe tener la capa oculta. Para ello se estudia el RMSE (Raíz del error cuadrático medio) de la salida para un número de neuronas entre $[2-21]$. Los resultados de sensibilidad para cada neurona en la capa oculta se muestran en la Figura \ref{sensi_red} y el RMSE evaluado en los 3 conjuntos se muestra en la Figura \ref{RMSE_full}. Se puede ver que el mínimo RMSE para el conjunto de prueba es para 5 neuronas y que el modelo es sensible  a la entrada $y(k-1)$ mayoritariamente.
+	
+	\textbf{Nota:} El entrenamiento se configura a una velocidad inicial de aprendizaje de la red de $0.05$ y un valor de épocas de 2000 sin evaluación de \textit{Overfitting} (esa es la razón de que exista una diferencia tan grande entre el número de neuronas óptimo definido por el conjunto de entrenamiento (20 neuronas) y por el conjunto de prueba (5 neuronas)).
+	
+	Cabe mencionar que no siempre el conjunto de prueba entrega el valor optimo de neuronas exactamente igual a 5 ya que depende levemente del valor inicial de los pesos y sesgos, los resultados mostraron que entre $5$ y $7$ neuronas está el mínimo. Finalmente, se selecciona un número de neuronas en la capa oculta igual a 5 con solo una entrada, $y(k-1)$.
+	
+	\begin{figure}[t!]
+		\centering
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full.eps}
+		\caption{Sensibilidad para diferente número de neuronas en la capa oculta. \textit{Sin Overfitting.}}
+		\label{sensi_red}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		\caption{RMSE para diferente número de neuronas. \textit{Sin Overfitting.}}
+		\label{RMSE_full}
+	\end{figure}
+	
+	\clearpage
+	\newpage
+	\item sadsadas
+
+\end{itemize}
+
+
+%\section{Problema 2}
+%Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
+%
+%Por tal razón, se le ha confiado a usted el proyecto de determinar modelos de predicción para la generación de energía en un sistema fotovoltaico instalado en una cierta comunidad del norte del país. La finalidad de este proyecto es la de disponer de información futura de generación fotovoltaica, para así poder gestionar el funcionamiento del resto de los elementos que componen a la micro-red.
+%
+%Para esto se le entregarán datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Estos datos tienen un tiempo de muestreo de 1 hora (considerar porcentajes adecuados de los datos en las fases de training, test y validación).
+%
+%Como usted sabe, son varias las formas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para dicha aplicación.
+%
+%Se sugiere considerar los datos del año 2015 como base de entrenamiento y las mediciones del año 2017 como base de prueba y validación. Para este trabajo se le pide detallar la metodología utilizada para:
+%
+%\begin{enumerate}[a)]
+%  \item Obtener dos modelos de predicción (a elección entre los vistos en este curso) y evaluar las predicciones a 1, 6 y 12 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras.
+%  \item Construir un intervalo de predicción para los modelos obtenidos en a), utilizando método que ud. seleccione.
+%\end{enumerate}
+%
+%\subsection{Selección de Datos}
+%Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2160 muestars del año 2015 para entrenamiento, que corresponde a 90 días de simulaciones, y para prueba y validación 720 muestras del año 2017, el equivalente a 30 días.
+
+
+\newpage
 \section{Resultados}
-
 
 
 \newpage
