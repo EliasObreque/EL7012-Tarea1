@@ -13,10 +13,10 @@ b    = 1;
 gain_aprbs = 4;
 % 
 num_regresor_y = 2;
-num_regresor_u = 2;
+num_regresor_u = 1;
 num_regresor = num_regresor_y  + num_regresor_u;
 
-loaded_data = load('DatosProblema1a.mat');
+loaded_data = load('P_DatosProblema1.mat');
 
 y_model = loaded_data.y;
 aprbs = loaded_data.u;
@@ -25,8 +25,9 @@ figure ()
 stairs(y_model)
 hold on
 stairs(aprbs)
+plot(aprbs, 'o')
 % stairs(e)
-xlim([1 90])
+xlim([1 500])
 xlabel('Número de muestras')
 ylabel('Amplitud')
 legend('y(k)', 'u(k)')
@@ -48,6 +49,11 @@ y_val = loaded_data.Yval;
 train_prc = 0.55;
 test_prc = 0.25;
 val_prc = 0.2;
+
+% Elimina el ultima regresor
+x_train(:, 4) = [];
+x_test(:, 4) = [];
+x_val(:, 4) = [];
 
 ntrain = Nd * train_prc;
 ntest = Nd * test_prc;
@@ -110,13 +116,13 @@ end
 
 
 
-InSet11 = get(ax11, 'TightInset');
-InSet12 = get(ax12, 'TightInset');
-InSet21 = get(ax21, 'TightInset');
-InSet22 = get(ax22, 'TightInset');
+%InSet11 = get(ax11, 'TightInset');
+%InSet12 = get(ax12, 'TightInset');
+%InSet21 = get(ax21, 'TightInset');
+%InSet22 = get(ax22, 'TightInset');
 
-set(gca(fig1), 'Position', [InSet12(1:2), 1-InSet1(1)-InSet1(3), 1-InSet1(2)-InSet1(4)]);
-set(gca(fig2), 'Position', [InSet22(1:2), 1-InSet2(1)-InSet2(3), 1-InSet2(2)-InSet2(4)]);
+%set(gca(fig1), 'Position', [InSet12(1:2), 1-InSet1(1)-InSet1(3), 1-InSet1(2)-InSet1(4)]);
+%set(gca(fig2), 'Position', [InSet22(1:2), 1-InSet2(1)-InSet2(3), 1-InSet2(2)-InSet2(4)]);
 
 
 %%
@@ -140,14 +146,14 @@ legend()
 InSet_rmse = get(axes_rmse, 'TightInset');
 set(gca(fig_rmse), 'Position', [InSet_rmse(1:2), 1-InSet_rmse(1)-InSet_rmse(3), 1-InSet_rmse(2)-InSet_rmse(4)]);
 % create a new pair of axes inside current figure
-axes('position',[.3 .5 .38 .42])
+axes('position',[.23 .5 .5 .42])
 box on % put box around new pair of axes
 plot(num_neu_min:num_neu_max, rmse_test, 'r')
 hold on 
 grid on
 plot(m2 + num_neu_min - 1, n2, '*r')
-ylim([2.3e-3, 2.5e-3])
-
+ylim([3.3e-3, 3.6e-3])
+xlim([3, 41])
 %% PLOT
 
 % plots error vs. epoch for the training, validation, and test performances of the training record TR 
@@ -156,22 +162,3 @@ plotperform(tr)
 % Plot training state values
 figure()
 plottrainstate(tr)
-
-% Plot Output and Target Values
-%plotfit(net_trained, x_data, y_data)
-
-% Plot Linear Regression
-%plotregression(x_test, y_test_nn,'Regression')
-
-% Plot Histogram of Error Values
-figure()
-ploterrhist(error_train,'Train', error_test, 'Test', error_val, 'Validation')
-
-figure()
-stairs(y_train_nn)
-hold on
-stairs(y_train)
-xlim([1 100])
-%[ exported_ann_structure ] = my_ann_exporter(net_trained);
-%y_test_nn = my_ann_evaluation(exported_ann_structure, x_test)';
-

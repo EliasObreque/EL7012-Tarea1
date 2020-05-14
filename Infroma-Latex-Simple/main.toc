@@ -6,5 +6,5 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Modelo lineal}{5}%
 \contentsline {subsubsection}{\numberline {2.2.2}Modelo difuso Takagi-Sugeno Tipo-1}{6}%
 \contentsline {subsubsection}{\numberline {2.2.3}Modelo de red neuronal}{11}%
-\contentsline {section}{\numberline {3}Resultados}{16}%
-\contentsline {section}{\numberline {4}Conclusión}{17}%
+\contentsline {section}{\numberline {3}Resultados}{19}%
+\contentsline {section}{\numberline {4}Conclusión}{20}%
