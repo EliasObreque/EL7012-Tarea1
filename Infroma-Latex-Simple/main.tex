@@ -267,9 +267,9 @@ donde $N$ es la cantidad total de datos, $y(k)$ es la salida de la planta real e
     \toprule
     \multicolumn{1}{|p{4.055em}|}{Modelo } & \multicolumn{1}{p{5.555em}|}{Variables de entrada } & \multicolumn{1}{p{4.055em}|}{MSE} \\
     \midrule
-    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$     & 0.1517 \\
+    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$     & 0.0474 \\
     \midrule
-    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.0902 \\
+    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.0445 \\
     \bottomrule
     \end{tabular}%
   \label{t_Error}%
@@ -291,7 +291,7 @@ MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
 
 \begin{figure}
 \centering
-\includegraphics[width=10cm,height=7cm]{imag/P1reglas11}
+\includegraphics[width=10cm,height=7cm]{imag/P1reglas12}
 \caption{Índice de Sensibilidades.}
 \label{f_P1reglas11}
 \end{figure}
@@ -347,11 +347,11 @@ MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
     \toprule
     Modelos & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
     \midrule
-    RMSE  & 0.0044 & 0.01104 & 0.0959 & 0.0105 \\
+    RMSE  & 0.0046 & 0.0061 & 0.0412 & NaN \\
     \midrule
-    MAPE  & 37.61 & 402.84 & 428.11 & 393.38 \\
+    MAPE  & 37.73 & 60.23 & 303.11 & NaN \\
     \midrule
-    MAE   & 0.1038 & 1.1249 & 1.2392 & 1.2769 \\
+    MAE   & 0.0835 & 0.1491 & 0.6627 & NaN \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
@@ -360,7 +360,7 @@ MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
 \newpage
 \subsubsection{Modelo de red neuronal}
 
-Para encontrar un buen modelo de red neuronal se propone seguir los pasos de identificación. 
+Para encontrar un buen modelo de red neuronal se propone seguir los pasos de identificación.
 
 \begin{itemize}
 	\item \textbf{Obtención de datos:} Para ello se utiliza el set de datos creado en el punto a) del problema.
@@ -368,7 +368,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\item \textbf{Definición de la estructura de la red:} Se propone una red con una capa oculta, función de activación \textit{tanh} en la salida de la capa oculta y algoritmo de aprendizaje Levenberg-Marquardt. Las variables de entradas son iguales al número de regresores (4 entradas) como muestra la Figura \ref{estred}. Por otro lado, el modelo matemático de la red, queda expresado como se muestra en la ecuacion \ref{mat_red}.
 	\begin{figure}
 		\centering
-		\includegraphics[width=8cm]{imag/redes/estructura.eps}
+		 \includegraphics[width=8cm]{imag/redes/estructura.eps}
 		\caption{Estructura de la red neuronal perceptrón}
 		\label{estred}
 	\end{figure}
@@ -377,7 +377,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\label{mat_red}
 	\end{align}
 	
-	donde, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.   
+	donde, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.
 	
 	
 	\item \textbf{Selección de entradas relevantes:} De los 4 regresores presente en el sistema se debe analizar cuál tiene mayor peso en el modelo. Un método para encontrar dichos regresores es mediante un análisis de sensibilidad evaluando la derivada de la salida de la red por cada premisa de nuestros datos, es decir,
@@ -385,7 +385,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\begin{align}
 	\xi_j = \frac{\partial \hat{y}(k)}{\partial x_j}		
 	\end{align}
-	Como la funcion de activacion es $tanh$ y en la salida es lineal, se tiene, 
+	Como la funcion de activacion es $tanh$ y en la salida es lineal, se tiene,
 	\begin{align}
 	\xi_j &= \frac{\partial \hat{y}(k)}{\partial x_j} \nonumber \\
 	&= \sum_{i=1}^{Nh} rw_i \left(1 - \tanh\left(\sum_{k=1}^{N_I} lw_{ki} x_k + b_i\right)^2 \right) lw_{ji}		
@@ -397,7 +397,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\begin{align}
 	I_j = \mu^2 (\boldsymbol{\xi_j}) + \sigma^2(\boldsymbol{\xi_j})
 	\end{align}
-	donde $\mu$ es la media del vector de datos y $\sigma^2$ es la varianza para cada entrada $j$. 
+	donde $\mu$ es la media del vector de datos y $\sigma^2$ es la varianza para cada entrada $j$.
 	
 	\item \textbf{Optimizan paramétrica y estructural:} Para encontrar los valores óptimos de las parámetros peso y sesgo de la red neuronal se utiliza el algoritmo de Levenberg-Marquardt backpropagation \cite{matlab_train}. Por otro lado, para encontrar el óptimo de la estructura se analiza cuantas neuronas debe tener la capa oculta. Para ello se evalúa el RMSE (Raíz del error cuadrático medio) del conjunto de prueba en la salida de la red para un número de neuronas entre $[2-41]$. Los resultados de sensibilidad para cada neurona en la capa oculta se muestran en las Figura \ref{sensi_red_1} y \ref{sensi_red_2} y el RMSE evaluado en los 3 conjuntos se muestra en la Figura \ref{RMSE_full}. Se puede ver que el mínimo RMSE para el conjunto de prueba es para $8$ neuronas y que el modelo es menos sensible  a la entrada $u(k-2)$ el cual es eliminado del entrenamiento.
 	
@@ -405,17 +405,17 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{RMSE_full}
 	\end{figure}
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1}
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2}
 	\end{figure}
@@ -442,9 +442,9 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
 		\caption{Indice de sensibilidad para 4 y 3 entradas.}
 		\label{Ind_4}
 	\end{figure}
@@ -454,18 +454,18 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
 		\caption{Comparación entre la salida de la red neuronal y el valor real del conjunto de validación.}
 	\end{figure}
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
 		\caption{Histograma del error de cada conjunto de datos.}
 		\label{hist_4}
 	\end{figure}
@@ -475,7 +475,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
@@ -483,14 +483,14 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1_3}
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2_3}
 	\end{figure}
-\end{itemize} 
+\end{itemize}
 
 
 
