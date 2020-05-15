@@ -78,34 +78,65 @@ mape_val = MAPE(y_val(1+ jpasos: end), y_j_val')
 figure()
 ploterrhist(error_train,'Train', error_test, 'Test', error_val, 'Validation')
 
-figure()
-stairs(y_j_val)
-hold on
-grid on
-ylabel('y(k)')
-xlabel('Número de muestras')
-stairs(y_val(1+ jpasos: end))
-xlim([1 100])
-legend('NN-Validación', 'Dato Real')
-
-figure()
+fig_train = figure('Renderer', 'painters', 'Units', 'centimeters', 'Position', [4 4 18 10]);
+axes_train = axes('Parent', fig_train);
 stairs(y_j_train)
 hold on
 grid on
 ylabel('y(k)')
 xlabel('Número de muestras')
 stairs(y_train(1+ jpasos: end))
-xlim([1 100])
-legend('NN-Train', 'Dato Real')
+xlim([1 300])
+ylim([-2 4])
+legend('NN-Entrenamiento', 'Dato Real', 'Location', 'southwest')
+InSet_rmse = get(axes_train, 'TightInset');
+set(gca(fig_train), 'Position', [InSet_rmse(1:2), 1-InSet_rmse(1)-InSet_rmse(3), 1-InSet_rmse(2)-InSet_rmse(4)]);
+axes('position',[0.65,0.6349,0.3058,0.32])
+box on % put box around new pair of axes
+stairs(y_j_train)
+hold on 
+grid on
+stairs(y_train(1+ jpasos: end))
+xlim([200, 250])
 
-figure()
+fig_test = figure('Renderer', 'painters', 'Units', 'centimeters', 'Position', [4 4 18 10])
+axes_test = axes('Parent', fig_test);
 stairs(y_j_test)
 hold on
 grid on
 ylabel('y(k)')
 xlabel('Número de muestras')
 stairs(y_test(1+ jpasos: end))
-xlim([1 100])
-legend('NN-Test', 'Dato Real')
+xlim([1 300])
+ylim([-2 4])
+legend('NN-Prueba', 'Dato Real', 'Location', 'southwest')
+InSet_rmse = get(axes_test, 'TightInset');
+set(gca(fig_test), 'Position', [InSet_rmse(1:2), 1-InSet_rmse(1)-InSet_rmse(3), 1-InSet_rmse(2)-InSet_rmse(4)]);
+axes('position',[0.65,0.6349,0.3058,0.32])
+box on % put box around new pair of axes
+stairs(y_j_test)
+hold on 
+grid on
+stairs(y_test(1+ jpasos: end))
+xlim([200, 250])
 
-
+fig_val = figure('Renderer', 'painters', 'Units', 'centimeters', 'Position', [4 4 18 10])
+axes_val = axes('Parent', fig_val);
+stairs(y_j_val)
+hold on
+grid on
+ylabel('y(k)')
+xlabel('Número de muestras')
+stairs(y_val(1+ jpasos: end))
+xlim([1 300])
+ylim([-2.5 4])
+legend('NN-Validación', 'Dato Real', 'Location', 'southwest')
+InSet_rmse = get(axes_val, 'TightInset');
+set(gca(fig_val), 'Position', [InSet_rmse(1:2), 1-InSet_rmse(1)-InSet_rmse(3), 1-InSet_rmse(2)-InSet_rmse(4)]);
+axes('position',[0.65,0.6349,0.3058,0.32])
+box on % put box around new pair of axes
+stairs(y_j_val)
+hold on 
+grid on
+stairs(y_val(1+ jpasos: end))
+xlim([200, 250])
