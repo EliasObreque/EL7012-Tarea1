@@ -151,3 +151,7 @@ Infroma-Latex-Simple/main.log
 Infroma-Latex-Simple/main.aux
 *.aux
 *.log
+*.gz
+Infroma-Latex-Simple/main.log
+Infroma-Latex-Simple/main.toc
+*.toc
