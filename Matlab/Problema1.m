@@ -12,17 +12,16 @@ clear all, clc
 % xlabel('Variables de entrada')
 % ylabel('I')
 
-% Error Cuadrático Medio (EMS)
-% errS_8=errortest(Yent,Xent,Ytest,Xtest,reglas)^2;
-% % 
-% % load('DatosProblema1'); %Conjunto con 4 regresores
+% % % Raíz Error Cuadrático Medio (REMS)
+% errS_8=errortest(Yent,Xent,Ytest,Xtest,reglas); 
+% 
 load('P_DatosProblema1'); %Conjunto con 4 regresores
-% errS_4=errortest(Yent,Xent,Ytest,Xtest,reglas)^2;
+% errS_4=errortest(Yent,Xent,Ytest,Xtest,reglas);
 
 %-----Obtención modelo. Parametros antecedentes y consecuentes-------------
 %Modelo con 4 regresores %y-1, y-2, u-1, u-2
 
-% % Seleccion del número óptimo de clusters
+% % % Seleccion del número óptimo de clusters
 % max_clusters=20;
 % [errtest,errent] = clusters_optimo(Ytest,Yent,Xtest,Xent,max_clusters);
 
@@ -84,8 +83,21 @@ load('P1ModeloDifusoTipo1_P');
 % xlabel('u(k-2)')
 % ylabel('Grado de pertenencia')
 
+% %Comprobación del Modelo
+% yE=ysim(Xent,model.a,model.b,model.g);
+% eRMSE_E=RMSE(Yent,yE);
+% eMAPE_E=MAPE(Yent,yE);
+% eMAE_E=MAE(Yent,yE);
+% yT=ysim(Xtest,model.a,model.b,model.g);
+% eRMSE_T=RMSE(Ytest,yT);
+% eMAPE_T=MAPE(Ytest,yT);
+% eMAE_T=MAE(Ytest,yT);
+
 % %Evaluación del modelo Original
 y=ysim(Xval,model.a,model.b,model.g);
+% eRMSE_V=RMSE(Yval,y);
+% eMAPE_V=MAPE(Yval,y);
+% eMAE_V=MAE(Yval,y);
 
 % figure ()
 % stairs(y,'--')
@@ -166,11 +178,11 @@ y16=ysim_p(Xval,model.a,model.b,model.g,16);
 salida=[y y1 y8 y16];
 [~,c]=size(salida);
 
-for i=1:c
-eRMSE(i)=RMSE(Yval,salida(:,i));
-eMAPE(i)=MAPE(Yval,salida(:,i));
-eMAE(i)=MAE(Yval,salida(:,i));
-end
+% for i=1:c
+% eRMSE(i)=RMSE(Yval,salida(:,i));
+% eMAPE(i)=MAPE(Yval,salida(:,i));
+% eMAE(i)=MAE(Yval,salida(:,i));
+% end
 
 alpha=10;
 [yEst,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
@@ -180,14 +192,14 @@ ePICP(i)= PICP(salida(:,i)',yEst_u,yEst_l);
 plot_Intervalos(salida(:,i)',yEst_u,yEst_l)
 end
 
-%Minimos cuadrados
-[g_u,g_l]=MinMax(Xtest,Ytest,model.a,model.b,model.g);
-y_u=ysim(Xval,model.a,model.b,g_u);
-y_l=ysim(Xval,model.a,model.b,g_l);
+% %Minimos cuadrados
+% [g_u,g_l]=MinMax(Xtest,Ytest,model.a,model.b,model.g);
+% y_u=ysim(Xval,model.a,model.b,g_u);
+% y_l=ysim(Xval,model.a,model.b,g_l);
 
 for i=1:c
-ePINAW(i)= PINAW(salida(:,i)',y_u',y_l');
-ePICP(i)= PICP(salida(:,i)',y_u',y_l');
+ePINAW_mm(i)= PINAW(salida(:,i)',y_u',y_l');
+ePICP_mm(i)= PICP(salida(:,i)',y_u',y_l');
 plot_Intervalos(salida(:,i)',y_u',y_l')
 end
 
