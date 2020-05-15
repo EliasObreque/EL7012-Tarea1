@@ -130,7 +130,7 @@ Como usted sabe existen varias técnicas que se pueden emplear para la modelaci�
 
 En esta estapa es necesario generar datos que representen la dinámica del sistema en la mayor cantidad de rangos de operación posibles, ya que el modelo obtenido tiene un ancho de banda acotado, y por lo tanto las dinámicas definidas por fuera de dicha banda podrían no ser representadas adecuadamente. Para lo cual se debe diseñar una entrada $u(k)$ que excite a la planta en el rango de frecuencias en que se encuentran los fenómenos de interés.
 
-En este trabajo se propone el uso de señales binarias pseudo aleatorias (Pseudo Random Binary Signal, PRBS),  ya  que  es  una  de  las  señales  más  utilizadas  en  identificación  de sistemas. Esta es una señal periódica, determinística y que  posee  principalmente  propiedades  similares  al  ruido  blanco  (contenido  muy  rico  en frecuencias)
+En este trabajo se propone el uso de señales binarias pseudo aleatorias (Pseudo Random Binary Signal, PRBS),  ya  que  es  una  de  las  señales  más  utilizadas  en  identificación  de sistemas. Esta es una señal periódica, determinística y que  posee  principalmente  propiedades  similares  al  ruido  blanco  (contenido  muy  rico  en frecuencias) \citep{nelles2013nonlinear}.
 
 Para general la señal se suponen los siguientes parámetros de interés $f_{min}=0.2 Hz$, $f_{max}=1 Hz$ y tiempo de muestreo $T_S=0.01$. Con los parámetros anteriores, y utilizando la expresión
 
@@ -245,6 +245,57 @@ A continuación, en la Tabla \ref{t_NoLinealp1}, se presentan las métricas de b
 
 \subsection{Modelo difuso Takagi-Sugeno Tipo-1}
 
+Los modelos difusos de Takagi-Sugeno son estructuras basadas en la lógica difusa
+que permiten representar procesos con dinámicas no lineales mediante la combinación
+de información otorgada por modelos locales. Estos tipos de modelos pueden ser
+expresados a partir de una base de reglas del tipo “Si-Entonces”, de la forma
+
+\begin{equation}
+R_r: Si\:z_1(k)\:es\:MF_1^r\:y ... y \: z_p(k)\:es\:MF_p^r\:entonces \:y_r(z(k))=f_r(z(k))
+\label{e_TS}
+\end{equation}
+
+donde $R_r$ denota la r-ésima regla del modelo difuso, con $r\in{1,...,N_r}$ y $N_r$ el número
+total de reglas; $y_r(z(k))$ es su consecuencia o modelo local; $z(k)=[z_1(k),...,z_p(k)]$ es el
+vector de premisas en el tiempo $k$, las cuales por lo general son regresores de la entrada
+y/o salida del sistema; $f_r(z(k))$ es una función de las premisas del modelo; y $MF_i^r$ es el
+conjunto difuso (función de pertenencia) de la i-ésima premisa correspondientes a la r-
+ésima regla.
+
+Sea $\mu_r(z_i(k))$ el grado de pertenencia de la i-ésima premisa $z_i(k)$  al conjunto difuso
+$MF_i^r$, donde $\mu_r(z_i(k))\in[0,1]$, siendo 0 cuando la premisa no pertenece en ningún grado
+al conjunto $MF_i^r$, y siendo 1 si pertenece completamente a dicho conjunto. Luego, se
+define el grado de activación de la r-ésima regla, $w_r(z(k))$, como
+
+\begin{equation}
+w_r(z(k))=oper(\mu_r(z_1(k)),...,\mu_r(z_p(k)))
+\label{e_Act}
+\end{equation}
+
+donde $oper(.)$ puede ser el operador mínimo o el producto. Se denota $h_r(z(k))$ al grado
+de activación normalizado de la r-ésima regla, es decir,
+
+\begin{equation}
+h_r(z(k))=\frac{w_r(z(k))}{\sum_{l=1}^{N_r}w_l(z(k))}
+\label{e_ActNor}
+\end{equation}
+
+Ya definido el grado de activación de cada regla, la salida del modelo difuso,
+$y_fuzzy(k)$, está dada por una suma ponderada de cada modelo local por su grado de
+activación normalizado, de la forma
+
+\begin{equation}
+y_{fuzzy}(k)=\sum_{r=1}^{N_r}h_r(z(k))*y_r(z(k))
+\label{e_ModDifuso}
+\end{equation}
+
+Los modelos difusos TS son una clase de sistemas no
+lineales, cuya formulación requiere definir una serie de variables que no se conocen a
+priori, por lo que una estructura adecuada para representar un sistema es desconocida y,
+como consecuencia, un proceso de identificación debe ser llevado a cabo para
+determinar la estructura y cada uno de los parámetros del modelo \citep{alvarez_metodologiidentificacion_nodate}.
+
+
 \begin{itemize}
 	\item \textbf{Selección de variables}:
 Para seleccionar las variables que actúan como entrada al sistema difuso, se realiza un análisis de sensibilidad. Suponiendo una estructura del modelo inicial difuso con 8 variables de entrada $y(k-1)$,..., $y(k-4)$, $u(k-1)$,...,$u(k-4)$. En la Fig. \ref{f_P1Sensibilidad} se muestran los índices de las sensibilidades del modelo inicial para las 8
@@ -299,6 +350,66 @@ aceptables bajo un estándar de rendimiento definido preliminarmente. Por lo ant
 \label{f_P1reglas11}
 \end{figure}
 
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Salida]{
+		 \includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
+		\subfloat[$y(k-1)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery1}}
+		\subfloat[$y(k-2)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
+        \subfloat[$u(k-1)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
+		\subfloat[$u(k-2)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
+		\caption{Clusters del Modelo Difuso Tipo 1.}
+		\label{f_Cluster}
+\end{figure}
+
+
+Una vez realizado el clustering es posible proyectar las agrupaciones en el espacio de
+entrada y ajustar funciones paramétricas para describir los conjuntos difusos $MF_i^r$. En
+particular, se consideraron funciones de pertenencia gaussianas dadas por
+
+\begin{equation}
+MF_r^i(z_i(k))=exp(-0.5(a_{r,i}*(z_i(k)-b_{r,i}))^2)
+\label{e_Gaussiana}
+\end{equation}
+
+donde $MF_r^i(z_i(k))$ es la función de pertenencia de la i-ésima premisa $z_i(k)$ al r-ésimo
+cluster, $a_{r,i}$ es el inverso de la desviación estándar de los datos ajustados por la
+gaussiana, $b_{r,i}$ representa su media. Para este modelo difuso se tiene:
+
+
+\begin{equation}
+a=
+\left(
+  \begin{array}{cccc}
+ 1.9799	&1.4049	& 4.31509&	4.9400\\
+1.8300&	1.4483	& 4.6810&	6.1218\\
+2.4547	&1.8383	& 5.2820&	8.5600\\
+2.0375	&1.773	& 4.5619&	4.7213\\
+1.6123&	1.4681&	4.9096	&5.0399
+  \end{array}
+\right)
+\label{e_ParA}
+\end{equation}
+
+\begin{equation}
+b=
+\left(
+  \begin{array}{cccc}
+0.6742&	0.4811&	0.4425&	0.4375\\
+-1.4657&	-1.4022&	-0.7580&	-0.7632\\
+2.1665&	2.1262&	0.8501&	0.86403\\
+-0.43602&	-0.5047&	-0.4782&	-0.4821\\
+-0.0353&	0.2984&	0.0744&	0.07290
+  \end{array}
+\right)
+\label{e_ParB}
+\end{equation}
+
 Además del RMSE, se pueden definir el Error Porcentual Absoluto Medio (MAPE, Mean Absolute Percentage Error) y Error Absoluto Medio (MAE, Mean Absolute Error) para comprobar el modelo difuso obtenido.
 
 \begin{equation}
@@ -331,28 +442,14 @@ MAE=\frac{1}{N}\sum_{k=1}^{N}|y(k)-y_{fuzzy}(k)|
   \label{t_MD}%
 \end{table}%
 
-En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que see sta trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
+En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que se está trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
 
-\begin{figure}
-		\centering
-		\captionsetup{justification=centering}
-		\subfloat[Salida]{
-		 \includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
-		\subfloat[$y(k-1)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clustery1}}
-		\subfloat[$y(k-2)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
-        \subfloat[$u(k-1)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
-		\subfloat[$u(k-2)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
-		\caption{Clusters del Modelo Difuso Tipo 1.}
-		\label{f_Cluster1}
-\end{figure}
 
-\item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes, de dimensión $[N_Rx\theta]$
+
+\item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes $\theta^T=[\theta_{1,1},...,\theta_{N_r,1},...,\theta_{1,n},...,\theta_{N_r,1}]$
 
 \begin{equation}
+\theta^T=
 \left(
   \begin{array}{ccccc}
  -0.1625 &	0.99755	&-0.7451	&0.8430	 &0.2983\\
@@ -365,8 +462,10 @@ En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los
 \label{e_ParaModDif}
 \end{equation}
 
-\item \textbf{Predicciones a 1, 8, y 16
-pasos}:
+\end{itemize}
+
+\subsubsection{Predicciones a 1, 8, y 16
+pasos}
 
 Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimación para 1, 8 y 16 pasos respectivamente.
 
@@ -386,7 +485,7 @@ Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimaci
 \end{figure}
 
 
-En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a amedida que aumenta el paso de la estimación el desempeño de del modelo difuso se deteriora.
+En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a medida que aumenta el paso de la estimación el desempeño del modelo difuso se deteriora.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
@@ -407,7 +506,70 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
   \label{t_MDjp}%
 \end{table}%
 
-\item \textbf{Covarianza}:
+\subsubsection{Intervalos Difusos}
+
+El modelo de intervalo difuso corresponde a un modelo difuso con parámetros
+superiores e inferiores que contiene un porcentaje de todos los valores medidos. Se debe encontrar una
+función difusa superior $\bar{f}$ y una función difusa inferior $\underline{f}$, tal que se satisfaga
+
+
+\begin{equation}
+\underline{f}(z_k)\leq g(z_k)\leq \bar{f}(z_k)
+\label{e_InterDif}
+\end{equation}
+
+en donde $z_k\in Z$ es un conjunto de entradas, $Y={y_1,...,y_N}$ contiene los valores medidos
+de la salida, y se tiene que $y_k=g(z_k),\:k=1,...,N$.
+
+Para encontrar las funciones $\underline{f}$ y $\bar{f}$ se utilizarán dos métodos: el método
+de la covarianza, y el método min-max.
+
+El principal requerimiento al definir la banda del intervalo es que sea lo mas estrecha
+posible y que contenga un cierto porcentaje de datos, llamado nivel de confianza para lo cual se definen los índices Prediction Interval Coverage
+Probability (PICP) para medir el porcentaje de cobertura y el Prediction Interval Normalized
+Average Width (PINAW) para medir el ancho promedio.
+
+\begin{equation}
+PICP=\frac{1}{N}\sum_{k=1}^{N}c\qquad c=\left\{
+                                          \begin{array}{ll}
+                                            1, & \hbox{$\hat{y}_l(k) \leq y(k) \leq \hat{y}_u(k)$} \\
+                                            0, & \hbox{caso \: contrario.}
+                                          \end{array}
+                                        \right.
+\label{e_PICP}
+\end{equation}
+
+\begin{equation}
+PINAW=\frac{1}{NR}\sum_{k=1}^{N}(\hat{y}_u(k)-\hat{y}_l(k)) \qquad donde\quad R=max(y(k))-min(y(k))
+\label{e_PINAW}
+\end{equation}
+
+\begin{itemize}
+\item \textbf{Método de la Covarianza}:
+
+Este método se basa en utilizar la covarianza del error entre los datos reales y la
+estimación de los modelos locales del sistema difuso, de tal manera de determinar los
+parámetros de las funciones difusas limitantes a partir de cada consecuencia.
+
+\begin{equation}
+Var(\hat{y}_j-h_j(Z^*)y_j)=\hat{\sigma}_j^2(1+\Psi_j^{*T}(\Psi_j\Psi_j^T)^{-1}\Psi_j^*)
+\label{e_Varianza}
+\end{equation}
+
+con la que se puede definir un intervalo difuso para cada modelo local
+
+\begin{equation}
+\hat{y}^j(k)=Z^{*T}(k)\hat{\theta}_j+\alpha[Var(\hat{y}_j-h_j(Z^*)y_j)]^2
+\label{e_MLocal}
+\end{equation}
+
+\begin{equation}
+\hat{y}^j(k)=Z^{*T}(k)\hat{\theta}_j-\alpha[Var(\hat{y}_j-h_j(Z^*)y_j)]^2
+\label{e_MLocal2}
+\end{equation}
+
+y obtener el modelo de intervalo total
+
 
 \begin{figure}
 		\centering
@@ -446,6 +608,10 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 
 
 \item \textbf{MinMax}:
+A diferencia del anterior no se fija un porcentaje
+de datos para el cual se desea el mínimo intervalo de confianza, sino que se realiza una
+optimización para que se contenga la mayor cantidad de datos dentro del intervalo de
+confianza y al mismo tiempo optimizando que su ancho sea el menor.
 
 \begin{figure}
 		\centering
@@ -508,18 +674,18 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\label{mat_red}
 	\end{align}
 	
-	donde, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.
+	donde, $x = [y(k-1), y(k-2), u(k-1), u(k-2)]$ es el vector de entrada, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.
 	
 	
 	\item \textbf{Selección de entradas relevantes:} De los 4 regresores presente en el sistema se debe analizar cuál tiene mayor peso en el modelo. Un método para encontrar dichos regresores es mediante un análisis de sensibilidad evaluando la derivada de la salida de la red por cada premisa de nuestros datos, es decir,
 	
 	\begin{align}
-	\xi_j = \frac{\partial \hat{y}(k)}{\partial x_j}		
+	\xi_j = \frac{\partial \hat{y}(k)}{\partial x_j}		 
 	\end{align}
 	Como la funcion de activacion es $tanh$ y en la salida es lineal, se tiene,
 	\begin{align}
 	\xi_j &= \frac{\partial \hat{y}(k)}{\partial x_j} \nonumber \\
-	&= \sum_{i=1}^{Nh} rw_i \left(1 - \tanh\left(\sum_{k=1}^{N_I} lw_{ki} x_k + b_i\right)^2 \right) lw_{ji}		
+	&= \sum_{i=1}^{Nh} rw_i \left(1 - \tanh\left(\sum_{m=1}^{N_I} lw_{mi} x_m + b_i\right)^2 \right) lw_{ji}		
 	\end{align}
 	
 	Como se tendrá un valor de $\xi_j$ para cada dato vector de entrada, se genera un vector $\boldsymbol{\xi_j}$ del mismo largo que el número de datos de cada variable.
@@ -530,29 +696,43 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\end{align}
 	donde $\mu$ es la media del vector de datos y $\sigma^2$ es la varianza para cada entrada $j$.
 	
-	\item \textbf{Optimizan paramétrica y estructural:} Para encontrar los valores óptimos de las parámetros peso y sesgo de la red neuronal se utiliza el algoritmo de Levenberg-Marquardt backpropagation \cite{matlab_train}. Por otro lado, para encontrar el óptimo de la estructura se analiza cuantas neuronas debe tener la capa oculta. Para ello se evalúa el RMSE (Raíz del error cuadrático medio) del conjunto de prueba en la salida de la red para un número de neuronas entre $[2-41]$. Los resultados de sensibilidad para cada neurona en la capa oculta se muestran en las Figura \ref{sensi_red_1} y \ref{sensi_red_2} y el RMSE evaluado en los 3 conjuntos se muestra en la Figura \ref{RMSE_full}. Se puede ver que el mínimo RMSE para el conjunto de prueba es para $8$ neuronas y que el modelo es menos sensible  a la entrada $u(k-2)$ el cual es eliminado del entrenamiento.
+	\item \textbf{Optimización paramétrica y estructural:} Para encontrar los valores óptimos de las parámetros peso y sesgo de la red neuronal se utiliza el algoritmo de Levenberg-Marquardt backpropagation \cite{matlab_train}. Por otro lado, para encontrar el óptimo de la estructura se analiza cuantas neuronas debe tener la capa oculta. Para ello se evalúa el RMSE (Raíz del error cuadrático medio) del conjunto de prueba en la salida de la red para un número de neuronas entre $[2-41]$. Los resultados de sensibilidad para cada neurona en la capa oculta se muestran en las Figura \ref{sensi_red_1} y \ref{sensi_red_2} y el RMSE evaluado en los 3 conjuntos se muestra en la Figura \ref{RMSE_full}. Se puede ver que el mínimo RMSE para el conjunto de prueba es para $6$ neuronas y que el modelo es menos sensible  a la entrada $u(k-2)$ el cual es eliminado del entrenamiento.
 	
-	\textbf{Nota:} El entrenamiento se configura a una velocidad inicial de aprendizaje de la red de $0.05$ y un valor de épocas de 4000 con evaluación de \textit{Overfitting} de 50 épocas de validación.
-	
-	\begin{figure}[h!]
+	El entrenamiento se configura a una velocidad inicial de aprendizaje de la red de $0.05$ y un valor de épocas de 5000 con evaluación de \textit{Overfitting} de 200 épocas de validación. Es importante señalar que durante el experimento se probaron diferentes épocas de validación para cuantificar el efecto del sobre ajuste en el número óptimo de neuronas con la hipótesis de que, independiente del RMSE obtenido, el mínimo global se da con la misma cantidad de neuronas óptimas afectando solo a los mínimos locales que pudieran aparecer. En la Tabla \ref{sobreajuste} se muestran los resultados de varios experimentos demostrando la hipótesis, es más, el valor RMSE obtenido con todo los modelos es casi el mismo y solo cambia el número de neuronas, donde, $6$ demuestra ser un mínimo global y los demás un mínimo local. Por otro lado, se observo que tras varios experimentos el mejor valor RMSE del conjunto de prueba se observa cuando las épocas de validación por sobre ajuste se encuentran entre $[50-300]$, de esta manera, de aquí en adelante se utilizan 50 épocas de validación por sobre ajuste para disminuir los costos de calculo.
+	\begin{table}[h!]
+		\centering
+		\caption{Experimento para ver la influencia del sobre ajuste.}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Número de épocas de validación & $N_h$ óptimo & Valor RMSE \\ \hline
+			1                              & 11           & 0.0025392   \\ \hline
+			10                             & 7            & 0.0025384  \\ \hline
+			50                             & 6            & 0.0025342  \\ \hline
+			100                            & 6            & \textbf{0.0025295}  \\ \hline
+			200                            & 6            & 0.0025324  \\ \hline
+			500                            & 6            & 0.0025326  \\ \hline
+			1000                            & 10           & 0.0025299  \\ \hline
+			5000                            & 17            & 0.0025383  \\ \hline
+		\end{tabular}
+	\label{sobreajuste}
+	\end{table}
+	\newpage
+	\begin{figure}[t!]
 		\centering
 		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{RMSE_full}
+		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_1.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
+		\label{sensi_red_1}
 	\end{figure}
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
-		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
-		\label{sensi_red_1}
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
+		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_2.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2}
 	\end{figure}
-	
-	\clearpage
-	
 	\item \textbf{Desempeño de la red definida}: Se procede a evaluar el desempeño de la red con 8 neuronas en la capa oculta utilizando las cuatro entradas y luego solo con 3, $[y(k-1), y(k-2), u(k-1)]$, para notar las diferencias.
 	Los resultados se muestran en las Figuras \ref{Ind_4} hasta la \ref{hist_4} y las datos numéricos se agrupan en la Tabla \ref{tabla_red_4_3}
 	
@@ -563,8 +743,8 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\begin{tabular}{|l|c|c|c|}
 			\hline
 			Número de entradas & \multicolumn{1}{l|}{MSE - Entrenamiento} & \multicolumn{1}{l|}{MSE - Prueba} & \multicolumn{1}{l|}{MSE - Validación} \\ \hline
-			4                  & 0.0084                                   & 0.0099                            & 0.0090                                \\ \hline
-			3                  & 0.0149                                   & 0.0168                            & 0.0163                                \\ \hline
+			4                  & 0.0089                                   & 0.0097                            & 0.0084                                \\ \hline
+			3                  & 0.0108                                   & 0.0118                           & 0.0108                                \\ \hline
 		\end{tabular}
 	\label{tabla_red_4_3}
 	\end{table}
@@ -579,8 +759,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\caption{Indice de sensibilidad para 4 y 3 entradas.}
 		\label{Ind_4}
 	\end{figure}
-	Se puede notar de la Figura \ref{Ind_4} que al quitar la entrada $u(k-2)$ aumenta el indicador $I_1$ de la entrada $y(k-1)$ para compensar manteniendo casi al mismo valor las otras dos entradas. Por otro lado, no se eliminan más entradas dado que el ancho del histograma de la Figura \ref{hist_4}(b) comienza a aumentar de valor mostrando que más datos tienen errores grandes. Este error puede tener solución al utilizar un nuevo número de neuronas en la capa oculta, por lo tanto, en el siguiente ítem se procede nuevamente a encontrar el numero optimo de neuronas con 3 entradas.
-
+	Se puede notar de la Figura \ref{Ind_4} que al quitar la entrada $u(k-2)$ aumenta el indicador $I_1$ de la entrada $y(k-1)$ para compensar la falta del autoregresor $u(k-2)$ manteniendo casi al mismo valor las otras dos entradas. Por otro lado, no se eliminan más entradas dado que el ancho del histograma de la Figura \ref{hist_4}(b) comienza a aumentar de valor mostrando que más datos tienen errores grandes. Este error puede tener solución al utilizar un nuevo número de neuronas en la capa oculta, por lo tanto, en el siguiente ítem se procede nuevamente a encontrar el numero óptimo de neuronas con 3 entradas.
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
@@ -602,11 +781,12 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\end{figure}
 
 	\newpage
-	\item \textbf{Optimizan estructural 2:} Se busca el número de neuronas óptimo en un rango de $[2-41]$. El resultado de la curva RMSE se muestra en la Figura \ref{rmse_3} y el análisis de sensibilidad para cada neurona en las Figuras \ref{sensi_red_1_3} y \ref{sensi_red_2_3}.
+	\item \textbf{Optimizar estructura 2:} Se busca el número de neuronas óptimo en un rango de $[2-41]$. El resultado de la curva RMSE se muestra en la Figura \ref{rmse_3} y el análisis de sensibilidad para cada neurona en las Figuras \ref{sensi_red_1_3} y \ref{sensi_red_2_3}.
 
 	\begin{figure}[h!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		\captionsetup{justification=centering}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full_3.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
@@ -614,13 +794,64 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
-		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
+		\captionsetup{justification=centering}
+		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_1_3.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_1_3}
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
-		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
+		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_2_3.eps}
+		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_2_3}
 	\end{figure}
+\end{itemize}
+\newpage
+\clearpage
+\textbf{Validación final de la estructura:}
+Para finalizar con la identificación del modelo de predicción por red neuronal, se evalúan los parámetros de la red, MAE, MAPE, RMSE, MSE reagrupados en la Tabla \ref{red_model_tabla}.
+
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[RN vs datos reales]{
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_10.eps}}
+	\subfloat[Histograma del error]{
+	 \includegraphics[width=0.5\textwidth]{imag/redes/error_10.eps}}
+\caption{Resultados del modelo neuronal con 10 neuronas en la capa oculta en comparación con los datos reales.}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[MSE de entrenamiento]{
+		 \includegraphics[width=0.5\textwidth]{imag/redes/mse_train.eps}}
+	\subfloat[Regresión]{
+		 \includegraphics[width=0.5\textwidth]{imag/redes/datos_target.eps}}
+	\caption{Resultados de entrenamiento mostrando la regresión de cada conjunto.}
+\end{figure}
+\begin{table}[h!]
+	\centering
+	\caption{Métricas finales del modelo neuronal}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
+		RMSE     & 0.001681                  & 0.002599           & 0.002726               \\ \hline
+		MSE      & 0.009324                  & 0.01013            & 0.008915               \\ \hline
+		MAE      & 0.06538                   & 0.06852            & 0.06117                \\ \hline
+		MAPE     & 45.25                     & 60.20              & 35.55                  \\ \hline
+	\end{tabular}
+\end{table}
+\textbf{Modelo predictivo:}
+	Se comienza de la premisa que se conocen todos lo valores hasta $\hat{y}(k)$.
+\begin{itemize}
+	\item \textbf{A 1 paso:}
+	Para realizar un modelo predictivo a 1 paso (un paso más y aparte del generado en si por el modelo neuronal para pasar de $(k-1)$ a $(k)$), se tiene,
+	\begin{align}
+	\hat{y}(k+1) &= \sum_{i=1}^{N_h} rw_i \left( \tanh\left(\sum_{m=1}^{N_I} lw_{mi} x_{m}(k + 1) + b_i\right)\right) + c
+	\label{mat_red_j}
+	\end{align}
+	recordando la definición del vector $x$, se tiene, que $x(k+1) = [\hat{y}(k), y(k-1), u(k)]$. Existe una forma de determinar la señal de control futura $u(k)$ mediante modelo de control predictivo (MPC) \cite{norgaard_neural_2000}, sin embargo, dado que se tiene un número grande de datos y que la señal APBRS se mantiene constante por lo menos en 40 puntos por bits antes de cambiar, se dará por conocido el control $u(k)$ requerido hasta el total de datos menos $j$.
+	
+	
+	\item \textbf{A 8 paso:}
+	\item \textbf{A 16 paso:}
 \end{itemize}
 
 
