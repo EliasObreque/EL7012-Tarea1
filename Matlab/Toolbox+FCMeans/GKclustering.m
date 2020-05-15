@@ -143,14 +143,15 @@ for i = 1:c
     D(i,:) = eig_val;
 end
 
-result.data.U             = U;              % Grados de pertenencia         
-result.data.d             = distout;        % Distancias entre datos y centros
-result.cluster.v          = v;           % Centros de los clusters
-result.cluster.F          = F;          	% Matrices de covarianza difusa
-result.cluster.A          = A;         	% Matrices de normas inducidas
-result.cluster.V          = V;          	% Vectores propios de F
-result.cluster.D          = D;          	% Valores propios de F
-result.iter               = iter;            	% Número de iteraciones
-result.cost               = J;               	% Función de Costos
+result.data.U = U;              % Grados de pertenencia         
+result.data.d = distout;        % Distancias entre datos y centros
+result.cluster.v = v;           % Centros de los clusters
+result.cluster.F = F;          	% Matrices de covarianza difusa
+result.cluster.A = A;         	% Matrices de normas inducidas
+result.cluster.V = V;          	% Vectores propios de F
+result.cluster.D = D;          	% Valores propios de F
+result.iter = iter;            	% Número de iteraciones
+result.cost = J;               	% Función de Costos
+%keyboard
 end
 

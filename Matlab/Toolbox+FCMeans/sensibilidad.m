@@ -12,7 +12,7 @@ end
 yent=(yent-mean(yent))./std(yent);
 %se genera el modelo takagi sugeno con el set de entradas cadidatas
 %keyboard
-[model, result]=TakagiSugeno(yent,Xent,reglas,[1 2]);
+[model, result]=TakagiSugeno(yent,Xent,reglas,[1 2 2 ]);
 % se definen los parametros del modelo obtenido   
 a=model.a;% rxi
 b=model.b; %rxi
@@ -72,8 +72,11 @@ for i=1:length(Xent(1,:))
             suma2=suma2+w(j,r);
             suma3=suma3+w(j,r)*c(i,r,j);
             suma4=suma4+w(j,r)*yr(j,r);
-            chi(j,i)=(suma1*suma2-suma3*suma4)/((suma2)^2);
-           
+            if suma2^2>1e-10
+                chi(j,i)=(suma1*suma2-suma3*suma4)/((suma2)^2);
+            else
+                chi(j,i)=(suma1*suma2-suma3*suma4);
+            end
 %             if isnan (chi(j,i))==1
 %                 chi(j,i)=0;
 %             end
@@ -94,7 +97,7 @@ for  i=1:length(Xent(1,:))
     indice(i)=mean(chi(:,i))^2+std(chi(:,i))^2;
 end
 p=find(indice==min(indice));
-% %se grafican los indices obtenidos para compararse
+%se grafican los indices obtenidos para compararse
 % figure ()
 % bar(indice)
 % ylabel('Índice de sensibilidad')

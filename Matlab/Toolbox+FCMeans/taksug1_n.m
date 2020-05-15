@@ -26,9 +26,20 @@ for k = 1:N             % k: Datos
     
     for r = 1:Nr                % Recorro reglas
         w(r) = prod(exp(-0.5*(a(r,:).*(Z(k,:) - b(r,:))).^2));
-    end
+    end 
+%     mu=zeros(Nr,n);
+%     for r=1:Nr
+%      for i=1:n
+%        mu(r,i)=exp(-0.5*(a(r,i)*(Z(k,i)-b(r,i)))^2);  
+%        w(r)=w(r)*mu(r,i);
+%      end
+%     end
     
-	h(k,:) = w/sum(w);
+    if sum(w)==0
+        h(k,:) = w;
+    else
+        h(k,:) = w/sum(w);
+    end
     
     % Si h es NaN
     h_NaN = sum(isnan(h(k,:)));
@@ -46,7 +57,9 @@ end
 if opcion(1) == 1           % Consecuencias afines
     Z_fuzzy = [h,Z_fuzzy];
 end
-
+% size(Z_fuzzy)
+% 
+% rank(Z_fuzzy)
 %% Parámetros
 theta = Z_fuzzy\y;          % Parámetros
 
@@ -64,9 +77,6 @@ for j=1:Nr
         Z_cov(k,:,j)=h(k,j).*Z(k,:);
     end
     P(:,:,j)=inv(Z_cov(:,:,j)'*Z_cov(:,:,j));
-    % P es el término (phi*phi^T)^-1 ecuaciones 35 y 36 paper 
-    % Intervalos de confianza basdo en: I. Škrjanc, “Confidence interval of fuzzy models: An example using a waste-water treatment plant,” 
-    %Chemom. Intell. Lab. Syst., vol. 96, no. 2, pp. 182–187, Apr. 2009.       
 end
 
 %keyboard
