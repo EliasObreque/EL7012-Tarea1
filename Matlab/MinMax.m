@@ -6,11 +6,8 @@ function [g_u,g_l]=MinMax(X,Y,a,b,g)
 [Nd,n]=size(X); % Nde numero de puntos del conjunto de entrenamiento
 NR=size(a,1);       % NR is the number of rules of the TS model      
 
-% y_t=zeros(Ndv,1);
-% yu-t=zeros(Ndv,1);
-% yl=zeros(Ndv,1);
 
-for k=1:Nd  %Numeros del conjunto de entrenamiento
+for k=1:Nd  %Numeros del conjunto de
     
     % W(r) is the activation degree of the rule r
     % mu(r,i) is the activation degree of rule r, regressor i
@@ -37,9 +34,7 @@ beq = [];
 lb = [];
 ub = [];
 nonlcon = [];
-options = optimoptions('fminimax','AbsoluteMaxObjectiveCount',1);
-
-% fun = @(x)-[sin(x);cos(x)]; %fun -> -fun
+options = optimoptions('fminimax','AbsoluteMaxObjectiveCount',1,'MaxIterations',10);
 
 f = @(x)myfun(x,Wn,Y,X,Nd);
 g_u= fminimax(f,g,A,b,Aeq,beq,lb,ub,nonlcon,options);
