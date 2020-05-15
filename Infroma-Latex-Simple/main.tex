@@ -245,6 +245,57 @@ A continuación, en la Tabla \ref{t_NoLinealp1}, se presentan las métricas de b
 
 \subsection{Modelo difuso Takagi-Sugeno Tipo-1}
 
+Los modelos difusos de Takagi-Sugeno son estructuras basadas en la lógica difusa
+que permiten representar procesos con dinámicas no lineales mediante la combinación
+de información otorgada por modelos locales. Estos tipos de modelos pueden ser
+expresados a partir de una base de reglas del tipo “Si-Entonces”, de la forma
+
+\begin{equation}
+R_r: Si\:z_1(k)\:es\:MF_1^r\:y ... y \: z_p(k)\:es\:MF_p^r\:entonces \:y_r(z(k))=f_r(z(k))
+\label{e_TS}
+\end{equation}
+
+donde $R_r$ denota la r-ésima regla del modelo difuso, con $r\in{1,...,N_r}$ y $N_r$ el número
+total de reglas; $y_r(z(k))$ es su consecuencia o modelo local; $z(k)=[z_1(k),...,z_p(k)]$ es el
+vector de premisas en el tiempo $k$, las cuales por lo general son regresores de la entrada
+y/o salida del sistema; $f_r(z(k))$ es una función de las premisas del modelo; y $MF_i^r$ es el
+conjunto difuso (función de pertenencia) de la i-ésima premisa correspondientes a la r-
+ésima regla.
+
+Sea $\mu_r(z_i(k))$ el grado de pertenencia de la i-ésima premisa $z_i(k)$  al conjunto difuso
+$MF_i^r$, donde $\mu_r(z_i(k))\in[0,1]$, siendo 0 cuando la premisa no pertenece en ningún grado
+al conjunto $MF_i^r$, y siendo 1 si pertenece completamente a dicho conjunto. Luego, se
+define el grado de activación de la r-ésima regla, $w_r(z(k))$, como
+
+\begin{equation}
+w_r(z(k))=oper(\mu_r(z_1(k)),...,\mu_r(z_p(k)))
+\label{e_Act}
+\end{equation}
+
+donde $oper(.)$ puede ser el operador mínimo o el producto. Se denota $h_r(z(k))$ al grado
+de activación normalizado de la r-ésima regla, es decir,
+
+\begin{equation}
+h_r(z(k))=\frac{w_r(z(k))}{\sum_{l=1}^{N_r}w_l(z(k))}
+\label{e_ActNor}
+\end{equation}
+
+Ya definido el grado de activación de cada regla, la salida del modelo difuso,
+$y_fuzzy(k)$, está dada por una suma ponderada de cada modelo local por su grado de
+activación normalizado, de la forma
+
+\begin{equation}
+y_{fuzzy}(k)=\sum_{r=1}^{N_r}h_r(z(k))*y_r(z(k))
+\label{e_ModDifuso}
+\end{equation}
+
+Los modelos difusos TS son una clase de sistemas no
+lineales, cuya formulación requiere definir una serie de variables que no se conocen a
+priori, por lo que una estructura adecuada para representar un sistema es desconocida y,
+como consecuencia, un proceso de identificación debe ser llevado a cabo para
+determinar la estructura y cada uno de los parámetros del modelo.
+
+
 \begin{itemize}
 	\item \textbf{Selección de variables}:
 Para seleccionar las variables que actúan como entrada al sistema difuso, se realiza un análisis de sensibilidad. Suponiendo una estructura del modelo inicial difuso con 8 variables de entrada $y(k-1)$,..., $y(k-4)$, $u(k-1)$,...,$u(k-4)$. En la Fig. \ref{f_P1Sensibilidad} se muestran los índices de las sensibilidades del modelo inicial para las 8
@@ -257,7 +308,7 @@ variables de entrada, comprobándose que las variables las variables $y(k-4)$, $
 \label{f_P1Sensibilidad}
 \end{figure}
 
-La Tabla \ref{t_Error} indica el valor de la Raíz del Error Cuadrático Medio (RMSE) para los modelos con 8 y 4 regresores, y se puede notar que son muy semejantes, y por consiguiente se eselecciona el modelo más sencillo.
+La Tabla \ref{t_Error} indica el valor de la Raíz del Error Cuadrático Medio (RMSE) para los modelos con 8 y 4 regresores, y se puede notar que son muy semejantes, y por consiguiente se eselecciona el modelo más sencillo, que coincide con el número de regresores de la serie no lineal original.
 
 \begin{equation}
 RMSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
@@ -331,28 +382,29 @@ MAE=\frac{1}{N}\sum_{k=1}^{N}|y(k)-y_{fuzzy}(k)|
   \label{t_MD}%
 \end{table}%
 
-En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que see sta trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
+En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que se está trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
 
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[Salida]{
-		\includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
+		 \includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
 		\subfloat[$y(k-1)$]{
-		\includegraphics[width=0.5\textwidth]{imag/Clustery1}}
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery1}}
 		\subfloat[$y(k-2)$]{
-		\includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
         \subfloat[$u(k-1)$]{
-		\includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
 		\subfloat[$u(k-2)$]{
-		\includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
 		\caption{Clusters del Modelo Difuso Tipo 1.}
-		\label{f_Cluster1}
+		\label{f_Cluster}
 \end{figure}
 
-\item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes, de dimensión $[N_Rx\theta]$
-
+\item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes $\theta^T=[\theta_{1,1},...,\theta_{N_r,1},...,\theta_{1,n},...,\theta_{N_r,1}]$
+    
 \begin{equation}
+\theta^T=
 \left(
   \begin{array}{ccccc}
  -0.1625 &	0.99755	&-0.7451	&0.8430	 &0.2983\\
@@ -374,13 +426,13 @@ Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimaci
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[Salida del Modelo]{
-		\includegraphics[width=0.5\textwidth]{imag/P1SalidaZoom}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1SalidaZoom}}
 		\subfloat[Salida del modelo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Salida_p1Zoom}}\\
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p1Zoom}}\\
         \subfloat[Salida del modelo a 8 pasos]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Salida_p8Zoom}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p8Zoom}}
 		\subfloat[Salida del modelo a 16 pasos]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Salida_p16Zoom}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p16Zoom}}
 		\caption{Respuesta del Modelo Difuso Tipo 1.}
 		\label{f_SalidaModelo}
 \end{figure}
@@ -413,13 +465,13 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[Salida del modelo. Método de la Covarianza]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Covarianza}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza}}
 		\subfloat[Salida del modelo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p1}}\\
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p1}}\\
         \subfloat[Salida del modelo a 8 pasos]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p8}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p8}}
 		\subfloat[Salida del modelo a 16 pasos]{
-		\includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p16}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p16}}
 		\caption{Intervalo difuso. Método de la Covarianza.}
 		\label{f_P1Covarianza}
 \end{figure}
@@ -451,13 +503,13 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[Salida del modelo. Método de la Covarianza]{
-		\includegraphics[width=0.5\textwidth]{imag/P1MinMax}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax}}
 		\subfloat[Salida del modelo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
         \subfloat[Salida del modelo a 8 pasos]{
-		\includegraphics[width=0.5\textwidth]{imag/P1MinMax_p8}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p8}}
 		\subfloat[Salida del modelo a 16 pasos]{
-		\includegraphics[width=0.5\textwidth]{imag/P1MinMax_p16}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p16}}
 		\caption{Intervalo difuso. Método MinMax}
 		\label{f_P1MinMax}
 \end{figure}
@@ -499,7 +551,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\item \textbf{Definición de la estructura de la red:} Se propone una red con una capa oculta, función de activación \textit{tanh} en la salida de la capa oculta y algoritmo de aprendizaje Levenberg-Marquardt. Las variables de entradas son iguales al número de regresores (4 entradas) como muestra la Figura \ref{estred}. Por otro lado, el modelo matemático de la red, queda expresado como se muestra en la ecuacion \ref{mat_red}.
 	\begin{figure}
 		\centering
-		\includegraphics[width=8cm]{imag/redes/estructura.eps}
+		 \includegraphics[width=8cm]{imag/redes/estructura.eps}
 		\caption{Estructura de la red neuronal perceptrón}
 		\label{estred}
 	\end{figure}
@@ -536,17 +588,17 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{RMSE_full}
 	\end{figure}
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1}
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2}
 	\end{figure}
@@ -573,9 +625,9 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
 		\caption{Indice de sensibilidad para 4 y 3 entradas.}
 		\label{Ind_4}
 	\end{figure}
@@ -585,18 +637,18 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
 		\caption{Comparación entre la salida de la red neuronal y el valor real del conjunto de validación.}
 	\end{figure}
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
 		\caption{Histograma del error de cada conjunto de datos.}
 		\label{hist_4}
 	\end{figure}
@@ -606,7 +658,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
@@ -614,10 +666,10 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1_3}
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2_3}
 	\end{figure}

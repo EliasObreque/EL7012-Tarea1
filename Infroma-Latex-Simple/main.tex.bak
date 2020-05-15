@@ -257,7 +257,7 @@ variables de entrada, comprobándose que las variables las variables $y(k-4)$, $
 \label{f_P1Sensibilidad}
 \end{figure}
 
-La Tabla \ref{t_Error} indica el valor de la Raíz del Error Cuadrático Medio (RMSE) para los modelos con 8 y 4 regresores, y se puede notar que son muy semejantes, y por consiguiente se eselecciona el modelo más sencillo.
+La Tabla \ref{t_Error} indica el valor de la Raíz del Error Cuadrático Medio (RMSE) para los modelos con 8 y 4 regresores, y se puede notar que son muy semejantes, y por consiguiente se eselecciona el modelo más sencillo, que coincide con el número de regresores de la serie no lineal original.
 
 \begin{equation}
 RMSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
@@ -333,39 +333,22 @@ MAE=\frac{1}{N}\sum_{k=1}^{N}|y(k)-y_{fuzzy}(k)|
 
 En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que see sta trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
 
-%\begin{figure}
-%\centering
-%\caption{Clusters del Modelo Difuso Tipo 1.}
-%\includegraphics[width=7cm]{imag/ClusterSalida}\\
-%\includegraphics[width=7cm]{imag/Clustery1}
-%\includegraphics[width=7cm]{imag/Clustery2}\\
-%\includegraphics[width=7cm]{imag/Clusteru1}
-%\includegraphics[width=7cm]{imag/Clusteru2}\\
-%\label{f_Cluster}
-%\end{figure}
-
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[Salida]{
-		\includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}}
-		\subfloat[hola]{
-		\includegraphics[width=0.5\textwidth]{imag/Clustery1}}
+		 \includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
+		\subfloat[$y(k-1)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery1}}
+		\subfloat[$y(k-2)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
+        \subfloat[$u(k-1)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
+		\subfloat[$u(k-2)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
 		\caption{Clusters del Modelo Difuso Tipo 1.}
 		\label{f_Cluster1}
 \end{figure}
-
-	%\begin{figure}
-%		\centering
-%		\captionsetup{justification=centering}
-%		\subfloat[4 Entradas]{
-%		\includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}
-%		\subfloat[3 Entradas]{
-%		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
-%		\caption{Histograma del error de cada conjunto de datos.}
-%		\label{f_Cluster}
-%	\end{figure}
-
 
 \item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes, de dimensión $[N_Rx\theta]$
 
@@ -385,39 +368,23 @@ En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los
 \item \textbf{Predicciones a 1, 8, y 16
 pasos}:
 
-Las Fig. \ref{f_SalidaModelo}, \ref{f_SalidaModelop1}, \ref{f_SalidaModelop8} y \ref{f_SalidaModelop16} muestran la salidas del modelo difuso y  la estimación para 1, 8 y 16 pasos respectivamente.
+Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimación para 1, 8 y 16 pasos respectivamente.
 
 \begin{figure}
-\centering
-\caption{Salida del modelo.}
-%\includegraphics[width=7cm]{imag/P1Salida}
-\includegraphics[width=7cm]{imag/P1SalidaZoom}
-\label{f_SalidaModelo}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Salida del Modelo]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1SalidaZoom}}
+		\subfloat[Salida del modelo a 1 paso]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p1Zoom}}\\
+        \subfloat[Salida del modelo a 8 pasos]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p8Zoom}}
+		\subfloat[Salida del modelo a 16 pasos]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p16Zoom}}
+		\caption{Respuesta del Modelo Difuso Tipo 1.}
+		\label{f_SalidaModelo}
 \end{figure}
 
-\begin{figure}
-\centering
-\caption{Salida del modelo a 1 pasos.}
-%\includegraphics[width=7cm]{imag/P1Salida_p1}
-\includegraphics[width=7cm]{imag/P1Salida_p1Zoom}
-\label{f_SalidaModelop1}
-\end{figure}
-
-\begin{figure}
-\centering
-\caption{Salida del modelo a 8 pasos.}
-%\includegraphics[width=7cm]{imag/P1Salida_p8}
-\includegraphics[width=7cm]{imag/P1Salida_p8Zoom}
-\label{f_SalidaModelop8}
-\end{figure}
-
-\begin{figure}
-\centering
-\caption{Salida del modelo a 16 pasos.}
-%\includegraphics[width=7cm]{imag/P1Salida_p16}
-\includegraphics[width=7cm]{imag/P1Salida_p16Zoom}
-\label{f_SalidaModelop16}
-\end{figure}
 
 En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a amedida que aumenta el paso de la estimación el desempeño de del modelo difuso se deteriora.
 
@@ -443,32 +410,20 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 \item \textbf{Covarianza}:
 
 \begin{figure}
-\centering
-\caption{Salida del modelo. Método de la Covarianza}
-\includegraphics[width=7cm]{imag/P1Covarianza}
-\label{f_P1Covarianza}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Salida del modelo. Método de la Covarianza]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza}}
+		\subfloat[Salida del modelo a 1 paso]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p1}}\\
+        \subfloat[Salida del modelo a 8 pasos]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p8}}
+		\subfloat[Salida del modelo a 16 pasos]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p16}}
+		\caption{Intervalo difuso. Método de la Covarianza.}
+		\label{f_P1Covarianza}
 \end{figure}
 
-\begin{figure}
-\centering
-\caption{Salida del modelo a 1 pasos. Método de la Covarianza}
-\includegraphics[width=7cm]{imag/P1Covarianza_p1}
-\label{f_P1Covarianza_p1}
-\end{figure}
-
-\begin{figure}
-\centering
-\caption{Salida del modelo a 8 pasos. Método de la Covarianza}
-\includegraphics[width=7cm]{imag/P1Covarianza_p8}
-\label{f_P1Covarianza_p8}
-\end{figure}
-
-\begin{figure}
-\centering
-\caption{Salida del modelo a 16 pasos. Método de la Covarianza}
-\includegraphics[width=7cm]{imag/P1Covarianza_p16}
-\label{f_P1Covarianza_p16}
-\end{figure}
 
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
@@ -493,32 +448,23 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 \item \textbf{MinMax}:
 
 \begin{figure}
-\centering
-\caption{Salida del modelo. Método MinMax}
-\includegraphics[width=7cm]{imag/P1MinMax}
-\label{f_P1MinMax}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Salida del modelo. Método de la Covarianza]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax}}
+		\subfloat[Salida del modelo a 1 paso]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
+        \subfloat[Salida del modelo a 8 pasos]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p8}}
+		\subfloat[Salida del modelo a 16 pasos]{
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p16}}
+		\caption{Intervalo difuso. Método MinMax}
+		\label{f_P1MinMax}
 \end{figure}
 
-\begin{figure}
-\centering
-\caption{Salida del modelo a 1 pasos. Método MinMax}
-\includegraphics[width=7cm]{imag/P1MinMax_p1}
-\label{f_P1MinMax_p1}
-\end{figure}
 
-\begin{figure}
-\centering
-\caption{Salida del modelo a 8 pasos. Método MinMax}
-\includegraphics[width=7cm]{imag/P1MinMax_p8}
-\label{f_P1MinMax_p8}
-\end{figure}
 
-\begin{figure}
-\centering
-\caption{Salida del modelo a 16 pasos. Método MinMax}
-\includegraphics[width=7cm]{imag/P1MinMax_p16}
-\label{f_P1MinMax_p16}
-\end{figure}
+
 
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
@@ -553,7 +499,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\item \textbf{Definición de la estructura de la red:} Se propone una red con una capa oculta, función de activación \textit{tanh} en la salida de la capa oculta y algoritmo de aprendizaje Levenberg-Marquardt. Las variables de entradas son iguales al número de regresores (4 entradas) como muestra la Figura \ref{estred}. Por otro lado, el modelo matemático de la red, queda expresado como se muestra en la ecuacion \ref{mat_red}.
 	\begin{figure}
 		\centering
-		\includegraphics[width=8cm]{imag/redes/estructura.eps}
+		 \includegraphics[width=8cm]{imag/redes/estructura.eps}
 		\caption{Estructura de la red neuronal perceptrón}
 		\label{estred}
 	\end{figure}
@@ -590,17 +536,17 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{RMSE_full}
 	\end{figure}
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1}
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2}
 	\end{figure}
@@ -627,9 +573,9 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
 		\caption{Indice de sensibilidad para 4 y 3 entradas.}
 		\label{Ind_4}
 	\end{figure}
@@ -639,18 +585,18 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
 		\caption{Comparación entre la salida de la red neuronal y el valor real del conjunto de validación.}
 	\end{figure}
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
 		\subfloat[3 Entradas]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
 		\caption{Histograma del error de cada conjunto de datos.}
 		\label{hist_4}
 	\end{figure}
@@ -660,7 +606,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
@@ -668,10 +614,10 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1_3}
-		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2_3}
 	\end{figure}

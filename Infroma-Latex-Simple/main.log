@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.4.18)  15 MAY 2020 01:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.4.18)  15 MAY 2020 11:17
 entering extended mode
 **"C:/Users/maibe/Documents/UCHILE/Ramos/EL7012 Control Inteligente de Sistemas
 /Tareas/EL7012-Tarea1/Infroma-Latex-Simple/main.tex"
@@ -535,181 +535,184 @@ Underfull \hbox (badness 4913) in paragraph at lines 232--232
  []
 
 [5]
-<imag/P1Sensibilidad.png, id=37, 526.96875pt x 395.22656pt>
+Overfull \hbox (5.92224pt too wide) in paragraph at lines 283--286
+[]\OT1/cmr/m/n/12 Ya de-fi-ni-do el gra-do de ac-ti-va-cion de ca-da re-gla, l
+a sa-li-da del mo-de-lo di-fu-so, $\OML/cmm/m/it/12 y[]uzzy\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 k\OT1/cmr/m/n/12 )$,
+ []
+
+[6]
+<imag/P1Sensibilidad.png, id=41, 526.96875pt x 395.22656pt>
 File: imag/P1Sensibilidad.png Graphic file (type png)
 <use imag/P1Sensibilidad.png>
-Package pdftex.def Info: imag/P1Sensibilidad.png  used on input line 255.
+Package pdftex.def Info: imag/P1Sensibilidad.png  used on input line 306.
 (pdftex.def)             Requested size: 284.5428pt x 199.1687pt.
- [6 <./imag/P1Sensibilidad.png (PNG copy)>]
-
-LaTeX Warning: Reference `f_Cluster' on page 7 undefined on input line 293.
-
-<imag/P1reglas12.png, id=41, 526.96875pt x 395.22656pt>
+ [7 <./imag/P1Sensibilidad.png (PNG copy)>]
+<imag/P1reglas12.png, id=45, 526.96875pt x 395.22656pt>
 File: imag/P1reglas12.png Graphic file (type png)
 <use imag/P1reglas12.png>
-Package pdftex.def Info: imag/P1reglas12.png  used on input line 297.
+Package pdftex.def Info: imag/P1reglas12.png  used on input line 348.
 (pdftex.def)             Requested size: 284.5428pt x 199.1687pt.
-[7]
-<imag/ClusterSalida.png, id=45, 526.96875pt x 395.22656pt>
+ [8] [9 <./imag/P1reglas12.png (PNG copy)>]
+<imag/ClusterSalida.png, id=52, 526.96875pt x 395.22656pt>
 File: imag/ClusterSalida.png Graphic file (type png)
 <use imag/ClusterSalida.png>
-Package pdftex.def Info: imag/ClusterSalida.png  used on input line 340.
+Package pdftex.def Info: imag/ClusterSalida.png  used on input line 391.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/Clustery1.png, id=46, 526.96875pt x 395.22656pt>
+<imag/Clustery1.png, id=53, 526.96875pt x 395.22656pt>
 File: imag/Clustery1.png Graphic file (type png)
 <use imag/Clustery1.png>
-Package pdftex.def Info: imag/Clustery1.png  used on input line 342.
+Package pdftex.def Info: imag/Clustery1.png  used on input line 393.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/Clustery2.png, id=47, 526.96875pt x 395.22656pt>
+<imag/Clustery2.png, id=54, 526.96875pt x 395.22656pt>
 File: imag/Clustery2.png Graphic file (type png)
 <use imag/Clustery2.png>
-Package pdftex.def Info: imag/Clustery2.png  used on input line 344.
+Package pdftex.def Info: imag/Clustery2.png  used on input line 395.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 342--344
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 393--395
  [][][] 
  []
 
-<imag/Clusteru1.png, id=48, 526.96875pt x 395.22656pt>
+<imag/Clusteru1.png, id=55, 526.96875pt x 395.22656pt>
 File: imag/Clusteru1.png Graphic file (type png)
 <use imag/Clusteru1.png>
-Package pdftex.def Info: imag/Clusteru1.png  used on input line 346.
+Package pdftex.def Info: imag/Clusteru1.png  used on input line 397.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/Clusteru2.png, id=49, 526.96875pt x 395.22656pt>
+<imag/Clusteru2.png, id=56, 526.96875pt x 395.22656pt>
 File: imag/Clusteru2.png Graphic file (type png)
 <use imag/Clusteru2.png>
-Package pdftex.def Info: imag/Clusteru2.png  used on input line 348.
+Package pdftex.def Info: imag/Clusteru2.png  used on input line 399.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 346--349
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 397--400
  [][][] 
  []
 
-[8 <./imag/P1reglas12.png (PNG copy)>] [9 <./imag/ClusterSalida.png (PNG copy)>
- <./imag/Clustery1.png (PNG copy)> <./imag/Clustery2.png (PNG copy)> <./imag/Cl
-usteru1.png (PNG copy)> <./imag/Clusteru2.png (PNG copy)>]
-<imag/P1SalidaZoom.png, id=58, 526.96875pt x 395.22656pt>
+<imag/P1SalidaZoom.png, id=57, 526.96875pt x 395.22656pt>
 File: imag/P1SalidaZoom.png Graphic file (type png)
 <use imag/P1SalidaZoom.png>
-Package pdftex.def Info: imag/P1SalidaZoom.png  used on input line 377.
+Package pdftex.def Info: imag/P1SalidaZoom.png  used on input line 429.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/P1Salida_p1Zoom.png, id=59, 526.96875pt x 395.22656pt>
+<imag/P1Salida_p1Zoom.png, id=58, 526.96875pt x 395.22656pt>
 File: imag/P1Salida_p1Zoom.png Graphic file (type png)
 <use imag/P1Salida_p1Zoom.png>
-Package pdftex.def Info: imag/P1Salida_p1Zoom.png  used on input line 379.
+Package pdftex.def Info: imag/P1Salida_p1Zoom.png  used on input line 431.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 377--379
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 429--431
  [][][] 
  []
 
-<imag/P1Salida_p8Zoom.png, id=60, 526.96875pt x 395.22656pt>
+<imag/P1Salida_p8Zoom.png, id=59, 526.96875pt x 395.22656pt>
 File: imag/P1Salida_p8Zoom.png Graphic file (type png)
 <use imag/P1Salida_p8Zoom.png>
-Package pdftex.def Info: imag/P1Salida_p8Zoom.png  used on input line 381.
+Package pdftex.def Info: imag/P1Salida_p8Zoom.png  used on input line 433.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/P1Salida_p16Zoom.png, id=61, 526.96875pt x 395.22656pt>
+<imag/P1Salida_p16Zoom.png, id=60, 526.96875pt x 395.22656pt>
 File: imag/P1Salida_p16Zoom.png Graphic file (type png)
 <use imag/P1Salida_p16Zoom.png>
-Package pdftex.def Info: imag/P1Salida_p16Zoom.png  used on input line 383.
+Package pdftex.def Info: imag/P1Salida_p16Zoom.png  used on input line 435.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 381--384
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 433--436
  [][][] 
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 398--398
+Underfull \hbox (badness 4595) in paragraph at lines 450--450
 []|\OT1/cmr/m/n/12 Prediccion a
  []
 
-<imag/P1Covarianza.png, id=62, 526.96875pt x 395.22656pt>
+<imag/P1Covarianza.png, id=61, 526.96875pt x 395.22656pt>
 File: imag/P1Covarianza.png Graphic file (type png)
 <use imag/P1Covarianza.png>
-Package pdftex.def Info: imag/P1Covarianza.png  used on input line 416.
+Package pdftex.def Info: imag/P1Covarianza.png  used on input line 468.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/P1Covarianza_p1.png, id=63, 526.96875pt x 395.22656pt>
+<imag/P1Covarianza_p1.png, id=62, 526.96875pt x 395.22656pt>
 File: imag/P1Covarianza_p1.png Graphic file (type png)
 <use imag/P1Covarianza_p1.png>
-Package pdftex.def Info: imag/P1Covarianza_p1.png  used on input line 418.
+Package pdftex.def Info: imag/P1Covarianza_p1.png  used on input line 470.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 416--418
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 468--470
  [][][] 
  []
 
-<imag/P1Covarianza_p8.png, id=64, 526.96875pt x 395.22656pt>
+<imag/P1Covarianza_p8.png, id=63, 526.96875pt x 395.22656pt>
 File: imag/P1Covarianza_p8.png Graphic file (type png)
 <use imag/P1Covarianza_p8.png>
-Package pdftex.def Info: imag/P1Covarianza_p8.png  used on input line 420.
+Package pdftex.def Info: imag/P1Covarianza_p8.png  used on input line 472.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/P1Covarianza_p16.png, id=65, 526.96875pt x 395.22656pt>
+<imag/P1Covarianza_p16.png, id=64, 526.96875pt x 395.22656pt>
 File: imag/P1Covarianza_p16.png Graphic file (type png)
 <use imag/P1Covarianza_p16.png>
-Package pdftex.def Info: imag/P1Covarianza_p16.png  used on input line 422.
+Package pdftex.def Info: imag/P1Covarianza_p16.png  used on input line 474.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 420--423
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 472--475
  [][][] 
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 436--436
+Underfull \hbox (badness 4595) in paragraph at lines 488--488
 []|\OT1/cmr/m/n/12 Prediccion a
  []
 
-<imag/P1MinMax.png, id=66, 526.96875pt x 395.22656pt>
+<imag/P1MinMax.png, id=65, 526.96875pt x 395.22656pt>
 File: imag/P1MinMax.png Graphic file (type png)
 <use imag/P1MinMax.png>
-Package pdftex.def Info: imag/P1MinMax.png  used on input line 454.
+Package pdftex.def Info: imag/P1MinMax.png  used on input line 506.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/P1MinMax_p1.png, id=67, 526.96875pt x 395.22656pt>
+<imag/P1MinMax_p1.png, id=66, 526.96875pt x 395.22656pt>
 File: imag/P1MinMax_p1.png Graphic file (type png)
 <use imag/P1MinMax_p1.png>
-Package pdftex.def Info: imag/P1MinMax_p1.png  used on input line 456.
+Package pdftex.def Info: imag/P1MinMax_p1.png  used on input line 508.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 454--456
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 506--508
  [][][] 
  []
 
-<imag/P1MinMax_p8.png, id=68, 526.96875pt x 395.22656pt>
+<imag/P1MinMax_p8.png, id=67, 526.96875pt x 395.22656pt>
 File: imag/P1MinMax_p8.png Graphic file (type png)
 <use imag/P1MinMax_p8.png>
-Package pdftex.def Info: imag/P1MinMax_p8.png  used on input line 458.
+Package pdftex.def Info: imag/P1MinMax_p8.png  used on input line 510.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
-<imag/P1MinMax_p16.png, id=69, 526.96875pt x 395.22656pt>
+<imag/P1MinMax_p16.png, id=68, 526.96875pt x 395.22656pt>
 File: imag/P1MinMax_p16.png Graphic file (type png)
 <use imag/P1MinMax_p16.png>
-Package pdftex.def Info: imag/P1MinMax_p16.png  used on input line 460.
+Package pdftex.def Info: imag/P1MinMax_p16.png  used on input line 512.
 (pdftex.def)             Requested size: 213.71576pt x 160.289pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 458--461
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 510--513
  [][][] 
  []
 
 
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 477--477
+Overfull \hbox (6.04268pt too wide) in paragraph at lines 529--529
 []|\OT1/cmr/m/n/12 Prediccion
  []
 
 
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 477--477
+Overfull \hbox (6.04268pt too wide) in paragraph at lines 529--529
 []|\OT1/cmr/m/n/12 Prediccion
  []
 
 
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 477--477
+Overfull \hbox (6.04268pt too wide) in paragraph at lines 529--529
 []|\OT1/cmr/m/n/12 Prediccion
  []
 
-[10] [11 <./imag/P1SalidaZoom.png (PNG copy)> <./imag/P1Salida_p1Zoom.png (PNG 
-copy)> <./imag/P1Salida_p8Zoom.png (PNG copy)> <./imag/P1Salida_p16Zoom.png (PN
-G copy)>] [12 <./imag/P1Covarianza.png (PNG copy)> <./imag/P1Covarianza_p1.png 
-(PNG copy)> <./imag/P1Covarianza_p8.png (PNG copy)> <./imag/P1Covarianza_p16.pn
-g (PNG copy)>] [13 <./imag/P1MinMax.png (PNG copy)> <./imag/P1MinMax_p1.png (PN
-G copy)> <./imag/P1MinMax_p8.png (PNG copy)> <./imag/P1MinMax_p16.png (PNG copy
-)>]
+[10] [11 <./imag/ClusterSalida.png (PNG copy)> <./imag/Clustery1.png (PNG copy)
+> <./imag/Clustery2.png (PNG copy)> <./imag/Clusteru1.png (PNG copy)> <./imag/C
+lusteru2.png (PNG copy)>] [12 <./imag/P1SalidaZoom.png (PNG copy)> <./imag/P1Sa
+lida_p1Zoom.png (PNG copy)> <./imag/P1Salida_p8Zoom.png (PNG copy)> <./imag/P1S
+alida_p16Zoom.png (PNG copy)>] [13 <./imag/P1Covarianza.png (PNG copy)> <./imag
+/P1Covarianza_p1.png (PNG copy)> <./imag/P1Covarianza_p8.png (PNG copy)> <./ima
+g/P1Covarianza_p16.png (PNG copy)>] [14 <./imag/P1MinMax.png (PNG copy)> <./ima
+g/P1MinMax_p1.png (PNG copy)> <./imag/P1MinMax_p8.png (PNG copy)> <./imag/P1Min
+Max_p16.png (PNG copy)>]
 Package epstopdf Info: Source file: <imag/redes/estructura.eps>
 (epstopdf)                    date: 2020-05-13 14:52:38
 (epstopdf)                    size: 50285 bytes
@@ -719,19 +722,19 @@ Package epstopdf Info: Source file: <imag/redes/estructura.eps>
 (epstopdf)                    size: 34911 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/estructura-eps-c
 onverted-to.pdf imag/redes/estructura.eps>
-(epstopdf)             \includegraphics on input line 502.
+(epstopdf)             \includegraphics on input line 554.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/estructura-eps-converted-to.pdf): P
 DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/estructura-eps-converted-to.pdf, id=83, 485.815pt x 487.8225pt>
+<imag/redes/estructura-eps-converted-to.pdf, id=87, 485.815pt x 487.8225pt>
 File: imag/redes/estructura-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/estructura-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/estructura-eps-converted-to.pdf  used on in
-put line 502.
+put line 554.
 (pdftex.def)             Requested size: 227.62204pt x 228.56201pt.
-[14 <./imag/redes/estructura-eps-converted-to.pdf>]
+[15 <./imag/redes/estructura-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/redes/RMSE_full.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
 (epstopdf)                    size: 29312 bytes
@@ -741,19 +744,19 @@ Package epstopdf Info: Source file: <imag/redes/RMSE_full.eps>
 (epstopdf)                    size: 9487 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/RMSE_full-eps-co
 nverted-to.pdf imag/redes/RMSE_full.eps>
-(epstopdf)             \includegraphics on input line 539.
+(epstopdf)             \includegraphics on input line 591.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/RMSE_full-eps-converted-to.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/RMSE_full-eps-converted-to.pdf, id=95, 511.9125pt x 285.065pt>
+<imag/redes/RMSE_full-eps-converted-to.pdf, id=98, 511.9125pt x 285.065pt>
 File: imag/redes/RMSE_full-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/RMSE_full-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/RMSE_full-eps-converted-to.pdf  used on inp
-ut line 539.
+ut line 591.
 (pdftex.def)             Requested size: 341.94652pt x 190.41838pt.
-[15] [16 <./imag/redes/RMSE_full-eps-converted-to.pdf>]
+[16] [17 <./imag/redes/RMSE_full-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_1.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
 (epstopdf)                    size: 81826 bytes
@@ -763,20 +766,20 @@ ed-to.pdf>
 (epstopdf)                    size: 9680 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_1-eps-converted-to.pdf imag/redes/sensibilidad_full_1.eps>
-(epstopdf)             \includegraphics on input line 546.
+(epstopdf)             \includegraphics on input line 598.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_1-eps-converted-t
 o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
 ed
-<imag/redes/sensibilidad_full_1-eps-converted-to.pdf, id=109, 421.575pt x 345.2
+<imag/redes/sensibilidad_full_1-eps-converted-to.pdf, id=113, 421.575pt x 345.2
 9pt>
 File: imag/redes/sensibilidad_full_1-eps-converted-to.pdf Graphic file (type pd
 f)
 <use imag/redes/sensibilidad_full_1-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/sensibilidad_full_1-eps-converted-to.pdf  u
-sed on input line 546.
+sed on input line 598.
 (pdftex.def)             Requested size: 341.94652pt x 280.07324pt.
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_2.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
@@ -787,27 +790,27 @@ ed-to.pdf>
 (epstopdf)                    size: 9682 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_2-eps-converted-to.pdf imag/redes/sensibilidad_full_2.eps>
-(epstopdf)             \includegraphics on input line 549.
+(epstopdf)             \includegraphics on input line 601.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_2-eps-converted-t
 o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
 ed
-<imag/redes/sensibilidad_full_2-eps-converted-to.pdf, id=110, 421.575pt x 345.2
+<imag/redes/sensibilidad_full_2-eps-converted-to.pdf, id=114, 421.575pt x 345.2
 9pt>
 File: imag/redes/sensibilidad_full_2-eps-converted-to.pdf Graphic file (type pd
 f)
 <use imag/redes/sensibilidad_full_2-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/sensibilidad_full_2-eps-converted-to.pdf  u
-sed on input line 549.
+sed on input line 601.
 (pdftex.def)             Requested size: 341.94652pt x 280.07324pt.
 
-LaTeX Warning: Float too large for page by 20.32079pt on input line 552.
+LaTeX Warning: Float too large for page by 20.32079pt on input line 604.
 
-[17 <./imag/redes/sensibilidad_full_1-eps-converted-to.pdf> <./imag/redes/sensi
+[18 <./imag/redes/sensibilidad_full_1-eps-converted-to.pdf> <./imag/redes/sensi
 bilidad_full_2-eps-converted-to.pdf>]
-Overfull \hbox (3.65758pt too wide) in paragraph at lines 563--570
+Overfull \hbox (3.65758pt too wide) in paragraph at lines 615--622
  [][] 
  []
 
@@ -819,17 +822,17 @@ Package epstopdf Info: Source file: <imag/redes/I_4.eps>
 (epstopdf)                    size: 6013 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/I_4-eps-converte
 d-to.pdf imag/redes/I_4.eps>
-(epstopdf)             \includegraphics on input line 576.
+(epstopdf)             \includegraphics on input line 628.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/I_4-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/I_4-eps-converted-to.pdf, id=125, 421.575pt x 316.18124pt>
+<imag/redes/I_4-eps-converted-to.pdf, id=128, 421.575pt x 316.18124pt>
 File: imag/redes/I_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/I_4-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/I_4-eps-converted-to.pdf  used on input lin
-e 576.
+e 628.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/I_3.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
@@ -839,20 +842,20 @@ Package epstopdf Info: Source file: <imag/redes/I_3.eps>
 (epstopdf)                    size: 5995 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/I_3-eps-converte
 d-to.pdf imag/redes/I_3.eps>
-(epstopdf)             \includegraphics on input line 578.
+(epstopdf)             \includegraphics on input line 630.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/I_3-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/I_3-eps-converted-to.pdf, id=126, 421.575pt x 316.18124pt>
+<imag/redes/I_3-eps-converted-to.pdf, id=129, 421.575pt x 316.18124pt>
 File: imag/redes/I_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/I_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/I_3-eps-converted-to.pdf  used on input lin
-e 578.
+e 630.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 576--579
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 628--631
  [][][] 
  []
 
@@ -864,17 +867,17 @@ Package epstopdf Info: Source file: <imag/redes/y_red_4.eps>
 (epstopdf)                    size: 9202 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_red_4-eps-conv
 erted-to.pdf imag/redes/y_red_4.eps>
-(epstopdf)             \includegraphics on input line 588.
+(epstopdf)             \includegraphics on input line 640.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/y_red_4-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_red_4-eps-converted-to.pdf, id=127, 421.575pt x 316.18124pt>
+<imag/redes/y_red_4-eps-converted-to.pdf, id=130, 421.575pt x 316.18124pt>
 File: imag/redes/y_red_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_red_4-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_red_4-eps-converted-to.pdf  used on input
- line 588.
+ line 640.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/y_red_3.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
@@ -884,20 +887,20 @@ Package epstopdf Info: Source file: <imag/redes/y_red_3.eps>
 (epstopdf)                    size: 9085 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_red_3-eps-conv
 erted-to.pdf imag/redes/y_red_3.eps>
-(epstopdf)             \includegraphics on input line 590.
+(epstopdf)             \includegraphics on input line 642.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/y_red_3-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_red_3-eps-converted-to.pdf, id=128, 421.575pt x 316.18124pt>
+<imag/redes/y_red_3-eps-converted-to.pdf, id=131, 421.575pt x 316.18124pt>
 File: imag/redes/y_red_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_red_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_red_3-eps-converted-to.pdf  used on input
- line 590.
+ line 642.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 588--591
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 640--643
  [][][] 
  []
 
@@ -909,17 +912,17 @@ Package epstopdf Info: Source file: <imag/redes/error_4.eps>
 (epstopdf)                    size: 10294 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_4-eps-conv
 erted-to.pdf imag/redes/error_4.eps>
-(epstopdf)             \includegraphics on input line 597.
+(epstopdf)             \includegraphics on input line 649.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/error_4-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/error_4-eps-converted-to.pdf, id=129, 421.575pt x 316.18124pt>
+<imag/redes/error_4-eps-converted-to.pdf, id=132, 421.575pt x 316.18124pt>
 File: imag/redes/error_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_4-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/error_4-eps-converted-to.pdf  used on input
- line 597.
+ line 649.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/error_3.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
@@ -929,28 +932,28 @@ Package epstopdf Info: Source file: <imag/redes/error_3.eps>
 (epstopdf)                    size: 10333 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_3-eps-conv
 erted-to.pdf imag/redes/error_3.eps>
-(epstopdf)             \includegraphics on input line 599.
+(epstopdf)             \includegraphics on input line 651.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/error_3-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/error_3-eps-converted-to.pdf, id=130, 421.575pt x 316.18124pt>
+<imag/redes/error_3-eps-converted-to.pdf, id=133, 421.575pt x 316.18124pt>
 File: imag/redes/error_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/error_3-eps-converted-to.pdf  used on input
- line 599.
+ line 651.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 597--600
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 649--652
  [][][] 
  []
 
-[18
+[19
 
 
  <./imag/redes/I_4-eps-converted-to.pdf> <./imag/redes/I_3-eps-converted-to.pdf
->] [19 <./imag/redes/y_red_4-eps-converted-to.pdf> <./imag/redes/y_red_3-eps-co
+>] [20 <./imag/redes/y_red_4-eps-converted-to.pdf> <./imag/redes/y_red_3-eps-co
 nverted-to.pdf> <./imag/redes/error_4-eps-converted-to.pdf> <./imag/redes/error
 _3-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/redes/RMSE_full.eps>
@@ -962,14 +965,14 @@ Package epstopdf Info: Source file: <imag/redes/RMSE_full.eps>
 (epstopdf)                    size: 9487 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/RMSE_full-eps-co
 nverted-to.pdf imag/redes/RMSE_full.eps>
-(epstopdf)             \includegraphics on input line 609.
+(epstopdf)             \includegraphics on input line 661.
 Package epstopdf Info: Output file is already uptodate.
 File: imag/redes/RMSE_full-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/RMSE_full-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/RMSE_full-eps-converted-to.pdf  used on inp
-ut line 609.
+ut line 661.
 (pdftex.def)             Requested size: 341.94652pt x 190.41838pt.
- [20]
+ [21]
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_1_3.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
 (epstopdf)                    size: 78676 bytes
@@ -979,20 +982,20 @@ rted-to.pdf>
 (epstopdf)                    size: 9437 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_1_3-eps-converted-to.pdf imag/redes/sensibilidad_full_1_3.eps>
-(epstopdf)             \includegraphics on input line 617.
+(epstopdf)             \includegraphics on input line 669.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_1_3-eps-converted
 -to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
 owed
-<imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf, id=176, 421.575pt x 365
+<imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf, id=179, 421.575pt x 365
 .365pt>
 File: imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf 
- used on input line 617.
+ used on input line 669.
 (pdftex.def)             Requested size: 341.94652pt x 296.35658pt.
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_2_3.eps>
 (epstopdf)                    date: 2020-05-14 00:57:59
@@ -1003,47 +1006,44 @@ rted-to.pdf>
 (epstopdf)                    size: 9417 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_2_3-eps-converted-to.pdf imag/redes/sensibilidad_full_2_3.eps>
-(epstopdf)             \includegraphics on input line 620.
+(epstopdf)             \includegraphics on input line 672.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_2_3-eps-converted
 -to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
 owed
-<imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf, id=177, 421.575pt x 365
+<imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf, id=180, 421.575pt x 365
 .365pt>
 File: imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf 
- used on input line 620.
+ used on input line 672.
 (pdftex.def)             Requested size: 341.94652pt x 296.35658pt.
 
-LaTeX Warning: Float too large for page by 52.88747pt on input line 623.
+LaTeX Warning: Float too large for page by 52.88747pt on input line 675.
 
-[21 <./imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf> <./imag/redes/sen
-sibilidad_full_2_3-eps-converted-to.pdf>] [22
+[22 <./imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf> <./imag/redes/sen
+sibilidad_full_2_3-eps-converted-to.pdf>] [23
 
 
-] [23] (main.bbl) [24] (main.aux
+] [24] (main.bbl) [25] (main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 )
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8027 strings out of 480934
- 118697 string characters out of 2909682
- 395685 words of memory out of 3000000
- 23699 multiletter control sequences out of 15000+200000
+ 8034 strings out of 480934
+ 118781 string characters out of 2909682
+ 397722 words of memory out of 3000000
+ 23706 multiletter control sequences out of 15000+200000
  549206 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,49p,1264b,559s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,14n,49p,1264b,556s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiK
@@ -1058,9 +1058,9 @@ Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (26 pages, 1105497 bytes).
+Output written on main.pdf (27 pages, 1110606 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
+ 251 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
