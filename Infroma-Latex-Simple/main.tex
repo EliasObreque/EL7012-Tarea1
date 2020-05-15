@@ -130,7 +130,7 @@ Como usted sabe existen varias técnicas que se pueden emplear para la modelaci�
 
 En esta estapa es necesario generar datos que representen la dinámica del sistema en la mayor cantidad de rangos de operación posibles, ya que el modelo obtenido tiene un ancho de banda acotado, y por lo tanto las dinámicas definidas por fuera de dicha banda podrían no ser representadas adecuadamente. Para lo cual se debe diseñar una entrada $u(k)$ que excite a la planta en el rango de frecuencias en que se encuentran los fenómenos de interés.
 
-En este trabajo se propone el uso de señales binarias pseudo aleatorias (Pseudo Random Binary Signal, PRBS),  ya  que  es  una  de  las  señales  más  utilizadas  en  identificación  de sistemas. Esta es una señal periódica, determinística y que  posee  principalmente  propiedades  similares  al  ruido  blanco  (contenido  muy  rico  en frecuencias)
+En este trabajo se propone el uso de señales binarias pseudo aleatorias (Pseudo Random Binary Signal, PRBS),  ya  que  es  una  de  las  señales  más  utilizadas  en  identificación  de sistemas. Esta es una señal periódica, determinística y que  posee  principalmente  propiedades  similares  al  ruido  blanco  (contenido  muy  rico  en frecuencias) \citep{nelles2013nonlinear}.
 
 Para general la señal se suponen los siguientes parámetros de interés $f_{min}=0.2 Hz$, $f_{max}=1 Hz$ y tiempo de muestreo $T_S=0.01$. Con los parámetros anteriores, y utilizando la expresión
 
@@ -293,7 +293,7 @@ Los modelos difusos TS son una clase de sistemas no
 lineales, cuya formulación requiere definir una serie de variables que no se conocen a
 priori, por lo que una estructura adecuada para representar un sistema es desconocida y,
 como consecuencia, un proceso de identificación debe ser llevado a cabo para
-determinar la estructura y cada uno de los parámetros del modelo.
+determinar la estructura y cada uno de los parámetros del modelo \citep{alvarez_metodologiidentificacion_nodate}.
 
 
 \begin{itemize}
@@ -350,6 +350,66 @@ aceptables bajo un estándar de rendimiento definido preliminarmente. Por lo ant
 \label{f_P1reglas11}
 \end{figure}
 
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Salida]{
+		 \includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
+		\subfloat[$y(k-1)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery1}}
+		\subfloat[$y(k-2)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
+        \subfloat[$u(k-1)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
+		\subfloat[$u(k-2)$]{
+		 \includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
+		\caption{Clusters del Modelo Difuso Tipo 1.}
+		\label{f_Cluster}
+\end{figure}
+
+
+Una vez realizado el clustering es posible proyectar las agrupaciones en el espacio de
+entrada y ajustar funciones paramétricas para describir los conjuntos difusos $MF_i^r$. En
+particular, se consideraron funciones de pertenencia gaussianas dadas por
+
+\begin{equation}
+MF_r^i(z_i(k))=exp(-0.5(a_{r,i}*(z_i(k)-b_{r,i}))^2)
+\label{e_Gaussiana}
+\end{equation}
+
+donde $MF_r^i(z_i(k))$ es la función de pertenencia de la i-ésima premisa $z_i(k)$ al r-ésimo
+cluster, $a_{r,i}$ es el inverso de la desviación estándar de los datos ajustados por la
+gaussiana, $b_{r,i}$ representa su media. Para este modelo difuso se tiene:
+
+
+\begin{equation}
+a=
+\left(
+  \begin{array}{cccc}
+ 1.9799	&1.4049	& 4.31509&	4.9400\\
+1.8300&	1.4483	& 4.6810&	6.1218\\
+2.4547	&1.8383	& 5.2820&	8.5600\\
+2.0375	&1.773	& 4.5619&	4.7213\\
+1.6123&	1.4681&	4.9096	&5.0399
+  \end{array}
+\right)
+\label{e_ParA}
+\end{equation}
+
+\begin{equation}
+b=
+\left(
+  \begin{array}{cccc}
+0.6742&	0.4811&	0.4425&	0.4375\\
+-1.4657&	-1.4022&	-0.7580&	-0.7632\\
+2.1665&	2.1262&	0.8501&	0.86403\\
+-0.43602&	-0.5047&	-0.4782&	-0.4821\\
+-0.0353&	0.2984&	0.0744&	0.07290
+  \end{array}
+\right)
+\label{e_ParB}
+\end{equation}
+
 Además del RMSE, se pueden definir el Error Porcentual Absoluto Medio (MAPE, Mean Absolute Percentage Error) y Error Absoluto Medio (MAE, Mean Absolute Error) para comprobar el modelo difuso obtenido.
 
 \begin{equation}
@@ -384,25 +444,10 @@ MAE=\frac{1}{N}\sum_{k=1}^{N}|y(k)-y_{fuzzy}(k)|
 
 En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que se está trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
 
-\begin{figure}
-		\centering
-		\captionsetup{justification=centering}
-		\subfloat[Salida]{
-		 \includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}\\
-		\subfloat[$y(k-1)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clustery1}}
-		\subfloat[$y(k-2)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clustery2}}\\
-        \subfloat[$u(k-1)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clusteru1}}
-		\subfloat[$u(k-2)$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Clusteru2}}
-		\caption{Clusters del Modelo Difuso Tipo 1.}
-		\label{f_Cluster}
-\end{figure}
+
 
 \item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes $\theta^T=[\theta_{1,1},...,\theta_{N_r,1},...,\theta_{1,n},...,\theta_{N_r,1}]$
-    
+
 \begin{equation}
 \theta^T=
 \left(
@@ -417,8 +462,10 @@ En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los
 \label{e_ParaModDif}
 \end{equation}
 
-\item \textbf{Predicciones a 1, 8, y 16
-pasos}:
+\end{itemize}
+
+\subsubsection{Predicciones a 1, 8, y 16
+pasos}
 
 Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimación para 1, 8 y 16 pasos respectivamente.
 
@@ -438,7 +485,7 @@ Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimaci
 \end{figure}
 
 
-En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a amedida que aumenta el paso de la estimación el desempeño de del modelo difuso se deteriora.
+En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a medida que aumenta el paso de la estimación el desempeño del modelo difuso se deteriora.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
@@ -459,7 +506,81 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
   \label{t_MDjp}%
 \end{table}%
 
-\item \textbf{Covarianza}:
+\subsubsection{Intervalos Difusos}
+
+El modelo de intervalo difuso corresponde a un modelo difuso con parámetros
+superiores e inferiores que contiene un porcentaje de todos los valores medidos. Se debe encontrar una
+función difusa superior $\bar{f}$ y una función difusa inferior $\underline{f}$, tal que se satisfaga
+
+
+\begin{equation}
+\underline{f}(z_k)\leq g(z_k)\leq \bar{f}(z_k)
+\label{e_InterDif}
+\end{equation}
+
+en donde $z_k\in Z$ es un conjunto de entradas, $Y={y_1,...,y_N}$ contiene los valores medidos
+de la salida, y se tiene que $y_k=g(z_k),\:k=1,...,N$.
+
+Para encontrar las funciones $\underline{f}$ y $\bar{f}$ se utilizarán dos métodos: el método
+de la covarianza, y el método min-max.
+
+El principal requerimiento al definir la banda del intervalo es que sea lo mas estrecha
+posible y que contenga un cierto porcentaje de datos, llamado nivel de confianza para lo cual se definen los índices Prediction Interval Coverage
+Probability (PICP) para medir el porcentaje de cobertura y el Prediction Interval Normalized
+Average Width (PINAW) para medir el ancho promedio.
+
+\begin{equation}
+PICP=\frac{1}{N}\sum_{k=1}^{N}c\qquad c=\left\{
+                                          \begin{array}{ll}
+                                            1, & \hbox{$\hat{y}_l(k) \leq y(k) \leq \hat{y}_u(k)$} \\
+                                            0, & \hbox{caso \: contrario.}
+                                          \end{array}
+                                        \right.
+\label{e_PICP}
+\end{equation}
+
+\begin{equation}
+PINAW=\frac{1}{NR}\sum_{k=1}^{N}(\hat{y}_u(k)-\hat{y}_l(k)) \qquad donde\quad R=max(y(k))-min(y(k))
+\label{e_PINAW}
+\end{equation}
+
+\begin{itemize}
+\item \textbf{Método de la Covarianza}:
+
+Este método se basa en utilizar la covarianza del error entre los datos reales y la
+estimación de los modelos locales del sistema difuso, de tal manera de determinar los
+parámetros de las funciones difusas limitantes a partir de cada consecuencia \citep{skrjanc_confidence_2009,skrjanc_fuzzy_2011}.
+
+\begin{equation}
+Var(\hat{y}_j-h_j(Z^*)y_j)=\hat{\sigma}_j^2(1+\Psi_j^{*T}(\Psi_j\Psi_j^T)^{-1}\Psi_j^*)
+\label{e_Varianza}
+\end{equation}
+
+con la que se puede definir un intervalo difuso para cada modelo local
+
+\begin{equation}
+\hat{y}^j(k)=Z^{*T}(k)\hat{\theta}_j+\alpha[Var(\hat{y}_j-h_j(Z^*)y_j)]^2
+\label{e_MLocal}
+\end{equation}
+
+\begin{equation}
+\hat{y}^j(k)=Z^{*T}(k)\hat{\theta}_j-\alpha[Var(\hat{y}_j-h_j(Z^*)y_j)]^2
+\label{e_MLocal2}
+\end{equation}
+
+y obtener el modelo de intervalo total
+
+\begin{equation}
+\hat{y}_{u}(k)=\sum_{j=1}^{N_r}h_j(Z^*(k))*\hat{y}_u^j(k)
+\label{e_ModDifusoC}
+\end{equation}
+
+\begin{equation}
+\hat{y}_{l}(k)=\sum_{j=1}^{N_r}h_j(Z^*(k))*\hat{y}_l^j(k)
+\label{e_ModDifusoC1}
+\end{equation}
+
+En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para el método de la Covarianza, donde se puede observar y se corrobora con la Tabla \ref{t_Covarianza} que el modelo estimado presenta un porcentaje de cobertura inicial de 100\% y que comienza a deteriorarze a medida que aumenta el paso de estimación del modelo. Ademas esto se logra con un ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
 
 \begin{figure}
 		\centering
@@ -492,17 +613,46 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
     PINAW & 27.59 & 29.2  & 29.55 & 28.1 \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{t_Covarianza}%
 \end{table}%
 
 
 
 \item \textbf{MinMax}:
+A diferencia del anterior no se fija un porcentaje
+de datos para el cual se desea el mínimo intervalo de confianza, sino que se realiza una
+optimización para que se contenga la mayor cantidad de datos dentro del intervalo de
+confianza y al mismo tiempo optimizando que su ancho sea el menor. Por lo que asumiendo la misma estructura de modelo obtenida anteriormente (número de reglas, número de
+regresores, y parámetros de los antecedentes), se calculan los parámetros de las consecuencias de
+ambos modelos ($\theta_u$,$\theta_l$ ) minimizando el máximo error absoluto de modelación mediante los siguientes
+problemas de optimización
+
+\begin{equation}
+min_{\theta_u} \: max |y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_u^j)^TZ(k)|
+\label{e_MaxMin}
+\end{equation}
+
+\begin{equation}
+\notag s.a \quad y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_u^j)^TZ(k) \leq 0
+\label{e_MaxMinsa}
+\end{equation}
+
+\begin{equation}
+min_{\theta_l} \: max |y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_l^j)^TZ(k)|
+\label{e_MaxMin1}
+\end{equation}
+
+\begin{equation}
+\notag s.a \quad y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_l^j)^TZ(k) \geq 0
+\label{e_MaxMinsa1}
+\end{equation}
+
+En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Método MinMax, para los modelos difusos obtenidos, en este caso se tiene un porcentaje de cobertura inicial de 96.92 \%, al obtenerse a partir de un algoritmo de optimización no se puede predefinir este valor; para los modelos de predicción a j-pasos el porcentaje de cobertura disminuye. El ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
 
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\subfloat[Salida del modelo. Método de la Covarianza]{
+		\subfloat[Salida del modelo.]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax}}
 		\subfloat[Salida del modelo a 1 paso]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
@@ -528,9 +678,9 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
     Índices & \multicolumn{4}{c|}{Modelos} \\
 \cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
     \midrule
-    PICP  & 98.5  & 98.08 & 96.42 & 95.67 \\
+    PICP  & 96.92 & 92.92 & 73.50 & 63.33 \\
     \midrule
-    PINAW & 296.69 & 313.96 & 317.784 & 302.19 \\
+    PINAW & 30.91 & 32.71 & 31.11 & 31.49 \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
@@ -539,6 +689,7 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 
 \end{itemize}
 
+Si se comparan los métodos de intervalos difusos utilizados anteriormente, se puede determinar que ambos métodos presentan un PINAW similar, pero el método Min-Max garantiza un mejor PICP para los modelos de predicción a 8 y 16 pasos, mientras que el método de la Covarianza para el modelo difuso y para la predicción a 1 paso.
 
 \newpage
 \subsection{Modelo de red neuronal}
@@ -560,7 +711,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\label{mat_red}
 	\end{align}
 	
-	donde, $x = [y(k-1), y(k-2), u(k-1), u(k-2)]$ es el vector de entrada, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.   
+	donde, $x = [y(k-1), y(k-2), u(k-1), u(k-2)]$ es el vector de entrada, $N_h$ es el número de neuronas en la capa oculta, $N_I$ es el número de variables en la entrada, $rw_i$ es el peso que conecta la $i$-ésima neurona de la capa oculta con el nodo de salida y $lw_{ji}$ corresponde al peso que una la entrada $j$ con la $i$-ésima neurona en la capa oculta. Los sesgos de cada neuronas en la capa oculta y para el nodo de salida son $b_i$ y $c$ respectivamente.
 	
 	
 	\item \textbf{Selección de entradas relevantes:} De los 4 regresores presente en el sistema se debe analizar cuál tiene mayor peso en el modelo. Un método para encontrar dichos regresores es mediante un análisis de sensibilidad evaluando la derivada de la salida de la red por cada premisa de nuestros datos, es decir,
@@ -672,7 +823,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
-		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full_3.eps}
+		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full_3.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
@@ -688,7 +839,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_2_3}
 	\end{figure}
-\end{itemize} 
+\end{itemize}
 \newpage
 \clearpage
 \textbf{Validación final de la estructura:}
@@ -698,18 +849,18 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\centering
 	\captionsetup{justification=centering}
 	\subfloat[RN vs datos reales]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_10.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_10.eps}}
 	\subfloat[Histograma del error]{
-	\includegraphics[width=0.5\textwidth]{imag/redes/error_10.eps}}
+	 \includegraphics[width=0.5\textwidth]{imag/redes/error_10.eps}}
 \caption{Resultados del modelo neuronal con 10 neuronas en la capa oculta en comparación con los datos reales.}
 \end{figure}
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
 	\subfloat[MSE de entrenamiento]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/mse_train.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/mse_train.eps}}
 	\subfloat[Regresión]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/datos_target.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/datos_target.eps}}
 	\caption{Resultados de entrenamiento mostrando la regresión de cada conjunto.}
 \end{figure}
 \begin{table}[h!]
@@ -727,12 +878,13 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 \textbf{Modelo predictivo:}
 	Se comienza de la premisa que se conocen todos lo valores hasta $\hat{y}(k)$.
 \begin{itemize}
-	\item \textbf{A 1 paso:} 
+	\item \textbf{A 1 paso:}
 	Para realizar un modelo predictivo a 1 paso (un paso más y aparte del generado en si por el modelo neuronal para pasar de $(k-1)$ a $(k)$), se tiene,
 	\begin{align}
 	\hat{y}(k+1) &= \sum_{i=1}^{N_h} rw_i \left( \tanh\left(\sum_{m=1}^{N_I} lw_{mi} x_{m}(k + 1) + b_i\right)\right) + c
 	\label{mat_red_j}
 	\end{align}
+
 	recordando la definición del vector $x$, se tiene, que $x(k+1) = [\hat{y}(k), y(k-1), u(k)]$. Existe una forma de determinar la señal de control futura $u(k)$ mediante modelo de control predictivo (MPC) \cite{norgaard_neural_2000}, sin embargo, dado que se tiene un número grande de datos y que la señal APBRS se mantiene constante por lo menos en 40 puntos por bits antes de cambiar, se dará por conocido el control $u(k)$ requerido hasta el total de datos menos $j$. Los resultados para un paso se muestran en la Figura \ref{red_1k} para todos los conjuntos de datos.
 	
 	\begin{figure}
@@ -750,6 +902,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 		\caption{Predicción a 1 paso con modelo neuronal.}
 		\label{red_1k}
 	\end{figure} 
+
 	\item \textbf{A 8 paso:}
 	Para este escenario, junto al de 16 pasos, se requiere conocer entradas no conocidas. Estas entradas deben ser estimadas de los datos conocidos como muestra la Figura \ref{pred_red}, donde hasta $j=1$ se conocen los datos y para $j>=2$ se deben usar las estimaciones anteriores. Los resultados para 8 pasos se muestran en la Figura \ref{red_8k}.
 	\begin{figure}

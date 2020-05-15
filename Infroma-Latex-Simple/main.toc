@@ -5,6 +5,8 @@
 \contentsline {section}{\numberline {3}Modelos de predicción}{5}%
 \contentsline {subsection}{\numberline {3.1}Modelo lineal}{5}%
 \contentsline {subsection}{\numberline {3.2}Modelo difuso Takagi-Sugeno Tipo-1}{6}%
-\contentsline {subsection}{\numberline {3.3}Modelo de red neuronal}{15}%
-\contentsline {section}{\numberline {4}Resultados}{23}%
-\contentsline {section}{\numberline {5}Conclusión}{24}%
+\contentsline {subsubsection}{\numberline {3.2.1}Predicciones a 1, 8, y 16 pasos}{11}%
+\contentsline {subsubsection}{\numberline {3.2.2}Intervalos Difusos}{13}%
+\contentsline {subsection}{\numberline {3.3}Modelo de red neuronal}{19}%
+\contentsline {section}{\numberline {4}Resultados}{30}%
+\contentsline {section}{\numberline {5}Conclusión}{31}%

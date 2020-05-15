@@ -21,6 +21,33 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{nelles2013nonlinear}
+O.~Nelles, \emph{Nonlinear system identification: from classical approaches to
+  neural networks and fuzzy models}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Springer Science \& Business Media, 2013.
+
+\bibitem{alvarez_metodologiidentificacion_nodate}
+G.~Alvarez, ``\BIBforeignlanguage{es}{Metodología de {Identificación}
+  {Difusa} {Basada} en el {Estudio} de {Controlabilidad} de {Sistemas}
+  {Dinámicos}},'' p. 172.
+
+\bibitem{skrjanc_confidence_2009}
+\BIBentryALTinterwordspacing
+I.~Škrjanc, ``\BIBforeignlanguage{en}{Confidence interval of fuzzy models:
+  {An} example using a waste-water treatment plant},''
+  \emph{\BIBforeignlanguage{en}{Chemometrics and Intelligent Laboratory
+  Systems}}, vol.~96, no.~2, pp. 182--187, Apr. 2009. [Online]. Available:
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0169743909000124}
+\BIBentrySTDinterwordspacing
+
+\bibitem{skrjanc_fuzzy_2011}
+\BIBentryALTinterwordspacing
+------, ``\BIBforeignlanguage{en}{Fuzzy confidence interval for {pH} titration
+  curve},'' \emph{\BIBforeignlanguage{en}{Applied Mathematical Modelling}},
+  vol.~35, no.~8, pp. 4083--4090, Aug. 2011. [Online]. Available:
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0307904X11000904}
+\BIBentrySTDinterwordspacing
+
 \bibitem{matlab_train}
 \BIBentryALTinterwordspacing
 Matlab, ``trainlm, levenberg-marquardt backpropagation.'' [Online]. Available:
