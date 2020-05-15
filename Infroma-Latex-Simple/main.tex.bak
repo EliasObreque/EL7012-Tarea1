@@ -86,11 +86,14 @@
 
 \section{Introducción}
 
-Esto es una prueba para el trabajo offline.
+La  mayoría  de  los  sistemas  tienen  un  comportamiento  no  lineal,  excepto  en  un determinado rango de operación donde pueden ser considerados lineales. En ocasiones un modelo lineal es insuficiente para explicar un fenómeno por lo que se debe recurrir a Modelos No Lineales.
+
+Los modelos basados en redes neuronales y sistemas difusos han sido empleados para la identificación, dado que han mostrado una grancapacidad para aproximar funciones no lineales desconocidas, además de que ofrecen una estructura general tan compleja o sencilla como el problema lo demande. Por un lado, las redes neuronales son estructuras matemáticas inspiradas en las estructuras biológicas compuestas por neuronas, en donde a través de elementos relativamente simples (llamados neuronas)que efectúan operaciones y procesos muy sencillos logran, mediante interconexiones, realizarprocesos complejos y procesamiento de información en paralelo. En general se consideran redes neuronales conformadas por “capas” de neuronas, donde una capa procesa la información recibida en paralelo y la envía a la siguiente capa de neuronas. Por otro lado, los sistemas difusos son también estructuras matemáticas, aunque estos se encuentran inspirados en los procesos de pensamiento y toma de decisiones llevados a cabo por los humanos, así como en la teoría de conjuntos difusos propuesta por Lofti Zadeh.
+
+En este ejercicio se dará solución al Problema 1.
 
 
-\newpage
-\section{Problema 1}
+\subsection{Problema 1}
 
 Considere la siguiente serie no lineal dinámica:
 
@@ -122,7 +125,8 @@ Como usted sabe existen varias técnicas que se pueden emplear para la modelaci�
 \item Seleccione el modelo más apropiado y justifique.
 \end{enumerate}
 
-\subsection{Generación de Datos}
+\newpage
+\section{Generación de Datos}
 
 En esta estapa es necesario generar datos que representen la dinámica del sistema en la mayor cantidad de rangos de operación posibles, ya que el modelo obtenido tiene un ancho de banda acotado, y por lo tanto las dinámicas definidas por fuera de dicha banda podrían no ser representadas adecuadamente. Para lo cual se debe diseñar una entrada $u(k)$ que excite a la planta en el rango de frecuencias en que se encuentran los fenómenos de interés.
 
@@ -161,8 +165,8 @@ modelo óptimo obtenido, evaluándolo en un nuevo conjunto de datos (distintos a
 datos del conjunto de entrenamiento y validación), analizando su capacidad de
 generalización. En este caso se utiliza una división de 55\% de los datos para entrenamiento, 25\% para prueba y 20\% validación.
 
-\subsection{Modelos de predicción}
-\subsubsection{Modelo lineal}
+\section{Modelos de predicción}
+\subsection{Modelo lineal}
 
 En este caso, supondremos que se ajustará un modelo lineal suponiendo que el sistema real es lineal con ruido blanco gaussiano aditivo, es decir,
 
@@ -237,10 +241,14 @@ A continuación, en la Tabla \ref{t_NoLinealp1}, se presentan las métricas de b
   \label{t_NoLinealp1}%
 \end{table}%
 
-\subsubsection{Modelo difuso Takagi-Sugeno Tipo-1}
+\newpage
 
-Para seleccionar las variables que actúan como entrada al sistema difuso, se realiza un análisis de sensibilidad. Suponiendo una estructura del modelo inicial difuso con 8 variables de entrada $y(k-1)$,... $y(k-4)$, $u(k-1)$,...,$u(k-4)$. En la Fig. \ref{f_P1Sensibilidad} se muestran los índices de las sensibilidades del modelo inicial para las 8
-variables de entrada, comprobándose que las variables las variables $y(k-3)$, $y(k-4)$, $u(k-1)$ y $u(k-4)$ presentan menores índices de las sensibilidades, por lo cual no son incluidos en el modelo difuso.
+\subsection{Modelo difuso Takagi-Sugeno Tipo-1}
+
+\begin{itemize}
+	\item \textbf{Selección de variables}:
+Para seleccionar las variables que actúan como entrada al sistema difuso, se realiza un análisis de sensibilidad. Suponiendo una estructura del modelo inicial difuso con 8 variables de entrada $y(k-1)$,..., $y(k-4)$, $u(k-1)$,...,$u(k-4)$. En la Fig. \ref{f_P1Sensibilidad} se muestran los índices de las sensibilidades del modelo inicial para las 8
+variables de entrada, comprobándose que las variables las variables $y(k-4)$, $u(k-3)$ y $u(k-4)$ presentan menores índices de las sensibilidades, por lo cual no son incluidos en el modelo difuso. A pesar de que los regresores $y(k-3)$ y $u(k-2)$ presentan una sensibilidad similar se decidio escoger $u(k-1)$ ya que el mismo es un parámetro de la serie no lineal dinámica.
 
 \begin{figure}
 \centering
@@ -249,45 +257,40 @@ variables de entrada, comprobándose que las variables las variables $y(k-3)$, $
 \label{f_P1Sensibilidad}
 \end{figure}
 
-La Tabla \ref{t_Error} indica el valor del Error Cuadrático Medio (MSE) para los modelos encontrados.
-
+La Tabla \ref{t_Error} indica el valor de la Raíz del Error Cuadrático Medio (RMSE) para los modelos con 8 y 4 regresores, y se puede notar que son muy semejantes, y por consiguiente se eselecciona el modelo más sencillo.
 
 \begin{equation}
-MSE=\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2
-\label{e_MSE}
+RMSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
+\label{e_RMSE}
 \end{equation}
 
-donde $N$ es la cantidad total de datos, $y(k)$ es la salida de la planta real en el instante , e $y_{fuzzy}(k)$ es la predicción realizada por el modelo difuso en el instante .
+
+donde $N$ es la cantidad total de datos, $y(k)$ es la salida de la planta real en el instante $k$ , e $y_{fuzzy}(k)$ es la predicción realizada por el modelo difuso en el instante $k$.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Valores de los Índices de Error Utilizando Análisis de Sensibilidades.}
+  \caption{Índices de Error para el Análisis de Sensibilidades.}
     \begin{tabular}{|r|l|r|}
     \toprule
-    \multicolumn{1}{|p{4.055em}|}{Modelo } & \multicolumn{1}{p{5.555em}|}{Variables de entrada } & \multicolumn{1}{p{4.055em}|}{MSE} \\
+    \multicolumn{1}{|p{4.055em}|}{Modelo } & \multicolumn{1}{p{5.555em}|}{Variables de entrada } & \multicolumn{1}{p{4.055em}|}{RMSE} \\
     \midrule
-    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$     & 0.0474 \\
+    1     & $y(k-1)$,$y(k-2)$,$y(k-3)$,$y(k-4)$, & 0.2177 \\
+    & $u(k-1)$,$u(k-2)$,$u(k-3)$,$u(k-4)$ & \\
     \midrule
-    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.0445 \\
+    2     & $y(k-1)$,$y(k-2)$,$u(k-1)$,$u(k-2)$    & 0.2109 \\
     \bottomrule
     \end{tabular}%
   \label{t_Error}%
 \end{table}%
 
-La optimización de la estructura del modelo difuso consiste principalmente en determinar el número óptimo de reglas del modelo difuso. En este caso se definió un número máximo de 11 clusters y se entrenó el modelo para cada una de las posibles valores de clusters.
+\item \textbf{Optimización de la estructura}:
+La optimización de la estructura del modelo difuso consiste principalmente en determinar el número óptimo de reglas del modelo difuso. En este caso se definió un número máximo de 20 clusters y se entrenó el modelo para cada una de las posibles valores de clusters, utilizando como algoritmo de clustering el Fuzzy C-Means.
 
-La Fig. \ref{f_P1reglas11} muestra la Raíz del Error Cuadrático Medio (RMSE) para los conjuntos de entrenamiento y prueba.  Si no importa la complejidad, el mejor modelo es aquel que
+La Fig. \ref{f_P1reglas11} muestra el RMSE para los conjuntos de entrenamiento y prueba.  Si no importa la complejidad, el mejor modelo es aquel que
 tiene menor RMSE. Sin embargo, es posible que un modelo con peor índice de
 desempeño, pero menos complejo que el modelo óptimo, pueda obtener resultados
-aceptables bajo un estándar de rendimiento definido preliminarmente. Por lo antes expuesto para este problema se escoge como número de clusters 5, por lo que el modelo difuso contará con 5 reglas.
-
-\begin{equation}
-MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
-\label{e_RMSE}
-\end{equation}
-
-
+aceptables bajo un estándar de rendimiento definido preliminarmente. Por lo antes expuesto para este problema se escoge como número de clusters 5, por lo que el modelo difuso contará con 5 reglas, Fig \ref{f_Cluster}.
 
 \begin{figure}
 \centering
@@ -296,69 +299,251 @@ MSE=\sqrt{\frac{1}{N}\sum_{k=1}^{N}(y(k)-y_{fuzzy}(k))^2}
 \label{f_P1reglas11}
 \end{figure}
 
+Además del RMSE, se pueden definir el Error Porcentual Absoluto Medio (MAPE, Mean Absolute Percentage Error) y Error Absoluto Medio (MAE, Mean Absolute Error) para comprobar el modelo difuso obtenido.
+
+\begin{equation}
+MAPE=\frac{1}{N}\sum_{k=1}^{N}\frac{y(k)-y_{fuzzy}(k)}{y(k)}
+\label{e_MAPE}
+\end{equation}
+
+\begin{equation}
+MAE=\frac{1}{N}\sum_{k=1}^{N}|y(k)-y_{fuzzy}(k)|
+\label{e_MAE}
+\end{equation}
+
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Índices de Error para el Modelo Difuso}
+    \begin{tabular}{|l|r|r|r|}
+    \toprule
+    Índices & \multicolumn{3}{c|}{Conjunto} \\
+\cmidrule{2-4}          & \multicolumn{1}{l|}{Entrenamiento} & \multicolumn{1}{p{6em}|}{Prueba} & \multicolumn{1}{p{6.39em}|}{Validación} \\
+    \midrule
+    RMSE  & 0.2082 & 0.2109 & 0.1938 \\
+    \midrule
+    MAPE  & 70.92 & 65.65 & 67.71 \\
+    \midrule
+    MAE   & 0.1454 & 0.1505 & 0.1344 \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_MD}%
+\end{table}%
+
+En la Tabla \ref{t_MD} se puede ver como el RMSE se mantiene de similar para los conjuntos de prueba y validadación lo que indica la capacidad de generalización del modelo. Por su parte el índice MAPE, mide el tamaño del error (absoluto) en términos porcentuales, indicando que el error porcentual promedio del modelo se encuentra alrededor del 70\%, si bien este es un valor grande, es válido destacar que see sta trabajando con una señal cuya salida se encuentra entre [-2,3]. El MAE tampoco presenta variaciones entre los diferentes conjuntos de datos. Considerando un compromiso entre complejidad y desempeño se determina que el modelo propuesto con 4 regresores y 5 reglas es suficiente.
+
+%\begin{figure}
+%\centering
+%\caption{Clusters del Modelo Difuso Tipo 1.}
+%\includegraphics[width=7cm]{imag/ClusterSalida}\\
+%\includegraphics[width=7cm]{imag/Clustery1}
+%\includegraphics[width=7cm]{imag/Clustery2}\\
+%\includegraphics[width=7cm]{imag/Clusteru1}
+%\includegraphics[width=7cm]{imag/Clusteru2}\\
+%\label{f_Cluster}
+%\end{figure}
+
 \begin{figure}
-\centering
-\caption{Clusters.}
-\includegraphics[width=7cm]{imag/ClusterSalida}\\
-\includegraphics[width=7cm]{imag/Clustery1}
-\includegraphics[width=7cm]{imag/Clustery2}\\
-\includegraphics[width=7cm]{imag/Clusteru1}
-\includegraphics[width=7cm]{imag/Clusteru2}\\
-\label{f_Cluster}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Salida]{
+		\includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}}
+		\subfloat[hola]{
+		\includegraphics[width=0.5\textwidth]{imag/Clustery1}}
+		\caption{Clusters del Modelo Difuso Tipo 1.}
+		\label{f_Cluster1}
 \end{figure}
+
+	%\begin{figure}
+%		\centering
+%		\captionsetup{justification=centering}
+%		\subfloat[4 Entradas]{
+%		\includegraphics[width=0.5\textwidth]{imag/ClusterSalida}}
+%		\subfloat[3 Entradas]{
+%		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
+%		\caption{Histograma del error de cada conjunto de datos.}
+%		\label{f_Cluster}
+%	\end{figure}
+
+
+\item \textbf{Optimización de los parámetros}: Se utiliza el algortimo de clustering difuso Fuzzy C-Means obteniéndose siguientes parámetros de los consecuentes, de dimensión $[N_Rx\theta]$
+
+\begin{equation}
+\left(
+  \begin{array}{ccccc}
+ -0.1625 &	0.99755	&-0.7451	&0.8430	 &0.2983\\
+0.4561&	1.1500	& -0.3126	&0.5930	& 0.1362\\
+-0.2139&	0.8892&	-0.2883&	1.0148&	0.2207\\
+-0.10934&	0.8182&	-0.9810&	0.6261&	0.1752\\
+0.0032&	0.5939&	-0.9615&	1.0893&	0.3707
+  \end{array}
+\right)
+\label{e_ParaModDif}
+\end{equation}
+
+\item \textbf{Predicciones a 1, 8, y 16
+pasos}:
+
+Las Fig. \ref{f_SalidaModelo}, \ref{f_SalidaModelop1}, \ref{f_SalidaModelop8} y \ref{f_SalidaModelop16} muestran la salidas del modelo difuso y  la estimación para 1, 8 y 16 pasos respectivamente.
 
 \begin{figure}
 \centering
 \caption{Salida del modelo.}
-\includegraphics[width=7cm]{imag/P1Salida}
+%\includegraphics[width=7cm]{imag/P1Salida}
 \includegraphics[width=7cm]{imag/P1SalidaZoom}
 \label{f_SalidaModelo}
 \end{figure}
 
 \begin{figure}
 \centering
-\caption{Salida del modelo a 1 paso.}
-\includegraphics[width=7cm]{imag/P1Salida_p1}
+\caption{Salida del modelo a 1 pasos.}
+%\includegraphics[width=7cm]{imag/P1Salida_p1}
 \includegraphics[width=7cm]{imag/P1Salida_p1Zoom}
 \label{f_SalidaModelop1}
 \end{figure}
 
 \begin{figure}
 \centering
-\caption{Salida del modelo a 8 paso.}
-\includegraphics[width=7cm]{imag/P1Salida_p8}
+\caption{Salida del modelo a 8 pasos.}
+%\includegraphics[width=7cm]{imag/P1Salida_p8}
 \includegraphics[width=7cm]{imag/P1Salida_p8Zoom}
 \label{f_SalidaModelop8}
 \end{figure}
 
 \begin{figure}
 \centering
-\caption{Salida del modelo a 16 paso.}
-\includegraphics[width=7cm]{imag/P1Salida_p16}
+\caption{Salida del modelo a 16 pasos.}
+%\includegraphics[width=7cm]{imag/P1Salida_p16}
 \includegraphics[width=7cm]{imag/P1Salida_p16Zoom}
 \label{f_SalidaModelop16}
 \end{figure}
 
+En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a amedida que aumenta el paso de la estimación el desempeño de del modelo difuso se deteriora.
+
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Métricas para el Modelo Difuso}
+  \caption{Desempeño del Modelo difuso a j-pasos}
     \begin{tabular}{|l|r|r|r|r|}
     \toprule
-    Modelos & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
+    Índices & \multicolumn{4}{c|}{Modelos} \\
+\cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
     \midrule
-    RMSE  & 0.0046 & 0.0061 & 0.0412 & NaN \\
+    RMSE  & 0.1938 & 0.2432 & 0.7077 & 0.8847 \\
     \midrule
-    MAPE  & 37.73 & 60.23 & 303.11 & NaN \\
+    MAPE  & 67.71 & 108.72 & 159.78 & 169.81 \\
     \midrule
-    MAE   & 0.0835 & 0.1491 & 0.6627 & NaN \\
+    MAE   & 0.1344 & 0.1816 & 0.5076 & 0.6814 \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_MDjp}%
+\end{table}%
+
+\item \textbf{Covarianza}:
+
+\begin{figure}
+\centering
+\caption{Salida del modelo. Método de la Covarianza}
+\includegraphics[width=7cm]{imag/P1Covarianza}
+\label{f_P1Covarianza}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 1 pasos. Método de la Covarianza}
+\includegraphics[width=7cm]{imag/P1Covarianza_p1}
+\label{f_P1Covarianza_p1}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 8 pasos. Método de la Covarianza}
+\includegraphics[width=7cm]{imag/P1Covarianza_p8}
+\label{f_P1Covarianza_p8}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 16 pasos. Método de la Covarianza}
+\includegraphics[width=7cm]{imag/P1Covarianza_p16}
+\label{f_P1Covarianza_p16}
+\end{figure}
+
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Intervalos de predicción. Método de la Covarianza}
+    \begin{tabular}{|l|r|r|r|r|}
+    \toprule
+    Índices & \multicolumn{4}{c|}{Modelos} \\
+\cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
+    \midrule
+    PICP  & 100   & 99.33 & 84.67 & 72 \\
+    \midrule
+    PINAW & 27.59 & 29.2  & 29.55 & 28.1 \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
 \end{table}%
 
+
+
+\item \textbf{MinMax}:
+
+\begin{figure}
+\centering
+\caption{Salida del modelo. Método MinMax}
+\includegraphics[width=7cm]{imag/P1MinMax}
+\label{f_P1MinMax}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 1 pasos. Método MinMax}
+\includegraphics[width=7cm]{imag/P1MinMax_p1}
+\label{f_P1MinMax_p1}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 8 pasos. Método MinMax}
+\includegraphics[width=7cm]{imag/P1MinMax_p8}
+\label{f_P1MinMax_p8}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Salida del modelo a 16 pasos. Método MinMax}
+\includegraphics[width=7cm]{imag/P1MinMax_p16}
+\label{f_P1MinMax_p16}
+\end{figure}
+
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Intervalos de predicción. Método MinMax}
+    \begin{tabular}{|l|r|r|r|r|}
+    \toprule
+    Índices & \multicolumn{4}{c|}{Modelos} \\
+\cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
+    \midrule
+    PICP  & 98.5  & 98.08 & 96.42 & 95.67 \\
+    \midrule
+    PINAW & 296.69 & 313.96 & 317.784 & 302.19 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+
+\end{itemize}
+
+
 \newpage
-\subsubsection{Modelo de red neuronal}
+\subsection{Modelo de red neuronal}
 
 Para encontrar un buen modelo de red neuronal se propone seguir los pasos de identificación.
 
@@ -368,7 +553,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\item \textbf{Definición de la estructura de la red:} Se propone una red con una capa oculta, función de activación \textit{tanh} en la salida de la capa oculta y algoritmo de aprendizaje Levenberg-Marquardt. Las variables de entradas son iguales al número de regresores (4 entradas) como muestra la Figura \ref{estred}. Por otro lado, el modelo matemático de la red, queda expresado como se muestra en la ecuacion \ref{mat_red}.
 	\begin{figure}
 		\centering
-		 \includegraphics[width=8cm]{imag/redes/estructura.eps}
+		\includegraphics[width=8cm]{imag/redes/estructura.eps}
 		\caption{Estructura de la red neuronal perceptrón}
 		\label{estred}
 	\end{figure}
@@ -405,17 +590,17 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	
 	\begin{figure}[h!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{RMSE_full}
 	\end{figure}
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1}
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2}
 	\end{figure}
@@ -442,9 +627,9 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
+		\includegraphics[width=0.5\textwidth]{imag/redes/I_4.eps}}
 		\subfloat[3 Entradas]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
+		\includegraphics[width=0.5\textwidth]{imag/redes/I_3.eps}}
 		\caption{Indice de sensibilidad para 4 y 3 entradas.}
 		\label{Ind_4}
 	\end{figure}
@@ -454,18 +639,18 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_4.eps}}
 		\subfloat[3 Entradas]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_red_3.eps}}
 		\caption{Comparación entre la salida de la red neuronal y el valor real del conjunto de validación.}
 	\end{figure}
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[4 Entradas]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
+		\includegraphics[width=0.5\textwidth]{imag/redes/error_4.eps}}
 		\subfloat[3 Entradas]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
+		\includegraphics[width=0.5\textwidth]{imag/redes/error_3.eps}}
 		\caption{Histograma del error de cada conjunto de datos.}
 		\label{hist_4}
 	\end{figure}
@@ -475,7 +660,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 
 	\begin{figure}[h!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
+		\includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
@@ -483,10 +668,10 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\clearpage
 	\begin{figure}[t!]
 		\centering
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_1_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.}
 		\label{sensi_red_1_3}
-		 \includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
+		\includegraphics[width=0.8\textwidth]{imag/redes/sensibilidad_full_2_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.}
 		\label{sensi_red_2_3}
 	\end{figure}
