@@ -549,7 +549,7 @@ PINAW=\frac{1}{NR}\sum_{k=1}^{N}(\hat{y}_u(k)-\hat{y}_l(k)) \qquad donde\quad R=
 
 Este método se basa en utilizar la covarianza del error entre los datos reales y la
 estimación de los modelos locales del sistema difuso, de tal manera de determinar los
-parámetros de las funciones difusas limitantes a partir de cada consecuencia.
+parámetros de las funciones difusas limitantes a partir de cada consecuencia \citep{skrjanc_confidence_2009,skrjanc_fuzzy_2011}.
 
 \begin{equation}
 Var(\hat{y}_j-h_j(Z^*)y_j)=\hat{\sigma}_j^2(1+\Psi_j^{*T}(\Psi_j\Psi_j^T)^{-1}\Psi_j^*)
@@ -570,6 +570,17 @@ con la que se puede definir un intervalo difuso para cada modelo local
 
 y obtener el modelo de intervalo total
 
+\begin{equation}
+\hat{y}_{u}(k)=\sum_{j=1}^{N_r}h_j(Z^*(k))*\hat{y}_u^j(k)
+\label{e_ModDifusoC}
+\end{equation}
+
+\begin{equation}
+\hat{y}_{l}(k)=\sum_{j=1}^{N_r}h_j(Z^*(k))*\hat{y}_l^j(k)
+\label{e_ModDifusoC1}
+\end{equation}
+
+En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para el método de la Covarianza, donde se puede observar y se corrobora con la Tabla \ref{t_Covarianza} que el modelo estimado presenta un porcentaje de cobertura inicial de 100\% y que comienza a deteriorarze a medida que aumenta el paso de estimación del modelo. Ademas esto se logra con un ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
 
 \begin{figure}
 		\centering
@@ -602,7 +613,7 @@ y obtener el modelo de intervalo total
     PINAW & 27.59 & 29.2  & 29.55 & 28.1 \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{t_Covarianza}%
 \end{table}%
 
 
@@ -611,12 +622,37 @@ y obtener el modelo de intervalo total
 A diferencia del anterior no se fija un porcentaje
 de datos para el cual se desea el mínimo intervalo de confianza, sino que se realiza una
 optimización para que se contenga la mayor cantidad de datos dentro del intervalo de
-confianza y al mismo tiempo optimizando que su ancho sea el menor.
+confianza y al mismo tiempo optimizando que su ancho sea el menor. Por lo que asumiendo la misma estructura de modelo obtenida anteriormente (número de reglas, número de
+regresores, y parámetros de los antecedentes), se calculan los parámetros de las consecuencias de
+ambos modelos ($\theta_u$,$\theta_l$ ) minimizando el máximo error absoluto de modelación mediante los siguientes
+problemas de optimización
+
+\begin{equation}
+min_{\theta_u} \: max |y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_u^j)^TZ(k)|
+\label{e_MaxMin}
+\end{equation}
+
+\begin{equation}
+\notag s.a \quad y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_u^j)^TZ(k) \leq 0
+\label{e_MaxMinsa}
+\end{equation}
+
+\begin{equation}
+min_{\theta_l} \: max |y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_l^j)^TZ(k)|
+\label{e_MaxMin1}
+\end{equation}
+
+\begin{equation}
+\notag s.a \quad y(k)-\sum_{j=1}^{N_r}h_j(Z^(k))*(\theta_l^j)^TZ(k) \geq 0
+\label{e_MaxMinsa1}
+\end{equation}
+
+En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Método MinMax, para los modelos difusos obtenidos, en este caso se tiene un porcentaje de cobertura inicial de 96.92 \%, al obtenerse a partir de un algoritmo de optimización no se puede predefinir este valor; para los modelos de predicción a j-pasos el porcentaje de cobertura disminuye. El ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
 
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\subfloat[Salida del modelo. Método de la Covarianza]{
+		\subfloat[Salida del modelo.]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax}}
 		\subfloat[Salida del modelo a 1 paso]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
@@ -642,9 +678,9 @@ confianza y al mismo tiempo optimizando que su ancho sea el menor.
     Índices & \multicolumn{4}{c|}{Modelos} \\
 \cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
     \midrule
-    PICP  & 98.5  & 98.08 & 96.42 & 95.67 \\
+    PICP  & 96.92 & 92.92 & 73.50 & 63.33 \\
     \midrule
-    PINAW & 296.69 & 313.96 & 317.784 & 302.19 \\
+    PINAW & 30.91 & 32.71 & 31.11 & 31.49 \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
@@ -653,6 +689,7 @@ confianza y al mismo tiempo optimizando que su ancho sea el menor.
 
 \end{itemize}
 
+Si se comparan los métodos de intervalos difusos utilizados anteriormente, se puede determinar que ambos métodos presentan un PINAW similar, pero el método Min-Max garantiza un mejor PICP para los modelos de predicción a 8 y 16 pasos, mientras que el método de la Covarianza para el modelo difuso y para la predicción a 1 paso.
 
 \newpage
 \subsection{Modelo de red neuronal}
@@ -680,7 +717,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\item \textbf{Selección de entradas relevantes:} De los 4 regresores presente en el sistema se debe analizar cuál tiene mayor peso en el modelo. Un método para encontrar dichos regresores es mediante un análisis de sensibilidad evaluando la derivada de la salida de la red por cada premisa de nuestros datos, es decir,
 	
 	\begin{align}
-	\xi_j = \frac{\partial \hat{y}(k)}{\partial x_j}		 
+	\xi_j = \frac{\partial \hat{y}(k)}{\partial x_j}		
 	\end{align}
 	Como la funcion de activacion es $tanh$ y en la salida es lineal, se tiene,
 	\begin{align}

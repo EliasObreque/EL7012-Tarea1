@@ -184,18 +184,18 @@ salida=[y y1 y8 y16];
 % eMAE(i)=MAE(Yval,salida(:,i));
 % end
 
-alpha=10;
-[yEst,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
-for i=1:c
-ePINAW(i)= PINAW(salida(:,i)',yEst_u,yEst_l);
-ePICP(i)= PICP(salida(:,i)',yEst_u,yEst_l);
-plot_Intervalos(salida(:,i)',yEst_u,yEst_l)
-end
+% alpha=10;
+% [yEst,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
+% for i=1:c
+% ePINAW(i)= PINAW(salida(:,i)',yEst_u,yEst_l);
+% ePICP(i)= PICP(salida(:,i)',yEst_u,yEst_l);
+% plot_Intervalos(salida(:,i)',yEst_u,yEst_l)
+% end
 
-% %Minimos cuadrados
-% [g_u,g_l]=MinMax(Xtest,Ytest,model.a,model.b,model.g);
-% y_u=ysim(Xval,model.a,model.b,g_u);
-% y_l=ysim(Xval,model.a,model.b,g_l);
+%Minimos cuadrados
+[g_u,g_l]=MinMax(Xtest,Ytest,model.a,model.b,model.g);
+y_u=ysim(Xval,model.a,model.b,g_u);
+y_l=ysim(Xval,model.a,model.b,g_l);
 
 for i=1:c
 ePINAW_mm(i)= PINAW(salida(:,i)',y_u',y_l');
