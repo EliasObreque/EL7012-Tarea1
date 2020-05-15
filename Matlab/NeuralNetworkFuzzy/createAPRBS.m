@@ -8,13 +8,23 @@ Ns = fs/fc;       %Numero de muestras por bit
 n  = ceil(log(fc/fmin+1)/log(2)); %orden de la señal
 Pmax = 2^n-1;     %Período máximo
 
-NumPeriod = ceil(ndatos/Pmax) + 1;
-%Band = [0 B] B=1/Ns 
+%NumPeriod = ceil(ndatos/Pmax);
+% prbs =- idinput([Pmax 1 NumPeriod],'prbs',[0 1],[minAmp maxAmp]); %PBRS
 
-prbs =- idinput([Pmax 1 NumPeriod],'prbs',[0 1],[minAmp maxAmp]); %PBRS
+Band = [0 1/Ns]; %B=1/Ns
+Nmax=Pmax*Ns;
+NumPeriod = ceil(ndatos/(Nmax));
+prbs =- idinput([Nmax 1 NumPeriod],'prbs',Band,[minAmp maxAmp]); %PBRS
 
 %APBRS
-n_d = round(rand(size(prbs)), 1);
-aprbs = gain_aprbs * prbs.*n_d;
+% n_d = round(rand(size(prbs)), 1);
+% aprbs = gain_aprbs * prbs.*n_d;
+temp=size(prbs)/Pmax;
+n_d = round(rand(temp(1)), 1);
+
+for i=1:size(n_d)
+
+    aprbs((i-1)*Pmax+1:i*Pmax) = gain_aprbs * prbs((i-1)*Pmax+1:i*Pmax)*n_d(i);
+end
 end
 

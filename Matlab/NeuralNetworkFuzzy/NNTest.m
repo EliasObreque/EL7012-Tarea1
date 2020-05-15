@@ -16,7 +16,7 @@ num_regresor_y = 2;
 num_regresor_u = 1;
 num_regresor = num_regresor_y  + num_regresor_u;
 
-loaded_data = load('DatosProblema1.mat');
+loaded_data = load('P_DatosProblema1.mat');
 
 y_model = loaded_data.y;
 aprbs = loaded_data.u;
@@ -44,7 +44,7 @@ y_test = loaded_data.Ytest;
 x_val = loaded_data.Xval;
 y_val = loaded_data.Yval;
 
-% Elimina el ultima regresor
+%Elimina el ultima regresor
 x_train(:, 4) = [];
 x_test(:, 4) = [];
 x_val(:, 4) = [];
@@ -58,16 +58,8 @@ ntrain = Nd * train_prc;
 ntest = Nd * test_prc;
 nval = Nd * val_prc;
 
-
-num_neu_min = 2;
-num_neu_max = 21;
-
-rmse_train = zeros(1, num_neu_max - num_neu_min);
-rmse_test  = zeros(1, num_neu_max - num_neu_min);
-rmse_val   = zeros(1, num_neu_max - num_neu_min);
-
 % Numero optimo de neuronas calculadas en Identification.m
-NUM_OPT_NEU = 8;
+NUM_OPT_NEU = 10;
 
 
 %% NEURALNETWORK
@@ -94,15 +86,36 @@ error_train = y_train - y_train_nn';
 error_test  = y_test - y_test_nn';
 error_val   = y_val- y_val_nn';
 
+
+figure()
+grid on
+hold on
+plot(error_train)
+plot(error_test)
+plot(error_val)
+legend('train','test','val')
+
+%%
+rmse_train = RMSE(y_train, y_train_nn')
+rmse_test = RMSE(y_test, y_test_nn')
+rmse_val = RMSE(y_val, y_val_nn')
+
 mse_train = MSE(y_train, y_train_nn')
 mse_test = MSE(y_test, y_test_nn')
 mse_val = MSE(y_val, y_val_nn')
 
+mae_train = MAE(y_train, y_train_nn')
+mae_test = MAE(y_test, y_test_nn')
+mae_val = MAE(y_val, y_val_nn')
+
+mape_train = MAPE(y_train, y_train_nn')
+mape_test = MAPE(y_test, y_test_nn')
+mape_val = MAPE(y_val, y_val_nn')
 
 %%
 % Plot Histogram of Error Values
-%figure()
-%ploterrhist(error_train,'Train', error_test, 'Test', error_val, 'Validation')
+figure()
+ploterrhist(error_train,'Train', error_test, 'Test', error_val, 'Validation')
 
 % plots error vs. epoch for the training, validation, and test performances of the training record TR 
 figure()
@@ -115,8 +128,8 @@ grid on
 ylabel('y(k)')
 xlabel('Número de muestras')
 stairs(y_val)
-xlim([1 500])
-legend('Red neuronal', 'Real')
+xlim([1 200])
+legend('NN-Validación', 'Dato Real')
 
 
 

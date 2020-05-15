@@ -27,4 +27,14 @@ Matlab, ``trainlm, levenberg-marquardt backpropagation.'' [Online]. Available:
   \url{https://www.mathworks.com/help/deeplearning/ref/trainlm.html}
 \BIBentrySTDinterwordspacing
 
+\bibitem{norgaard_neural_2000}
+\BIBentryALTinterwordspacing
+M.~Nørgaard, O.~Ravn, N.~K. Poulsen, and L.~K. Hansen,
+  \emph{\BIBforeignlanguage{en}{Neural {Networks} for {Modelling} and {Control}
+  of {Dynamic} {Systems}}}, ser. Advanced {Textbooks} in {Control} and {Signal}
+  {Processing}, M.~J. Grimble and M.~A. Johnson, Eds.\hskip 1em plus 0.5em
+  minus 0.4em\relax London: Springer London, 2000. [Online]. Available:
+  \url{http://link.springer.com/10.1007/978-1-4471-0453-7}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

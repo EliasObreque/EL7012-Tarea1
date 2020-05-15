@@ -14,6 +14,8 @@ net_fit.divideFcn = 'divideind';
 net_fit.divideParam.trainInd = 1:size(x_train, 1); 
 net_fit.divideParam.testInd = size(x_train, 1) + 1: size(x_train, 1) + size(x_test, 1);
 net_fit.divideParam.valInd = size(x_train, 1) + size(x_test, 1) + 1: size(x_data, 1);   
+
+
 net_fit.trainParam.max_fail = 50;
 
 %TRAINING PARAMETERS

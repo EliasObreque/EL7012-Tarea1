@@ -135,7 +135,7 @@ ylabel('RMSE')
 xlabel('Número de neuronas')
 [n1, m1] = min(rmse_train);
 plot(m1 + num_neu_min - 1, n1, '*b', 'DisplayName', 'min-Train')
-[n2, m2] = min(rmse_test);
+[n2, m2] = min(rmse_test)
 plot(m2 + num_neu_min - 1, n2, '*r', 'DisplayName', 'min-Test')
 [n3, m3] = min(rmse_val);
 plot(m3 + num_neu_min - 1, n3, '*k', 'DisplayName', 'min-Validation')
@@ -152,8 +152,8 @@ plot(num_neu_min:num_neu_max, rmse_test, 'r')
 hold on 
 grid on
 plot(m2 + num_neu_min - 1, n2, '*r')
-ylim([3.3e-3, 3.6e-3])
-xlim([3, 41])
+ylim([2.5e-3, 3e-3])
+xlim([2, 41])
 %% PLOT
 
 % plots error vs. epoch for the training, validation, and test performances of the training record TR 
