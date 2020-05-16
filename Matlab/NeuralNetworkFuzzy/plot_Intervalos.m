@@ -1,4 +1,4 @@
-function []=plot_Intervalos(y,yu,yl)
+function []=plot_Intervalos(y,yu,yl, y_ext)
 
 %Parametros de las funciones
         options.handle     = figure();
@@ -19,10 +19,25 @@ function []=plot_Intervalos(y,yu,yl)
     set(patch, 'edgecolor', 'none');
     set(patch, 'FaceAlpha', options.alpha);
     hold on;
+    grid on;
     plot(options.x_axis,y,'color', options.color_line, ...
         'LineWidth', options.line_width);
+    plot(y_ext, '.')
+    xlim([0, 500])
+    xlabel('Número de muestras')
+    ylabel('Salida del modelo')
+%     axes('position',[0.62,0.63,0.3058,0.32])
+%     box on % put box around new pair of axes
+%     x_vector = [options.x_axis', fliplr(options.x_axis')];
+%     patch = fill(x_vector, [yu,fliplr(yl)], options.color_area);
+%     set(patch, 'edgecolor', 'none');
+%     set(patch, 'FaceAlpha', options.alpha);
+%     plot(options.x_axis,y,'color', options.color_line, ...
+%         'LineWidth', options.line_width)
+%     hold on
+%     plot(y_ext, '.')
+%     xlim([0, 100])
+%     grid on
     hold off;
     
-     xlabel('NÃºmero de muestras')
-     ylabel('Salida del modelo')
 end
