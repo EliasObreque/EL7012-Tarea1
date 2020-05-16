@@ -1,4 +1,4 @@
-function [y_j_train, y_j_test, y_j_val, y_u, y_l] = predictiveNNC(jpasos, net_trained, x_train, x_test, x_val)
+function [y_j_train, y_j_test, y_j_val, y_u, y_l] = predictiveNNC(alpha, jpasos, net_trained, x_train, x_test, x_val)
 %PREDICTIVENN Summary of this function goes here
 
 % Paso j = 2:
@@ -56,6 +56,6 @@ y_j_train = y_train_new;
 y_j_test = y_test_new;
 y_j_val = y_val_new;
 
-[y_u, y_l] = Covariance(net_trained, x_train_new, x_val_new, y_j_val);
+[y_u, y_l] = Covariance(alpha, net_trained, x_train_new, x_val_new, y_j_val);
 end
 

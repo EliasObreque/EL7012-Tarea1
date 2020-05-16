@@ -52,15 +52,15 @@ y_train_nn = net_trained(x_train');
 y_test_nn = net_trained(x_test');
 y_val_nn = net_trained(x_val');
 %% Interval by covariance
-jpasos = 16;
-
+jpasos = 1;
+alpha = 10;
 if jpasos == 1
     y_j_train = y_train_nn;
     y_j_test = y_test_nn;
     y_j_val = y_val_nn;
-    [y_u, y_l] = Covariance(net_trained, x_train, x_val, y_j_val);
+    [y_u, y_l] = Covariance(alpha, net_trained, x_train, x_val, y_j_val);
 else
-    [y_j_train, y_j_test, y_j_val, y_u, y_l] = predictiveNNC(jpasos, net_trained, x_train, x_test, x_val);
+    [y_j_train, y_j_test, y_j_val, y_u, y_l] = predictiveNNC(alpha, jpasos, net_trained, x_train, x_test, x_val);
 end
 plot_Intervalos(y_j_val,y_u',y_l', y_val(jpasos:end))
 

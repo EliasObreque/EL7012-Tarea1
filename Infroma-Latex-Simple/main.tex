@@ -930,25 +930,26 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
-		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full_3.eps}
+		 \includegraphics[width=0.75\textwidth]{imag/redes/RMSE_full_3.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
-	\newpage
-	\clearpage
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
-		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_1_3.eps}
+		\includegraphics[width=0.8\textwidth, height=0.45\textheight]{imag/redes/sensibilidad_full_1_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_1_3}
-		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_2_3.eps}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\captionsetup{justification=centering}
+		\includegraphics[width=0.8\textwidth, height=0.45\textheight]{imag/redes/sensibilidad_full_2_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_2_3}
 	\end{figure}
 \end{itemize}
-\newpage
-\clearpage
+
 \textbf{Validación final de la estructura:}
 Para finalizar con la identificación del modelo de predicción por red neuronal, se evalúan los parámetros de la red, MAE, MAPE, RMSE, MSE reagrupados en la Tabla \ref{red_model_tabla}.
 
@@ -983,6 +984,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\end{tabular}
 \label{red_model_tabla}
 \end{table}
+\newpage
 \subsubsection{Predicciones a 1, 8, y 16
 	pasos}
 	Se comienza de la premisa que se conocen todos lo valores hasta $\hat{y}(k)$.
@@ -995,8 +997,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\end{align}
 
 	recordando la definición del vector $x$, se tiene, que $x(k+1) = [\hat{y}(k), y(k-1), u(k)]$. Existe una forma de determinar la señal de control futura $u(k)$ mediante modelo de control predictivo (MPC) \cite{norgaard_neural_2000}, sin embargo, dado que se tiene un número grande de datos y que la señal APBRS se mantiene constante por lo menos en 40 puntos por bits antes de cambiar, se dará por conocido el control $u(k)$ requerido hasta el total de datos menos $j$. Los resultados para un paso se muestran en la Figura \ref{red_1k} para todos los conjuntos de datos.
-	\newpage
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[MSE de entrenamiento]{
@@ -1110,7 +1111,7 @@ Donde,
 	\item $\sigma_e^2$: Varianza del error en el conjunto de entrenamiento $Var(y(k) - \hat{y}(k))$.
 \end{itemize}
 
-Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el intervalo de la varianza, se deben calcular las mismas ecuaciones pero con el conjunto de validación. Por otro lado, para las predicción a $j$ pasos, se debe calcular la matriz de entrada de la red correspondiente a ese paso y calcular el valor de $\tilde{Z}$ correcto. De esta forma, se obtienen los resultados mostrados en la Figura \ref{cov_val} los resultados del conjunto de validación. Las métricas PICP y PINAW se muestran en la Tabla \ref{pinc_red} 
+Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el intervalo de la varianza de validación, se deben calcular las mismas ecuaciones pero con el conjunto de validación. Por otro lado, para las predicción a $j$ pasos, se debe calcular la matriz de entrada de la red correspondiente a ese paso y calcular el valor de $\tilde{Z}$ correcto. De esta forma, se obtienen los resultados mostrados en la Figura \ref{cov_val} los resultados del conjunto de validación. Las métricas PICP y PINAW se muestran en la Tabla \ref{pinc_red} 
 
 \begin{figure}[h!]
 	\centering
@@ -1121,11 +1122,11 @@ Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el
 		\includegraphics[width=0.5\textwidth]{imag/redes/cov_8_val.eps}} \newline
 	\subfloat[Intervalo a 16 paso]{
 		\includegraphics[width=0.5\textwidth]{imag/redes/cov_16_val.eps}}
-	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16. Los puntos anaranjados corresponden a los datos reales de validación.}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16.}
 	\label{cov_val}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[h!]
 	\centering
 	\caption{Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 5$.}
 	\begin{tabular}{|l|l|l|l|}
@@ -1136,6 +1137,10 @@ Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el
 	\end{tabular}
 \label{pinc_red}
 \end{table}
+
+\clearpage
+\newpage
+
 
 
 %\section{Problema 2}
