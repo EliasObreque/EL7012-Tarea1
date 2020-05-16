@@ -4,10 +4,12 @@ Database file #1: biblio.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in doris1
+Warning--empty journal in doris2
 Warning--empty journal in alvarez_metodologiidentificacion_nodate
 Warning--empty year in alvarez_metodologiidentificacion_nodate
 Warning--empty journal in matlab_train
 Warning--empty year in matlab_train
 
 Done.
-(There were 4 warnings)
+(There were 6 warnings)

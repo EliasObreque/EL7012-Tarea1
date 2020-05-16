@@ -21,6 +21,14 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{doris1}
+D.~S. H., ``Apuntes el7012 – control inteligente de sistemas, modelación
+  difusa,'' 2016.
+
+\bibitem{doris2}
+------, ``Apuntes el7012 – control inteligente de sistemas, modelación
+  neuronal,'' 2016.
+
 \bibitem{nelles2013nonlinear}
 O.~Nelles, \emph{Nonlinear system identification: from classical approaches to
   neural networks and fuzzy models}.\hskip 1em plus 0.5em minus 0.4em\relax

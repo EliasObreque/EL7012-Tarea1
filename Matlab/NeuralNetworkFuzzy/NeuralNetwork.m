@@ -8,12 +8,14 @@ y_data = [y_train; y_test; y_val];
 % Crea una capa oculta en la red
 net_fit = fitnet(num_neu,'trainlm');
 
+[trainInd,valInd,testInd] = divideblock(6000, 0.55, 0.2, 0.25);
+
 % Funcion de activacion 
 net_fit.layers{1}.transferFcn = 'tansig'; % tansig = tanh
 net_fit.divideFcn = 'divideind';
-net_fit.divideParam.trainInd = 1:size(x_train, 1); 
-net_fit.divideParam.testInd = size(x_train, 1) + 1: size(x_train, 1) + size(x_test, 1);
-net_fit.divideParam.valInd = size(x_train, 1) + size(x_test, 1) + 1: size(x_data, 1);   
+net_fit.divideParam.trainInd = trainInd;
+net_fit.divideParam.testInd = testInd;
+net_fit.divideParam.valInd = valInd;   
 
 
 net_fit.trainParam.max_fail = 50;
