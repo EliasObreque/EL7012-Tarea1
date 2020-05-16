@@ -1,4 +1,4 @@
-function y=ysim_p(X,a,b,g,p)
+function [y,x]=ysim_p(X,a,b,g,p)
 
 % y is the vector of outputs when evaluating the TS defined by a,b,g
 % X is the data matrix
@@ -15,7 +15,7 @@ y=zeros(Nd,1);
       
 Xest=X;
 Xest(:,1:2)=0;
-     
+x=Xest;     
 for k=1:Nd-p 
     
     % W(r) is the activation degree of the rule r
@@ -42,13 +42,16 @@ for k=1:Nd-p
     % Finally the output
     if k==1
     y(j,1)=Wn*yr;
+    x(j,1:2)=Xest(j,1:2);
     end
     
     Xest(j+1,1)=Wn*yr;
     Xest(j+1,2)=Xest(j,1);
     
     end
-
+    
+    
+    x(j,1:2)=Xest(j,1:2);
     y(j,1)=Xest(j+1,1);
 end
 end
