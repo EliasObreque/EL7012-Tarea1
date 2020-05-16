@@ -52,7 +52,7 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {4 Entradas}}}{30}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3 Entradas}}}{30}%
 \contentsline {figure}{\numberline {21}{\ignorespaces RMSE para diferente número de neuronas.\relax }}{31}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta con 3 entradas.\relax }}{32}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta con 3 entradas.\relax }}{31}%
 \contentsline {figure}{\numberline {23}{\ignorespaces Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta con 3 entradas.\relax }}{32}%
 \contentsline {figure}{\numberline {24}{\ignorespaces Resultados del modelo neuronal con 10 neuronas en la capa oculta en comparación con los datos reales.\relax }}{33}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RN vs datos reales}}}{33}%
@@ -60,23 +60,27 @@
 \contentsline {figure}{\numberline {25}{\ignorespaces Resultados de entrenamiento mostrando la regresión de cada conjunto.\relax }}{33}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{33}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Regresión}}}{33}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Predicción a 1 paso con modelo neuronal.\relax }}{35}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{35}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{35}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{35}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{35}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Modelo de predicción para $j$ pasos del modelo neuronal.\relax }}{36}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Predicción a 8 paso con modelo neuronal.\relax }}{37}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{37}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{37}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{37}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{37}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Predicción a 1 paso con modelo neuronal.\relax }}{34}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{34}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{34}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{34}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{34}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Modelo de predicción para $j$ pasos del modelo neuronal.\relax }}{35}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Predicción a 8 paso con modelo neuronal.\relax }}{36}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{36}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{36}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{36}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{36}%
 \contentsline {figure}{\numberline {29}{\ignorespaces Predicción a 16 paso con modelo neuronal.\relax }}{38}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{38}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{38}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{38}%
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{38}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16. Los puntos anaranjados corresponden a los datos reales de validación.\relax }}{40}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha =5$.\relax }}{40}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{40}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{40}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{40}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha =10$.\relax }}{41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{41}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{41}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{41}%

@@ -9,8 +9,9 @@
 \contentsline {table}{\numberline {8}{\ignorespaces Intervalos de predicción. Método MinMax\relax }}{22}%
 \contentsline {table}{\numberline {9}{\ignorespaces Experimento para ver la influencia del sobre ajuste.\relax }}{26}%
 \contentsline {table}{\numberline {10}{\ignorespaces Valores MSE para los 3 conjuntos de datos evaluados en una red con 4 entradas y otra con 3 entradas.\relax }}{28}%
-\contentsline {table}{\numberline {11}{\ignorespaces Métricas finales del modelo neuronal\relax }}{34}%
-\contentsline {table}{\numberline {12}{\ignorespaces Métricas de evaluación para 1, 8 y 16 pasos adelante.\relax }}{36}%
-\contentsline {table}{\numberline {13}{\ignorespaces Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 5$.\relax }}{41}%
-\contentsline {table}{\numberline {14}{\ignorespaces Comparación de los modelos propuestos\relax }}{41}%
-\contentsline {table}{\numberline {15}{\ignorespaces Add caption\relax }}{41}%
+\contentsline {table}{\numberline {11}{\ignorespaces Métricas finales del modelo neuronal\relax }}{32}%
+\contentsline {table}{\numberline {12}{\ignorespaces Métricas de evaluación para 1, 8 y 16 pasos adelante.\relax }}{37}%
+\contentsline {table}{\numberline {13}{\ignorespaces Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 5$.\relax }}{40}%
+\contentsline {table}{\numberline {14}{\ignorespaces Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 10$.\relax }}{41}%
+\contentsline {table}{\numberline {15}{\ignorespaces Comparación de los modelos propuestos\relax }}{42}%
+\contentsline {table}{\numberline {16}{\ignorespaces Comparación de modelos de intervalo.\relax }}{42}%

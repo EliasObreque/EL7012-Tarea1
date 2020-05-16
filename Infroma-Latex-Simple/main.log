@@ -1,15 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7350 64-bit) (preloaded format=pdflatex 2020.4.18)  16 MAY 2020 03:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.4.20)  16 MAY 2020 17:21
 entering extended mode
-**"C:/Users/maibe/Documents/UCHILE/Ramos/EL7012 Control Inteligente de Sistemas
-/Tareas/EL7012-Tarea1/Infroma-Latex-Simple/main.tex"
-
-("C:/Users/maibe/Documents/UCHILE/Ramos/EL7012 Control Inteligente de Sistemas/
-Tareas/EL7012-Tarea1/Infroma-Latex-Simple/main.tex"
+**./main.tex
+(main.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06>
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+L3 programming layer <2020-03-03>
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
 File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
@@ -24,33 +21,35 @@ File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
 Package: babel 2020/02/28 3.41 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def"
 File: switch.def 2020/02/28 3.41 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-spanish\spanish.ldf
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-spanish\spanish
+.ldf"
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
 File: babel.def 2020/02/28 3.41 Babel common definitions
 \babel@savecnt=\count175
 \U@D=\dimen135
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.def"
+)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count176
 )
@@ -60,18 +59,17 @@ Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
-))
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/natbib\natbib.sty
+)) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip49
 \bibsep=\skip50
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count178
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty
+"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks18
 \symAMSa=\mathgroup4
@@ -80,24 +78,23 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen136
-))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+)) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen137
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count179
@@ -137,8 +134,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/amscls\amsthm.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.sty"
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks24
 \thm@bodyfont=\toks25
@@ -149,8 +145,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@postskip=\skip55
 \thm@headsep=\skip56
 \dth@everypar=\toks29
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count191
 \calc@Bcount=\count192
@@ -163,59 +158,66 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count193
 \calc@Cskip=\skip59
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\afterpage.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\afterpage.sty"
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks30
 \AP@partial=\box47
 \AP@footins=\box48
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/was\gensymb.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.sty
+"
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks31
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.sty
+"
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphics
+.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex.d
+ef"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen147
 \Gin@req@width=\dimen148
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/parskip\parskip.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\parskip.sty"
 Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/kvoptions\kvoptions.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvoptions.s
+ty"
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/ltxcmds\ltxcmds.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.sty
+"
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/kvsetkeys\kvsetkeys.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvsetkeys
+.sty"
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) ("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
+))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty
+"
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count194
 ))
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/fancyhdr\fancyhdr.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.sty
+"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip60
@@ -227,25 +229,26 @@ s
 \f@nch@O@erf=\skip66
 \f@nch@O@olf=\skip67
 \f@nch@O@orf=\skip68
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/vmargin\vmargin.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/vmargin\vmargin.sty
+"
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 \PaperWidth=\dimen149
 \PaperHeight=\dimen150
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.cf
+g"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/colortbl\colortbl.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\colortbl.sty
+"
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen151
 \ar@mcellbox=\box49
@@ -268,14 +271,12 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.s
+ty"
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count196
@@ -291,26 +292,29 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen160
 \Gm@dimlist=\toks34
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.cfg))
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/pdflscape\pdflscape.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.cfg
+"))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscape.s
+ty"
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/multirow\multirow.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow.sty
+"
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip72
 \multirow@cntb=\count199
 \multirow@dima=\skip73
 \bigstrutjot=\dimen161
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.sty
+"
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption3.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.sty"
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
 \captionmargin=\dimen162
@@ -324,11 +328,11 @@ Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count266
 \c@continuedfloat=\count267
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/xurl\xurl.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xurl\xurl.sty"
 Package: xurl 2020/01/24 v 0.09 modify URL breaks
 )
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/booktabs\booktabs.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs.sty
+"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen169
 \lightrulewidth=\dimen170
@@ -347,8 +351,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count270
 \@lastruleclass=\count271
 \@thisrulewidth=\dimen181
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/subfig\subfig.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@KVtest=\count272
 \sf@farskip=\skip74
@@ -363,8 +366,7 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@lotdepth=\count278
 \sf@top=\skip77
 \sf@bottom=\skip78
-)
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/float\float.sty
+) ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count279
 \float@exts=\toks35
@@ -372,7 +374,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks36
 \@floatcapt=\box52
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.sty"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.sty
+"
 \lst@mode=\count280
 \lst@gtempboxa=\box53
 \lst@token=\toks37
@@ -385,19 +388,54 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \lst@newlines=\count284
 \lst@lineno=\count285
 \lst@maxwidth=\dimen186
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
+ ("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.sty
+"
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 \c@lstnumber=\count286
 \lst@skipnumbers=\count287
 \lst@framebox=\box54
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.cfg"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.cfg
+"
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/enumitem\enumitem.sty
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf
+.sty"
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwarerr
+.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grfext\grfext.sty"
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexcmds
+.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf
+-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+))
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.sty
+"
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip79
 \enit@outerparindent=\dimen187
@@ -406,12 +444,12 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count288
 \enitdp@description=\count289
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdfmode.def"
-File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend-p
+dfmode.def"
+File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count290
 \l__pdf_internal_box=\box56
-)
-(main.aux
+) (main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 )
@@ -445,7 +483,9 @@ Package gensymb Info: Using \Omega for \ohm on input line 52.
 
 Package gensymb Warning: Not defining \micro.
 
-("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.
+mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count291
 \scratchdimen=\dimen188
@@ -458,30 +498,6 @@ Package gensymb Warning: Not defining \micro.
 \MPnumerator=\count295
 \makeMPintoPDFobject=\count296
 \everyMPtoPDFconversion=\toks40
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/infwarerr\infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/latex/grfext\grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-
-(C:\Users\maibe\AppData\Roaming\MiKTeX\2.9\tex/generic/kvdefinekeys\kvdefinekey
-s.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)) ("C:\Program Files\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexcmds.sty"
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -530,19 +546,19 @@ Package pdftex.def Info: Logo_Uchile_modern.png  used on input line 59.
 (pdftex.def)             Requested size: 170.16167pt x 140.53996pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
 
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+("C:\Users\EO\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+[1
 
-{C:/Users/maibe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Logo_Uchi
-le_modern.png>]
-(main.toc
+{C:/Users/EO/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Logo_Uchile_
+modern.png>] (main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -574,13 +590,14 @@ File: imag/SerieNoLineal.png Graphic file (type png)
 <use imag/SerieNoLineal.png>
 Package pdftex.def Info: imag/SerieNoLineal.png  used on input line 160.
 (pdftex.def)             Requested size: 284.5428pt x 199.1687pt.
- [3] [4 <./imag/APRBS.png (PNG copy)> <./imag/SerieNoLineal.png (PNG copy)>] [5
-]
+
+[3] [4 <./imag/APRBS.png (PNG copy)> <./imag/SerieNoLineal.png (PNG copy)>]
+[5]
 Package epstopdf Info: Source file: <imag/Figura_1.eps>
-(epstopdf)                    date: 2020-05-15 22:43:23
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 50858 bytes
 (epstopdf)             Output file: <imag/Figura_1-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:17
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 38389 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_1-eps-converted
 -to.pdf imag/Figura_1.eps>
@@ -588,8 +605,8 @@ Package epstopdf Info: Source file: <imag/Figura_1.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_1-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_1-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_1-eps-converted-to.pdf, id=46, 421.575pt x 316.18124pt>
 File: imag/Figura_1-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_1-eps-converted-to.pdf>
@@ -597,10 +614,10 @@ Package pdftex.def Info: imag/Figura_1-eps-converted-to.pdf  used on input line
  233.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/Figura_2.eps>
-(epstopdf)                    date: 2020-05-15 22:44:06
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 29111 bytes
 (epstopdf)             Output file: <imag/Figura_2-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:18
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 21990 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_2-eps-converted
 -to.pdf imag/Figura_2.eps>
@@ -608,8 +625,8 @@ Package epstopdf Info: Source file: <imag/Figura_2.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_2-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_2-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_2-eps-converted-to.pdf, id=47, 421.575pt x 316.18124pt>
 File: imag/Figura_2-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_2-eps-converted-to.pdf>
@@ -617,10 +634,10 @@ Package pdftex.def Info: imag/Figura_2-eps-converted-to.pdf  used on input line
  235.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/Figura_3.eps>
-(epstopdf)                    date: 2020-05-15 22:43:25
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 25206 bytes
 (epstopdf)             Output file: <imag/Figura_3-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:19
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 19872 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_3-eps-converted
 -to.pdf imag/Figura_3.eps>
@@ -628,8 +645,8 @@ Package epstopdf Info: Source file: <imag/Figura_3.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_3-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_3-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_3-eps-converted-to.pdf, id=48, 421.575pt x 316.18124pt>
 File: imag/Figura_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_3-eps-converted-to.pdf>
@@ -644,10 +661,10 @@ Overfull \hbox (7.83324pt too wide) in paragraph at lines 235--237
 [6 <./imag/Figura_1-eps-converted-to.pdf> <./imag/Figura_2-eps-converted-to.pdf
 > <./imag/Figura_3-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/Figura_4.eps>
-(epstopdf)                    date: 2020-05-15 22:43:31
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 25186 bytes
 (epstopdf)             Output file: <imag/Figura_4-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:46
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 20033 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_4-eps-converted
 -to.pdf imag/Figura_4.eps>
@@ -655,8 +672,8 @@ Package epstopdf Info: Source file: <imag/Figura_4.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_4-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_4-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_4-eps-converted-to.pdf, id=71, 418.56375pt x 314.17375pt>
 File: imag/Figura_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_4-eps-converted-to.pdf>
@@ -664,10 +681,10 @@ Package pdftex.def Info: imag/Figura_4-eps-converted-to.pdf  used on input line
  266.
 (pdftex.def)             Requested size: 213.71576pt x 160.41345pt.
 Package epstopdf Info: Source file: <imag/Figura_5.eps>
-(epstopdf)                    date: 2020-05-15 22:43:26
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 24849 bytes
 (epstopdf)             Output file: <imag/Figura_5-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:46
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 20310 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_5-eps-converted
 -to.pdf imag/Figura_5.eps>
@@ -675,8 +692,8 @@ Package epstopdf Info: Source file: <imag/Figura_5.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_5-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_5-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_5-eps-converted-to.pdf, id=72, 418.56375pt x 314.17375pt>
 File: imag/Figura_5-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_5-eps-converted-to.pdf>
@@ -684,10 +701,10 @@ Package pdftex.def Info: imag/Figura_5-eps-converted-to.pdf  used on input line
  268.
 (pdftex.def)             Requested size: 213.71576pt x 160.41345pt.
 Package epstopdf Info: Source file: <imag/Figura_6.eps>
-(epstopdf)                    date: 2020-05-15 22:43:32
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 24766 bytes
 (epstopdf)             Output file: <imag/Figura_6-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:47
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 20399 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_6-eps-converted
 -to.pdf imag/Figura_6.eps>
@@ -695,8 +712,8 @@ Package epstopdf Info: Source file: <imag/Figura_6.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_6-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_6-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_6-eps-converted-to.pdf, id=73, 418.56375pt x 314.17375pt>
 File: imag/Figura_6-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_6-eps-converted-to.pdf>
@@ -711,10 +728,10 @@ Overfull \hbox (7.83324pt too wide) in paragraph at lines 268--270
 [7 <./imag/Figura_4-eps-converted-to.pdf> <./imag/Figura_5-eps-converted-to.pdf
 > <./imag/Figura_6-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/Figura_7.eps>
-(epstopdf)                    date: 2020-05-15 22:43:35
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 31450 bytes
 (epstopdf)             Output file: <imag/Figura_7-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:48
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 25163 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_7-eps-converted
 -to.pdf imag/Figura_7.eps>
@@ -722,8 +739,8 @@ Package epstopdf Info: Source file: <imag/Figura_7.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_7-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_7-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_7-eps-converted-to.pdf, id=95, 421.575pt x 316.18124pt>
 File: imag/Figura_7-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_7-eps-converted-to.pdf>
@@ -731,10 +748,10 @@ Package pdftex.def Info: imag/Figura_7-eps-converted-to.pdf  used on input line
  303.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/Figura_8.eps>
-(epstopdf)                    date: 2020-05-15 22:43:37
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 15223 bytes
 (epstopdf)             Output file: <imag/Figura_8-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:48
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 11646 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_8-eps-converted
 -to.pdf imag/Figura_8.eps>
@@ -742,8 +759,8 @@ Package epstopdf Info: Source file: <imag/Figura_8.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_8-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_8-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_8-eps-converted-to.pdf, id=96, 421.575pt x 316.18124pt>
 File: imag/Figura_8-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_8-eps-converted-to.pdf>
@@ -756,10 +773,10 @@ Overfull \hbox (7.83324pt too wide) in paragraph at lines 303--305
  []
 
 Package epstopdf Info: Source file: <imag/Figura_9.eps>
-(epstopdf)                    date: 2020-05-15 22:43:39
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 31312 bytes
 (epstopdf)             Output file: <imag/Figura_9-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:49
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 25213 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_9-eps-converted
 -to.pdf imag/Figura_9.eps>
@@ -767,8 +784,8 @@ Package epstopdf Info: Source file: <imag/Figura_9.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_9-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_9-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_9-eps-converted-to.pdf, id=97, 421.575pt x 316.18124pt>
 File: imag/Figura_9-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_9-eps-converted-to.pdf>
@@ -776,10 +793,10 @@ Package pdftex.def Info: imag/Figura_9-eps-converted-to.pdf  used on input line
  329.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/Figura_10.eps>
-(epstopdf)                    date: 2020-05-15 22:43:38
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 18006 bytes
 (epstopdf)             Output file: <imag/Figura_10-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:50
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 13736 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_10-eps-converte
 d-to.pdf imag/Figura_10.eps>
@@ -787,8 +804,8 @@ d-to.pdf imag/Figura_10.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_10-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_10-eps-converted-to.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_10-eps-converted-to.pdf, id=98, 421.575pt x 316.18124pt>
 File: imag/Figura_10-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_10-eps-converted-to.pdf>
@@ -806,10 +823,10 @@ Overfull \hbox (7.83324pt too wide) in paragraph at lines 329--331
 df> <./imag/Figura_9-eps-converted-to.pdf> <./imag/Figura_10-eps-converted-to.p
 df>]
 Package epstopdf Info: Source file: <imag/Figura_11.eps>
-(epstopdf)                    date: 2020-05-15 22:43:41
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 31866 bytes
 (epstopdf)             Output file: <imag/Figura_11-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:51
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 25311 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_11-eps-converte
 d-to.pdf imag/Figura_11.eps>
@@ -817,8 +834,8 @@ d-to.pdf imag/Figura_11.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_11-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_11-eps-converted-to.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_11-eps-converted-to.pdf, id=131, 421.575pt x 316.18124pt>
 File: imag/Figura_11-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_11-eps-converted-to.pdf>
@@ -826,10 +843,10 @@ Package pdftex.def Info: imag/Figura_11-eps-converted-to.pdf  used on input lin
 e 346.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/Figura_12.eps>
-(epstopdf)                    date: 2020-05-15 22:43:43
+(epstopdf)                    date: 2020-05-15 23:22:30
 (epstopdf)                    size: 31680 bytes
 (epstopdf)             Output file: <imag/Figura_12-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 22:46:51
+(epstopdf)                    date: 2020-05-15 23:37:09
 (epstopdf)                    size: 25276 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/Figura_12-eps-converte
 d-to.pdf imag/Figura_12.eps>
@@ -837,8 +854,8 @@ d-to.pdf imag/Figura_12.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/Figura_12-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/Figura_12-eps-converted-to.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/Figura_12-eps-converted-to.pdf, id=132, 421.575pt x 316.18124pt>
 File: imag/Figura_12-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/Figura_12-eps-converted-to.pdf>
@@ -1004,11 +1021,11 @@ Package pdftex.def Info: imag/P1MinMax_p16.png  used on input line 775.
 [22] [23 <./imag/P1MinMax.png (PNG copy)> <./imag/P1MinMax_p8.png (PNG copy)> <
 ./imag/P1MinMax_p16.png (PNG copy)>]
 Package epstopdf Info: Source file: <imag/redes/estructura.eps>
-(epstopdf)                    date: 2020-05-13 14:52:38
-(epstopdf)                    size: 50285 bytes
+(epstopdf)                    date: 2020-05-12 18:22:02
+(epstopdf)                    size: 49507 bytes
 (epstopdf)             Output file: <imag/redes/estructura-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2020-05-13 14:52:38
+(epstopdf)                    date: 2020-05-12 18:26:10
 (epstopdf)                    size: 34911 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/estructura-eps-c
 onverted-to.pdf imag/redes/estructura.eps>
@@ -1016,8 +1033,8 @@ onverted-to.pdf imag/redes/estructura.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/estructura-eps-converted-to.pdf): P
-DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/estructura-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/estructura-eps-converted-to.pdf, id=206, 485.815pt x 487.8225pt>
 File: imag/redes/estructura-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/estructura-eps-converted-to.pdf>
@@ -1028,11 +1045,11 @@ put line 816.
 
  <./imag/redes/estructura-eps-converted-to.pdf>] [25] [26]
 Package epstopdf Info: Source file: <imag/redes/RMSE_full.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 35983 bytes
+(epstopdf)                    date: 2020-05-14 22:40:48
+(epstopdf)                    size: 35350 bytes
 (epstopdf)             Output file: <imag/redes/RMSE_full-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:41:35
 (epstopdf)                    size: 12210 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/RMSE_full-eps-co
 nverted-to.pdf imag/redes/RMSE_full.eps>
@@ -1040,8 +1057,8 @@ nverted-to.pdf imag/redes/RMSE_full.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/RMSE_full-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/RMSE_full-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/RMSE_full-eps-converted-to.pdf, id=226, 511.9125pt x 285.065pt>
 File: imag/redes/RMSE_full-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/RMSE_full-eps-converted-to.pdf>
@@ -1049,11 +1066,11 @@ Package pdftex.def Info: imag/redes/RMSE_full-eps-converted-to.pdf  used on inp
 ut line 870.
 (pdftex.def)             Requested size: 341.94652pt x 190.41838pt.
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_1.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 81971 bytes
+(epstopdf)                    date: 2020-05-14 22:44:00
+(epstopdf)                    size: 80841 bytes
 (epstopdf)             Output file: <imag/redes/sensibilidad_full_1-eps-convert
 ed-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:44:09
 (epstopdf)                    size: 9781 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_1-eps-converted-to.pdf imag/redes/sensibilidad_full_1.eps>
@@ -1061,9 +1078,9 @@ l_1-eps-converted-to.pdf imag/redes/sensibilidad_full_1.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_1-eps-converted-t
-o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
-ed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/sensibilidad_full_1-eps-convert
+ed-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
+llowed
 <imag/redes/sensibilidad_full_1-eps-converted-to.pdf, id=227, 421.575pt x 316.1
 8124pt>
 File: imag/redes/sensibilidad_full_1-eps-converted-to.pdf Graphic file (type pd
@@ -1075,11 +1092,11 @@ sed on input line 873.
 [27 <./imag/redes/RMSE_full-eps-converted-to.pdf> <./imag/redes/sensibilidad_fu
 ll_1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_2.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 81990 bytes
+(epstopdf)                    date: 2020-05-14 22:43:48
+(epstopdf)                    size: 80860 bytes
 (epstopdf)             Output file: <imag/redes/sensibilidad_full_2-eps-convert
 ed-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:44:09
 (epstopdf)                    size: 9746 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_2-eps-converted-to.pdf imag/redes/sensibilidad_full_2.eps>
@@ -1087,9 +1104,9 @@ l_2-eps-converted-to.pdf imag/redes/sensibilidad_full_2.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_2-eps-converted-t
-o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
-ed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/sensibilidad_full_2-eps-convert
+ed-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
+llowed
 <imag/redes/sensibilidad_full_2-eps-converted-to.pdf, id=244, 421.575pt x 316.1
 8124pt>
 File: imag/redes/sensibilidad_full_2-eps-converted-to.pdf Graphic file (type pd
@@ -1104,10 +1121,10 @@ Overfull \hbox (3.65758pt too wide) in paragraph at lines 891--898
  []
 
 Package epstopdf Info: Source file: <imag/redes/I_4.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 15797 bytes
+(epstopdf)                    date: 2020-05-14 22:52:35
+(epstopdf)                    size: 15679 bytes
 (epstopdf)             Output file: <imag/redes/I_4-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:55:32
 (epstopdf)                    size: 5983 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/I_4-eps-converte
 d-to.pdf imag/redes/I_4.eps>
@@ -1115,8 +1132,8 @@ d-to.pdf imag/redes/I_4.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/I_4-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/I_4-eps-converted-to.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/I_4-eps-converted-to.pdf, id=245, 421.575pt x 316.18124pt>
 File: imag/redes/I_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/I_4-eps-converted-to.pdf>
@@ -1124,10 +1141,10 @@ Package pdftex.def Info: imag/redes/I_4-eps-converted-to.pdf  used on input lin
 e 904.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/I_3.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 16269 bytes
+(epstopdf)                    date: 2020-05-14 22:58:01
+(epstopdf)                    size: 16156 bytes
 (epstopdf)             Output file: <imag/redes/I_3-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:58:39
 (epstopdf)                    size: 6364 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/I_3-eps-converte
 d-to.pdf imag/redes/I_3.eps>
@@ -1135,8 +1152,8 @@ d-to.pdf imag/redes/I_3.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/I_3-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/I_3-eps-converted-to.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/I_3-eps-converted-to.pdf, id=246, 421.575pt x 316.18124pt>
 File: imag/redes/I_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/I_3-eps-converted-to.pdf>
@@ -1152,10 +1169,10 @@ Overfull \hbox (7.83324pt too wide) in paragraph at lines 904--907
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package epstopdf Info: Source file: <imag/redes/y_red_4.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 34269 bytes
+(epstopdf)                    date: 2020-05-14 22:54:49
+(epstopdf)                    size: 33350 bytes
 (epstopdf)             Output file: <imag/redes/y_red_4-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:55:33
 (epstopdf)                    size: 10656 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_red_4-eps-conv
 erted-to.pdf imag/redes/y_red_4.eps>
@@ -1163,8 +1180,8 @@ erted-to.pdf imag/redes/y_red_4.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_red_4-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_red_4-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/y_red_4-eps-converted-to.pdf, id=247, 421.575pt x 316.18124pt>
 File: imag/redes/y_red_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_red_4-eps-converted-to.pdf>
@@ -1172,10 +1189,10 @@ Package pdftex.def Info: imag/redes/y_red_4-eps-converted-to.pdf  used on input
  line 915.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/y_red_3.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 34745 bytes
+(epstopdf)                    date: 2020-05-14 22:58:12
+(epstopdf)                    size: 33823 bytes
 (epstopdf)             Output file: <imag/redes/y_red_3-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:58:40
 (epstopdf)                    size: 10659 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_red_3-eps-conv
 erted-to.pdf imag/redes/y_red_3.eps>
@@ -1183,8 +1200,8 @@ erted-to.pdf imag/redes/y_red_3.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_red_3-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_red_3-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/y_red_3-eps-converted-to.pdf, id=248, 421.575pt x 316.18124pt>
 File: imag/redes/y_red_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_red_3-eps-converted-to.pdf>
@@ -1197,10 +1214,10 @@ Overfull \hbox (7.83324pt too wide) in paragraph at lines 915--918
  []
 
 Package epstopdf Info: Source file: <imag/redes/error_4.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 31503 bytes
+(epstopdf)                    date: 2020-05-14 22:55:28
+(epstopdf)                    size: 30863 bytes
 (epstopdf)             Output file: <imag/redes/error_4-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:55:34
 (epstopdf)                    size: 10364 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_4-eps-conv
 erted-to.pdf imag/redes/error_4.eps>
@@ -1208,8 +1225,8 @@ erted-to.pdf imag/redes/error_4.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/error_4-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/error_4-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/error_4-eps-converted-to.pdf, id=249, 421.575pt x 316.18124pt>
 File: imag/redes/error_4-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_4-eps-converted-to.pdf>
@@ -1217,10 +1234,10 @@ Package pdftex.def Info: imag/redes/error_4-eps-converted-to.pdf  used on input
  line 924.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/error_3.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 30367 bytes
+(epstopdf)                    date: 2020-05-14 22:58:24
+(epstopdf)                    size: 29722 bytes
 (epstopdf)             Output file: <imag/redes/error_3-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 22:58:41
 (epstopdf)                    size: 10322 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_3-eps-conv
 erted-to.pdf imag/redes/error_3.eps>
@@ -1228,8 +1245,8 @@ erted-to.pdf imag/redes/error_3.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/error_3-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/error_3-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/error_3-eps-converted-to.pdf, id=250, 421.575pt x 316.18124pt>
 File: imag/redes/error_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_3-eps-converted-to.pdf>
@@ -1249,11 +1266,11 @@ es/y_red_4-eps-converted-to.pdf> <./imag/redes/y_red_3-eps-converted-to.pdf> <.
 /imag/redes/error_4-eps-converted-to.pdf> <./imag/redes/error_3-eps-converted-t
 o.pdf>]
 Package epstopdf Info: Source file: <imag/redes/RMSE_full_3.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 35727 bytes
+(epstopdf)                    date: 2020-05-14 23:30:02
+(epstopdf)                    size: 35095 bytes
 (epstopdf)             Output file: <imag/redes/RMSE_full_3-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:30:10
 (epstopdf)                    size: 12238 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/RMSE_full_3-eps-
 converted-to.pdf imag/redes/RMSE_full_3.eps>
@@ -1261,669 +1278,624 @@ converted-to.pdf imag/redes/RMSE_full_3.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/RMSE_full_3-eps-converted-to.pdf): 
-PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/RMSE_full_3-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/RMSE_full_3-eps-converted-to.pdf, id=301, 511.9125pt x 285.065pt>
 File: imag/redes/RMSE_full_3-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/RMSE_full_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/RMSE_full_3-eps-converted-to.pdf  used on i
 nput line 937.
-(pdftex.def)             Requested size: 341.94652pt x 190.41838pt.
-[31 <./imag/redes/RMSE_full_3-eps-converted-to.pdf>]
+(pdftex.def)             Requested size: 320.57364pt x 178.51315pt.
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_1_3.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 77988 bytes
+(epstopdf)                    date: 2020-05-14 23:25:48
+(epstopdf)                    size: 77040 bytes
 (epstopdf)             Output file: <imag/redes/sensibilidad_full_1_3-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:26:42
 (epstopdf)                    size: 9435 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_1_3-eps-converted-to.pdf imag/redes/sensibilidad_full_1_3.eps>
-(epstopdf)             \includegraphics on input line 946.
+(epstopdf)             \includegraphics on input line 944.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_1_3-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf, id=313, 421.575pt x 316
+pdfTeX warning: pdflatex.exe (file ./imag/redes/sensibilidad_full_1_3-eps-conve
+rted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
+ allowed
+<imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf, id=302, 421.575pt x 316
 .18124pt>
 File: imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf 
- used on input line 946.
-(pdftex.def)             Requested size: 341.94989pt x 294.93323pt.
+ used on input line 944.
+(pdftex.def)             Requested size: 341.94989pt x 265.43604pt.
 Package epstopdf Info: Source file: <imag/redes/sensibilidad_full_2_3.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 78762 bytes
+(epstopdf)                    date: 2020-05-14 23:26:03
+(epstopdf)                    size: 77810 bytes
 (epstopdf)             Output file: <imag/redes/sensibilidad_full_2_3-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:26:43
 (epstopdf)                    size: 9426 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/sensibilidad_ful
 l_2_3-eps-converted-to.pdf imag/redes/sensibilidad_full_2_3.eps>
-(epstopdf)             \includegraphics on input line 949.
+(epstopdf)             \includegraphics on input line 951.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/sensibilidad_full_2_3-eps-converted
--to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
-owed
-<imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf, id=314, 421.575pt x 316
+pdfTeX warning: pdflatex.exe (file ./imag/redes/sensibilidad_full_2_3-eps-conve
+rted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
+ allowed
+<imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf, id=303, 421.575pt x 316
 .18124pt>
 File: imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf 
- used on input line 949.
-(pdftex.def)             Requested size: 341.94989pt x 294.93323pt.
+ used on input line 951.
+(pdftex.def)             Requested size: 341.94989pt x 265.43604pt.
 
-LaTeX Warning: Float too large for page by 79.04076pt on input line 952.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32 <./imag/redes/sensibilidad_full_1_3-eps-converted-to.pdf> <./imag/redes/sen
-sibilidad_full_2_3-eps-converted-to.pdf>]
+[31 <./imag/redes/RMSE_full_3-eps-converted-to.pdf> <./imag/redes/sensibilidad_
+full_1_3-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <imag/redes/y_red_10.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 34248 bytes
+(epstopdf)                    date: 2020-05-14 23:37:05
+(epstopdf)                    size: 33329 bytes
 (epstopdf)             Output file: <imag/redes/y_red_10-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:38:18
 (epstopdf)                    size: 10654 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_red_10-eps-con
 verted-to.pdf imag/redes/y_red_10.eps>
-(epstopdf)             \includegraphics on input line 963.
+(epstopdf)             \includegraphics on input line 964.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_red_10-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_red_10-eps-converted-to.pdf, id=329, 421.575pt x 316.18124pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_red_10-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_red_10-eps-converted-to.pdf, id=320, 421.575pt x 316.18124pt>
 File: imag/redes/y_red_10-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_red_10-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_red_10-eps-converted-to.pdf  used on inpu
-t line 963.
+t line 964.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/error_10.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 30609 bytes
+(epstopdf)                    date: 2020-05-14 23:37:21
+(epstopdf)                    size: 29963 bytes
 (epstopdf)             Output file: <imag/redes/error_10-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:38:19
 (epstopdf)                    size: 10281 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_10-eps-con
 verted-to.pdf imag/redes/error_10.eps>
-(epstopdf)             \includegraphics on input line 965.
+(epstopdf)             \includegraphics on input line 966.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/error_10-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/error_10-eps-converted-to.pdf, id=330, 421.575pt x 316.18124pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/error_10-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/error_10-eps-converted-to.pdf, id=321, 421.575pt x 316.18124pt>
 File: imag/redes/error_10-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_10-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/error_10-eps-converted-to.pdf  used on inpu
-t line 965.
+t line 966.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 963--966
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 964--967
  [][][] 
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <imag/redes/mse_train.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 34416 bytes
+(epstopdf)                    date: 2020-05-14 23:39:44
+(epstopdf)                    size: 33663 bytes
 (epstopdf)             Output file: <imag/redes/mse_train-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:40:38
 (epstopdf)                    size: 14155 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/mse_train-eps-co
 nverted-to.pdf imag/redes/mse_train.eps>
-(epstopdf)             \includegraphics on input line 972.
+(epstopdf)             \includegraphics on input line 973.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/mse_train-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/mse_train-eps-converted-to.pdf, id=331, 421.575pt x 316.18124pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/mse_train-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/mse_train-eps-converted-to.pdf, id=322, 421.575pt x 316.18124pt>
 File: imag/redes/mse_train-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/mse_train-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/mse_train-eps-converted-to.pdf  used on inp
-ut line 972.
+ut line 973.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/datos_target.eps>
-(epstopdf)                    date: 2020-05-15 11:53:17
-(epstopdf)                    size: 1328510 bytes
+(epstopdf)                    date: 2020-05-14 23:39:26
+(epstopdf)                    size: 1291536 bytes
 (epstopdf)             Output file: <imag/redes/datos_target-eps-converted-to.p
 df>
-(epstopdf)                    date: 2020-05-15 11:53:17
+(epstopdf)                    date: 2020-05-14 23:40:41
 (epstopdf)                    size: 451402 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/datos_target-eps
 -converted-to.pdf imag/redes/datos_target.eps>
-(epstopdf)             \includegraphics on input line 974.
+(epstopdf)             \includegraphics on input line 975.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/datos_target-eps-converted-to.pdf):
- PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/datos_target-eps-converted-to.pdf, id=332, 526.96875pt x 526.96875p
+pdfTeX warning: pdflatex.exe (file ./imag/redes/datos_target-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/datos_target-eps-converted-to.pdf, id=323, 526.96875pt x 526.96875p
 t>
 File: imag/redes/datos_target-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/datos_target-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/datos_target-eps-converted-to.pdf  used on 
-input line 974.
+input line 975.
 (pdftex.def)             Requested size: 213.71576pt x 213.71867pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 972--975
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 973--976
  [][][] 
- []
-
-
-Overfull \hbox (28.00034pt too wide) in paragraph at lines 980--989
- [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[33
 
+Overfull \hbox (28.00034pt too wide) in paragraph at lines 981--990
+ [][] 
+ []
 
- <./imag/redes/y_red_10-eps-converted-to.pdf> <./imag/redes/error_10-eps-conver
-ted-to.pdf> <./imag/redes/mse_train-eps-converted-to.pdf> <./imag/redes/datos_t
-arget-eps-converted-to.pdf>] [34]
+[32 <./imag/redes/sensibilidad_full_2_3-eps-converted-to.pdf>] [33 <./imag/rede
+s/y_red_10-eps-converted-to.pdf> <./imag/redes/error_10-eps-converted-to.pdf> <
+./imag/redes/mse_train-eps-converted-to.pdf> <./imag/redes/datos_target-eps-con
+verted-to.pdf>]
 Package epstopdf Info: Source file: <imag/redes/y_train_1k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 50320 bytes
+(epstopdf)                    date: 2020-05-15 13:33:50
+(epstopdf)                    size: 48761 bytes
 (epstopdf)             Output file: <imag/redes/y_train_1k-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 13:37:19
 (epstopdf)                    size: 13632 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_train_1k-eps-c
 onverted-to.pdf imag/redes/y_train_1k.eps>
-(epstopdf)             \includegraphics on input line 1007.
+(epstopdf)             \includegraphics on input line 1008.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_train_1k-eps-converted-to.pdf): P
-DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_train_1k-eps-converted-to.pdf, id=368, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_train_1k-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_train_1k-eps-converted-to.pdf, id=365, 511.9125pt x 284.06125pt>
 File: imag/redes/y_train_1k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_train_1k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_train_1k-eps-converted-to.pdf  used on in
-put line 1007.
+put line 1008.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/y_test_1k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 50992 bytes
+(epstopdf)                    date: 2020-05-15 13:33:34
+(epstopdf)                    size: 49423 bytes
 (epstopdf)             Output file: <imag/redes/y_test_1k-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 13:38:43
 (epstopdf)                    size: 14032 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_test_1k-eps-co
 nverted-to.pdf imag/redes/y_test_1k.eps>
-(epstopdf)             \includegraphics on input line 1009.
+(epstopdf)             \includegraphics on input line 1010.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_test_1k-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_test_1k-eps-converted-to.pdf, id=369, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_test_1k-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_test_1k-eps-converted-to.pdf, id=366, 511.9125pt x 284.06125pt>
 File: imag/redes/y_test_1k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_test_1k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_test_1k-eps-converted-to.pdf  used on inp
-ut line 1009.
+ut line 1010.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/y_val_1k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 49815 bytes
+(epstopdf)                    date: 2020-05-15 13:33:12
+(epstopdf)                    size: 48259 bytes
 (epstopdf)             Output file: <imag/redes/y_val_1k-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 13:38:43
 (epstopdf)                    size: 13700 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_val_1k-eps-con
 verted-to.pdf imag/redes/y_val_1k.eps>
-(epstopdf)             \includegraphics on input line 1012.
+(epstopdf)             \includegraphics on input line 1013.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_val_1k-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_val_1k-eps-converted-to.pdf, id=370, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_val_1k-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_val_1k-eps-converted-to.pdf, id=367, 511.9125pt x 284.06125pt>
 File: imag/redes/y_val_1k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_val_1k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_val_1k-eps-converted-to.pdf  used on inpu
-t line 1012.
+t line 1013.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/error_1k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 30455 bytes
+(epstopdf)                    date: 2020-05-15 13:34:27
+(epstopdf)                    size: 29805 bytes
 (epstopdf)             Output file: <imag/redes/error_1k-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 13:38:44
 (epstopdf)                    size: 10280 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_1k-eps-con
 verted-to.pdf imag/redes/error_1k.eps>
-(epstopdf)             \includegraphics on input line 1014.
+(epstopdf)             \includegraphics on input line 1015.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/error_1k-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/error_1k-eps-converted-to.pdf, id=371, 421.575pt x 316.18124pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/error_1k-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/error_1k-eps-converted-to.pdf, id=368, 421.575pt x 316.18124pt>
 File: imag/redes/error_1k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_1k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/error_1k-eps-converted-to.pdf  used on inpu
-t line 1014.
+t line 1015.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1007--1015
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1008--1016
  [][][]  
  []
 
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1007--1015
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1008--1016
  [][] 
  []
 
 Package epstopdf Info: Source file: <imag/redes/pred_red.eps>
-(epstopdf)                    date: 2020-05-15 23:32:07
-(epstopdf)                    size: 67337 bytes
+(epstopdf)                    date: 2020-05-15 22:15:30
+(epstopdf)                    size: 66097 bytes
 (epstopdf)             Output file: <imag/redes/pred_red-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 23:32:07
+(epstopdf)                    date: 2020-05-15 22:15:36
 (epstopdf)                    size: 35088 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/pred_red-eps-con
 verted-to.pdf imag/redes/pred_red.eps>
-(epstopdf)             \includegraphics on input line 1023.
+(epstopdf)             \includegraphics on input line 1024.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/pred_red-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/pred_red-eps-converted-to.pdf, id=372, 484.81125pt x 520.94624pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/pred_red-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/pred_red-eps-converted-to.pdf, id=369, 484.81125pt x 520.94624pt>
 File: imag/redes/pred_red-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/pred_red-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/pred_red-eps-converted-to.pdf  used on inpu
-t line 1023.
+t line 1024.
 (pdftex.def)             Requested size: 170.97pt x 183.71704pt.
 Package epstopdf Info: Source file: <imag/redes/y_train_8k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 50311 bytes
+(epstopdf)                    date: 2020-05-15 14:43:21
+(epstopdf)                    size: 48753 bytes
 (epstopdf)             Output file: <imag/redes/y_train_8k-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:43:49
 (epstopdf)                    size: 13653 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_train_8k-eps-c
 onverted-to.pdf imag/redes/y_train_8k.eps>
-(epstopdf)             \includegraphics on input line 1031.
+(epstopdf)             \includegraphics on input line 1032.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_train_8k-eps-converted-to.pdf): P
-DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_train_8k-eps-converted-to.pdf, id=373, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_train_8k-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_train_8k-eps-converted-to.pdf, id=370, 511.9125pt x 284.06125pt>
 File: imag/redes/y_train_8k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_train_8k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_train_8k-eps-converted-to.pdf  used on in
-put line 1031.
+put line 1032.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/y_test_8k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 50524 bytes
+(epstopdf)                    date: 2020-05-15 14:43:38
+(epstopdf)                    size: 48965 bytes
 (epstopdf)             Output file: <imag/redes/y_test_8k-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:43:50
 (epstopdf)                    size: 13926 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_test_8k-eps-co
 nverted-to.pdf imag/redes/y_test_8k.eps>
-(epstopdf)             \includegraphics on input line 1033.
+(epstopdf)             \includegraphics on input line 1034.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_test_8k-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_test_8k-eps-converted-to.pdf, id=374, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_test_8k-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_test_8k-eps-converted-to.pdf, id=371, 511.9125pt x 284.06125pt>
 File: imag/redes/y_test_8k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_test_8k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_test_8k-eps-converted-to.pdf  used on inp
-ut line 1033.
+ut line 1034.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/y_val_8k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 49827 bytes
+(epstopdf)                    date: 2020-05-15 14:42:44
+(epstopdf)                    size: 48271 bytes
 (epstopdf)             Output file: <imag/redes/y_val_8k-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:43:50
 (epstopdf)                    size: 13737 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_val_8k-eps-con
 verted-to.pdf imag/redes/y_val_8k.eps>
-(epstopdf)             \includegraphics on input line 1036.
+(epstopdf)             \includegraphics on input line 1037.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_val_8k-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_val_8k-eps-converted-to.pdf, id=375, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_val_8k-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_val_8k-eps-converted-to.pdf, id=372, 511.9125pt x 284.06125pt>
 File: imag/redes/y_val_8k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_val_8k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_val_8k-eps-converted-to.pdf  used on inpu
-t line 1036.
+t line 1037.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/error_8k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 30219 bytes
+(epstopdf)                    date: 2020-05-15 14:43:05
+(epstopdf)                    size: 29584 bytes
 (epstopdf)             Output file: <imag/redes/error_8k-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:43:52
 (epstopdf)                    size: 10311 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_8k-eps-con
 verted-to.pdf imag/redes/error_8k.eps>
-(epstopdf)             \includegraphics on input line 1038.
+(epstopdf)             \includegraphics on input line 1039.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/error_8k-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/error_8k-eps-converted-to.pdf, id=376, 421.575pt x 316.18124pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/error_8k-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/error_8k-eps-converted-to.pdf, id=373, 421.575pt x 316.18124pt>
 File: imag/redes/error_8k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_8k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/error_8k-eps-converted-to.pdf  used on inpu
-t line 1038.
+t line 1039.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1031--1039
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1032--1040
  [][][]  
  []
 
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1031--1039
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1032--1040
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[35 <./imag/redes/y_train_1k-eps-converted-to.pdf> <./imag/redes/y_test_1k-eps-
+[34 <./imag/redes/y_train_1k-eps-converted-to.pdf> <./imag/redes/y_test_1k-eps-
 converted-to.pdf> <./imag/redes/y_val_1k-eps-converted-to.pdf> <./imag/redes/er
-ror_1k-eps-converted-to.pdf>]
-Overfull \hbox (28.00034pt too wide) in paragraph at lines 1048--1070
+ror_1k-eps-converted-to.pdf>] [35 <./imag/redes/pred_red-eps-converted-to.pdf>]
+[36 <./imag/redes/y_train_8k-eps-converted-to.pdf> <./imag/redes/y_test_8k-eps-
+converted-to.pdf> <./imag/redes/y_val_8k-eps-converted-to.pdf> <./imag/redes/er
+ror_8k-eps-converted-to.pdf>]
+Overfull \hbox (28.00034pt too wide) in paragraph at lines 1049--1071
  [][] 
  []
 
 Package epstopdf Info: Source file: <imag/redes/y_train_16k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 50345 bytes
+(epstopdf)                    date: 2020-05-15 14:50:19
+(epstopdf)                    size: 48786 bytes
 (epstopdf)             Output file: <imag/redes/y_train_16k-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:50:46
 (epstopdf)                    size: 13653 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_train_16k-eps-
 converted-to.pdf imag/redes/y_train_16k.eps>
-(epstopdf)             \includegraphics on input line 1076.
+(epstopdf)             \includegraphics on input line 1077.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_train_16k-eps-converted-to.pdf): 
-PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_train_16k-eps-converted-to.pdf, id=403, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_train_16k-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_train_16k-eps-converted-to.pdf, id=441, 511.9125pt x 284.06125pt>
 
 File: imag/redes/y_train_16k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_train_16k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_train_16k-eps-converted-to.pdf  used on i
-nput line 1076.
+nput line 1077.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/y_test_16k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 49998 bytes
+(epstopdf)                    date: 2020-05-15 14:50:00
+(epstopdf)                    size: 48442 bytes
 (epstopdf)             Output file: <imag/redes/y_test_16k-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:50:47
 (epstopdf)                    size: 13859 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_test_16k-eps-c
 onverted-to.pdf imag/redes/y_test_16k.eps>
-(epstopdf)             \includegraphics on input line 1078.
+(epstopdf)             \includegraphics on input line 1079.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_test_16k-eps-converted-to.pdf): P
-DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_test_16k-eps-converted-to.pdf, id=404, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_test_16k-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_test_16k-eps-converted-to.pdf, id=442, 511.9125pt x 284.06125pt>
 File: imag/redes/y_test_16k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_test_16k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_test_16k-eps-converted-to.pdf  used on in
-put line 1078.
+put line 1079.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/y_val_16k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 49824 bytes
+(epstopdf)                    date: 2020-05-15 14:49:28
+(epstopdf)                    size: 48268 bytes
 (epstopdf)             Output file: <imag/redes/y_val_16k-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:50:48
 (epstopdf)                    size: 13670 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/y_val_16k-eps-co
 nverted-to.pdf imag/redes/y_val_16k.eps>
-(epstopdf)             \includegraphics on input line 1081.
+(epstopdf)             \includegraphics on input line 1082.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/y_val_16k-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/y_val_16k-eps-converted-to.pdf, id=405, 511.9125pt x 284.06125pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/y_val_16k-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/y_val_16k-eps-converted-to.pdf, id=443, 511.9125pt x 284.06125pt>
 File: imag/redes/y_val_16k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/y_val_16k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/y_val_16k-eps-converted-to.pdf  used on inp
-ut line 1081.
+ut line 1082.
 (pdftex.def)             Requested size: 213.71576pt x 118.58972pt.
 Package epstopdf Info: Source file: <imag/redes/error_16k.eps>
-(epstopdf)                    date: 2020-05-15 19:04:38
-(epstopdf)                    size: 30437 bytes
+(epstopdf)                    date: 2020-05-15 14:50:36
+(epstopdf)                    size: 29787 bytes
 (epstopdf)             Output file: <imag/redes/error_16k-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 19:04:38
+(epstopdf)                    date: 2020-05-15 14:50:49
 (epstopdf)                    size: 10273 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/error_16k-eps-co
 nverted-to.pdf imag/redes/error_16k.eps>
-(epstopdf)             \includegraphics on input line 1083.
+(epstopdf)             \includegraphics on input line 1084.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/error_16k-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imag/redes/error_16k-eps-converted-to.pdf, id=406, 421.575pt x 316.18124pt>
+pdfTeX warning: pdflatex.exe (file ./imag/redes/error_16k-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/error_16k-eps-converted-to.pdf, id=444, 421.575pt x 316.18124pt>
 File: imag/redes/error_16k-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/error_16k-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/error_16k-eps-converted-to.pdf  used on inp
-ut line 1083.
+ut line 1084.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1076--1084
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1077--1085
  [][][]  
  []
 
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1076--1084
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1077--1085
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36 <./imag/redes/pred_red-eps-converted-to.pdf>] [37 <./imag/redes/y_train_8k-
-eps-converted-to.pdf> <./imag/redes/y_test_8k-eps-converted-to.pdf> <./imag/red
-es/y_val_8k-eps-converted-to.pdf> <./imag/redes/error_8k-eps-converted-to.pdf>]
-[38 <./imag/redes/y_train_16k-eps-converted-to.pdf> <./imag/redes/y_test_16k-ep
-s-converted-to.pdf> <./imag/redes/y_val_16k-eps-converted-to.pdf> <./imag/redes
-/error_16k-eps-converted-to.pdf>] [39
+[37] [38 <./imag/redes/y_train_16k-eps-converted-to.pdf> <./imag/redes/y_test_1
+6k-eps-converted-to.pdf> <./imag/redes/y_val_16k-eps-converted-to.pdf> <./imag/
+redes/error_16k-eps-converted-to.pdf>] [39
 
 ]
 Package epstopdf Info: Source file: <imag/redes/cov_1_val.eps>
-(epstopdf)                    date: 2020-05-15 23:32:07
-(epstopdf)                    size: 89881 bytes
+(epstopdf)                    date: 2020-05-15 23:06:48
+(epstopdf)                    size: 88818 bytes
 (epstopdf)             Output file: <imag/redes/cov_1_val-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 23:32:07
+(epstopdf)                    date: 2020-05-15 23:17:54
 (epstopdf)                    size: 112518 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/cov_1_val-eps-co
 nverted-to.pdf imag/redes/cov_1_val.eps>
-(epstopdf)             \includegraphics on input line 1123.
+(epstopdf)             \includegraphics on input line 1124.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/cov_1_val-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/cov_1_val-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/cov_1_val-eps-converted-to.pdf, id=478, 421.575pt x 316.18124pt>
 File: imag/redes/cov_1_val-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/cov_1_val-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/cov_1_val-eps-converted-to.pdf  used on inp
-ut line 1123.
+ut line 1124.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/cov_8_val.eps>
-(epstopdf)                    date: 2020-05-15 23:32:07
-(epstopdf)                    size: 89554 bytes
+(epstopdf)                    date: 2020-05-15 23:14:30
+(epstopdf)                    size: 88495 bytes
 (epstopdf)             Output file: <imag/redes/cov_8_val-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2020-05-15 23:32:07
+(epstopdf)                    date: 2020-05-15 23:17:55
 (epstopdf)                    size: 112306 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/cov_8_val-eps-co
 nverted-to.pdf imag/redes/cov_8_val.eps>
-(epstopdf)             \includegraphics on input line 1125.
+(epstopdf)             \includegraphics on input line 1126.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/cov_8_val-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/cov_8_val-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/cov_8_val-eps-converted-to.pdf, id=479, 421.575pt x 316.18124pt>
 File: imag/redes/cov_8_val-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/cov_8_val-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/cov_8_val-eps-converted-to.pdf  used on inp
-ut line 1125.
+ut line 1126.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 Package epstopdf Info: Source file: <imag/redes/cov_16_val.eps>
-(epstopdf)                    date: 2020-05-15 23:32:07
-(epstopdf)                    size: 91673 bytes
+(epstopdf)                    date: 2020-05-15 23:14:44
+(epstopdf)                    size: 90587 bytes
 (epstopdf)             Output file: <imag/redes/cov_16_val-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2020-05-15 23:32:07
+(epstopdf)                    date: 2020-05-15 23:17:56
 (epstopdf)                    size: 113987 bytes
 (epstopdf)             Command: <epstopdf --outfile=imag/redes/cov_16_val-eps-c
 onverted-to.pdf imag/redes/cov_16_val.eps>
-(epstopdf)             \includegraphics on input line 1127.
+(epstopdf)             \includegraphics on input line 1128.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./imag/redes/cov_16_val-eps-converted-to.pdf): P
-DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file ./imag/redes/cov_16_val-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <imag/redes/cov_16_val-eps-converted-to.pdf, id=480, 421.575pt x 316.18124pt>
 File: imag/redes/cov_16_val-eps-converted-to.pdf Graphic file (type pdf)
 <use imag/redes/cov_16_val-eps-converted-to.pdf>
 Package pdftex.def Info: imag/redes/cov_16_val-eps-converted-to.pdf  used on in
-put line 1127.
+put line 1128.
 (pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1123--1128
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1124--1129
  [][][]  
  []
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1132.
-
 [40 <./imag/redes/cov_1_val-eps-converted-to.pdf> <./imag/redes/cov_8_val-eps-c
 onverted-to.pdf> <./imag/redes/cov_16_val-eps-converted-to.pdf>]
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
+Package epstopdf Info: Source file: <imag/redes/cov_1_val_10.eps>
+(epstopdf)                    date: 2020-05-16 16:53:34
+(epstopdf)                    size: 101081 bytes
+(epstopdf)             Output file: <imag/redes/cov_1_val_10-eps-converted-to.p
+df>
+(epstopdf)                    date: 2020-05-16 16:55:24
+(epstopdf)                    size: 132380 bytes
+(epstopdf)             Command: <epstopdf --outfile=imag/redes/cov_1_val_10-eps
+-converted-to.pdf imag/redes/cov_1_val_10.eps>
+(epstopdf)             \includegraphics on input line 1152.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./imag/redes/cov_1_val_10-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imag/redes/cov_1_val_10-eps-converted-to.pdf, id=502, 421.575pt x 316.18124pt>
+
+File: imag/redes/cov_1_val_10-eps-converted-to.pdf Graphic file (type pdf)
+<use imag/redes/cov_1_val_10-eps-converted-to.pdf>
+Package pdftex.def Info: imag/redes/cov_1_val_10-eps-converted-to.pdf  used on 
+input line 1152.
+(pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
+Package epstopdf Info: Source file: <imag/redes/cov_8_val.eps>
+(epstopdf)                    date: 2020-05-15 23:14:30
+(epstopdf)                    size: 88495 bytes
+(epstopdf)             Output file: <imag/redes/cov_8_val-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2020-05-15 23:17:55
+(epstopdf)                    size: 112306 bytes
+(epstopdf)             Command: <epstopdf --outfile=imag/redes/cov_8_val-eps-co
+nverted-to.pdf imag/redes/cov_8_val.eps>
+(epstopdf)             \includegraphics on input line 1154.
+Package epstopdf Info: Output file is already uptodate.
+File: imag/redes/cov_8_val-eps-converted-to.pdf Graphic file (type pdf)
+<use imag/redes/cov_8_val-eps-converted-to.pdf>
+Package pdftex.def Info: imag/redes/cov_8_val-eps-converted-to.pdf  used on inp
+ut line 1154.
+(pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
+Package epstopdf Info: Source file: <imag/redes/cov_16_val.eps>
+(epstopdf)                    date: 2020-05-15 23:14:44
+(epstopdf)                    size: 90587 bytes
+(epstopdf)             Output file: <imag/redes/cov_16_val-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2020-05-15 23:17:56
+(epstopdf)                    size: 113987 bytes
+(epstopdf)             Command: <epstopdf --outfile=imag/redes/cov_16_val-eps-c
+onverted-to.pdf imag/redes/cov_16_val.eps>
+(epstopdf)             \includegraphics on input line 1156.
+Package epstopdf Info: Output file is already uptodate.
+File: imag/redes/cov_16_val-eps-converted-to.pdf Graphic file (type pdf)
+<use imag/redes/cov_16_val-eps-converted-to.pdf>
+Package pdftex.def Info: imag/redes/cov_16_val-eps-converted-to.pdf  used on in
+put line 1156.
+(pdftex.def)             Requested size: 213.71576pt x 160.2902pt.
+
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1152--1157
+ [][][]  
  []
 
+[41 <./imag/redes/cov_1_val_10-eps-converted-to.pdf>] [42
 
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1176--1176
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (161.41647pt too wide) in paragraph at lines 1173--1186
- [][][] 
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (6.04268pt too wide) in paragraph at lines 1197--1197
-[]|\OT1/cmr/m/n/12 Prediccion
- []
-
-
-Overfull \hbox (166.3956pt too wide) in paragraph at lines 1194--1205
- [][][] 
- []
-
-[41] (main.bbl
+] (main.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `es'. Using the pattern for
 ** the default language instead.
@@ -1942,35 +1914,38 @@ Overfull \hbox (166.3956pt too wide) in paragraph at lines 1194--1205
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
-) [42] (main.aux
+) [43] (main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 ) ) 
 Here is how much of TeX's memory you used:
- 9866 strings out of 480934
- 150211 string characters out of 2909682
- 410817 words of memory out of 3000000
- 25472 multiletter control sequences out of 15000+200000
+ 9887 strings out of 481258
+ 152368 string characters out of 2907634
+ 409309 words of memory out of 3000000
+ 25150 multiletter control sequences out of 15000+200000
  549206 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,49p,1318b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmex
-tra/cmmib8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (47 pages, 2361911 bytes).
+ 41i,14n,49p,1199b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmbx12.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmcsc10.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/EO/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/EO/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/EO/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Use
+rs/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.
+pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cmextra/cmmib8.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/EO/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/EO/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EO/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/EO/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (48 pages, 2494403 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
+ 567 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -52,7 +52,7 @@ y_train_nn = net_trained(x_train');
 y_test_nn = net_trained(x_test');
 y_val_nn = net_trained(x_val');
 %% Interval by covariance
-jpasos = 1;
+jpasos = 16;
 alpha = 10;
 if jpasos == 1
     y_j_train = y_train_nn;
