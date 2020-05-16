@@ -48,30 +48,37 @@ NUM_OPT_NEU = 10;
 %% NEURALNETWORK
 [net_trained, tr] = NeuralNetwork(NUM_OPT_NEU, x_train, y_train, x_test, y_test, x_val, y_val);%, test_prc, val_prc);
 
-
+y_train_nn = net_trained(x_train');
+y_test_nn = net_trained(x_test');
+y_val_nn = net_trained(x_val');
 %% Prediction
-jpasos = 16;
-[y_j_train, y_j_test, y_j_val] = predictiveNN(jpasos, net_trained, x_train, x_test, x_val);
+jpasos = 500;
+if jpasos == 1
+    y_j_train = y_train_nn;
+    y_j_test = y_test_nn;
+    y_j_val = y_val_nn;
+else
+    [y_j_train, y_j_test, y_j_val] = predictiveNN(jpasos, net_trained, x_train, x_test, x_val);
+end
+error_train = y_train(jpasos: end) - y_j_train';
+error_test  = y_test(jpasos: end) - y_j_test';
+error_val   = y_val(jpasos: end)- y_j_val';
 
-error_train = y_train(1+ jpasos: end) - y_j_train';
-error_test  = y_test(1+ jpasos: end) - y_j_test';
-error_val   = y_val(1+ jpasos: end)- y_j_val';
+rmse_train = RMSE(y_train(jpasos: end), y_j_train')
+rmse_test = RMSE(y_test(jpasos: end), y_j_test')
+rmse_val = RMSE(y_val(jpasos: end), y_j_val')
 
-rmse_train = RMSE(y_train(1+ jpasos: end), y_j_train')
-rmse_test = RMSE(y_test(1+ jpasos: end), y_j_test')
-rmse_val = RMSE(y_val(1+ jpasos: end), y_j_val')
+mse_train = MSE(y_train(jpasos: end), y_j_train')
+mse_test = MSE(y_test(jpasos: end), y_j_test')
+mse_val = MSE(y_val(jpasos: end), y_j_val')
 
-mse_train = MSE(y_train(1+ jpasos: end), y_j_train')
-mse_test = MSE(y_test(1+ jpasos: end), y_j_test')
-mse_val = MSE(y_val(1+ jpasos: end), y_j_val')
+mae_train = MAE(y_train(jpasos: end), y_j_train')
+mae_test = MAE(y_test(jpasos: end), y_j_test')
+mae_val = MAE(y_val(jpasos: end), y_j_val')
 
-mae_train = MAE(y_train(1+ jpasos: end), y_j_train')
-mae_test = MAE(y_test(1+ jpasos: end), y_j_test')
-mae_val = MAE(y_val(1+ jpasos: end), y_j_val')
-
-mape_train = MAPE(y_train(1+ jpasos: end), y_j_train')
-mape_test = MAPE(y_test(1+ jpasos: end), y_j_test')
-mape_val = MAPE(y_val(1+ jpasos: end), y_j_val')
+mape_train = MAPE(y_train(jpasos: end), y_j_train')
+mape_test = MAPE(y_test(jpasos: end), y_j_test')
+mape_val = MAPE(y_val(jpasos: end), y_j_val')
 
 %%
 % Plot Histogram of Error Values
@@ -85,7 +92,7 @@ hold on
 grid on
 ylabel('y(k)')
 xlabel('Número de muestras')
-stairs(y_train(1+ jpasos: end))
+stairs(y_train(jpasos: end))
 xlim([1 300])
 ylim([-2 4])
 legend('NN-Entrenamiento', 'Dato Real', 'Location', 'southwest')
@@ -96,7 +103,7 @@ box on % put box around new pair of axes
 stairs(y_j_train)
 hold on 
 grid on
-stairs(y_train(1+ jpasos: end))
+stairs(y_train(jpasos: end))
 xlim([200, 250])
 
 fig_test = figure('Renderer', 'painters', 'Units', 'centimeters', 'Position', [4 4 18 10])
@@ -106,7 +113,7 @@ hold on
 grid on
 ylabel('y(k)')
 xlabel('Número de muestras')
-stairs(y_test(1+ jpasos: end))
+stairs(y_test(jpasos: end))
 xlim([1 300])
 ylim([-2 4])
 legend('NN-Prueba', 'Dato Real', 'Location', 'southwest')
@@ -127,7 +134,7 @@ hold on
 grid on
 ylabel('y(k)')
 xlabel('Número de muestras')
-stairs(y_val(1+ jpasos: end))
+stairs(y_val(jpasos: end))
 xlim([1 300])
 ylim([-2.5 4])
 legend('NN-Validación', 'Dato Real', 'Location', 'southwest')
@@ -138,5 +145,5 @@ box on % put box around new pair of axes
 stairs(y_j_val)
 hold on 
 grid on
-stairs(y_val(1+ jpasos: end))
+stairs(y_val(jpasos: end))
 xlim([200, 250])

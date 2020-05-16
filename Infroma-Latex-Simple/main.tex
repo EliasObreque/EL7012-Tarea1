@@ -874,6 +874,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 		MAE      & 0.06538                   & 0.06852            & 0.06117                \\ \hline
 		MAPE     & 45.25                     & 60.20              & 35.55                  \\ \hline
 	\end{tabular}
+\label{red_model_tabla}
 \end{table}
 \textbf{Modelo predictivo:}
 	Se comienza de la premisa que se conocen todos lo valores hasta $\hat{y}(k)$.
@@ -1001,6 +1002,34 @@ Donde,
 	\item $\alpha$: Hiperparámetro para ajustar el ancho del intervalo.
 	\item $\sigma_e^2$: Varianza del error en el conjunto de entrenamiento $Var(y(k) - \hat{y}(k))$.
 \end{itemize}
+
+Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el intervalo de la varianza, se deben calcular las mismas ecuaciones pero con el conjunto de validación. Por otro lado, para las predicción a $j$ pasos, se debe calcular la matriz de entrada de la red correspondiente a ese paso y calcular el valor de $\tilde{Z}$ correcto. De esta forma, se obtienen los resultados mostrados en la Figura \ref{cov_val} los resultados del conjunto de validación. Las métricas PICP y PINAW se muestran en la Tabla \ref{pinc_red} 
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/cov_1_val.eps}}
+	\subfloat[Intervalo a 8 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/cov_8_val.eps}} \newline
+	\subfloat[Intervalo a 16 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/cov_16_val.eps}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16. Los puntos anaranjados corresponden a los datos reales de validación.}
+	\label{cov_val}
+\end{figure}
+
+\begin{table}[]
+	\centering
+	\caption{Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 5$.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\multicolumn{4}{|c|}{Conjunto de validación} \\ \hline
+		PICP     & 88.0833   & 57.5859   & 48.1013   \\ \hline
+		PINAW    & 4.6883    & 4.7021    & 4.7179    \\ \hline
+	\end{tabular}
+\label{pinc_red}
+\end{table}
+
 
 %\section{Problema 2}
 %Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
