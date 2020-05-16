@@ -117,26 +117,7 @@ y=ysim(Xval,model.a,model.b,model.g);
 % xlim([1 300])
 
 % % Prediccion a j-pasos del modelo Original
-y1=ysim_p(Xval,model.a,model.b,model.g,1);
-
-% figure ()
-% stairs(y1,'--')
-% hold on
-% stairs(Yval,'red')
-% legend('Estimación a 1 pasos','Modelo real')
-% xlabel('Número de muestras')
-% ylabel('Salida del modelo')
-% 
-% figure ()
-% stairs(y1,'--')
-% hold on
-% stairs(Yval,'red')
-% legend('Estimación a 1 pasos','Modelo real')
-% xlabel('Número de muestras')
-% ylabel('Salida del modelo')
-% xlim([1 300])
-
-y8=ysim_p(Xval,model.a,model.b,model.g,8);
+y8=ysim_p(Xval,model.a,model.b,model.g,7);
 
 % figure ()
 % stairs(y8,'--')
@@ -155,7 +136,7 @@ y8=ysim_p(Xval,model.a,model.b,model.g,8);
 % ylabel('Salida del modelo')
 % xlim([1 300])
 
-y16=ysim_p(Xval,model.a,model.b,model.g,16);
+y16=ysim_p(Xval,model.a,model.b,model.g,15);
 
 % figure ()
 % stairs(y16,'--')
@@ -175,7 +156,7 @@ y16=ysim_p(Xval,model.a,model.b,model.g,16);
 % xlim([1 300])
 
 %%Calculo de los errores
-salida=[y y1 y8 y16];
+salida=[y y8 y16];
 [~,c]=size(salida);
 
 % for i=1:c
@@ -184,7 +165,7 @@ salida=[y y1 y8 y16];
 % eMAE(i)=MAE(Yval,salida(:,i));
 % end
 
-% alpha=10;
+% alpha=2;
 % [yEst,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
 % for i=1:c
 % ePINAW(i)= PINAW(salida(:,i)',yEst_u,yEst_l);

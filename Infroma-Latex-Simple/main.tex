@@ -134,14 +134,14 @@ En esta estapa es necesario generar datos que representen la dinámica del siste
 
 En este trabajo se propone el uso de señales binarias pseudo aleatorias (Pseudo Random Binary Signal, PRBS),  ya  que  es  una  de  las  señales  más  utilizadas  en  identificación  de sistemas. Esta es una señal periódica, determinística y que  posee  principalmente  propiedades  similares  al  ruido  blanco  (contenido  muy  rico  en frecuencias) \citep{nelles2013nonlinear}.
 
-Para general la señal se suponen los siguientes parámetros de interés $f_{min}=0.2 Hz$, $f_{max}=1 Hz$ y tiempo de muestreo $T_S=0.01$. Con los parámetros anteriores, y utilizando la expresión
+Para generar la señal se suponen los siguientes parámetros de interés $f_{min}=0.2 Hz$, $f_{max}=1 Hz$ y tiempo de muestreo $T_S=0.01$. Con los parámetros anteriores, y utilizando la expresión
 
 \begin{equation}
 n=\frac{log(f_c/f_{min}+1)}{log(2)})
 \label{e_}
 \end{equation}
 
-con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$. Luego, el tiempo de un bit, $\triangle t=N_s*T_s=0.4s$, por lo que la PRBS dura en total 6s y debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
+con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$,  lo cual supera el número de iteraciones en el que sistema se establece ante una entrada escalón sin ruido aproximadamente 20 iteraciones, por lo que la PRBS debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
 
 \begin{figure}
 \centering
@@ -164,7 +164,7 @@ generados. El conjunto de entrenamiento se utiliza para determinar los parámetr
 modelo. El conjunto de prueba permite comparar distintas estructuras de los modelos
 generados. Finalmente, el conjunto de validación permite verificar el sobreajuste del
 modelo óptimo obtenido, evaluándolo en un nuevo conjunto de datos (distintos a los
-datos del conjunto de entrenamiento y validación), analizando su capacidad de
+datos del conjunto de entrenamiento y prueba), analizando su capacidad de
 generalización. En este caso se utiliza una división de 55\% de los datos para entrenamiento, 25\% para prueba y 20\% validación.
 
 \section{Modelos de predicción}
@@ -197,7 +197,7 @@ Para llevar a cabo la estimación de los parámetros del modelo se utilizó la t
 \end{equation}
 
 
-En que $\hat{\theta}=[\hat{a}_1 \quad \hat{a}_2 \quad \hat{b}_1 \quad \hat{2}_2]^T$ es el vector de parámetros y $Xent$ es la matriz de regresores con los valores de las $n$ muestras ordenados por filas.
+En que $\hat{\theta}=[\hat{a}_1 \quad \hat{a}_2 \quad \hat{b}_1 \quad \hat{b}_2]^T$ es el vector de parámetros y $Xent$ es la matriz de regresores con los valores de las $n$ muestras ordenados por filas.
 
 Los valores que se obtuvieron de los parámetros fueron los siguientes:
 
@@ -225,7 +225,7 @@ Los valores que se obtuvieron de los parámetros fueron los siguientes:
 
 
 
-En la Fig. \ref{f_G123}, se muestran las gráficas de la predicción a un paso en cada conjunto de datos, a saber, conjunto de entrenamiento, prueba y validación. Esto es solo a modo de comparación puesto que finalmente es lo relevante de nuestro modelo, es el comportamiento o bondad de ajuste en el conjunto de validación. Evidentemente que los datos de los parámetros usados en las predicciones, para todos los conjuntos, son aquellos obtenidos con el conjunto de entrenamiento, sin embargo, la matriz de represores y salidas cambian dependiendo del conjunto que se esté usando para predicción.
+En la Fig. \ref{f_G123}, se muestran las gráficas de la predicción a un paso en cada conjunto de datos, a saber, conjunto de entrenamiento, prueba y validación. Esto es solo a modo de comparación puesto que finalmente, lo relevante de nuestro modelo, es el comportamiento o bondad de ajuste en el conjunto de validación. Evidentemente que los datos de los parámetros usados en las predicciones, para todos los conjuntos, son aquellos obtenidos con el conjunto de entrenamiento, sin embargo, la matriz de represores y salidas cambian dependiendo del conjunto que se esté usando para predicción.
 
 \begin{figure}
 		\centering
@@ -264,7 +264,7 @@ A continuación, en la Tabla \ref{t_NoLinealp1}, se presentan las métricas de b
 
 Es interesante notar que los ajustes del modelo, en todos los conjuntos, son bastante comparables entre sí, es decir, en general, los errores son similares en cuanto a RMSE y MAE. Esto también se puede apreciar al observar la Fig. \ref{f_G123} respectivamente. Si bien, el conjunto de entrenamiento presenta el menor MAPE, a su vez, el conjunto de entrenamiento, presenta el menor RMSE.
 
-Finalmente, para efectos de apreciar la robustez de este modelo, llevaremos a cabo la predicción a 8 y 16 pasos respectivamente, en el conjunto de validación del modelo lineal, para luego compararlos con los demás modelos, a saber, modelo de Takagi y Sugeno y Modelo Neuronal para el mismo conjunto de validación.
+Finalmente, para efectos de apreciar la robustez de este modelo, llevaremos a cabo la predicción a 8 y 16 pasos respectivamente, en el conjunto de validación del modelo lineal, para luego compararlos con los demás modelos, a saber, modelo de Takagi y Sugeno y Modelo Neuronal para el mismo conjunto de validación, Fig. \ref{f_G456}.
 
 \begin{figure}
 		\centering
@@ -281,7 +281,7 @@ Finalmente, para efectos de apreciar la robustez de este modelo, llevaremos a ca
 
 \textbf{Construcción de Intervalos para el modelo lineal}
 
-En este caso, se pueden definir 2 modelos adicionales que den cuenta de un intervalo que contenga un porcentaje de las muestras al interior del mismo. A saber, podríamos determinar un modelo por arriba ($y_u$) y uno por abajo ($y_l$) del modelo de valor esperado $y_val$, con los datos del conjunto de validación, determinado en la sección anterior.
+En este caso, se pueden definir 2 modelos adicionales que den cuenta de un intervalo que contenga un porcentaje de las muestras al interior del mismo. A saber, podríamos determinar un modelo por arriba ($y_u$) y uno por abajo ($y_l$) del modelo de valor esperado $y_{val}$, con los datos del conjunto de validación, determinado en la sección anterior.
 
 Estos modelos se podrían construir considerando la adición de la varianza de las salidas del conjunto de validación entre el valor real y el estimado, es decir, el intervalo tendría la siguiente expresión para ambos modelos:
 
@@ -301,7 +301,7 @@ $\hat{y}_{val}(k)=X_{val}(k)\hat{\theta}(k)$
 
 Así entonces, podemos determinar los modelos por arriba y por abajo del modelo clásico de valor esperado, los cuales nos definen el intervalo.
 
-A continuación, en la Fig. \ref{f_G78}, se muestran las gráficas de las 3 curvas o modelos para la predicción a un paso con $\alpha=0,8$.
+En la Fig. \ref{f_G78}, se muestran las gráficas de las 3 curvas o modelos para la predicción a un paso con $\alpha=0,8$.
 
 \begin{figure}
 		\centering
@@ -326,15 +326,15 @@ En la Tabla \ref{t_G2}, se muestran las métricas PICP y PINAW las cuales miden 
     \toprule
     Parámetro $\alpha$ & \multicolumn{1}{p{4.055em}|}{0,5} & \multicolumn{1}{p{4.055em}|}{0,8} & \multicolumn{1}{p{4.055em}|}{0,9} & \multicolumn{1}{c|}{1} & \multicolumn{1}{p{4.055em}|}{1,5} & \multicolumn{1}{c|}{2} \\
     \midrule
-    PICP (\%) & 322,034 & 525,424 & 587,288 & 653,390 & 885,593 & 961,017 \\
+    PICP (\%) & 32.2034 & 52.5424 & 58.7288 & 65.3390 & 885,593 & 96.1017 \\
     \midrule
-    PINAW & 11,687 & 186,992 & 210,366 & 237,339 & 350,609 & 467,479 \\
+    PINAW & 11.687 & 18.6992 & 21.0366 & 23.7339 & 35.0609 & 46.7479 \\
     \bottomrule
     \end{tabular}%
   \label{t_G2}%
 \end{table}%
 
-A continuación, en el siguiente gráfico, se muestra el caso en que el parámetro $\alpha$ se aumenta a 1,5.
+En la Fig. \ref{f_G910} se muestra el caso en que el parámetro $\alpha$ se aumenta a 1.5.
 
 \begin{figure}
 		\centering
@@ -347,18 +347,18 @@ A continuación, en el siguiente gráfico, se muestra el caso en que el parámet
 		\label{f_G910}
 \end{figure}
 
-Es evidente, que los datos de salida de la curva promedio (color azul) están casi completamente contenidos en el intervalo (entre curva de color rojo y verde respectivamente), de hecho, está en un 88,56% contenida en el intervalo.
+Es evidente, que los datos de salida de la curva promedio (color azul) están casi completamente contenidos en el intervalo (entre curva de color rojo y verde respectivamente), de hecho, está en un 88,56\% contenida en el intervalo.
 Ahora bien, en el caso de la construcción del intervalo de predicción a 8 y 16 pasos, se procede de manera análoga al caso de 1 paso, con la salvedad que se debe usar el modelo de 8 pasos y 16 pasos respectivamente.
 
-A continuación, en la Fig. \ref{G_1112}  se muestran los intervalos para el caso de 8 y 16 pasos considerando un parámetro $\alpha=0.8$, para efectos de comparación con el gráfico de la Fig. \ref{f_G78}.
+A continuación, en la Fig. \ref{f_G1112}  se muestran los intervalos para el caso de 8 y 16 pasos considerando un parámetro $\alpha=0.8$, para efectos de comparación con el gráfico de la Fig. \ref{f_G78}.
 
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[Curvas para Intervalo del modelo lineal considerando predicción a 8 pasos y $\alpha=0,8.$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Figura_9}}
+		 \includegraphics[width=0.5\textwidth]{imag/Figura_11}}
 		\subfloat[Curvas para Intervalo del modelo lineal considerando predicción a 16 pasos y $\alpha=0,8.$]{
-		 \includegraphics[width=0.5\textwidth]{imag/Figura_10}}\\
+		 \includegraphics[width=0.5\textwidth]{imag/Figura_12}}\\
 		\caption{Curvas para Intervalo del modelo lineal}
 		\label{f_G1112}
 \end{figure}
@@ -369,13 +369,13 @@ A continuación, en la Fig. \ref{G_1112}  se muestran los intervalos para el cas
   \caption{Métricas de porcentaje de cobertura y ancho del intervalo para diferentes valores de $\alpha=0,8$ considerando intervalos de predicción a 1, 8 y 16 pasos respectivamente.}
     \begin{tabular}{|p{8.61em}|r|r|r|}
     \toprule
-    \textbf{Parámetro a} & \multicolumn{3}{p{12.165em}|}{\textbf{0,8}} \\
+    \textbf{Parámetro $\alpha=0,8$} & \multicolumn{3}{p{12.165em}|}{\textbf{0,8}} \\
     \midrule
     \multicolumn{1}{|r|}{} & \multicolumn{1}{p{4.055em}|}{1 paso} & \multicolumn{1}{p{4.055em}|}{8 pasos} & \multicolumn{1}{p{4.055em}|}{16 pasos} \\
     \midrule
-    PICP (\%) & 525,424 & 527,966 & 527,966 \\
+    PICP (\%) & 52.5424 & 52.7966 & 52.7966 \\
     \midrule
-    PINAW & 186,992 & 184,244 & 187,348 \\
+    PINAW & 18.6992 & 18.4244 & 18.7348 \\
     \bottomrule
     \end{tabular}%
   \label{t_G3}%
@@ -614,12 +614,12 @@ Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimaci
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\subfloat[Salida del Modelo]{
+		\subfloat[Salida del Modelo a 1 paso]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1SalidaZoom}}
-		\subfloat[Salida del modelo a 1 paso]{
-		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p1Zoom}}\\
+		%\subfloat[Salida del modelo ]{
+%		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p1Zoom}}\\
         \subfloat[Salida del modelo a 8 pasos]{
-		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p8Zoom}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p8Zoom}}\\
 		\subfloat[Salida del modelo a 16 pasos]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1Salida_p16Zoom}}
 		\caption{Respuesta del Modelo Difuso Tipo 1.}
@@ -633,16 +633,16 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
 \begin{table}[htbp]
   \centering
   \caption{Desempeño del Modelo difuso a j-pasos}
-    \begin{tabular}{|l|r|r|r|r|}
+    \begin{tabular}{|l|r|r|r|}
     \toprule
-    Índices & \multicolumn{4}{c|}{Modelos} \\
-\cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
+    Índices & \multicolumn{3}{c|}{Modelos} \\
+\cmidrule{2-4}          & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
     \midrule
-    RMSE  & 0.1938 & 0.2432 & 0.7077 & 0.8847 \\
+    RMSE  & 0.1938 &  0.7077 & 0.8847 \\
     \midrule
-    MAPE  & 67.71 & 108.72 & 159.78 & 169.81 \\
+    MAPE  & 67.71 & 159.78 & 169.81 \\
     \midrule
-    MAE   & 0.1344 & 0.1816 & 0.5076 & 0.6814 \\
+    MAE   & 0.1344 &  0.5076 & 0.6814 \\
     \bottomrule
     \end{tabular}%
   \label{t_MDjp}%
@@ -722,17 +722,17 @@ y obtener el modelo de intervalo total
 \label{e_ModDifusoC1}
 \end{equation}
 
-En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para el método de la Covarianza, donde se puede observar y se corrobora con la Tabla \ref{t_Covarianza} que el modelo estimado presenta un porcentaje de cobertura inicial de 100\% y que comienza a deteriorarze a medida que aumenta el paso de estimación del modelo. Ademas esto se logra con un ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
+En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para el método de la Covarianza, donde se puede observar y se corrobora con la Tabla \ref{t_Covarianza} para un $\alpha=2$ que el modelo estimado presenta un porcentaje de cobertura inicial de 100\% y que comienza a deteriorarze a medida que aumenta el paso de estimación del modelo. Ademas esto se logra con un ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
 
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\subfloat[Salida del modelo. Método de la Covarianza]{
+		\subfloat[Salida del modelo a 1 paso.]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza}}
-		\subfloat[Salida del modelo a 1 paso]{
-		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p1}}\\
+		%\subfloat[Salida del modelo ]{
+%		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p1}}\\
         \subfloat[Salida del modelo a 8 pasos]{
-		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p8}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p8}}\\
 		\subfloat[Salida del modelo a 16 pasos]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1Covarianza_p16}}
 		\caption{Intervalo difuso. Método de la Covarianza.}
@@ -745,14 +745,14 @@ En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para
 \begin{table}[htbp]
   \centering
   \caption{Intervalos de predicción. Método de la Covarianza}
-    \begin{tabular}{|l|r|r|r|r|}
+    \begin{tabular}{|l|r|r|r|}
     \toprule
-    Índices & \multicolumn{4}{c|}{Modelos} \\
-\cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
+    Índices & \multicolumn{3}{c|}{Modelos} \\
+\cmidrule{2-4}          & \multicolumn{1}{p{6em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{6.39em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{5.445em}|}{Predicción a 16 pasos} \\
     \midrule
-    PICP  & 100   & 99.33 & 84.67 & 72 \\
+    PICP  & 100   &  84.67 & 72 \\
     \midrule
-    PINAW & 27.59 & 29.2  & 29.55 & 28.1 \\
+    PINAW & 27.59 &  29.55 & 28.1 \\
     \bottomrule
     \end{tabular}%
   \label{t_Covarianza}%
@@ -794,12 +794,12 @@ En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Métod
 \begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\subfloat[Salida del modelo.]{
+		\subfloat[Salida del modelo a 1 paso.]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax}}
-		\subfloat[Salida del modelo a 1 paso]{
-		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
+		%\subfloat[Salida del modelo ]{
+%		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p1}}\\
         \subfloat[Salida del modelo a 8 pasos]{
-		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p8}}
+		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p8}}\\
 		\subfloat[Salida del modelo a 16 pasos]{
 		 \includegraphics[width=0.5\textwidth]{imag/P1MinMax_p16}}
 		\caption{Intervalo difuso. Método MinMax}
@@ -815,14 +815,14 @@ En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Métod
 \begin{table}[htbp]
   \centering
   \caption{Intervalos de predicción. Método MinMax}
-    \begin{tabular}{|l|r|r|r|r|}
+    \begin{tabular}{|l|r|r|r|}
     \toprule
-    Índices & \multicolumn{4}{c|}{Modelos} \\
-\cmidrule{2-5}          & \multicolumn{1}{l|}{Estimado} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
+    Índices & \multicolumn{3}{c|}{Modelos} \\
+\cmidrule{2-4}          & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
     \midrule
-    PICP  & 96.92 & 92.92 & 73.50 & 63.33 \\
+    PICP  & 96.92  & 73.50 & 63.33 \\
     \midrule
-    PINAW & 30.91 & 32.71 & 31.11 & 31.49 \\
+    PINAW & 30.91  & 31.11 & 31.49 \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
@@ -831,7 +831,7 @@ En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Métod
 
 \end{itemize}
 
-Si se comparan los métodos de intervalos difusos utilizados anteriormente, se puede determinar que ambos métodos presentan un PINAW similar, pero el método Min-Max garantiza un mejor PICP para los modelos de predicción a 8 y 16 pasos, mientras que el método de la Covarianza para el modelo difuso y para la predicción a 1 paso.
+Si se comparan los métodos de intervalos difusos utilizados anteriormente, se puede determinar que ambos métodos presentan un PINAW similar, pero el método Covarianza garantiza un mejor PICP para los modelos de predicción a 1, 8 y 16 pasos.
 
 \newpage
 \subsection{Modelo de red neuronal}
@@ -938,7 +938,7 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 		\caption{Indice de sensibilidad para 4 y 3 entradas.}
 		\label{Ind_4}
 	\end{figure}
-	Se puede notar de la Figura \ref{Ind_4} que al quitar la entrada $u(k-2)$ aumenta el indicador $I_1$ de la entrada $y(k-1)$ para compensar la falta del autoregresor $u(k-2)$ manteniendo casi al mismo valor las otras dos entradas. Por otro lado, no se eliminan más entradas dado que el ancho del histograma de la Figura \ref{hist_4}(b) comienza a aumentar de valor mostrando que más datos tienen errores grandes. Este error puede tener solución al utilizar un nuevo número de neuronas en la capa oculta, por lo tanto, en el siguiente ítem se procede nuevamente a encontrar el numero óptimo de neuronas con 3 entradas.
+	Se puede notar de la Figura \ref{Ind_4} que al quitar la entrada $u(k-2)$ aumenta el indicador $I_1$ de la entrada $y(k-1)$ para compensar la falta del regresor $u(k-2)$ manteniendo casi al mismo valor las otras dos entradas. Por otro lado, no se eliminan más entradas dado que el ancho del histograma de la Figura \ref{hist_4}(b) comienza a aumentar de valor mostrando que más datos tienen errores grandes. Este error puede tener solución al utilizar un nuevo número de neuronas en la capa oculta, por lo tanto, en el siguiente ítem se procede nuevamente a encontrar el numero óptimo de neuronas con 3 entradas.
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
@@ -1165,6 +1165,51 @@ Donde,
 
 \newpage
 \section{Conclusión}
+
+En la Tabla \ref{{t_Comp}}, se muestran las diversas métricas de bondad de predicción para los diferentes modelos analizados en este informe (Lineal, Takagi y Sugeno y Neuronal) usando los datos de validación.
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Comparación de los modelos propuestos}
+    \begin{tabular}{|l|l|l|l|r|r|r|r|r|r|}
+    \toprule
+    Índices & \multicolumn{3}{c|}{Modelo Lineal} & \multicolumn{3}{c|}{Modelo Difuso Takagi Sugeno} & \multicolumn{3}{c|}{Modelo Lineal} \\
+\cmidrule{2-10}          & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
+    \midrule
+    RMSE  & 0.0954 & 0.0789 & 0.0964 & 0.1938 & 0.7077 & 0.8847 &       &       &  \\
+    \midrule
+    MAPE  & \multicolumn{1}{r|}{238.22} & \multicolumn{1}{r|}{226.60} & \multicolumn{1}{r|}{235.33} & 67.71 & 159.78 & 169.81 &       &       &  \\
+    \midrule
+    MAE   & 0.6020 & 0.5805 & 0.5944 & 0.1344 & 0.5076 & 0.6814 &       &       &  \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_Comp}%
+\end{table}%
+
+
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Add caption}
+    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
+    \toprule
+    Índices & \multicolumn{3}{c|}{Modelo Lineal} & \multicolumn{3}{c|}{Modelo Difuso Takagi Sugeno} & \multicolumn{3}{c|}{Modelo Lineal} \\
+\cmidrule{2-10}          & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
+    \midrule
+    PICP  & 52.542 & 52.797 & 52.797 & 100   & 84.67 & 72    &       &       &  \\
+    \midrule
+    PINAW & 18.6992   & 18.4244   & 18.7348   & 27.59  & 29.55 & 28.1  &       &       &  \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_CompCov}%
+\end{table}%
+
+
+					
+Tabla xx: Errores ó Métricas de bondad de ajuste para predicción resumida en los conjuntos de validación para los tres modelos obtenidos.
+
 
 
 \newpage
