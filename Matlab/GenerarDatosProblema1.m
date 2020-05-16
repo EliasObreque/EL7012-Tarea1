@@ -50,7 +50,6 @@ ry=4;
 ru=4;
 [X, Y] = createMatrixInput(Dt, ry, ru, y, u);
 
-
 %--------------Selección de datos Aleatoria----------------
 %55% para entrenamiento (3300) 25% test (1500) y 20% validación (1200)
 % rndIDX = randperm(Dt);

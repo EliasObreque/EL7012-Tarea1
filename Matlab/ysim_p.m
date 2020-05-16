@@ -1,4 +1,4 @@
-function y=ysim(X,a,b,g,p)
+function y=ysim_p(X,a,b,g,p)
 
 % y is the vector of outputs when evaluating the TS defined by a,b,g
 % X is the data matrix
