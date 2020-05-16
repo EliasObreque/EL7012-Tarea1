@@ -22,6 +22,8 @@
 \usepackage{booktabs}
 \usepackage{subfig}
 \usepackage{float}
+\usepackage{listings}
+
 %Agregados
 \usepackage[shortlabels]{enumitem}
 
@@ -88,7 +90,7 @@
 
 La  mayoría  de  los  sistemas  tienen  un  comportamiento  no  lineal,  excepto  en  un determinado rango de operación donde pueden ser considerados lineales. En ocasiones un modelo lineal es insuficiente para explicar un fenómeno por lo que se debe recurrir a Modelos No Lineales.
 
-Los modelos basados en redes neuronales y sistemas difusos han sido empleados para la identificación, dado que han mostrado una grancapacidad para aproximar funciones no lineales desconocidas, además de que ofrecen una estructura general tan compleja o sencilla como el problema lo demande. Por un lado, las redes neuronales son estructuras matemáticas inspiradas en las estructuras biológicas compuestas por neuronas, en donde a través de elementos relativamente simples (llamados neuronas)que efectúan operaciones y procesos muy sencillos logran, mediante interconexiones, realizarprocesos complejos y procesamiento de información en paralelo. En general se consideran redes neuronales conformadas por “capas” de neuronas, donde una capa procesa la información recibida en paralelo y la envía a la siguiente capa de neuronas. Por otro lado, los sistemas difusos son también estructuras matemáticas, aunque estos se encuentran inspirados en los procesos de pensamiento y toma de decisiones llevados a cabo por los humanos, así como en la teoría de conjuntos difusos propuesta por Lofti Zadeh.
+Los modelos basados en redes neuronales y sistemas difusos han sido empleados para la identificación, dado que han mostrado una grancapacidad para aproximar funciones no lineales desconocidas, además de que ofrecen una estructura general tan compleja o sencilla como el problema lo demande. Por un lado, las redes neuronales son estructuras matemáticas inspiradas en las estructuras biológicas compuestas por neuronas, en donde a través de elementos relativamente simples (llamados neuronas)que efectúan operaciones y procesos muy sencillos logran, mediante interconexiones, realizar procesos complejos y procesamiento de información en paralelo. En general se consideran redes neuronales conformadas por “capas” de neuronas, donde una capa procesa la información recibida en paralelo y la envía a la siguiente capa de neuronas. Por otro lado, los sistemas difusos son también estructuras matemáticas, aunque estos se encuentran inspirados en los procesos de pensamiento y toma de decisiones llevados a cabo por los humanos, así como en la teoría de conjuntos difusos propuesta por Lofti Zadeh.
 
 En este ejercicio se dará solución al Problema 1.
 
@@ -884,14 +886,123 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\hat{y}(k+1) &= \sum_{i=1}^{N_h} rw_i \left( \tanh\left(\sum_{m=1}^{N_I} lw_{mi} x_{m}(k + 1) + b_i\right)\right) + c
 	\label{mat_red_j}
 	\end{align}
-	recordando la definición del vector $x$, se tiene, que $x(k+1) = [\hat{y}(k), y(k-1), u(k)]$. Existe una forma de determinar la señal de control futura $u(k)$ mediante modelo de control predictivo (MPC) \cite{norgaard_neural_2000}, sin embargo, dado que se tiene un número grande de datos y que la señal APBRS se mantiene constante por lo menos en 40 puntos por bits antes de cambiar, se dará por conocido el control $u(k)$ requerido hasta el total de datos menos $j$.
+
+	recordando la definición del vector $x$, se tiene, que $x(k+1) = [\hat{y}(k), y(k-1), u(k)]$. Existe una forma de determinar la señal de control futura $u(k)$ mediante modelo de control predictivo (MPC) \cite{norgaard_neural_2000}, sin embargo, dado que se tiene un número grande de datos y que la señal APBRS se mantiene constante por lo menos en 40 puntos por bits antes de cambiar, se dará por conocido el control $u(k)$ requerido hasta el total de datos menos $j$. Los resultados para un paso se muestran en la Figura \ref{red_1k} para todos los conjuntos de datos.
 	
-	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/y_train_1k.eps}}
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/y_test_1k.eps}}
+		\newline
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/y_val_1k.eps}}
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/error_1k.eps}}		
+		\caption{Predicción a 1 paso con modelo neuronal.}
+		\label{red_1k}
+	\end{figure} 
+
 	\item \textbf{A 8 paso:}
-	\item \textbf{A 16 paso:}
+	Para este escenario, junto al de 16 pasos, se requiere conocer entradas no conocidas. Estas entradas deben ser estimadas de los datos conocidos como muestra la Figura \ref{pred_red}, donde hasta $j=1$ se conocen los datos y para $j>=2$ se deben usar las estimaciones anteriores. Los resultados para 8 pasos se muestran en la Figura \ref{red_8k}.
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\includegraphics[width=0.5\textwidth]{imag/redes/pred_red.eps}
+		\caption{Modelo de predicción para $j$ pasos del modelo neuronal.}
+		\label{pred_red}
+	\end{figure}
+	\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[MSE de entrenamiento]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_train_8k.eps}}
+	\subfloat[MSE de entrenamiento]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_test_8k.eps}}
+	\newline
+	\subfloat[MSE de entrenamiento]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/y_val_8k.eps}}
+	\subfloat[MSE de entrenamiento]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/error_8k.eps}}		
+	\caption{Predicción a 8 paso con modelo neuronal.}
+	\label{red_8k}
+\end{figure} 
+	\item \textbf{A 16 paso:} Los resultados se muestran en la Figura \ref{red_16k}.
+	Reagrupando las métricas, se tiene el resultado de la Tabla \ref{tab_pred_red}.
+		\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/y_train_16k.eps}}
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/y_test_16k.eps}}
+		\newline
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/y_val_16k.eps}}
+		\subfloat[MSE de entrenamiento]{
+			\includegraphics[width=0.5\textwidth]{imag/redes/error_16k.eps}}		
+		\caption{Predicción a 16 paso con modelo neuronal.}
+		\label{red_16k}
+	\end{figure} 
+	\begin{table}[]
+		\centering
+		\caption{Métricas de evaluación para 1, 8 y 16 pasos adelante.}
+		\begin{tabular}{|l|l|l|l|}
+			\hline
+			\multicolumn{4}{|c|}{\textbf{Predicción a 1 paso}}                                 \\ \hline
+			Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
+			RMSE     & 0.0022                    & 0.0034             & 0.0036                 \\ \hline
+			MSE      & 0.0162                    & 0.0172             & 0.0157                 \\ \hline
+			MAE      & 0.0917                    & 0.0948             & 0.0877                 \\ \hline
+			MAPE     & 61.1581                   & 75.2533            & 37.2537                \\ \hline
+			\multicolumn{4}{|c|}{\textbf{Predicción a 8 paso}}                                 \\ \hline
+			Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
+			RMSE     & 0.0050                    & 0.0082             & 0.0082                 \\ \hline
+			MSE      & 0.0811                    & 0.1012             & 0.0809                 \\ \hline
+			MAE      & 0.2006                    & 0.2243             & 0.1900                 \\ \hline
+			MAPE     & 150.8271                  & 172.2750           & 89.0900                \\ \hline
+			\multicolumn{4}{|c|}{\textbf{Predicción a 16 paso}}                                \\ \hline
+			Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
+			RMSE     & 0.0072                    & 0.0122             & 0.0116                 \\ \hline
+			MSE      & 0.1695                    & 0.2191             & 0.1582                 \\ \hline
+			MAE      & 0.2792                    & 0.3272             & 0.2621                 \\ \hline
+			MAPE     & 209.8643                  & 263.4764           & 125.4239               \\ \hline
+		\end{tabular}
+	\label{tab_pred_red}
+	\end{table}
 \end{itemize}
-
-
+\subsubsection{Comentarios sobre los modelos}
+\newpage
+\subsection{Intervalos de predicción por covarianza}
+\subsubsection{Modelo lineal}
+\subsubsection{Modelo difuso Takagi-Sugeno}
+\subsubsection{Modelo de red neuronal}
+Del modelo matemático de la ecuación \ref{mat_red}, es posible reescribir la ecuación separando las capas, es decir,
+\begin{align}
+\hat{y}(k) = \sum_{i=1}^{N_h} rw_i \tilde{Z}_i (k)  + c
+\label{out_red}
+\end{align}
+donde $\tilde{Z}_i (k)$ es la de la $i$-ésima neurona de la capa oculta, tal que,
+\begin{align}
+	\tilde{Z}_i (k) &= \tanh\left(\sum_{j=1}^{N_I} lw_{ji} x_j + b_i\right) \nonumber \\
+	\tilde{Z} &= LW X + B  
+\end{align}
+Donde $\tilde{Z}$ es la matriz de todos los datos a la salida de la capa oculta, $X$ es la matriz que contiene todos los datos de la entrada, $RW$ es la matriz de los pesos internos entre la entrada y la capa oculta y $B$ es el vector de sesgo de cada neurona en la capa oculta. Luego, el método de la covarianza nos da los limites superiores $\hat{y}_u(k)$ y limite inferior $\hat{y}_l(k)$ como sigue,
+\begin{align}
+	\hat{y}_u(k) &= [RW \tilde{Z}^{*T}(k) + c] + \alpha \cdot \sigma_e^2 \left(1+\tilde{Z}^{*T}(k) \left(\tilde{Z} \tilde{Z}^T \right)^{-1} \tilde{Z}^{*T}(k) \right)^{1/2} \nonumber\\
+	\hat{y}_l(k) &= [RW \tilde{Z}^{*T}(k) + c] - \alpha \cdot \sigma_e^2 \left(1 + \tilde{Z}^{*T}(k) \left(\tilde{Z} \tilde{Z}^T \right)^{-1} \tilde{Z}^{*T}(k) \right)^{1/2}
+	\label{cov_red}
+\end{align}
+Donde,
+\begin{itemize}
+	\item $\tilde{Z}^{*T}(k)$: Es el vector/matriz del conjunto de prueba
+	\item $\tilde{Z}$: Vector/matriz de los datos de entrenamiento.
+	\item $RW$: Matriz de pesos que conectan la capa oculta con la capa de salida de la red.
+	\item $\alpha$: Hiperparámetro para ajustar el ancho del intervalo.
+	\item $\sigma_e^2$: Varianza del error en el conjunto de entrenamiento $Var(y(k) - \hat{y}(k))$.
+\end{itemize}
 
 %\section{Problema 2}
 %Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
@@ -912,14 +1023,31 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 %\subsection{Selección de Datos}
 %Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2160 muestars del año 2015 para entrenamiento, que corresponde a 90 días de simulaciones, y para prueba y validación 720 muestras del año 2017, el equivalente a 30 días.
 
+\newpage
+\section{Conclusión}
+
 
 \newpage
 \clearpage
-\section{Resultados}
+\section{Anexos}
+
+\subsection{Anexo 1}
 
 
-\newpage
-\section{Conclusión}
+\lstset{language=Matlab}  
+
+\lstset{language=Matlab, breaklines=true, basicstyle=\footnotesize}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=-2pt}
+\begin{lstlisting}[frame=single]
+
+clear all
+clc
+%------------Generar BPRS------------
+Nd=6010;
+\end{lstlisting}
+
+
+
 
 
 \newpage
