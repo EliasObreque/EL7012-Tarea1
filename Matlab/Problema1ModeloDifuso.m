@@ -93,7 +93,7 @@ eRMSE_T=RMSE(Ytest,yT);
 eMAPE_T=MAPE(Ytest,yT);
 eMAE_T=MAE(Ytest,yT);
 
-%Evaluación del modelo Original
+% % Evaluación del modelo Original
 y=ysim(Xval,model.a,model.b,model.g);
 eRMSE_V=RMSE(Yval,y);
 eMAPE_V=MAPE(Yval,y);
@@ -116,8 +116,8 @@ xlabel('Número de muestras')
 ylabel('Salida del modelo')
 xlim([1 300])
 
-% Prediccion a j-pasos del modelo Original
-y8=ysim_p(Xval,model.a,model.b,model.g,7);
+Prediccion a j-pasos del modelo Original
+[y8,x8]=ysim_p(Xval,model.a,model.b,model.g,7);
 
 figure ()
 stairs(y8,'--')
@@ -136,7 +136,7 @@ xlabel('Número de muestras')
 ylabel('Salida del modelo')
 xlim([1 300])
 
-y16=ysim_p(Xval,model.a,model.b,model.g,15);
+[y16,x16]=ysim_p(Xval,model.a,model.b,model.g,15);
 
 figure ()
 stairs(y16,'--')
@@ -155,7 +155,7 @@ xlabel('Número de muestras')
 ylabel('Salida del modelo')
 xlim([1 300])
 
-%Calculo de los errores
+Calculo de los errores
 salida=[y y8 y16];
 [~,c]=size(salida);
 
@@ -165,22 +165,42 @@ eMAPE(i)=MAPE(Yval,salida(:,i));
 eMAE(i)=MAE(Yval,salida(:,i));
 end
 
-alpha=2;
-[yEst,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
+%Intervalos Difusos
+%Método de la Covarianza
+alpha=10;
+% Estimación a un paso
+[~,yEst_u,yEst_l]=Covarianza(Xent,Yent,Xval,model.a,model.b,model.g,alpha);
+% Estimación a  8 paso
+[~,yEst_u8,yEst_l8]=Covarianza(Xent,Yent,x8,model.a,model.b,model.g,alpha);
+% Estimación a 16 paso
+[~,yEst_u16,yEst_l16]=Covarianza(Xent,Yent,x16,model.a,model.b,model.g,alpha);
+
+y_u=[yEst_u; yEst_u8; yEst_u16];
+y_l=[yEst_l; yEst_l8; yEst_l16];
+
 for i=1:c
-ePINAW(i)= PINAW(salida(:,i)',yEst_u,yEst_l);
-ePICP(i)= PICP(salida(:,i)',yEst_u,yEst_l);
-plot_Intervalos(salida(:,i)',yEst_u,yEst_l)
+ePINAW(i)= PINAW(Yval,y_u(i,:),y_l(i,:));
+ePICP(i)= PICP(Yval,y_u(i,:),y_l(i,:));
+plot_Intervalos(Yval',y_u(i,:),y_l(i,:))
 end
 
-% Minimos cuadrados
+% % Minimos cuadrados
 [g_u,g_l]=MinMax(Xtest,Ytest,model.a,model.b,model.g);
-y_u=ysim(Xval,model.a,model.b,g_u);
-y_l=ysim(Xval,model.a,model.b,g_l);
+y_u1=ysim(Xval,model.a,model.b,g_u);
+y_l1=ysim(Xval,model.a,model.b,g_l);
+
+y_u8=ysim(x8,model.a,model.b,g_u);
+y_l8=ysim(x8,model.a,model.b,g_l);
+
+y_u16=ysim(x16,model.a,model.b,g_u);
+y_l16=ysim(x16,model.a,model.b,g_l);
+
+y_u=[y_u1 y_u8 y_u16];
+y_l=[y_l1 y_l8 y_l16];
 
 for i=1:c
-ePINAW_mm(i)= PINAW(salida(:,i)',y_u',y_l');
-ePICP_mm(i)= PICP(salida(:,i)',y_u',y_l');
-plot_Intervalos(salida(:,i)',y_u',y_l')
+ePINAW_mm(i)= PINAW(Yval,y_u(:,i),y_l(:,i));
+ePICP_mm(i)= PICP(Yval,y_u(:,i),y_l(:,i));
+plot_Intervalos(Yval',y_u',y_l')
 end
 

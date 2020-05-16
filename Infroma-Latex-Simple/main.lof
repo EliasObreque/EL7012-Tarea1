@@ -1,0 +1,82 @@
+\babel@toc {spanish}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Señal APRBS con Amplitud entre -1 y +1.\relax }}{4}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Respuesta de la serie no lineal.\relax }}{4}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Predicción del modelo Lineal.\relax }}{6}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Predicción a 1 paso en conjunto de entrenamiento}}}{6}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Predicción a 1 paso en conjunto de prueba}}}{6}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Predicción a 1 paso en conjunto de validación}}}{6}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Predicción del modelo Lineal.\relax }}{7}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Predicción a 1 paso en el conjunto de validación para el Modelo Lineal}}}{7}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Predicción a 8 pasos en el conjunto de validación para el Modelo Lineal.}}}{7}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Predicción a 16 pasos en el conjunto de validación para el Modelo Lineal.}}}{7}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Curvas para Intervalo del modelo lineal considerando predicción a 1 paso y $\alpha =0,8$\relax }}{9}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Curvas para Intervalo del modelo lineal considerando predicción a 1 paso y $\alpha =0,8$}}}{9}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Porción del gráfico}}}{9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Curvas para Intervalo del modelo lineal considerando predicción a 1 paso y $\alpha =1.5$\relax }}{9}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Curvas para Intervalo del modelo lineal considerando predicción a 1 paso y $\alpha =1.5$}}}{9}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Porción del gráfico}}}{9}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Curvas para Intervalo del modelo lineal\relax }}{10}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Curvas para Intervalo del modelo lineal considerando predicción a 8 pasos y $\alpha =0,8.$}}}{10}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Curvas para Intervalo del modelo lineal considerando predicción a 16 pasos y $\alpha =0,8.$}}}{10}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Índice de Sensibilidades.\relax }}{13}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Índice de Sensibilidades.\relax }}{14}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Clusters del Modelo Difuso Tipo 1.\relax }}{15}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Salida}}}{15}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$y(k-1)$}}}{15}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$y(k-2)$}}}{15}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$u(k-1)$}}}{15}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$u(k-2)$}}}{15}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Respuesta del Modelo Difuso Tipo 1.\relax }}{18}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Salida del Modelo a 1 paso}}}{18}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Salida del modelo a 8 pasos}}}{18}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Salida del modelo a 16 pasos}}}{18}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Intervalo difuso. Método de la Covarianza.\relax }}{21}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Salida del modelo a 1 paso.}}}{21}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Salida del modelo a 8 pasos}}}{21}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Salida del modelo a 16 pasos}}}{21}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Intervalo difuso. Método MinMax\relax }}{23}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Salida del modelo a 1 paso.}}}{23}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Salida del modelo a 8 pasos}}}{23}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Salida del modelo a 16 pasos}}}{23}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Estructura de la red neuronal perceptrón\relax }}{24}%
+\contentsline {figure}{\numberline {15}{\ignorespaces RMSE para diferente número de neuronas.\relax }}{27}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta.\relax }}{27}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta.\relax }}{28}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Indice de sensibilidad para 4 y 3 entradas.\relax }}{29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {4 Entradas}}}{29}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3 Entradas}}}{29}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Comparación entre la salida de la red neuronal y el valor real del conjunto de validación.\relax }}{30}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {4 Entradas}}}{30}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3 Entradas}}}{30}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Histograma del error de cada conjunto de datos.\relax }}{30}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {4 Entradas}}}{30}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3 Entradas}}}{30}%
+\contentsline {figure}{\numberline {21}{\ignorespaces RMSE para diferente número de neuronas.\relax }}{31}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta con 3 entradas.\relax }}{32}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta con 3 entradas.\relax }}{32}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Resultados del modelo neuronal con 10 neuronas en la capa oculta en comparación con los datos reales.\relax }}{33}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RN vs datos reales}}}{33}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Histograma del error}}}{33}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Resultados de entrenamiento mostrando la regresión de cada conjunto.\relax }}{33}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{33}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Regresión}}}{33}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Predicción a 1 paso con modelo neuronal.\relax }}{35}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{35}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{35}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{35}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{35}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Modelo de predicción para $j$ pasos del modelo neuronal.\relax }}{36}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Predicción a 8 paso con modelo neuronal.\relax }}{37}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{37}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{37}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{37}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{37}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Predicción a 16 paso con modelo neuronal.\relax }}{38}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MSE de entrenamiento}}}{38}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MSE de entrenamiento}}}{38}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSE de entrenamiento}}}{38}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSE de entrenamiento}}}{38}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16. Los puntos anaranjados corresponden a los datos reales de validación.\relax }}{40}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{40}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{40}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{40}%
