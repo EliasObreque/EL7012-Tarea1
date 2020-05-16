@@ -1,0 +1,16 @@
+\babel@toc {spanish}{}
+\contentsline {table}{\numberline {1}{\ignorespaces Errores o Métricas de bondad de ajuste a 1 paso\relax }}{6}%
+\contentsline {table}{\numberline {2}{\ignorespaces Métricas de intervalo para diferentes valores de $\alpha $. \relax }}{8}%
+\contentsline {table}{\numberline {3}{\ignorespaces Métricas de porcentaje de cobertura y ancho del intervalo para diferentes valores de $\alpha =0,8$ considerando intervalos de predicción a 1, 8 y 16 pasos respectivamente.\relax }}{10}%
+\contentsline {table}{\numberline {4}{\ignorespaces Índices de Error para el Análisis de Sensibilidades.\relax }}{14}%
+\contentsline {table}{\numberline {5}{\ignorespaces Índices de Error para el Modelo Difuso\relax }}{17}%
+\contentsline {table}{\numberline {6}{\ignorespaces Desempeño del Modelo difuso a j-pasos\relax }}{18}%
+\contentsline {table}{\numberline {7}{\ignorespaces Intervalos de predicción. Método de la Covarianza\relax }}{20}%
+\contentsline {table}{\numberline {8}{\ignorespaces Intervalos de predicción. Método MinMax\relax }}{22}%
+\contentsline {table}{\numberline {9}{\ignorespaces Experimento para ver la influencia del sobre ajuste.\relax }}{26}%
+\contentsline {table}{\numberline {10}{\ignorespaces Valores MSE para los 3 conjuntos de datos evaluados en una red con 4 entradas y otra con 3 entradas.\relax }}{28}%
+\contentsline {table}{\numberline {11}{\ignorespaces Métricas finales del modelo neuronal\relax }}{34}%
+\contentsline {table}{\numberline {12}{\ignorespaces Métricas de evaluación para 1, 8 y 16 pasos adelante.\relax }}{36}%
+\contentsline {table}{\numberline {13}{\ignorespaces Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 5$.\relax }}{41}%
+\contentsline {table}{\numberline {14}{\ignorespaces Comparación de los modelos propuestos\relax }}{41}%
+\contentsline {table}{\numberline {15}{\ignorespaces Add caption\relax }}{41}%
