@@ -97,7 +97,7 @@ La  mayoría  de  los  sistemas  tienen  un  comportamiento  no  lineal,  except
 
 Los modelos basados en redes neuronales y sistemas difusos han sido empleados para la identificación, dado que han mostrado una grancapacidad para aproximar funciones no lineales desconocidas, además de que ofrecen una estructura general tan compleja o sencilla como el problema lo demande. Por un lado, las redes neuronales son estructuras matemáticas inspiradas en las estructuras biológicas compuestas por neuronas, en donde a través de elementos relativamente simples (llamados neuronas)que efectúan operaciones y procesos muy sencillos logran, mediante interconexiones, realizar procesos complejos y procesamiento de información en paralelo. En general se consideran redes neuronales conformadas por “capas” de neuronas, donde una capa procesa la información recibida en paralelo y la envía a la siguiente capa de neuronas. Por otro lado, los sistemas difusos son también estructuras matemáticas, aunque estos se encuentran inspirados en los procesos de pensamiento y toma de decisiones llevados a cabo por los humanos, así como en la teoría de conjuntos difusos propuesta por Lofti Zadeh.
 
-En este ejercicio se dará solución al Problema 1 con ayuda del material del curso \cite{doris1}\cite{doris2}.
+En este ejercicio se dará solución al Problema 1 con ayuda del material del curso \cite{doris1}\cite{doris2}. Los códigos utilizados para los modelos se encuentran en \cite{git}.
 
 
 \subsection{Problema 1}
@@ -146,7 +146,15 @@ n=\frac{log(f_c/f_{min}+1)}{log(2)})
 \label{e_}
 \end{equation}
 
-con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$,  lo cual supera el número de iteraciones en el que sistema se establece ante una entrada escalón sin ruido aproximadamente 20 iteraciones, por lo que la PRBS debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
+con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$,  lo cual supera el número de iteraciones en el que el sistema se establece ante una entrada escalón sin ruido, aproximadamente 20 iteraciones según la Figura \ref{eval_model}. Por lo que la PRBS debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=10cm,height=7cm]{imag/evol_model.eps}
+	\caption{Comportamiento de la planta con una entrada de escalón unitario.}
+	\label{eval_model}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -172,6 +180,8 @@ modelo óptimo obtenido, evaluándolo en un nuevo conjunto de datos (distintos a
 datos del conjunto de entrenamiento y prueba), analizando su capacidad de
 generalización. En este caso se utiliza una división de 55\% de los datos para entrenamiento, 25\% para prueba y 20\% validación.
 
+\clearpage
+\newpage
 \section{Modelos de predicción}
 \subsection{Modelo lineal}
 
@@ -1102,9 +1112,9 @@ Para generar el intervalo de predicción en una red neuronal, se utiliza el mét
 donde $\tilde{Z}_i (k)$ es la de la $i$-ésima neurona de la capa oculta, tal que,
 \begin{align}
 	\tilde{Z}_i (k) &= \tanh\left(\sum_{j=1}^{N_I} lw_{ji} x_j + b_i\right) \nonumber \\
-	\tilde{Z} &= LW X + B
+	\tilde{Z} &= \tanh\left(LW X + B\right)
 \end{align}
-Donde $\tilde{Z}$ es la matriz de todos los datos a la salida de la capa oculta, $X$ es la matriz que contiene todos los datos de la entrada, $RW$ es la matriz de los pesos internos entre la entrada y la capa oculta y $B$ es el vector de sesgo de cada neurona en la capa oculta. Luego, el método de la covarianza nos da los limites superiores $\hat{y}_u(k)$ y limite inferior $\hat{y}_l(k)$ como sigue,
+Donde $\tilde{Z}$ es la matriz de todos los datos a la salida de la capa oculta, $X$ es la matriz que contiene todos los datos de la entrada, $LW$ es la matriz de los pesos internos entre la entrada y la capa oculta y $B$ es el vector de sesgo de cada neurona en la capa oculta. Luego, el método de la covarianza nos da los limites superiores $\hat{y}_u(k)$ y limite inferior $\hat{y}_l(k)$ como sigue,
 \begin{align}
 	\hat{y}_u(k) &= [RW \tilde{Z}^{*T}(k) + c] + \alpha \cdot \sigma_e^2 \left(1+\tilde{Z}^{*T}(k) \left(\tilde{Z} \tilde{Z}^T \right)^{-1} \tilde{Z}^{*T}(k) \right)^{1/2} \nonumber\\
 	\hat{y}_l(k) &= [RW \tilde{Z}^{*T}(k) + c] - \alpha \cdot \sigma_e^2 \left(1 + \tilde{Z}^{*T}(k) \left(\tilde{Z} \tilde{Z}^T \right)^{-1} \tilde{Z}^{*T}(k) \right)^{1/2}

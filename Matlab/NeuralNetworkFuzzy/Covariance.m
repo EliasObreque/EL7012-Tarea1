@@ -1,4 +1,4 @@
-function [y_u, y_l] = Covariance(alpha, net_trained, x_train_act, x_test_act, y_est)
+function [y_u, y_l] = Covariance(alpha, net_trained, x_train_act, x_est_act, y_est)
 %COVARIANCE Summary of this function goes here
 %   Detailed explanation goes here
 % 
@@ -7,16 +7,16 @@ function [y_u, y_l] = Covariance(alpha, net_trained, x_train_act, x_test_act, y_
  B = net_trained.b{1}; 
  Nh = size(B, 1);
  
- Nd = size(x_test_act, 1);
+ Nd = size(x_est_act, 1);
 % 
-Z_test = tanh(LW*x_test_act' + B);
+Z_est = tanh(LW*x_est_act' + B);
 Z_train = tanh(LW*x_train_act' + B);
 % 
 
 z_train_2 = Z_train*Z_train';
 z_train_inv = inv(z_train_2);
 
-arg = diag(ones(1, Nd)) + Z_test' * z_train_inv  * Z_test; 
+arg = diag(ones(1, Nd)) + Z_est' * z_train_inv  * Z_est; 
 
 y_u = y_est' + alpha * var(arg).^0.5';
 y_l = y_est' - alpha * var(arg).^0.5';

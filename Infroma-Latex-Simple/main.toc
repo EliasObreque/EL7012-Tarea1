@@ -2,14 +2,14 @@
 \contentsline {section}{\numberline {1}Introducción}{1}%
 \contentsline {subsection}{\numberline {1.1}Problema 1}{1}%
 \contentsline {section}{\numberline {2}Generación de Datos}{3}%
-\contentsline {section}{\numberline {3}Modelos de predicción}{5}%
-\contentsline {subsection}{\numberline {3.1}Modelo lineal}{5}%
-\contentsline {subsubsection}{\numberline {3.1.1}Predicciones a 1, 8, y 16 pasos}{7}%
-\contentsline {subsubsection}{\numberline {3.1.2}Intervalos de predicción}{8}%
-\contentsline {subsection}{\numberline {3.2}Modelo difuso Takagi-Sugeno Tipo-1}{12}%
-\contentsline {subsubsection}{\numberline {3.2.1}Predicciones a 1, 8, y 16 pasos}{17}%
-\contentsline {subsubsection}{\numberline {3.2.2}Intervalos de predicción}{17}%
-\contentsline {subsection}{\numberline {3.3}Modelo de red neuronal}{24}%
-\contentsline {subsubsection}{\numberline {3.3.1}Predicciones a 1, 8, y 16 pasos}{33}%
-\contentsline {subsubsection}{\numberline {3.3.2}Intervalo de predicción}{39}%
-\contentsline {section}{\numberline {4}Resultados previos y conclusión}{42}%
+\contentsline {section}{\numberline {3}Modelos de predicción}{6}%
+\contentsline {subsection}{\numberline {3.1}Modelo lineal}{6}%
+\contentsline {subsubsection}{\numberline {3.1.1}Predicciones a 1, 8, y 16 pasos}{8}%
+\contentsline {subsubsection}{\numberline {3.1.2}Intervalos de predicción}{9}%
+\contentsline {subsection}{\numberline {3.2}Modelo difuso Takagi-Sugeno Tipo-1}{13}%
+\contentsline {subsubsection}{\numberline {3.2.1}Predicciones a 1, 8, y 16 pasos}{18}%
+\contentsline {subsubsection}{\numberline {3.2.2}Intervalos de predicción}{18}%
+\contentsline {subsection}{\numberline {3.3}Modelo de red neuronal}{25}%
+\contentsline {subsubsection}{\numberline {3.3.1}Predicciones a 1, 8, y 16 pasos}{34}%
+\contentsline {subsubsection}{\numberline {3.3.2}Intervalo de predicción}{40}%
+\contentsline {section}{\numberline {4}Resultados previos y conclusión}{43}%
