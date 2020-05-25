@@ -25,7 +25,7 @@
 \usepackage{subfig}
 \usepackage{float}
 \usepackage{listings}
-
+ \usepackage{epstopdf}
 %Agregados
 \usepackage[shortlabels]{enumitem}
 
@@ -97,7 +97,7 @@ La  mayoría  de  los  sistemas  tienen  un  comportamiento  no  lineal,  except
 
 Los modelos basados en redes neuronales y sistemas difusos han sido empleados para la identificación, dado que han mostrado una grancapacidad para aproximar funciones no lineales desconocidas, además de que ofrecen una estructura general tan compleja o sencilla como el problema lo demande. Por un lado, las redes neuronales son estructuras matemáticas inspiradas en las estructuras biológicas compuestas por neuronas, en donde a través de elementos relativamente simples (llamados neuronas)que efectúan operaciones y procesos muy sencillos logran, mediante interconexiones, realizar procesos complejos y procesamiento de información en paralelo. En general se consideran redes neuronales conformadas por “capas” de neuronas, donde una capa procesa la información recibida en paralelo y la envía a la siguiente capa de neuronas. Por otro lado, los sistemas difusos son también estructuras matemáticas, aunque estos se encuentran inspirados en los procesos de pensamiento y toma de decisiones llevados a cabo por los humanos, así como en la teoría de conjuntos difusos propuesta por Lofti Zadeh.
 
-En este ejercicio se dará solución al Problema 1.
+En este ejercicio se dará solución al Problema 1 con ayuda del material del curso \cite{doris1}\cite{doris2}. Los códigos utilizados para los modelos se encuentran en \cite{git}.
 
 
 \subsection{Problema 1}
@@ -146,7 +146,15 @@ n=\frac{log(f_c/f_{min}+1)}{log(2)})
 \label{e_}
 \end{equation}
 
-con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$,  lo cual supera el número de iteraciones en el que sistema se establece ante una entrada escalón sin ruido aproximadamente 20 iteraciones, por lo que la PRBS debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
+con $f_c=2.5*f_{max}=2.5 Hz$, se genera una PRBS de orden $n= 4$, por lo que el largo máximo corresponde a $N = 2^n - 1 = 15$. A su vez, la cantidad de muestras por bit son $N_{s} = 40$,  lo cual supera el número de iteraciones en el que el sistema se establece ante una entrada escalón sin ruido, aproximadamente 20 iteraciones según la Figura \ref{eval_model}. Por lo que la PRBS debe ser replicada 400 veces con diferentes condiciones iniciales para obtener los 6000 datos de interés. Finalmente se genera la APRBS variando la amplitud aleatoriamente de la PRBS generada, Fig.\ref{f_APRBS} y se aplica a la serie no lineal como se muestra en la Fig.\ref{f_SerieNoLineal}.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=10cm,height=7cm]{imag/evol_model.eps}
+	\caption{Comportamiento de la planta con una entrada de escalón unitario.}
+	\label{eval_model}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -172,6 +180,8 @@ modelo óptimo obtenido, evaluándolo en un nuevo conjunto de datos (distintos a
 datos del conjunto de entrenamiento y prueba), analizando su capacidad de
 generalización. En este caso se utiliza una división de 55\% de los datos para entrenamiento, 25\% para prueba y 20\% validación.
 
+\clearpage
+\newpage
 \section{Modelos de predicción}
 \subsection{Modelo lineal}
 
@@ -548,7 +558,7 @@ MAE=\frac{1}{N}\sum_{k=1}^{N}|y(k)-y_{fuzzy}(k)|
   \caption{Índices de Error para el Modelo Difuso}
 \begin{tabular}{|c|c|c|c|}
 	\hline
-	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Conjuntos}      \\ \cline{2-4} 
+	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Conjuntos}      \\ \cline{2-4}
 	& Entrenamiento & Prueba & Validación \\ \hline
 	RMSE                      & 0.2082        & 0.2109 & 0.1938     \\ \hline
 	MAPE                      & 70.92         & 65.65  & 67.71      \\ \hline
@@ -600,7 +610,7 @@ Las Fig. \ref{f_SalidaModelo} muestra la salida del modelo difuso y  la estimaci
 \end{figure}
 
 
-En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a medida que aumenta el paso de la estimación el desempeño del modelo difuso se deteriora.
+En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenidos, como se puede comprobar a medida que aumenta el paso de la estimación el desempeño del modelo difuso se deteriora,ya que el modelo comienza a realizar estimaciones a partir de sus propias estimaciones. Sin embargo entre la estimación a 8 y 16 pasos no existen marcadas diferencias, lo cual indica que se puede utilizar el modelo obtenido para predecir a j-pasos, siempre que se tenga en cuenta que se está trabajando con estimaciones.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
@@ -608,11 +618,11 @@ En la Tabla \ref{t_MDjp} se establece una comparación entre los modelos obtenid
   \caption{Desempeño del Modelo difuso a j-pasos}
 \begin{tabular}{|c|c|c|c|}
 	\hline
-	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Modelos}                                     \\ \cline{2-4} 
-	& Predicción a 1 paso & Predicción a 8 paso & Predicción a 16 paso \\ \hline
-	RMSE                      & 0.1938              & 0.7077              & 0.8847               \\ \hline
-	MAPE                      & 67.71               & 159.78              & 169.81               \\ \hline
-	MAE                       & 0.1344              & 0.5076              & 0.6814               \\ \hline
+	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Modelos}                                     \\ \cline{2-4}
+	& Predicción a 1 paso & Predicción a 8 pasos & Predicción a 16 pasos \\ \hline
+	RMSE                      & 0.1938              & 0.6740              & 0.8653               \\ \hline
+	MAPE                      & 67.71               & 147.36              & 186.32               \\ \hline
+	MAE                       & 0.1344              & 0.4747              & 0.6672               \\ \hline
 \end{tabular}
   \label{t_MDjp}%
 \end{table}%
@@ -652,7 +662,7 @@ PICP=\frac{1}{N}\sum_{k=1}^{N}c\qquad c=\left\{
 
 \begin{align}
 PINAW &=\frac{1}{NR}\sum_{k=1}^{N}(\hat{y}_u(k)-\hat{y}_l(k)) \qquad \\
-&donde\quad R=max(y(k))-min(y(k))\nonumber 
+&donde\quad R=max(y(k))-min(y(k))\nonumber
 \label{e_PINAW}
 \end{align}
 
@@ -692,7 +702,9 @@ y obtener el modelo de intervalo total
 \label{e_ModDifusoC1}
 \end{equation}
 
-En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para el método de la Covarianza, donde se puede observar y se corrobora con la Tabla \ref{t_Covarianza} para un $\alpha=10$ que el modelo estimado presenta un porcentaje de cobertura inicial de 100\% y que comienza a deteriorarze a medida que aumenta el paso de estimación del modelo. Ademas esto se logra con un ancho promedio porcentual del intervalo que se mantiene constante para los diferentes modelos obtenidos.
+En la Tabla \ref{t_Covarianza} se muestra un análisis para tres valores de $\alpha$ diferentes, como se puede observar $\alpha=1$ da como resultado un ancho promedio porcentual del intervalo muy pequeño lo que implica un porcentaje de cobertura insuficiente para el modelo difuso, por lo cual esta opción no es válida. A medida que aumenta el valor de $\alpha$ aumenta el PICP pero también aumenta el PINAW, siendo necesario establecer un compromiso, en este problema es seleccionado el $\alpha=10$ ya que presenta para la estimación a un paso 100\% de cobertura y para las estimaciones a 8 y 16 pasos valores superiores al 75\%, aunque esto implique un aumento del PINAW. En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos.
+
+En las estiamciones a j-pasos los intervalos difusos cobran una mayor importancia, pues no solo se está predidiendo un valor, sino que además se indica con cual porciento de confianza dici valor se encuentra dentro de un intervalo de tal amplitud.
 
 \begin{figure}[h!]
 		\centering
@@ -709,21 +721,23 @@ En la Fig. \ref{f_P1Covarianza} se muestra los intervalos difusos obtenidos para
 		\label{f_P1Covarianza}
 \end{figure}
 
-
-
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
+% Table generated by Excel2LaTeX
 \begin{table}[htbp]
   \centering
   \caption{Intervalos de predicción. Método de la Covarianza}
-\begin{tabular}{|c|c|c|c|}
-	\hline
-	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Modelos}                                     \\ \cline{2-4} 
-	& Predicción a 1 paso & Predicción a 8 paso & Predicción a 16 paso \\ \hline
-	PICP                      & 100                 & 84.67               & 72                   \\ \hline
-	PINAW                     & 27.59               & 29.55               & 28.1                 \\ \hline
-\end{tabular}
-  \label{t_Covarianza}%
+    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
+    \toprule
+          & \multicolumn{3}{c|}{$\alpha=1$ } & \multicolumn{3}{c|}{$\alpha=5$ } & \multicolumn{3}{c|}{$\alpha=10$ } \\
+\cmidrule{2-10}    Índices & \multicolumn{1}{p{3em}|}{1 paso} & \multicolumn{1}{p{3em}|}{ 8 pasos} & \multicolumn{1}{p{3em}|}{ 16 pasos} & \multicolumn{1}{p{3em}|}{ 1 paso} & \multicolumn{1}{p{3em}|}{ 8 pasos} & \multicolumn{1}{p{3em}|}{ 16 pasos} & \multicolumn{1}{p{3em}|}{ 1 paso} & \multicolumn{1}{p{3em}|}{ 8 pasos} & \multicolumn{1}{p{3em}|}{ 16 pasos} \\
+    \midrule
+    PICP  & 39.5  & 14    & 9.08  & 97.5  & 63    & 47    & 100   & 86.5  & 76.25 \\
+    \midrule
+    PINAW & 2.76  & 2.89  & 2.97  & 13.78 & 14.448 & 14.87 & 27.55 & 28.88 & 29.74 \\
+    \bottomrule
+    \end{tabular}%
+ \label{t_Covarianza}
 \end{table}%
+
 
 \newpage
 
@@ -784,10 +798,10 @@ En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Métod
   \caption{Intervalos de predicción. Método MinMax}
 \begin{tabular}{|c|c|c|c|}
 	\hline
-	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Modelos}                                     \\ \cline{2-4} 
+	\multirow{2}{*}{Métricas} & \multicolumn{3}{c|}{Modelos}                                     \\ \cline{2-4}
 	& Predicción a 1 paso & Predicción a 8 paso & Predicción a 16 paso \\ \hline
-	PICP                      & 96.92               & 73.50               & 63.33                \\ \hline
-	PINAW                     & 30.91               & 31.11               & 31.49                \\ \hline
+	PICP                      & 92.58               & 77.25               & 69.92                \\ \hline
+	PINAW                     & 30.87               & 30.71             & 33.78                \\ \hline
 \end{tabular}
   \label{tab:addlabel}%
 \end{table}%
@@ -795,7 +809,7 @@ En la Fig. \ref{f_P1MinMax} se muestra el resultado de la aplicación del Métod
 
 \end{itemize}
 
-Si se comparan los métodos de intervalos difusos utilizados anteriormente, se puede determinar que ambos métodos presentan un PINAW similar, pero el método Covarianza garantiza un mejor PICP para los modelos de predicción a 1, 8 y 16 pasos.
+Si se comparan los métodos de intervalos difusos utilizados anteriormente, se puede determinar que el método de la Covarianza con un PINAW ligeramente inferior garantiza un mejor PICP para los modelos difusos de predicción a 1, 8 y 16 pasos.
 
 \clearpage
 \newpage
@@ -930,25 +944,26 @@ Para encontrar un buen modelo de red neuronal se propone seguir los pasos de ide
 	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
-		 \includegraphics[width=0.8\textwidth]{imag/redes/RMSE_full_3.eps}
+		 \includegraphics[width=0.75\textwidth]{imag/redes/RMSE_full_3.eps}
 		\caption{RMSE para diferente número de neuronas.}
 		\label{rmse_3}
 	\end{figure}
-	\newpage
-	\clearpage
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
-		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_1_3.eps}
+		\includegraphics[width=0.8\textwidth, height=0.45\textheight]{imag/redes/sensibilidad_full_1_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[2-21]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_1_3}
-		\includegraphics[width=0.8\textwidth, height=0.5\textheight]{imag/redes/sensibilidad_full_2_3.eps}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\captionsetup{justification=centering}
+		\includegraphics[width=0.8\textwidth, height=0.45\textheight]{imag/redes/sensibilidad_full_2_3.eps}
 		\caption{Sensibilidad para un número de neuronas entre $[22-41]$ en la capa oculta con 3 entradas.}
 		\label{sensi_red_2_3}
 	\end{figure}
 \end{itemize}
-\newpage
-\clearpage
+
 \textbf{Validación final de la estructura:}
 Para finalizar con la identificación del modelo de predicción por red neuronal, se evalúan los parámetros de la red, MAE, MAPE, RMSE, MSE reagrupados en la Tabla \ref{red_model_tabla}.
 
@@ -983,6 +998,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\end{tabular}
 \label{red_model_tabla}
 \end{table}
+\newpage
 \subsubsection{Predicciones a 1, 8, y 16
 	pasos}
 	Se comienza de la premisa que se conocen todos lo valores hasta $\hat{y}(k)$.
@@ -995,8 +1011,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\end{align}
 
 	recordando la definición del vector $x$, se tiene, que $x(k+1) = [\hat{y}(k), y(k-1), u(k)]$. Existe una forma de determinar la señal de control futura $u(k)$ mediante modelo de control predictivo (MPC) \cite{norgaard_neural_2000}, sin embargo, dado que se tiene un número grande de datos y que la señal APBRS se mantiene constante por lo menos en 40 puntos por bits antes de cambiar, se dará por conocido el control $u(k)$ requerido hasta el total de datos menos $j$. Los resultados para un paso se muestran en la Figura \ref{red_1k} para todos los conjuntos de datos.
-	\newpage
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
 		\subfloat[MSE de entrenamiento]{
@@ -1007,7 +1022,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 		\subfloat[MSE de entrenamiento]{
 			 \includegraphics[width=0.5\textwidth]{imag/redes/y_val_1k.eps}}
 		\subfloat[MSE de entrenamiento]{
-			 \includegraphics[width=0.5\textwidth]{imag/redes/error_1k.eps}}		 
+			 \includegraphics[width=0.5\textwidth]{imag/redes/error_1k.eps}}		
 		\caption{Predicción a 1 paso con modelo neuronal.}
 		\label{red_1k}
 	\end{figure}
@@ -1031,7 +1046,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 	\subfloat[MSE de entrenamiento]{
 		 \includegraphics[width=0.5\textwidth]{imag/redes/y_val_8k.eps}}
 	\subfloat[MSE de entrenamiento]{
-		 \includegraphics[width=0.5\textwidth]{imag/redes/error_8k.eps}}		 
+		 \includegraphics[width=0.5\textwidth]{imag/redes/error_8k.eps}}		
 	\caption{Predicción a 8 paso con modelo neuronal.}
 	\label{red_8k}
 \end{figure}
@@ -1043,19 +1058,19 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 		\caption{Métricas de evaluación para 1, 8 y 16 pasos adelante.}
 		\begin{tabular}{|l|l|l|l|}
 			\hline
-			\multicolumn{4}{|c|}{\textbf{Predicción a 1 paso}}                                 \\ \hline
+			 \multicolumn{4}{|c|}{\textbf{Predicción a 1 paso}}                                 \\ \hline
 			Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
 			RMSE     & 0.0022                    & 0.0034             & 0.0036                 \\ \hline
 			MSE      & 0.0162                    & 0.0172             & 0.0157                 \\ \hline
 			MAE      & 0.0917                    & 0.0948             & 0.0877                 \\ \hline
 			MAPE     & 61.1581                   & 75.2533            & 37.2537                \\ \hline
-			\multicolumn{4}{|c|}{\textbf{Predicción a 8 paso}}                                 \\ \hline
+			 \multicolumn{4}{|c|}{\textbf{Predicción a 8 paso}}                                 \\ \hline
 			Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
 			RMSE     & 0.0050                    & 0.0082             & 0.0082                 \\ \hline
 			MSE      & 0.0811                    & 0.1012             & 0.0809                 \\ \hline
 			MAE      & 0.2006                    & 0.2243             & 0.1900                 \\ \hline
 			MAPE     & 150.8271                  & 172.2750           & 89.0900                \\ \hline
-			\multicolumn{4}{|c|}{\textbf{Predicción a 16 paso}}                                \\ \hline
+			 \multicolumn{4}{|c|}{\textbf{Predicción a 16 paso}}                                \\ \hline
 			Métricas & Conjunto de entrenamiento & Conjunto de prueba & Conjunto de validación \\ \hline
 			RMSE     & 0.0072                    & 0.0122             & 0.0116                 \\ \hline
 			MSE      & 0.1695                    & 0.2191             & 0.1582                 \\ \hline
@@ -1065,6 +1080,10 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 		\label{tab_pred_red}
 	\end{table}
 	
+	\textbf{Comentarios:}
+	De las Figuras \ref{red_1k}, \ref{red_8k} y \ref{red_16k} y la Tabla resumen \ref{tab_pred_red}, se puede ver que la red neuronal se ajusta muy bien a los datos reales manteniendo un error con distribución pseudo gaussiana (apartado (b) de las figuras) con un ancho bajo con error centrado en cero.  Por otro, se nota que a medida que los pasos de predicción aumentan, las métricas comienzan a aumentar como es de esperarse, sobre todo el MAPE que mide la precisión de la predicción porcentual, es decir, puede que la curva de la red neuronal siga la curva gruesa de los datos reales sin necesidad de caer cerca de los datos reales, a pesar de esto, sigue siendo una predicción acertada. Se piensa que las perturbaciones y errores del modelo son pequeñas debido a que el tiempo de muestreo es muy alto y avanzar 16 pasos sea muy poco .
+
+	\newpage
 		\begin{figure}[h!]
 		\centering
 		\captionsetup{justification=centering}
@@ -1076,7 +1095,7 @@ Para finalizar con la identificación del modelo de predicción por red neuronal
 		\subfloat[MSE de entrenamiento]{
 			 \includegraphics[width=0.5\textwidth]{imag/redes/y_val_16k.eps}}
 		\subfloat[MSE de entrenamiento]{
-			 \includegraphics[width=0.5\textwidth]{imag/redes/error_16k.eps}}		 
+			 \includegraphics[width=0.5\textwidth]{imag/redes/error_16k.eps}}		
 		\caption{Predicción a 16 paso con modelo neuronal.}
 		\label{red_16k}
 	\end{figure}
@@ -1093,9 +1112,9 @@ Para generar el intervalo de predicción en una red neuronal, se utiliza el mét
 donde $\tilde{Z}_i (k)$ es la de la $i$-ésima neurona de la capa oculta, tal que,
 \begin{align}
 	\tilde{Z}_i (k) &= \tanh\left(\sum_{j=1}^{N_I} lw_{ji} x_j + b_i\right) \nonumber \\
-	\tilde{Z} &= LW X + B
+	\tilde{Z} &= \tanh\left(LW X + B\right)
 \end{align}
-Donde $\tilde{Z}$ es la matriz de todos los datos a la salida de la capa oculta, $X$ es la matriz que contiene todos los datos de la entrada, $RW$ es la matriz de los pesos internos entre la entrada y la capa oculta y $B$ es el vector de sesgo de cada neurona en la capa oculta. Luego, el método de la covarianza nos da los limites superiores $\hat{y}_u(k)$ y limite inferior $\hat{y}_l(k)$ como sigue,
+Donde $\tilde{Z}$ es la matriz de todos los datos a la salida de la capa oculta, $X$ es la matriz que contiene todos los datos de la entrada, $LW$ es la matriz de los pesos internos entre la entrada y la capa oculta y $B$ es el vector de sesgo de cada neurona en la capa oculta. Luego, el método de la covarianza nos da los limites superiores $\hat{y}_u(k)$ y limite inferior $\hat{y}_l(k)$ como sigue,
 \begin{align}
 	\hat{y}_u(k) &= [RW \tilde{Z}^{*T}(k) + c] + \alpha \cdot \sigma_e^2 \left(1+\tilde{Z}^{*T}(k) \left(\tilde{Z} \tilde{Z}^T \right)^{-1} \tilde{Z}^{*T}(k) \right)^{1/2} \nonumber\\
 	\hat{y}_l(k) &= [RW \tilde{Z}^{*T}(k) + c] - \alpha \cdot \sigma_e^2 \left(1 + \tilde{Z}^{*T}(k) \left(\tilde{Z} \tilde{Z}^T \right)^{-1} \tilde{Z}^{*T}(k) \right)^{1/2}
@@ -1110,99 +1129,140 @@ Donde,
 	\item $\sigma_e^2$: Varianza del error en el conjunto de entrenamiento $Var(y(k) - \hat{y}(k))$.
 \end{itemize}
 
-Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el intervalo de la varianza de validación, se deben calcular las mismas ecuaciones pero con el conjunto de validación. Por otro lado, para las predicción a $j$ pasos, se debe calcular la matriz de entrada de la red correspondiente a ese paso y calcular el valor de $\tilde{Z}$ correcto. De esta forma, se obtienen los resultados mostrados en la Figura \ref{cov_val} los resultados del conjunto de validación. Las métricas PICP y PINAW se muestran en la Tabla \ref{pinc_red} 
+Notar que $\tilde{Z}$ nace del conjunto de prueba, por lo tanto, para evaluar el intervalo de la varianza de validación, se deben calcular las mismas ecuaciones pero con el conjunto de validación. Por otro lado, para las predicción a $j$ pasos, se debe calcular la matriz de entrada de la red correspondiente a ese paso y calcular el valor de $\tilde{Z}$ correcto. De esta forma, se obtienen los resultados mostrados en la Figura \ref{cov_val} los resultados del conjunto de validación. Las métricas PICP y PINAW se muestran en la Tabla \ref{pinc_red}
 
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
 	\subfloat[Intervalo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/cov_1_val.eps}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/cov_1_val.eps}}
 	\subfloat[Intervalo a 8 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/cov_8_val.eps}} \newline
+		 \includegraphics[width=0.5\textwidth]{imag/redes/cov_8_val.eps}} \newline
 	\subfloat[Intervalo a 16 paso]{
 		\includegraphics[width=0.5\textwidth]{imag/redes/cov_16_val.eps}}
-	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16. Los puntos anaranjados corresponden a los datos reales de validación.}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha=5$.}
 	\label{cov_val}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[h!]
 	\centering
 	\caption{Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 5$.}
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		\multicolumn{4}{|c|}{Conjunto de validación} \\ \hline
+			& A 1 paso &A 8 pasos & A 16 pasos \\\hline
 		PICP     & 88.0833   & 57.5859   & 48.1013   \\ \hline
 		PINAW    & 4.6883    & 4.7021    & 4.7179    \\ \hline
 	\end{tabular}
 \label{pinc_red}
 \end{table}
 
+Como se puede apreciar en la Tabla \ref{pinc_red}, el PICP del primer paso no alcanza a cubrir todos los puntos reales del conjunto de validación, por ello, se presenta los resultados de otro escenario con $\alpha=10$ en la Figura \ref{cov_val_10}. Las métricas de evaluación de intervalo se reagrupan en la Tabla \ref{pinc_red_10} donde se observa una mejora en el PICP con un leve aumento del PINAW.
 
-%\section{Problema 2}
-%Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
-%
-%Por tal razón, se le ha confiado a usted el proyecto de determinar modelos de predicción para la generación de energía en un sistema fotovoltaico instalado en una cierta comunidad del norte del país. La finalidad de este proyecto es la de disponer de información futura de generación fotovoltaica, para así poder gestionar el funcionamiento del resto de los elementos que componen a la micro-red.
-%
-%Para esto se le entregarán datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Estos datos tienen un tiempo de muestreo de 1 hora (considerar porcentajes adecuados de los datos en las fases de training, test y validación).
-%
-%Como usted sabe, son varias las formas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para dicha aplicación.
-%
-%Se sugiere considerar los datos del año 2015 como base de entrenamiento y las mediciones del año 2017 como base de prueba y validación. Para este trabajo se le pide detallar la metodología utilizada para:
-%
-%\begin{enumerate}[a)]
-%  \item Obtener dos modelos de predicción (a elección entre los vistos en este curso) y evaluar las predicciones a 1, 6 y 12 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras.
-%  \item Construir un intervalo de predicción para los modelos obtenidos en a), utilizando método que ud. seleccione.
-%\end{enumerate}
-%
-%\subsection{Selección de Datos}
-%Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2160 muestars del año 2015 para entrenamiento, que corresponde a 90 días de simulaciones, y para prueba y validación 720 muestras del año 2017, el equivalente a 30 días.
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/cov_1_val_10.eps}}
+	\subfloat[Intervalo a 8 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/cov_8_val.eps}} \newline
+	\subfloat[Intervalo a 16 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/cov_16_val.eps}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha=10$.}
+	\label{cov_val_10}
+\end{figure}
+
+\begin{table}[h!]
+	\centering
+	\caption{Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 10$.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& A 1 paso &A 8 pasos & A 16 pasos \\\hline
+		PICP     &  98.3333   & 79.2121   & 68.4388   \\ \hline
+		PINAW    & 9.3770   & 9.4056    & 9.4368    \\ \hline
+	\end{tabular}
+	\label{pinc_red_10}
+\end{table}
+
+
+\clearpage
+\newpage
+
+
+
 
 \newpage
-\section{Conclusión}
+\section{Resultados previos y conclusión}
 
-En la Tabla \ref{{t_Comp}}, se muestran las diversas métricas de bondad de predicción para los diferentes modelos analizados en este informe (Lineal, Takagi y Sugeno y Neuronal) usando los datos de validación.
+En la Tabla \ref{t_Comp}, se muestran las diversas métricas de bondad de predicción para los diferentes modelos analizados en este informe (Lineal, Takagi y Sugeno y Neuronal) usando los datos de validación.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
   \caption{Comparación de los modelos propuestos}
-    \begin{tabular}{|l|l|l|l|r|r|r|r|r|r|}
-    \toprule
-    Índices & \multicolumn{3}{c|}{Modelo Lineal} & \multicolumn{3}{c|}{Modelo Difuso Takagi Sugeno} & \multicolumn{3}{c|}{Modelo Lineal} \\
-\cmidrule{2-10}          & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
-    \midrule
-    RMSE  & 0.0954 & 0.0789 & 0.0964 & 0.1938 & 0.7077 & 0.8847 &       &       &  \\
-    \midrule
-    MAPE  & \multicolumn{1}{r|}{238.22} & \multicolumn{1}{r|}{226.60} & \multicolumn{1}{r|}{235.33} & 67.71 & 159.78 & 169.81 &       &       &  \\
-    \midrule
-    MAE   & 0.6020 & 0.5805 & 0.5944 & 0.1344 & 0.5076 & 0.6814 &       &       &  \\
-    \bottomrule
-    \end{tabular}%
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	Modelos                & Pasos & \multicolumn{3}{l|}{Parámetro de evaluación} \\ \hline
+	\multicolumn{2}{|l|}{}         & RMSE         & MAPE           & MAE          \\ \hline
+	\multirow{3}{*}{Linal} & 1     & 0.0954       & 238.22         & 0.6020       \\ \cline{2-5}
+	& 8     & 0.0789       & 226.60         & 0.5805       \\ \cline{2-5}
+	& 16    & 0.0964       & 235.33         & 0.5944       \\ \hline
+	\multirow{3}{*}{T\&S}  & 1     & 0.1938       & 67.71          & 0.1344       \\ \cline{2-5}
+	& 8     & 0.6740       & 147.36         & 0.4747       \\ \cline{2-5}
+	& 16    & 0.8653       & 186.32         & 0.6672       \\ \hline
+	\multirow{3}{*}{RN}    & 1     & 0.0036       & 37.2537        & 0.0877       \\ \cline{2-5}
+	& 8     & 0.0082       & 89.0900        & 0.1900       \\ \cline{2-5}
+	& 16    & 0.0116       & 125.4239       & 0.2621       \\ \hline
+\end{tabular}
   \label{t_Comp}%
 \end{table}%
 
-
+Un análisis para intervalos difusos se presenta con el Método de la Covarianza (común para los tres modelos utilizados) en la  Tabla \ref{t_CompCov}
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Add caption}
-    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
-    \toprule
-    Índices & \multicolumn{3}{c|}{Modelo Lineal} & \multicolumn{3}{c|}{Modelo Difuso Takagi Sugeno} & \multicolumn{3}{c|}{Modelo Lineal} \\
-\cmidrule{2-10}          & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 1 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 8 pasos} & \multicolumn{1}{p{4.055em}|}{Predicción a 16 pasos} \\
-    \midrule
-    PICP  & 52.542 & 52.797 & 52.797 & 100   & 84.67 & 72    &       &       &  \\
-    \midrule
-    PINAW & 18.6992   & 18.4244   & 18.7348   & 27.59  & 29.55 & 28.1  &       &       &  \\
-    \bottomrule
-    \end{tabular}%
+  \caption{Comparación de modelos de intervalo.}
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	Modelos                & Pasos & \multicolumn{2}{l|}{Parámetro de evaluación} \\ \hline
+	\multicolumn{2}{|l|}{}         & PICP                  & PINAW                \\ \hline
+	\multirow{3}{*}{Linal} & 1     & 52.542                & 18.6992              \\ \cline{2-4}
+	& 8     & 52.797                & 18.4244              \\ \cline{2-4}
+	& 16    & 52.797                & 18.7348              \\ \hline
+	\multirow{3}{*}{T\&S}  & 1     & 100                   & 27.55                \\ \cline{2-4}
+	& 8     & 86.5                  & 28.88                \\ \cline{2-4}
+	& 16    & 76.25                 & 29.74                \\ \hline
+	\multirow{3}{*}{RN}    & 1     & 98.3333               & 9.3770               \\ \cline{2-4}
+	& 8     & 79.2121               & 9.4056               \\ \cline{2-4}
+	& 16    & 68.4388               & 9.4368               \\ \hline
+\end{tabular}
   \label{t_CompCov}%
 \end{table}%
 
+Se puede apreciar que, como el modelo de la planta es no lineal, la red neuronal predomina en todos los sectores de evaluación. El RMSE es bajo incluso para 16 pasos y el valor más alto de PINAW es alrededor de 9.5, menor que los otros modelos.
 
-					
-Tabla xx: Errores ó Métricas de bondad de ajuste para predicción resumida en los conjuntos de validación para los tres modelos obtenidos.
+
+
+\section{Problema 2}
+Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
+
+Por tal razón, se le ha confiado a usted el proyecto de determinar modelos de predicción para la generación de energía en un sistema fotovoltaico instalado en una cierta comunidad del norte del país. La finalidad de este proyecto es la de disponer de información futura de generación fotovoltaica, para así poder gestionar el funcionamiento del resto de los elementos que componen a la micro-red.
+
+Para esto se le entregarán datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Estos datos tienen un tiempo de muestreo de 1 hora (considerar porcentajes adecuados de los datos en las fases de training, test y validación).
+
+Como usted sabe, son varias las formas que se pueden emplear para la modelación a partir de estos datos, por lo que debe seleccionar el tipo de modelo más adecuado para dicha aplicación.
+
+Se sugiere considerar los datos del año 2015 como base de entrenamiento y las mediciones del año 2017 como base de prueba y validación. Para este trabajo se le pide detallar la metodología utilizada para:
+
+\begin{enumerate}[a)]
+  \item Obtener dos modelos de predicción (a elección entre los vistos en este curso) y evaluar las predicciones a 1, 6 y 12 pasos. Comparar el desempeño de todos los modelos a partir de las métricas más apropiadas tales como RMSE, MAPE, MAE, entre otras.
+  \item Construir un intervalo de predicción para los modelos obtenidos en a), utilizando método que ud. seleccione.
+\end{enumerate}
+
+\subsection{Selección de Datos}
+Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2160 muestars del año 2015 para entrenamiento, que corresponde a 90 días de simulaciones, y para prueba y validación 720 muestras del año 2017, el equivalente a 30 días.
+				
 
 
 
