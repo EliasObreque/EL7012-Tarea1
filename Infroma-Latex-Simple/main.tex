@@ -1261,9 +1261,236 @@ Se sugiere considerar los datos del año 2015 como base de entrenamiento y las m
 \end{enumerate}
 
 \subsection{Selección de Datos}
-Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2880 muestars del año 2015 para entrenamiento, que corresponde a 120 días de muestreo, y para prueba y validación 960 muestras del año 2017, el equivalente a 40 días.
+Se cuenta con los datos históricos de generación fotovoltaica (expresada en KW) medida en la comunidad durante el periodo septiembre-diciembre de los años 2015 y 2017. Para la selección de los conjuntos de entrenamiento, prueba y validación se utiliza una división $[60\%,20\%,20\%]$, tomándose en este caso 2880 muestras del año 2015 para entrenamiento, que corresponde a 120 días de muestreo, y para prueba y validación 960 muestras del año 2017, el equivalente a 40 días.
 				
+\subsection{Modelo difuso Takagi-Sugeno Tipo-1}
 
+\begin{itemize}
+	\item \textbf{Selección de variables:}
+Para seleccionar las variables que actúan como entrada al sistema difuso, se realiza un análisis de sensibilidad suponiendo una estructura del modelo inicial difuso con 24 variables de entrada $y(k-1)$,..., $y(k-24)$, que se corresponden con las mediciones de un día hacía atrás. La Fig. \ref{f_P2reglas24} muestra el RMSE para los conjuntos de entrenamiento y prueba, destacándose que salvo para un número de clúster igual a 4 el comportamiento para ambos conjuntos, entrenamiento y prueba es similar, por lo se escoge como número de cluster 2 que resulta en un modelo menos complejo. Para todos los análisis se utiliza como algoritmo de clustering el Fuzzy C-Means.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=10cm,height=7cm]{imag/P2/cluster24}
+\caption{Índice de Sensibilidades.}
+\label{f_P2reglas24}
+\end{figure}
+
+En la Fig. \ref{f_P2Sensibilidad} se muestran los índices de las sensibilidades del modelo para 6
+variables de entrada (constituye un cuarto de la cantidad de regresores iniciales): $y(k-1)$, $y(k-2)$, $y(k-10)$, $y(k-11)$, $y(k-12)$ y $y(k-23)$, comprobándose que las variables con mayor aporte son el muestreo en los instantes anteriores y la muestras tomadas equivalente medio día antes. Es de interés analizar el comportamiento del modelo cuando solo se conoce el muestreo en el instante anterior por lo que obtendrá un modelo que solo trabaje con la variable de entrada $y(k-1)$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=10cm,height=7cm]{imag/P2/Sensibilidad24}
+\caption{Índice de Sensibilidades.}
+\label{f_P2Sensibilidad}
+\end{figure}
+
+	\item \textbf{Optimización de la estructura y los parámetros:}
+
+La optimización de la estructura del modelo difuso consiste principalmente en determinar el número óptimo de reglas del modelo difuso, por lo que se trabajará con los 3 modelos anteriormente descritos:
+
+\begin{itemize}
+  \item Modelo 1: 24 regresores: $y(k-1)$,..., $y(k-24)$
+  \item Modelo 2: 6 regresores: $y(k-1)$, $y(k-2)$, $y(k-10)$, $y(k-11)$, $y(k-12)$ y $y(k-24)$
+  \item Modelo 3: 1 regresor: $y(k-1)$
+\end{itemize}
+
+En este caso se definió un número máximo de 10 clusters y se entrenó cada modelo para cada una de las posibles valores de clusters, utilizando como algoritmo de clustering el Fuzzy C-Means, Fig. \ref{f_P2Cluster}. Se escoge el número de cluster igual a 2 para los tres modelos ya que es un número de clusters aceptable para todos los modelos y además permite establecer condiciones de similitud para establecer comparaciones entre ellos. Para cada modelo y números de clusters se obtienen los parámetros del modelo. En la Fig. \ref{f_P2ClusterS} se nota que a medida que se disminuye el número de regresores, es más complejo para el algoritmo de clustering difuso poder asignar los grados de pertencia a los conjuntos difusos.
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Cluster24}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Cluster6}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Cluster1}}
+		\caption{Índice de Sensibilidades.}
+		\label{f_P2Cluster}
+\end{figure}
+
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/clusterSalidaM1}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/clusterSalidaM2}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/clusterSalidaM3}}
+		\caption{ Clusters de Salida Modelo Difuso Tipo 1.}
+		\label{f_P2ClusterS}
+\end{figure}
+
+
+La Tabla \ref{t_P2TM} muestra varios índices de desempeño para los conjuntos de entrenamiento, prueba y validación. Es destacable los altos valores para el índice porcentual MAPE, ya que este indicador es sensible a valores de observación cercanos a cero (los valores iguales a cero no se incluyen ya que indefinen la expresión) lo cual es algo característico de la generación de energía en un sistema fotovoltaico, por lo cual no se tendrá en cuenta en futuros análisis.
+
+Dentro de un mismo modelo las variaciones en los índices RMSE y MAE para los conjuntos de entranamiento, prueba y validación no presentan variaciones significativas lo cual es un indicacor de que los modelos obtenidos son válidos. Si se comparan el desempeño de los Modelos 1, 2 y 3 se puede encontrar que a medidad de disminye el número de regresores (información del modelo), los índices de desempeño RMSE y MAE comienzan a deteriorase, por lo cual para seleccionar un modelo final es necesrio establecer un compromiso entre desempeño y complejidad, en este caso el desempeño del modelo 3 no difiere mucho desempeño del modelo 1 que cuenta con muchos más regresores.
+
+% Table generated by Excel2LaTeX from sheet 'P2'
+\begin{table}[htbp]
+  \centering
+  \caption{Desempeño de los Modelos Difusos}
+    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
+    \toprule
+          & \multicolumn{3}{c|}{Modelo 1} & \multicolumn{3}{c|}{Modelo 2} & \multicolumn{3}{c|}{Modelo 3} \\
+    \midrule
+    Índices & \multicolumn{1}{p{3em}|}{Entre.} & \multicolumn{1}{p{3em}|}{Prueba} & \multicolumn{1}{p{3.9em}|}{Validación} & \multicolumn{1}{p{3em}|}{Entre.} & \multicolumn{1}{p{3em}|}{Prueba} & \multicolumn{1}{p{3.9em}|}{Validación} & \multicolumn{1}{p{3em}|}{Entre.} & \multicolumn{1}{p{3em}|}{Prueba} & \multicolumn{1}{p{3.9em}|}{Validación} \\
+
+    \midrule
+    RMSE  & 1.4751 & 0.8860 & 1.0761 & 1.6342 & 1.1371 & 1.1520 & 2.4171 & 2.7762 & 2.53811 \\
+    \midrule
+    MAPE  & 766.42 & 335.23 & 262.78 & 649.63 & 266.23 & 215.32 & 968.63 & 768.61 & 728.16 \\
+    \midrule
+    MAE   & 0.7572 & 0.5171 & 0.6014 & 0.8420 & 0.6363 & 0.6176 & 1.4398 & 1.6494 & 1.5828 \\
+
+    \bottomrule
+    \end{tabular}%
+  \label{t_P2TM}%
+\end{table}%
+
+En la Fig. \ref{f_P2Salida} se muestra la salida de los modelos difusos en el conjunto de validación. Es necesario destacar que alrededor del día 10 de muestreo la generación de energía en el sistema fotovoltaico no presentó el comportamiento tradicional y los modelos difusos logran emular este comportamiento. Las salidas del modelo difuso para los conjuntos de 6 y 24 regresores en los valores de salida cercanos a cero pueden dar como salida valores negativos, algo que hay que prestar atención ya que el modelo físico del sistema de generación fotovoltaica no puede dar valores inferiores a cero.
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r24}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r6}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r1}}
+		\caption{Salida de los modelos difusos}
+		\label{f_P2Salida}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Predicciones a 1, 6, y 12
+pasos}
+
+En las Fig. \ref{f_P2Salida}, \ref{f_P2Salidap6} y \ref{f_P2Salidap12} se muestra la salida para los tres modelos en la predicción a 1, 6 y 12 pasos. Se oberva que a medida que aumenta el número de pasos la predicción del modelo se deteriora. En el caso de la predicción a 6 pasos para el Modelo 3, cuenta solo con la información del instante anterior, no logra predecir los valores cercanos a cero, aunque se puede decir que los tres modelos logran seguir el comporatmiento de la señal, siendo el de mejor comportamiento el modelo 1, cuenta con la información de 24 instantes de muestreos anteriores, según se corrobora en la Tabla \ref{t_MDP}.
+
+% Table generated by Excel2LaTeX from sheet 'P2'
+\begin{table}[htbp]
+  \centering
+  \caption{ Desempeño de la predicción de los Modelos Difusos.}
+    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
+    \toprule
+          & \multicolumn{3}{c|}{1 paso} & \multicolumn{3}{c|}{6 paso} & \multicolumn{3}{c|}{12 paso} \\
+\cmidrule{2-10}    Índices &
+\multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} \\
+    \midrule
+    RMSE  & 1.0761 & 1.1371 & 2.5381 & 1.6011 & 1.7073 & 4.3392 & 8.8953 & 9.0658 & 5.0312 \\
+    \midrule
+    MAE   & 0.6014 & 0.616 & 1.5828 & 0.8204 & 0.9401 & 2.9788 & 5.653 & 5.9445 & 4.2140\\
+    \bottomrule
+    \end{tabular}%
+  \label{t_MDP}%
+\end{table}%
+
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r24_p6}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r6_p6}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r1_p6}}
+		\caption{Salida de los modelos difusos. Predicción a 6 pasos}
+		\label{f_P2Salidap6}
+\end{figure}
+
+En el caso de la predicción a 12 pasos, Fig. \ref{f_P2Salidap12}, los modelos difusos desarrollados no logran predecir la señal y sus índices de desempeño no son los adecuados, por lo que en este caso más que predecir la señal es más conveniente predecir el intervalo difuso de la señal.
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r24_p12}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r6_p12}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/Sal_r1_p12}}
+		\caption{Salida de los modelos difusos. Predicción a 12 pasos}
+		\label{f_P2Salidap12}
+\end{figure}
+
+\subsubsection{Intervalos de predicción}
+
+En las estimaciones a j-pasos los intervalos difusos cobran una mayor importancia, pues no solo se está predidiendo un valor, sino que además se indica con cual porciento de confianza dici valor se encuentra dentro de un intervalo de tal amplitud.
+
+% Table generated by Excel2LaTeX from sheet 'P2'
+\begin{table}[htbp]
+  \centering
+  \caption{ Desempeño de la predicción de los Intervalos Difusos. Método de la Covarianza}
+    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
+    \toprule
+          & \multicolumn{3}{c|}{1 paso} & \multicolumn{3}{c|}{6 paso} & \multicolumn{3}{c|}{12 paso} \\
+\cmidrule{2-10}    Índices &
+\multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} \\
+    \midrule
+    PICP  & 98.85 & 98.85 & 90.83 & 96.77 & 97.08 & 78.4375 & 71.15 & 89.79 & 99.69 \\
+    \midrule
+    PINAW & 27.78 & 30.06 & 44.12 & 28.14 & 30.12 & 45.84 & 55.63 & 57.1  & 129.81 \\
+    \bottomrule
+    \end{tabular}%
+  \label{t_MDPCov}%
+\end{table}%
+
+Para la predicción a 1 paso se observa en la Fig. \ref{f_P2SalidaCov} como se logra un porciento de cobertura adecuado para los tres modelos a la vez que el ancho promedio porcentual es aceptable para los modelos 1 y 2, mientras que en el modelo 3 se logra un buen porciento de cobertura a expensas de aumentar el ancho del intervalo difuso.
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r24_p1}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r6_p1}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r1_p1}}
+		\caption{Intervalo Difuso. Método de la covarianza}
+		\label{f_P2SalidaCov}
+\end{figure}
+
+La predicción a 6 pasos mantiene un comportamiento similar a la prediccióna un paso, siendo nuevamente el modelo de pero comportamiento el modelo 3, recordar que este modelo solo cuenta con la información del instante anterior.
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r24_p6}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r6_p6}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r1_p6}}
+		\caption{Intervalo Difuso. Método de la covarianza. Predicción a 6 pasos}
+		\label{f_P2SalidaCovp6}
+\end{figure}
+
+Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el modelo no brinda una infromación muy precisa, pudiendo tomarse solo como una cota superior de la predicci?2n d ela variable pues falla en los valor cercanos a cero.
+
+\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\subfloat[Modelo 1]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r24_p12}}
+		\subfloat[Modelo 2]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r6_p12}}\\
+		\subfloat[Modelo 3]{
+		 \includegraphics[width=0.5\textwidth]{imag/P2/SalCov_r1_p12}}
+		\caption{Intervalo Difuso. Método de la covarianza. Predicción a 12 pasos}
+		\label{f_P2SalidaCovp12}
+\end{figure}
+
+\subsubsection{Conclusiones para el modelo difuso Takagi-Sugeno}
+
+Como conclusión al análisis anterior se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto al modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación reuiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
 
 
 \newpage
