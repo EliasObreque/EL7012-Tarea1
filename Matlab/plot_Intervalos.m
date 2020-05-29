@@ -23,6 +23,7 @@ function []=plot_Intervalos(y,yu,yl)
         'LineWidth', options.line_width);
     hold off;
     
-     xlabel('Número de muestras')
+     xlabel('t')
      ylabel('Salida del modelo')
+     xlim([168 288])
 end

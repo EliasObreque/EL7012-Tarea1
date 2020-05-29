@@ -116,7 +116,7 @@ xlabel('Número de muestras')
 ylabel('Salida del modelo')
 xlim([1 300])
 
-Prediccion a j-pasos del modelo Original
+% Prediccion a j-pasos del modelo Original
 [y8,x8]=ysim_p(Xval,model.a,model.b,model.g,7);
 
 figure ()
