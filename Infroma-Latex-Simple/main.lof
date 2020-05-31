@@ -85,3 +85,8 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{42}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{42}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{42}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Metodología para desarrollar intervalos de predicción\relax }}{44}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha =10$.\relax }}{45}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{45}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{45}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{45}%
