@@ -1277,7 +1277,7 @@ Para seleccionar las variables que actúan como entrada al sistema difuso, se re
 \end{figure}
 
 En la Fig. \ref{f_P2Sensibilidad} se muestran los índices de las sensibilidades del modelo para 6
-variables de entrada (constituye un cuarto de la cantidad de regresores iniciales): $y(k-1)$, $y(k-2)$, $y(k-10)$, $y(k-11)$, $y(k-12)$ y $y(k-23)$, comprobándose que las variables con mayor aporte son el muestreo en los instantes anteriores y la muestras tomadas equivalente medio día antes. Es de interés analizar el comportamiento del modelo cuando solo se conoce el muestreo en el instante anterior por lo que obtendrá un modelo que solo trabaje con la variable de entrada $y(k-1)$.
+variables de entrada (constituye un cuarto de la cantidad de regresores iniciales): $y(k-1)$, $y(k-2)$, $y(k-10)$, $y(k-11)$, $y(k-12)$ y $y(k-23)$, comprobándose que las variables con mayor aporte son los autoregresores en los instantes inmediatamente anteriores y la muestras tomadas equivalente medio día antes. Es de interés analizar el comportamiento del modelo cuando solo se conoce el muestreo en el instante anterior por lo que obtendrá un modelo que solo trabaje con la variable de entrada $y(k-1)$.
 
 \begin{figure}[h!]
 \centering
@@ -1473,7 +1473,7 @@ La predicción a 6 pasos mantiene un comportamiento similar a la prediccióna un
 		\label{f_P2SalidaCovp6}
 \end{figure}
 
-Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el modelo no brinda una infromación muy precisa, pudiendo tomarse solo como una cota superior de la predicci?2n d ela variable pues falla en los valor cercanos a cero.
+Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el modelo no brinda una infromación muy precisa, pudiendo tomarse solo como una cota superior de la predicción de la variable pues falla en los valor cercanos a cero.
 
 \begin{figure}
 		\centering
