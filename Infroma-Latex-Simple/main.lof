@@ -86,7 +86,50 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{42}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{42}%
 \contentsline {figure}{\numberline {33}{\ignorespaces Metodología para desarrollar intervalos de predicción\relax }}{44}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha =10$.\relax }}{45}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con JS.\relax }}{45}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{45}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 8 paso}}}{45}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 16 paso}}}{45}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Índice de Sensibilidades.\relax }}{49}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Índice de Sensibilidades.\relax }}{50}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Índice de Sensibilidades.\relax }}{51}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{51}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{51}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{51}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Clusters de Salida Modelo Difuso Tipo 1.\relax }}{52}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{52}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{52}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{52}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Salida de los modelos difusos\relax }}{54}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{54}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{54}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{54}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Salida de los modelos difusos. Predicción a 6 pasos\relax }}{55}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{55}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{55}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{55}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Salida de los modelos difusos. Predicción a 12 pasos\relax }}{56}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{56}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{56}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{56}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Intervalo Difuso. Método de la covarianza\relax }}{58}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{58}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{58}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{58}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Intervalo Difuso. Método de la covarianza. Predicción a 6 pasos\relax }}{59}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{59}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{59}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{59}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Intervalo Difuso. Método de la covarianza. Predicción a 12 pasos\relax }}{60}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modelo 1}}}{60}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Modelo 2}}}{60}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Modelo 3}}}{60}%
+\contentsline {figure}{\numberline {45}{\ignorespaces RMSE para diferente número de neuronas.\relax }}{61}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Indice de sensibilidad para cada regresor.\relax }}{62}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Modelo neuronal con 10 neuronas y 12 regresores.\relax }}{62}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Modelo neuronal con 16 neuronas y 6 regresores.\relax }}{63}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Indice de sensibilidad para 6 regresores.\relax }}{63}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Uso del método de covarianza para estimar el intervalo de predicción a 1, 6 y 12 con $\alpha =10$.\relax }}{65}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Intervalo a 1 paso}}}{65}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Intervalo a 6 paso}}}{65}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Intervalo a 12 paso}}}{65}%

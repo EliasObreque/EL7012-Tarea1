@@ -1270,13 +1270,13 @@ Para desarrollar el experimento y comparar los intervalos de predicción por cov
 		\includegraphics[width=0.5\textwidth]{imag/redes/js_8.pdf}} \newline
 	\subfloat[Intervalo a 16 paso]{
 		\includegraphics[width=0.5\textwidth]{imag/redes/js_16.pdf}}
-	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con $\alpha=10$.}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con JS.}
 	\label{js_4}
 \end{figure}
 
 \begin{table}[h!]
 	\centering
-	\caption{Métricas de evaluación de intervalo para diferentes pasos con $\alpha = 10$.}
+	\caption{Métricas de evaluación de intervalo con Joint Supervision.}
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		& A 1 paso &A 8 pasos & A 16 pasos \\\hline
@@ -1547,10 +1547,83 @@ Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el 
 
 Como conclusión al análisis anterior se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto al modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación reuiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
 
+
+\clearpage
 \subsection{Modelo de red neuronal}
-Se comienza con un modelo de las red inicial usando 24 regresores para buscar el numero optimo de neuronas.
+\subsubsection{Estructura}
+Se comienza con un modelo inicial de la red usando 12 regresores para buscar el número óptimo de neuronas y tener más datos en el entrenamiento. El resultado se muestra en la Figura \ref{p2_neuronas} dando un óptimo de 10 con un RMSE = 2.0961 con el conjunto de prueba. Sin embargo, como se puede ver en la Figura \ref{p2_neuronas}, no hay mucha diferencia entre 60 o 10 neuronas y se define en 10 neuronas.
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/RMSE_p2.pdf}
+	\caption{RMSE para diferente número de neuronas.}
+	\label{p2_neuronas}
+\end{figure}
+
+Luego, se realiza un análisis de sensibilidad para los 12 regresores resultando en la Figura \ref{p2_sensi}. Se puede que existe una periodicidad cada 6 regresores aumentando el Indicador de sensibilizad en 6 y 12 regresores atrás, que corresponden a 6 y 12 horas respectivamente. El modelo obtenido se muestra en la Figura \ref{Model_nn}. En orden de aumentar la cantidad de datos y, viendo que los regresores tienen sensibilidad seudo-cíclica en múltiple de 6 regresores, se realiza otro experimento con 6 regresores mostrando los resultados de la Figura\ref{p2_model3}. En este ultimo experimento resulto en un mínimo RMSE con 16 neuronas y un RMSE de prueba de 2.596, cercano al de 12 regresores. La sensibilidad de cada regresor utilizado es como se ve en la Figura \ref{sensi_p2_3}, donde nuevamente tiene más influencia el regresor desfasado en 6 horas del valor a predecir. No se descontarán más regresores para no aumentar el valor de RMSE. 
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/sensi_p2.pdf}
+	\caption{Indice de sensibilidad para cada regresor.}
+	\label{p2_sensi}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/model_p2.pdf}
+	\caption{Modelo neuronal con 10 neuronas y 12 regresores.}
+	\label{Model_nn}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/model3_p2.pdf}
+	\caption{Modelo neuronal con 16 neuronas y 6 regresores.}
+	\label{p2_model3}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/sensi_p23.pdf}
+	\caption{Indice de sensibilidad para 6 regresores.}
+	\label{sensi_p2_3}
+\end{figure}
 
 \newpage
+\clearpage
+\subsubsection{Predicción a j pasos}
+Se utiliza el método de la covarianza porque es menos costoso computacionalmente y mostró mejores resultados respecto al PINAW. Los resultados se muestran la Figura \ref{p2_j} y se reagrupan en la Tabla \ref{tab_p2}.
+
+\begin{table}[h!]
+	\centering
+	\caption{Métricas de evaluación de intervalo para diferentes pasos.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& A 1 paso &A 6 pasos & A 12 pasos \\\hline
+		PICP     &  91.1532   &  85.8049   & 91.952   \\ \hline
+		PINAW    & 46.2572   & 106.2346    & 93.859    \\ \hline
+		MAE & 9.62541 & 23.487 &20.1027\\ \hline
+		RMSE &2.2992 & 6.1008 & 4.5877\\ \hline
+	\end{tabular}
+	\label{tab_p2}
+\end{table}
+
+
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_1.pdf}}
+	\subfloat[Intervalo a 6 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_6.pdf}} \newline
+	\subfloat[Intervalo a 12 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_12.pdf}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 6 y 12 con $\alpha=10$.}
+	\label{p2_j}
+\end{figure}
+\newpage
+\clearpage
 \bibliographystyle{IEEEtran}
 \bibliography{biblio}
 \end{document} 
