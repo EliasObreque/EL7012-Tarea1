@@ -1255,21 +1255,21 @@ En esta sección se presenta el desarrollo de intervalos de predicción con Join
 \begin{figure}[!h]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.5\textwidth]{imag/redes/estructura_js.png}
+	 \includegraphics[width=0.5\textwidth]{imag/redes/estructura_js.png}
 	\caption{Metodología para desarrollar intervalos de predicción}
 	\label{est_js}
 \end{figure}
-Para desarrollar el experimento y comparar los intervalos de predicción por covarianza, se genera un entrenamiento y optimización de $\lambda$ con 4 regresores al usar Joint Supervision. Esto es porque en el entrenamiento de la nueva estructura de la red, la función de perdida a sido modificada y esto puede afectar el modelo y cambiar los resultados del análisis de sensibilidad haciendo preferible el uso de todos los regresores. La optimización recae en 12 neuronas en la capa oculta con un $RMSE = 0.0968$ en el conjunto de prueba. Se propone un $\mu=90\%$. Los resultados para 1, 8 y 16 pasos se muestran las Figuras \ref{js_4} respectivamente, reagrupando las métricas en la Tabla \ref{tab_js}. 
+Para desarrollar el experimento y comparar los intervalos de predicción por covarianza, se genera un entrenamiento y optimización de $\lambda$ con 4 regresores al usar Joint Supervision. Esto es porque en el entrenamiento de la nueva estructura de la red, la función de perdida a sido modificada y esto puede afectar el modelo y cambiar los resultados del análisis de sensibilidad haciendo preferible el uso de todos los regresores. La optimización recae en 12 neuronas en la capa oculta con un $RMSE = 0.0968$ en el conjunto de prueba. Se propone un $\mu=90\%$. Los resultados para 1, 8 y 16 pasos se muestran las Figuras \ref{js_4} respectivamente, reagrupando las métricas en la Tabla \ref{tab_js}.
 
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
 	\subfloat[Intervalo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/js_1.pdf}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/js_1.pdf}}
 	\subfloat[Intervalo a 8 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/js_8.pdf}} \newline
+		 \includegraphics[width=0.5\textwidth]{imag/redes/js_8.pdf}} \newline
 	\subfloat[Intervalo a 16 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/js_16.pdf}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/js_16.pdf}}
 	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con JS.}
 	\label{js_4}
 \end{figure}
@@ -1293,10 +1293,10 @@ Se puede ver una mejora en el PICP con un bajo RMSE. Sin embargo, a diferencia d
 	\item La estructura de entrenamiento, es decir, definir bien si cada función de perdida de cada salida debe entrenar por separado los pesos asociados a la conexión de la salida de la capa oculta y dicha salida (método de salidas independiente con solo las capas ocultas en común). Por otro lado, esta el método que se basa en sumar las perdidas de las 3 salidas y optimizar en base una función de perdida común para las 3 salida, lo que conlleva a que cualquier error en una de las salida, genere un cambio en todo los pesos \cite{noauthor_multi-task_nodate}. En el desarrollo de este problema se probaron ambos método mostrando mejores resultados el primero y es el que se utilizó finalmente.
 	\item El uso de early stopping depende de que función de perdida estamos evaluando (upper, crisp, lower). Se puede elegir una de ellas o la suma de las 3, cualquiera de las dos tiene un impacto en las otras 3 salidas.
 	\item Existe la hipótesis de que los valores de la señal APBRS pueden influir en los resultados. Usar una señal con una amplitud máxima unitaria puede acotar la función de salida a valores pequeños con poca diferencia entre si dificultando el entrenamiento de la red neuronal y sobre todo en las predicciones.
-	\item Durante el ensayo de hiperparámetro se observo que el entrenamiento es muy ruidoso al cambiar la tasa de aprendizaje de 0.01 a 0.05. Para evitar esto se cambio a 0.005, sin embargo, para $j=16$ pasos, vuelven a aparecer ruidos en el MSE del entrenamiento. Esto influye en el early stopping, pudiendo para antes solo por la existencia de ruido. 
+	\item Durante el ensayo de hiperparámetro se observo que el entrenamiento es muy ruidoso al cambiar la tasa de aprendizaje de 0.01 a 0.05. Para evitar esto se cambio a 0.005, sin embargo, para $j=16$ pasos, vuelven a aparecer ruidos en el MSE del entrenamiento. Esto influye en el early stopping, pudiendo para antes solo por la existencia de ruido.
 	Finalmente, el valor del incremente de $\lambda$ puede afectar que tan grande nos da el siguiente PINAW, si se escoge un incremento muy pequeña, el código se demora mucho, si es muy grande, el PINAW puede quedar sub-ajustado y por eso puede que de tan grande para pasos más grandes.
-\end{itemize} 
-	De esta forma, el método es muy bueno para asegurar un PICP deseado, pero a cambia, debe definirse muy bien toda su estructura y los puntos ya mencionados para evitar ambigüedades y que sea robusto a los valores aleatorios iniciales de los pesos, al ruido de entrenamiento, y lo que se define como función de perdida total $L_{total}$. 
+\end{itemize}
+	De esta forma, el método es muy bueno para asegurar un PICP deseado, pero a cambia, debe definirse muy bien toda su estructura y los puntos ya mencionados para evitar ambigüedades y que sea robusto a los valores aleatorios iniciales de los pesos, al ruido de entrenamiento, y lo que se define como función de perdida total $L_{total}$.
 \clearpage
 \newpage
 \section{Problema 2}
@@ -1389,20 +1389,18 @@ Dentro de un mismo modelo las variaciones en los índices RMSE y MAE para los co
 \begin{table}[htbp]
   \centering
   \caption{Desempeño de los Modelos Difusos}
-    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
-    \toprule
-          & \multicolumn{3}{c|}{Modelo 1} & \multicolumn{3}{c|}{Modelo 2} & \multicolumn{3}{c|}{Modelo 3} \\
-    \midrule
-    Índices & \multicolumn{1}{p{3em}|}{Entre.} & \multicolumn{1}{p{3em}|}{Prueba} & \multicolumn{1}{p{3.9em}|}{Validación} & \multicolumn{1}{p{3em}|}{Entre.} & \multicolumn{1}{p{3em}|}{Prueba} & \multicolumn{1}{p{3.9em}|}{Validación} & \multicolumn{1}{p{3em}|}{Entre.} & \multicolumn{1}{p{3em}|}{Prueba} & \multicolumn{1}{p{3.9em}|}{Validación} \\
-
-    \midrule
-    RMSE  & 1.4751 & 0.8860 & 1.0761 & 1.6342 & 1.1371 & 1.1520 & 2.4171 & 2.7762 & 2.53811 \\
-    \midrule
-    MAPE  & 766.42 & 335.23 & 262.78 & 649.63 & 266.23 & 215.32 & 968.63 & 768.61 & 728.16 \\
-    \midrule
-    MAE   & 0.7572 & 0.5171 & 0.6014 & 0.8420 & 0.6363 & 0.6176 & 1.4398 & 1.6494 & 1.5828 \\
-
-    \bottomrule
+    \begin{tabular}{|c|l|l|l|l|}
+\hline
+\multicolumn{1}{|l|}{Índices} &               & RMSE   & MAPE   & MAE    \\ \hline
+\multirow{3}{*}{Modelo   1}   & Entrenamiento & 1.4751 & 766.42 & 0.7572 \\ \cline{2-5}
+                              & Prueba        & 0.886  & 335.23 & 0.5171 \\ \cline{2-5}
+                              & Validación    & 1.0761 & 262.78 & 0.6014 \\ \hline
+\multirow{3}{*}{Modelo   2}   & Entrenamiento & 1.6342 & 649.63 & 0.8419 \\ \cline{2-5}
+                              & Prueba        & 1.1371 & 266.23 & 0.6363 \\ \cline{2-5}
+                              & Validación    & 1.1517 & 215.32 & 0.6176 \\ \hline
+\multirow{3}{*}{Modelo   3}   & Entrenamiento & 2.4171 & 968.63 & 1.4398 \\ \cline{2-5}
+                              & Prueba        & 2.7762 & 768.61 & 1.6494 \\ \cline{2-5}
+                              & Validación    & 2.5381 & 728.16 & 1.5828 \\ \hline
     \end{tabular}%
   \label{t_P2TM}%
 \end{table}%
@@ -1433,17 +1431,19 @@ En las Fig. \ref{f_P2Salida}, \ref{f_P2Salidap6} y \ref{f_P2Salidap12} se muestr
 \begin{table}[htbp]
   \centering
   \caption{ Desempeño de la predicción de los Modelos Difusos.}
-    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
-    \toprule
-          & \multicolumn{3}{c|}{1 paso} & \multicolumn{3}{c|}{6 paso} & \multicolumn{3}{c|}{12 paso} \\
-\cmidrule{2-10}    Índices &
-\multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} \\
-    \midrule
-    RMSE  & 1.0761 & 1.1371 & 2.5381 & 1.6011 & 1.7073 & 4.3392 & 8.8953 & 9.0658 & 5.0312 \\
-    \midrule
-    MAE   & 0.6014 & 0.616 & 1.5828 & 0.8204 & 0.9401 & 2.9788 & 5.653 & 5.9445 & 4.2140\\
-    \bottomrule
-    \end{tabular}%
+\begin{tabular}{|c|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{Índices} & \multicolumn{1}{l|}{} & RMSE   & MAE     \\ \hline
+\multirow{3}{*}{1   paso}     & Modelo 1              & 1.0761 & 0.6014  \\ \cline{2-4}
+                              & Modelo 2              & 1.1371 & 0.616   \\ \cline{2-4}
+                              & Modelo 3              & 2.5381 & 1.5828  \\ \hline
+\multirow{3}{*}{6   paso}     & Modelo 1              & 1.6011 & 0.8204  \\ \cline{2-4}
+                              & Modelo 2              & 1.7073 & 0.9401  \\ \cline{2-4}
+                              & Modelo 3              & 4.3392 & 2.97887 \\ \hline
+\multirow{3}{*}{12   paso}    & Modelo 1              & 8.8953 & 5.653   \\ \cline{2-4}
+                              & Modelo 2              & 9.0658 & 5.9445  \\ \cline{2-4}
+                              & Modelo 3              & 5.0312 & 4.214   \\ \hline
+\end{tabular}
   \label{t_MDP}%
 \end{table}%
 
@@ -1478,23 +1478,25 @@ En el caso de la predicción a 12 pasos, Fig. \ref{f_P2Salidap12}, los modelos d
 
 \subsubsection{Intervalos de predicción}
 
-En las estimaciones a j-pasos los intervalos difusos cobran una mayor importancia, pues no solo se está predidiendo un valor, sino que además se indica con cual porciento de confianza dici valor se encuentra dentro de un intervalo de tal amplitud.
+En las estimaciones a j-pasos los intervalos difusos cobran una mayor importancia, pues no solo se está predidiendo un valor, sino que además se indica con cual porciento de confianza dicho valor se encuentra dentro de un intervalo de tal amplitud. Destacar en este momento que dado que la variable física que se estima no puede tomar valores negativos, se añade esta restricción al intervalo difuso propuesto.
 
 % Table generated by Excel2LaTeX from sheet 'P2'
 \begin{table}[htbp]
   \centering
   \caption{ Desempeño de la predicción de los Intervalos Difusos. Método de la Covarianza}
-    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
-    \toprule
-          & \multicolumn{3}{c|}{1 paso} & \multicolumn{3}{c|}{6 paso} & \multicolumn{3}{c|}{12 paso} \\
-\cmidrule{2-10}    Índices &
-\multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} & \multicolumn{1}{p{3em}|}{Modelo 1} & \multicolumn{1}{p{3em}|}{Modelo 2} & \multicolumn{1}{p{3em}|}{Modelo 3} \\
-    \midrule
-    PICP  & 98.85 & 98.85 & 90.83 & 96.77 & 97.08 & 78.4375 & 71.15 & 89.79 & 99.69 \\
-    \midrule
-    PINAW & 27.78 & 30.06 & 44.12 & 28.14 & 30.12 & 45.84 & 55.63 & 57.1  & 129.81 \\
-    \bottomrule
-    \end{tabular}%
+    \begin{tabular}{|c|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{Índices} & \multicolumn{1}{l|}{} & PICP  & PINAW  \\ \hline
+\multirow{3}{*}{1   paso}     & Modelo 1              & 98.85 & 27.78  \\ \cline{2-4}
+                              & Modelo 2              & 98.85 & 30.06  \\ \cline{2-4}
+                              & Modelo 3              & 90.83 & 44.12  \\ \hline
+\multirow{3}{*}{6   paso}     & Modelo 1              & 96.77 & 28.14  \\ \cline{2-4}
+                              & Modelo 2              & 97.08 & 30.12  \\ \cline{2-4}
+                              & Modelo 3              & 78.44 & 45.84  \\ \hline
+\multirow{3}{*}{12   paso}    & Modelo 1              & 71.15 & 55.63  \\ \cline{2-4}
+                              & Modelo 2              & 89.79 & 57.1   \\ \cline{2-4}
+                              & Modelo 3              & 99.69 & 129.81 \\ \hline
+\end{tabular}
   \label{t_MDPCov}%
 \end{table}%
 
@@ -1550,37 +1552,37 @@ Se comienza con un modelo inicial de la red usando 12 regresores para buscar el 
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.75\textwidth]{imag/redes/RMSE_p2.pdf}
+	 \includegraphics[width=0.75\textwidth]{imag/redes/RMSE_p2.pdf}
 	\caption{RMSE para diferente número de neuronas.}
 	\label{p2_neuronas}
 \end{figure}
 
-Luego, se realiza un análisis de sensibilidad para los 12 regresores resultando en la Figura \ref{p2_sensi}. Se puede que existe una periodicidad cada 6 regresores aumentando el Indicador de sensibilizad en 6 y 12 regresores atrás, que corresponden a 6 y 12 horas respectivamente. El modelo obtenido se muestra en la Figura \ref{Model_nn}. En orden de aumentar la cantidad de datos y, viendo que los regresores tienen sensibilidad seudo-cíclica en múltiple de 6 regresores, se realiza otro experimento con 6 regresores mostrando los resultados de la Figura\ref{p2_model3}. En este ultimo experimento resulto en un mínimo RMSE con 16 neuronas y un RMSE de prueba de 2.596, cercano al de 12 regresores. La sensibilidad de cada regresor utilizado es como se ve en la Figura \ref{sensi_p2_3}, donde nuevamente tiene más influencia el regresor desfasado en 6 horas del valor a predecir. No se descontarán más regresores para no aumentar el valor de RMSE. 
+Luego, se realiza un análisis de sensibilidad para los 12 regresores resultando en la Figura \ref{p2_sensi}. Se puede que existe una periodicidad cada 6 regresores aumentando el Indicador de sensibilizad en 6 y 12 regresores atrás, que corresponden a 6 y 12 horas respectivamente. El modelo obtenido se muestra en la Figura \ref{Model_nn}. En orden de aumentar la cantidad de datos y, viendo que los regresores tienen sensibilidad seudo-cíclica en múltiple de 6 regresores, se realiza otro experimento con 6 regresores mostrando los resultados de la Figura\ref{p2_model3}. En este ultimo experimento resulto en un mínimo RMSE con 16 neuronas y un RMSE de prueba de 2.596, cercano al de 12 regresores. La sensibilidad de cada regresor utilizado es como se ve en la Figura \ref{sensi_p2_3}, donde nuevamente tiene más influencia el regresor desfasado en 6 horas del valor a predecir. No se descontarán más regresores para no aumentar el valor de RMSE.
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.75\textwidth]{imag/redes/sensi_p2.pdf}
+	 \includegraphics[width=0.75\textwidth]{imag/redes/sensi_p2.pdf}
 	\caption{Indice de sensibilidad para cada regresor.}
 	\label{p2_sensi}
 \end{figure}
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.75\textwidth]{imag/redes/model_p2.pdf}
+	 \includegraphics[width=0.75\textwidth]{imag/redes/model_p2.pdf}
 	\caption{Modelo neuronal con 10 neuronas y 12 regresores.}
 	\label{Model_nn}
 \end{figure}
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.75\textwidth]{imag/redes/model3_p2.pdf}
+	 \includegraphics[width=0.75\textwidth]{imag/redes/model3_p2.pdf}
 	\caption{Modelo neuronal con 16 neuronas y 6 regresores.}
 	\label{p2_model3}
 \end{figure}
 \begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.75\textwidth]{imag/redes/sensi_p23.pdf}
+	 \includegraphics[width=0.75\textwidth]{imag/redes/sensi_p23.pdf}
 	\caption{Indice de sensibilidad para 6 regresores.}
 	\label{sensi_p2_3}
 \end{figure}
@@ -1604,7 +1606,7 @@ Se utiliza el método de la covarianza porque es menos costoso computacionalment
 	\label{tab_p2}
 \end{table}
 
-Los gráficos de la Figura \ref{p2_j} muestran el mismo comportamiento de la serie de Chen, es decir, a medida que aumentan los pasos se debe aumentar el ancho para obtener mayor PICP. Por otro lado, uno puede ir ajustando manualmente el valor de $\alpha$ hasta obtener un valor de PINAW pequeño sin sacrificar tanto PICP. Para este experimento se busca mantener sobre $85\%$. Algo muy interesante ocurre al predecir a 12 pasos, ya que como se menciono anteriormente, los regresores tiene una relación cíclica lo que mejora notablemente la predicción a 12 pasos, mejor que a 6 pasos que también tenia sensibilidad alta respecto a otros regresores. 
+Los gráficos de la Figura \ref{p2_j} muestran el mismo comportamiento de la serie de Chen, es decir, a medida que aumentan los pasos se debe aumentar el ancho para obtener mayor PICP. Por otro lado, uno puede ir ajustando manualmente el valor de $\alpha$ hasta obtener un valor de PINAW pequeño sin sacrificar tanto PICP. Para este experimento se busca mantener sobre $85\%$. Algo muy interesante ocurre al predecir a 12 pasos, ya que como se menciono anteriormente, los regresores tiene una relación cíclica lo que mejora notablemente la predicción a 12 pasos, mejor que a 6 pasos que también tenia sensibilidad alta respecto a otros regresores.
 
 A los resultados obtenidos se le realiza una pequeña modificación semejante al caso de T\&S. Como se sabe que los valores son siempre positivos, se restringe el $y_{lower}$ del intervalo de predicción a un mínimo valor de cero. Los resultados de esto se muestran en la Figura \ref{p2_j_cero} y en la Tabla \ref{tab_p2_cero} donde se observa una disminución del PINAW.
 \begin{table}[h!]
@@ -1625,11 +1627,11 @@ A los resultados obtenidos se le realiza una pequeña modificación semejante al
 	\centering
 	\captionsetup{justification=centering}
 	\subfloat[Intervalo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/p2_1.pdf}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/p2_1.pdf}}
 	\subfloat[Intervalo a 6 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/p2_6.pdf}} \newline
+		 \includegraphics[width=0.5\textwidth]{imag/redes/p2_6.pdf}} \newline
 	\subfloat[Intervalo a 12 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/p2_12.pdf}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/p2_12.pdf}}
 	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 6 y 12 con $\alpha=10$.}
 	\label{p2_j}
 \end{figure}
@@ -1638,11 +1640,11 @@ A los resultados obtenidos se le realiza una pequeña modificación semejante al
 	\centering
 	\captionsetup{justification=centering}
 	\subfloat[Intervalo a 1 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/p2_1c.pdf}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/p2_1c.pdf}}
 	\subfloat[Intervalo a 6 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/p2_6c.pdf}} \newline
+		 \includegraphics[width=0.5\textwidth]{imag/redes/p2_6c.pdf}} \newline
 	\subfloat[Intervalo a 12 paso]{
-		\includegraphics[width=0.5\textwidth]{imag/redes/p2_12c.pdf}}
+		 \includegraphics[width=0.5\textwidth]{imag/redes/p2_12c.pdf}}
 	\caption{Uso del método de covarianza para estimar el intervalo de predicción modificado a 1, 6 y 12 con $\alpha=10$.}
 	\label{p2_j_cero}
 \end{figure}
@@ -1650,7 +1652,7 @@ A los resultados obtenidos se le realiza una pequeña modificación semejante al
 \newpage
 \clearpage
 \section{Conclusiones finales}
-Como conclusión al análisis anterior se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto al modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación reuiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
+Como conclusión al análisis en los Modelos Difusos Takagi-Sugeno se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto a los modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación requiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
 
 Respecto a la comparación de los 2 modelos de predicción, la red neuronal no mostró resultados sobresalientes como lo fue en el problema 1, de hecho, en el Modelo 2 de T\&S se obtienen valores altos de PICP sin obtener grandes valores de PINAW para 6 y 12 pasos. Tal vez la red neuronal podría tener un mejor desempeño si la cantidad de datos fuera mayor. Por otro lado, aumentar el numero de regresores tampoco afecta tanto el estimado ya que al aumentar el numero de regresores a 24 se mantiene un RMSE semejante a 2.627 en la optimización.
 

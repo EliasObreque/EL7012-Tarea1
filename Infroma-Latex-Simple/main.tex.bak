@@ -1242,8 +1242,63 @@ Un análisis para intervalos difusos se presenta con el Método de la Covarianza
 
 Se puede apreciar que, como el modelo de la planta es no lineal, la red neuronal predomina en todos los sectores de evaluación. El RMSE es bajo incluso para 16 pasos y el valor más alto de PINAW es alrededor de 9.5, menor que los otros modelos.
 
+\section{Intervalo de predicción con Joint Supervision}
+En esta sección se presenta el desarrollo de intervalos de predicción con Joint Supervision \cite{cruz_neural_2018}. Para facilitar la implementación se procede a programar en python una red neuronal como se muestra en \cite{git} en el archivo JoinSupervision.py. La lógica del código sigue la estructura presentada por \cite{cruz_neural_2018} mostrada en la Figura \ref{est_js}, donde se debe buscar el mejor valor de $\lambda$ para aumentar el PICP. Las ecuaciones no se presentaran ni se desarrollaran en este trabajo ya que se pueden ver fácilmente en la referencia, pero si se presenta el método aplicada para encontrar $\lambda$, el cual consiste en,
+\begin{itemize}
+\item Se entrena la red para paso igual 1
+\item Con el resultado se estima la predicción a J pasos
+\item Se evalúa el PICP de la salida (k+j)
+\item Si no cumple la condición de PICP se aumenta el valor de lambda.
+\item Se vuelve al punto inicial y se itera hasta encontrar el PICP deseado.
+\item Cuando se obtiene el PICP deseado, se mantiene constante el valor de $\lambda$ y se corre el entrenamiento hasta maxCounter para encontrar el mínimo valor de PINAW.
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.5\textwidth]{imag/redes/estructura_js.png}
+	\caption{Metodología para desarrollar intervalos de predicción}
+	\label{est_js}
+\end{figure}
+Para desarrollar el experimento y comparar los intervalos de predicción por covarianza, se genera un entrenamiento y optimización de $\lambda$ con 4 regresores al usar Joint Supervision. Esto es porque en el entrenamiento de la nueva estructura de la red, la función de perdida a sido modificada y esto puede afectar el modelo y cambiar los resultados del análisis de sensibilidad haciendo preferible el uso de todos los regresores. La optimización recae en 12 neuronas en la capa oculta con un $RMSE = 0.0968$ en el conjunto de prueba. Se propone un $\mu=90\%$. Los resultados para 1, 8 y 16 pasos se muestran las Figuras \ref{js_4} respectivamente, reagrupando las métricas en la Tabla \ref{tab_js}. 
 
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/js_1.pdf}}
+	\subfloat[Intervalo a 8 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/js_8.pdf}} \newline
+	\subfloat[Intervalo a 16 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/js_16.pdf}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 8 y 16 con JS.}
+	\label{js_4}
+\end{figure}
 
+\begin{table}[h!]
+	\centering
+	\caption{Métricas de evaluación de intervalo con Joint Supervision.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& A 1 paso &A 8 pasos & A 16 pasos \\\hline
+		PICP     &  90.399   &  92.3721   & 91.8143   \\ \hline
+		PINAW    & 4.34012   & 41.3193    & 42.8199    \\ \hline
+		MAE & 0.077826&00.5676 & 0.60138\\ \hline
+		RMSE & 0.1081&0.6739&0.7213\\ \hline
+	\end{tabular}
+	\label{tab_js}
+\end{table}
+
+Se puede ver una mejora en el PICP con un bajo RMSE. Sin embargo, a diferencia de los resultados presentados en \cite{cruz_neural_2018}, los mostrados en la Tabla \ref{tab_js} muestran un PINAW más amplio. Las razones de por que puede pasar esto son variadas, entre ellas:
+\begin{itemize}
+	\item La estructura de entrenamiento, es decir, definir bien si cada función de perdida de cada salida debe entrenar por separado los pesos asociados a la conexión de la salida de la capa oculta y dicha salida (método de salidas independiente con solo las capas ocultas en común). Por otro lado, esta el método que se basa en sumar las perdidas de las 3 salidas y optimizar en base una función de perdida común para las 3 salida, lo que conlleva a que cualquier error en una de las salida, genere un cambio en todo los pesos \cite{noauthor_multi-task_nodate}. En el desarrollo de este problema se probaron ambos método mostrando mejores resultados el primero y es el que se utilizó finalmente.
+	\item El uso de early stopping depende de que función de perdida estamos evaluando (upper, crisp, lower). Se puede elegir una de ellas o la suma de las 3, cualquiera de las dos tiene un impacto en las otras 3 salidas.
+	\item Existe la hipótesis de que los valores de la señal APBRS pueden influir en los resultados. Usar una señal con una amplitud máxima unitaria puede acotar la función de salida a valores pequeños con poca diferencia entre si dificultando el entrenamiento de la red neuronal y sobre todo en las predicciones.
+	\item Durante el ensayo de hiperparámetro se observo que el entrenamiento es muy ruidoso al cambiar la tasa de aprendizaje de 0.01 a 0.05. Para evitar esto se cambio a 0.005, sin embargo, para $j=16$ pasos, vuelven a aparecer ruidos en el MSE del entrenamiento. Esto influye en el early stopping, pudiendo para antes solo por la existencia de ruido. 
+	Finalmente, el valor del incremente de $\lambda$ puede afectar que tan grande nos da el siguiente PINAW, si se escoge un incremento muy pequeña, el código se demora mucho, si es muy grande, el PINAW puede quedar sub-ajustado y por eso puede que de tan grande para pasos más grandes.
+\end{itemize} 
+	De esta forma, el método es muy bueno para asegurar un PICP deseado, pero a cambia, debe definirse muy bien toda su estructura y los puntos ya mencionados para evitar ambigüedades y que sea robusto a los valores aleatorios iniciales de los pesos, al ruido de entrenamiento, y lo que se define como función de perdida total $L_{total}$. 
+\clearpage
+\newpage
 \section{Problema 2}
 Para la operación óptima de las micro-redes es importante contar con modelos de predicción confiables de variables tales como: potencia solar, potencia eólica, consumo, estado de carga de las baterías, entre otras variables. Los modelos e intervalos de predicción son importantes debido a la incertidumbre asociada a la generación con energía renovable y la variabilidad del consumo local.
 
@@ -1473,7 +1528,7 @@ La predicción a 6 pasos mantiene un comportamiento similar a la prediccióna un
 		\label{f_P2SalidaCovp6}
 \end{figure}
 
-Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el modelo no brinda una infromación muy precisa, pudiendo tomarse solo como una cota superior de la predicci?2n d ela variable pues falla en los valor cercanos a cero.
+Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el modelo no brinda una infromación muy precisa, pudiendo tomarse solo como una cota superior de la predicción de la variable pues falla en los valor cercanos a cero.
 
 \begin{figure}
 		\centering
@@ -1488,10 +1543,116 @@ Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el 
 		\label{f_P2SalidaCovp12}
 \end{figure}
 
-\subsubsection{Conclusiones para el modelo difuso Takagi-Sugeno}
+\clearpage
+\subsection{Modelo de red neuronal}
+\subsubsection{Estructura}
+Se comienza con un modelo inicial de la red usando 12 regresores para buscar el número óptimo de neuronas y tener más datos en el entrenamiento. El resultado se muestra en la Figura \ref{p2_neuronas} dando un óptimo de 10 con un RMSE = 2.0961 con el conjunto de prueba. Sin embargo, como se puede ver en la Figura \ref{p2_neuronas}, no hay mucha diferencia entre 60 o 10 neuronas y se define en 10 neuronas.
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/RMSE_p2.pdf}
+	\caption{RMSE para diferente número de neuronas.}
+	\label{p2_neuronas}
+\end{figure}
 
+Luego, se realiza un análisis de sensibilidad para los 12 regresores resultando en la Figura \ref{p2_sensi}. Se puede que existe una periodicidad cada 6 regresores aumentando el Indicador de sensibilizad en 6 y 12 regresores atrás, que corresponden a 6 y 12 horas respectivamente. El modelo obtenido se muestra en la Figura \ref{Model_nn}. En orden de aumentar la cantidad de datos y, viendo que los regresores tienen sensibilidad seudo-cíclica en múltiple de 6 regresores, se realiza otro experimento con 6 regresores mostrando los resultados de la Figura\ref{p2_model3}. En este ultimo experimento resulto en un mínimo RMSE con 16 neuronas y un RMSE de prueba de 2.596, cercano al de 12 regresores. La sensibilidad de cada regresor utilizado es como se ve en la Figura \ref{sensi_p2_3}, donde nuevamente tiene más influencia el regresor desfasado en 6 horas del valor a predecir. No se descontarán más regresores para no aumentar el valor de RMSE. 
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/sensi_p2.pdf}
+	\caption{Indice de sensibilidad para cada regresor.}
+	\label{p2_sensi}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/model_p2.pdf}
+	\caption{Modelo neuronal con 10 neuronas y 12 regresores.}
+	\label{Model_nn}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/model3_p2.pdf}
+	\caption{Modelo neuronal con 16 neuronas y 6 regresores.}
+	\label{p2_model3}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.75\textwidth]{imag/redes/sensi_p23.pdf}
+	\caption{Indice de sensibilidad para 6 regresores.}
+	\label{sensi_p2_3}
+\end{figure}
+
+\newpage
+\clearpage
+\subsubsection{Predicción a j pasos}
+Se utiliza el método de la covarianza porque es menos costoso computacionalmente y mostró mejores resultados respecto al PINAW. Los resultados se muestran la Figura \ref{p2_j} y se reagrupan en la Tabla \ref{tab_p2}.
+
+\begin{table}[h!]
+	\centering
+	\caption{Métricas de evaluación de intervalo para diferentes pasos.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& A 1 paso &A 6 pasos & A 12 pasos \\\hline
+		PICP     &  91.1532   &  85.8049   & 91.952   \\ \hline
+		PINAW    & 46.2572   & 106.2346    & 93.859    \\ \hline
+		MAE & 9.62541 & 23.487 &20.1027\\ \hline
+		RMSE &2.2992 & 6.1008 & 4.5877\\ \hline
+	\end{tabular}
+	\label{tab_p2}
+\end{table}
+
+Los gráficos de la Figura \ref{p2_j} muestran el mismo comportamiento de la serie de Chen, es decir, a medida que aumentan los pasos se debe aumentar el ancho para obtener mayor PICP. Por otro lado, uno puede ir ajustando manualmente el valor de $\alpha$ hasta obtener un valor de PINAW pequeño sin sacrificar tanto PICP. Para este experimento se busca mantener sobre $85\%$. Algo muy interesante ocurre al predecir a 12 pasos, ya que como se menciono anteriormente, los regresores tiene una relación cíclica lo que mejora notablemente la predicción a 12 pasos, mejor que a 6 pasos que también tenia sensibilidad alta respecto a otros regresores. 
+
+A los resultados obtenidos se le realiza una pequeña modificación semejante al caso de T\&S. Como se sabe que los valores son siempre positivos, se restringe el $y_{lower}$ del intervalo de predicción a un mínimo valor de cero. Los resultados de esto se muestran en la Figura \ref{p2_j_cero} y en la Tabla \ref{tab_p2_cero} donde se observa una disminución del PINAW.
+\begin{table}[h!]
+	\centering
+	\caption{Métricas de evaluación de intervalo modificado para diferentes pasos.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& A 1 paso &A 6 pasos & A 12 pasos \\\hline
+		PICP     &  93.5229   &  91.67327   & 93.3864   \\ \hline
+		PINAW    & 36.4097   & 88.2214    & 78.4275    \\ \hline
+		MAE &7.9019 & 23.487 &17.4140\\ \hline
+		RMSE &2.2992 & 6.1008 & 4.5877\\ \hline
+	\end{tabular}
+	\label{tab_p2_cero}
+\end{table}
+
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_1.pdf}}
+	\subfloat[Intervalo a 6 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_6.pdf}} \newline
+	\subfloat[Intervalo a 12 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_12.pdf}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 6 y 12 con $\alpha=10$.}
+	\label{p2_j}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_1c.pdf}}
+	\subfloat[Intervalo a 6 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_6c.pdf}} \newline
+	\subfloat[Intervalo a 12 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_12c.pdf}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción modificado a 1, 6 y 12 con $\alpha=10$.}
+	\label{p2_j_cero}
+\end{figure}
+
+\newpage
+\clearpage
+\section{Conclusiones finales}
 Como conclusión al análisis anterior se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto al modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación reuiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
 
+Respecto a la comparación de los 2 modelos de predicción, la red neuronal no mostró resultados sobresalientes como lo fue en el problema 1, de hecho, en el Modelo 2 de T\&S se obtienen valores altos de PICP sin obtener grandes valores de PINAW para 6 y 12 pasos. Tal vez la red neuronal podría tener un mejor desempeño si la cantidad de datos fuera mayor. Por otro lado, aumentar el numero de regresores tampoco afecta tanto el estimado ya que al aumentar el numero de regresores a 24 se mantiene un RMSE semejante a 2.627 en la optimización.
 
 \newpage
 \bibliographystyle{IEEEtran}

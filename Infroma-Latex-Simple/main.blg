@@ -1,5 +1,12 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7350 64-bit)
+Capacity: max_strings=4000, hash_size=5000, hash_prime=4253
+The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: biblio.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -14,4 +21,45 @@ Warning--empty journal in matlab_train
 Warning--empty year in matlab_train
 
 Done.
+You've used 11 entries,
+            4087 wiz_defined-function locations,
+            886 strings with 9291 characters,
+and the built_in function-call counts, 5801 in all, are:
+= -- 454
+> -- 94
+< -- 30
++ -- 50
+- -- 17
+* -- 323
+:= -- 988
+add.period$ -- 23
+call.type$ -- 11
+change.case$ -- 12
+chr.to.int$ -- 66
+cite$ -- 19
+duplicate$ -- 441
+empty$ -- 500
+format.name$ -- 20
+if$ -- 1283
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 77
+newline$ -- 70
+num.names$ -- 12
+pop$ -- 198
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 422
+stack$ -- 0
+substring$ -- 171
+swap$ -- 308
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 11
+warning$ -- 8
+while$ -- 24
+width$ -- 13
+write$ -- 129
 (There were 8 warnings)
