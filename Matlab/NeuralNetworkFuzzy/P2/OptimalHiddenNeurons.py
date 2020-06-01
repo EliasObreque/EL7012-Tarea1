@@ -25,7 +25,7 @@ def create_int_out_matrix(XDATA, nregrsors):
 
 #%%
 
-NR = 6
+NR = 24
 
 y_train, x_train = create_int_out_matrix(datos2015, NR)
 y_test, x_test = create_int_out_matrix(datos2017[0:int(len(datos2017)/2)], NR)

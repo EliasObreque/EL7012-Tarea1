@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.4.20)  31 MAY 2020 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.4.20)  31 MAY 2020 22:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -2282,27 +2282,27 @@ lCov_r6_p12.png (PNG copy)> <./imag/P2/SalCov_r1_p12.png (PNG copy)>]
 <imag/redes/RMSE_p2.pdf, id=725, 462.52798pt x 345.4506pt>
 File: imag/redes/RMSE_p2.pdf Graphic file (type pdf)
 <use imag/redes/RMSE_p2.pdf>
-Package pdftex.def Info: imag/redes/RMSE_p2.pdf  used on input line 1558.
+Package pdftex.def Info: imag/redes/RMSE_p2.pdf  used on input line 1553.
 (pdftex.def)             Requested size: 320.57364pt x 239.44176pt.
 <imag/redes/sensi_p2.pdf, id=726, 685.1196pt x 345.4506pt>
 File: imag/redes/sensi_p2.pdf Graphic file (type pdf)
 <use imag/redes/sensi_p2.pdf>
-Package pdftex.def Info: imag/redes/sensi_p2.pdf  used on input line 1567.
+Package pdftex.def Info: imag/redes/sensi_p2.pdf  used on input line 1562.
 (pdftex.def)             Requested size: 320.57364pt x 161.64493pt.
 <imag/redes/model_p2.pdf, id=727, 433.62pt x 359.9046pt>
 File: imag/redes/model_p2.pdf Graphic file (type pdf)
 <use imag/redes/model_p2.pdf>
-Package pdftex.def Info: imag/redes/model_p2.pdf  used on input line 1574.
+Package pdftex.def Info: imag/redes/model_p2.pdf  used on input line 1569.
 (pdftex.def)             Requested size: 320.57364pt x 266.08908pt.
 <imag/redes/model3_p2.pdf, id=728, 433.62pt x 359.9046pt>
 File: imag/redes/model3_p2.pdf Graphic file (type pdf)
 <use imag/redes/model3_p2.pdf>
-Package pdftex.def Info: imag/redes/model3_p2.pdf  used on input line 1581.
+Package pdftex.def Info: imag/redes/model3_p2.pdf  used on input line 1576.
 (pdftex.def)             Requested size: 320.57364pt x 266.08908pt.
 <imag/redes/sensi_p23.pdf, id=729, 492.1587pt x 345.4506pt>
 File: imag/redes/sensi_p23.pdf Graphic file (type pdf)
 <use imag/redes/sensi_p23.pdf>
-Package pdftex.def Info: imag/redes/sensi_p23.pdf  used on input line 1588.
+Package pdftex.def Info: imag/redes/sensi_p23.pdf  used on input line 1583.
 (pdftex.def)             Requested size: 320.57364pt x 225.00935pt.
 
 
@@ -2332,20 +2332,43 @@ multiple pdfs with page group included in a single page
 <imag/redes/p2_1.pdf, id=909, 433.62pt x 359.9046pt>
 File: imag/redes/p2_1.pdf Graphic file (type pdf)
 <use imag/redes/p2_1.pdf>
-Package pdftex.def Info: imag/redes/p2_1.pdf  used on input line 1617.
+Package pdftex.def Info: imag/redes/p2_1.pdf  used on input line 1628.
 (pdftex.def)             Requested size: 213.71576pt x 177.38722pt.
 <imag/redes/p2_6.pdf, id=910, 433.62pt x 359.9046pt>
 File: imag/redes/p2_6.pdf Graphic file (type pdf)
 <use imag/redes/p2_6.pdf>
-Package pdftex.def Info: imag/redes/p2_6.pdf  used on input line 1619.
+Package pdftex.def Info: imag/redes/p2_6.pdf  used on input line 1630.
 (pdftex.def)             Requested size: 213.71576pt x 177.38722pt.
 <imag/redes/p2_12.pdf, id=911, 433.62pt x 359.9046pt>
 File: imag/redes/p2_12.pdf Graphic file (type pdf)
 <use imag/redes/p2_12.pdf>
-Package pdftex.def Info: imag/redes/p2_12.pdf  used on input line 1621.
+Package pdftex.def Info: imag/redes/p2_12.pdf  used on input line 1632.
 (pdftex.def)             Requested size: 213.71576pt x 177.38722pt.
 
-Overfull \hbox (7.83324pt too wide) in paragraph at lines 1617--1622
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1628--1633
+ [][][]  
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<imag/redes/p2_1c.pdf, id=912, 433.62pt x 359.9046pt>
+File: imag/redes/p2_1c.pdf Graphic file (type pdf)
+<use imag/redes/p2_1c.pdf>
+Package pdftex.def Info: imag/redes/p2_1c.pdf  used on input line 1641.
+(pdftex.def)             Requested size: 213.71576pt x 177.38722pt.
+<imag/redes/p2_6c.pdf, id=913, 433.62pt x 359.9046pt>
+File: imag/redes/p2_6c.pdf Graphic file (type pdf)
+<use imag/redes/p2_6c.pdf>
+Package pdftex.def Info: imag/redes/p2_6c.pdf  used on input line 1643.
+(pdftex.def)             Requested size: 213.71576pt x 177.38722pt.
+<imag/redes/p2_12c.pdf, id=914, 433.62pt x 359.9046pt>
+File: imag/redes/p2_12c.pdf Graphic file (type pdf)
+<use imag/redes/p2_12c.pdf>
+Package pdftex.def Info: imag/redes/p2_12c.pdf  used on input line 1645.
+(pdftex.def)             Requested size: 213.71576pt x 177.38722pt.
+
+Overfull \hbox (7.83324pt too wide) in paragraph at lines 1641--1646
  [][][]  
  []
 
@@ -2362,7 +2385,17 @@ ple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./imag/redes/p2_12.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
->] (main.bbl
+>] [66 <./imag/redes/p2_1c.pdf> <./imag/redes/p2_6c.pdf
+
+pdfTeX warning: pdflatex.exe (file ./imag/redes/p2_6c.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./imag/redes/p2_12c.pdf
+
+pdfTeX warning: pdflatex.exe (file ./imag/redes/p2_12c.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>] [67
+
+] (main.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `es'. Using the pattern for
 ** the default language instead.
@@ -2390,17 +2423,15 @@ iple pdfs with page group included in a single page
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en-US'. Using the pattern for
 ** the default language instead.
-) [66
-
-] (main.aux
+) [68] (main.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 ) ) 
 Here is how much of TeX's memory you used:
- 10221 strings out of 481258
- 160147 string characters out of 2907634
- 414627 words of memory out of 3000000
- 25443 multiletter control sequences out of 15000+200000
+ 10241 strings out of 481258
+ 160633 string characters out of 2907634
+ 413647 words of memory out of 3000000
+ 25460 multiletter control sequences out of 15000+200000
  549543 words of font info for 88 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,14n,49p,1199b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2423,9 +2454,9 @@ Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EO/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/User
 s/EO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pf
 b>
-Output written on main.pdf (72 pages, 3647874 bytes).
+Output written on main.pdf (74 pages, 3762160 bytes).
 PDF statistics:
- 1083 PDF objects out of 1200 (max. 8388607)
+ 1202 PDF objects out of 1440 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 521 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 536 words of extra memory for PDF output out of 10000 (max. 10000000)
 

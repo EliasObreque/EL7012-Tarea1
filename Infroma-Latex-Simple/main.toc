@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {6.2}Modelo difuso Takagi-Sugeno Tipo-1}{49}%
 \contentsline {subsubsection}{\numberline {6.2.1}Predicciones a 1, 6, y 12 pasos}{53}%
 \contentsline {subsubsection}{\numberline {6.2.2}Intervalos de predicción}{56}%
-\contentsline {subsubsection}{\numberline {6.2.3}Conclusiones para el modelo difuso Takagi-Sugeno}{57}%
 \contentsline {subsection}{\numberline {6.3}Modelo de red neuronal}{61}%
 \contentsline {subsubsection}{\numberline {6.3.1}Estructura}{61}%
 \contentsline {subsubsection}{\numberline {6.3.2}Predicción a j pasos}{64}%
+\contentsline {section}{\numberline {7}Conclusiones finales}{67}%

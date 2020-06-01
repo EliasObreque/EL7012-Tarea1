@@ -142,7 +142,7 @@ class MLPPredictive(object):
         arg = np.diag(np.ones(Nd)) + Z_est.transpose().dot(z_train_inv).dot(Z_est)
 
         y_u = y_crisp + alpha * np.sqrt(np.var(arg))
-        y_l = y_crisp - alpha * np.sqrt(np.var(arg))
+        y_l = np.maximum(y_crisp - alpha * np.sqrt(np.var(arg)), 0)
         return y_u, y_l
 
 
@@ -188,7 +188,7 @@ y_test_pred  = model_mlp.evaluate(x_test)
 
 
 JSTEP = 12
-alpha = 240
+alpha = 250
 
 y_test_h, y_test_pred_h = model_mlp.predictive_ahead(JSTEP, x_test, y_test, x_train, alpha)
 y_val_h, y_val_pred_h = model_mlp.predictive_ahead(JSTEP, x_val, y_val, x_train, alpha)

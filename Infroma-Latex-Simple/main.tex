@@ -1543,11 +1543,6 @@ Ya en el caso de la predicción a 12 pasos el intervalo difuso propuesto por el 
 		\label{f_P2SalidaCovp12}
 \end{figure}
 
-\subsubsection{Conclusiones para el modelo difuso Takagi-Sugeno}
-
-Como conclusión al análisis anterior se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto al modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación reuiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
-
-
 \clearpage
 \subsection{Modelo de red neuronal}
 \subsubsection{Estructura}
@@ -1609,6 +1604,22 @@ Se utiliza el método de la covarianza porque es menos costoso computacionalment
 	\label{tab_p2}
 \end{table}
 
+Los gráficos de la Figura \ref{p2_j} muestran el mismo comportamiento de la serie de Chen, es decir, a medida que aumentan los pasos se debe aumentar el ancho para obtener mayor PICP. Por otro lado, uno puede ir ajustando manualmente el valor de $\alpha$ hasta obtener un valor de PINAW pequeño sin sacrificar tanto PICP. Para este experimento se busca mantener sobre $85\%$. Algo muy interesante ocurre al predecir a 12 pasos, ya que como se menciono anteriormente, los regresores tiene una relación cíclica lo que mejora notablemente la predicción a 12 pasos, mejor que a 6 pasos que también tenia sensibilidad alta respecto a otros regresores. 
+
+A los resultados obtenidos se le realiza una pequeña modificación semejante al caso de T\&S. Como se sabe que los valores son siempre positivos, se restringe el $y_{lower}$ del intervalo de predicción a un mínimo valor de cero. Los resultados de esto se muestran en la Figura \ref{p2_j_cero} y en la Tabla \ref{tab_p2_cero} donde se observa una disminución del PINAW.
+\begin{table}[h!]
+	\centering
+	\caption{Métricas de evaluación de intervalo modificado para diferentes pasos.}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& A 1 paso &A 6 pasos & A 12 pasos \\\hline
+		PICP     &  93.5229   &  91.67327   & 93.3864   \\ \hline
+		PINAW    & 36.4097   & 88.2214    & 78.4275    \\ \hline
+		MAE &7.9019 & 23.487 &17.4140\\ \hline
+		RMSE &2.2992 & 6.1008 & 4.5877\\ \hline
+	\end{tabular}
+	\label{tab_p2_cero}
+\end{table}
 
 \begin{figure}[h!]
 	\centering
@@ -1622,8 +1633,28 @@ Se utiliza el método de la covarianza porque es menos costoso computacionalment
 	\caption{Uso del método de covarianza para estimar el intervalo de predicción a 1, 6 y 12 con $\alpha=10$.}
 	\label{p2_j}
 \end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\captionsetup{justification=centering}
+	\subfloat[Intervalo a 1 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_1c.pdf}}
+	\subfloat[Intervalo a 6 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_6c.pdf}} \newline
+	\subfloat[Intervalo a 12 paso]{
+		\includegraphics[width=0.5\textwidth]{imag/redes/p2_12c.pdf}}
+	\caption{Uso del método de covarianza para estimar el intervalo de predicción modificado a 1, 6 y 12 con $\alpha=10$.}
+	\label{p2_j_cero}
+\end{figure}
+
 \newpage
 \clearpage
+\section{Conclusiones finales}
+Como conclusión al análisis anterior se determina que el modelo 3 aún cuando requiere muy poca información no logra mantener un desempeño adecuado para las predicciones a 6 y 12 pasos, por lo cual no se recomienda su implementación. En cuanto al modelo 2 y 1, aún cuando su desempeño son similares se recomeinda utilizar el modelo 1, ya que el mismo incorpora la información de un día hacia atrás, pero si la situación reuiere un modelo más sencillo es bueno saber que se cuenta con un modelo con similar desempeño.
+
+Respecto a la comparación de los 2 modelos de predicción, la red neuronal no mostró resultados sobresalientes como lo fue en el problema 1, de hecho, en el Modelo 2 de T\&S se obtienen valores altos de PICP sin obtener grandes valores de PINAW para 6 y 12 pasos. Tal vez la red neuronal podría tener un mejor desempeño si la cantidad de datos fuera mayor. Por otro lado, aumentar el numero de regresores tampoco afecta tanto el estimado ya que al aumentar el numero de regresores a 24 se mantiene un RMSE semejante a 2.627 en la optimización.
+
+\newpage
 \bibliographystyle{IEEEtran}
 \bibliography{biblio}
 \end{document} 
